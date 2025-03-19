@@ -1,0 +1,23 @@
+### 유니티
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/mono_crash.*.json
+
+
+### Visual Studio
+.vs
+# .vsconfig : vs의 확장 및 워크로드 설정 파일. vs로 협업시 넣음
+.vsconfig
+*.vscode
+*.csproj
+*.sln
+*.suo
+
+
+### 플랫폼별
+.DS_Store
