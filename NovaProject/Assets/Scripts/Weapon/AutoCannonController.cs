@@ -40,7 +40,7 @@ public class AutoCannonController : MonoBehaviour, IWeaponController
     /// </summary>
     public void Shooting()
     {
-        // TODO: 애니메이션 재생 로직 추가
+        // TODO: 발사 애니메이션 재생 로직 추가
         Instantiate(bullet, launcher1.position, Quaternion.identity); // 첫 번째 발사 위치에서 탄환 생성
         Instantiate(bullet, launcher2.position, Quaternion.identity); // 두 번째 발사 위치에서 탄환 생성
     }

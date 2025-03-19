@@ -118,7 +118,26 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        move();
+    }
+
+    /// <summary>
+    /// 플레이어의 이동을 처리하는 메서드.
+    /// 입력에 따라 이동 방향을 결정하고 엔진 효과를 조절한다.
+    /// </summary>
+    private void move()
+    {
         moveInput = inputSystem.Player.Move.ReadValue<Vector2>(); // 이동 입력값 업데이트
+        //Debug.Log(moveInput.y);
+
+        if (moveInput.x != 0 || moveInput.y != 0)
+        {
+            amBaseEngineEffects.SetBool("power", true);
+        }
+        else
+        {
+            amBaseEngineEffects.SetBool("power", false);
+        }
     }
 
     /// <summary>
