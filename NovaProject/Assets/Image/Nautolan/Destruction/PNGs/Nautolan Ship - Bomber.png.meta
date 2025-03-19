@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 883cf5983521b074a9d5bfba709c90e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1660297600170083037
+    second: Nautolan Ship - Bomber_0
+  - first:
+      213: -1014905905867412264
+    second: Nautolan Ship - Bomber_1
+  - first:
+      213: -9066779296062297812
+    second: Nautolan Ship - Bomber_2
+  - first:
+      213: -5122415570570412985
+    second: Nautolan Ship - Bomber_3
+  - first:
+      213: 1636987892674773762
+    second: Nautolan Ship - Bomber_4
+  - first:
+      213: -5540349678869818637
+    second: Nautolan Ship - Bomber_5
+  - first:
+      213: 8825950240013617774
+    second: Nautolan Ship - Bomber_6
+  - first:
+      213: -7017040347403979010
+    second: Nautolan Ship - Bomber_7
+  - first:
+      213: -6238895060691467548
+    second: Nautolan Ship - Bomber_8
+  - first:
+      213: -8537873870925648632
+    second: Nautolan Ship - Bomber_9
+  - first:
+      213: 6928229264403705156
+    second: Nautolan Ship - Bomber_10
+  - first:
+      213: 6819948164043362323
+    second: Nautolan Ship - Bomber_11
+  - first:
+      213: 4269160002263832486
+    second: Nautolan Ship - Bomber_12
+  - first:
+      213: 261179810367893692
+    second: Nautolan Ship - Bomber_13
+  - first:
+      213: 1800424792950415212
+    second: Nautolan Ship - Bomber_14
+  - first:
+      213: -3031362199003486851
+    second: Nautolan Ship - Bomber_15
+  - first:
+      213: 7766385300907868670
+    second: Nautolan Ship - Bomber_16
+  - first:
+      213: -3546834664774957118
+    second: Nautolan Ship - Bomber_17
+  - first:
+      213: 6080873033162953269
+    second: Nautolan Ship - Bomber_18
+  - first:
+      213: -6710210922104586872
+    second: Nautolan Ship - Bomber_19
+  - first:
+      213: 7292887046655361396
+    second: Nautolan Ship - Bomber_20
+  - first:
+      213: -1738128099316971446
+    second: Nautolan Ship - Bomber_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 20
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd24297eedf8a0710800000000000000
+      internalID: 1660297600170083037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 20
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dca350b4745ae1f0800000000000000
+      internalID: -1014905905867412264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 19
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c292751a4445c2280800000000000000
+      internalID: -9066779296062297812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 16
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c7834ad2689e8b0800000000000000
+      internalID: -5122415570570412985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 14
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 203ce74b0dfb7b610800000000000000
+      internalID: 1636987892674773762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 29
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f2d3833259bc13b0800000000000000
+      internalID: -5540349678869818637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_6
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 30
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a094d3bf21c7a70800000000000000
+      internalID: 8825950240013617774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_7
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 21
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6f66e5bf67e9e90800000000000000
+      internalID: -7017040347403979010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_8
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 26
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e2cb845ffdfa69a0800000000000000
+      internalID: -6238895060691467548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_9
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 25
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d236233f0638980800000000000000
+      internalID: -8537873870925648632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_10
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 24
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44daf330fc3062060800000000000000
+      internalID: 6928229264403705156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_11
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 25
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310d168b8b255ae50800000000000000
+      internalID: 6819948164043362323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_12
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 22
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7dd30376a1f3b30800000000000000
+      internalID: 4269160002263832486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_13
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 12
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb07b7b57a5ef9300800000000000000
+      internalID: 261179810367893692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_14
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 11
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f9d946fc46cf810800000000000000
+      internalID: 1800424792950415212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_15
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 20
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75a9de04207ee5d0800000000000000
+      internalID: -3031362199003486851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_16
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef1cd69784eb7cb60800000000000000
+      internalID: 7766385300907868670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_17
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 22
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c70c011aac17cec0800000000000000
+      internalID: -3546834664774957118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_18
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 10
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5321ee94ec9936450800000000000000
+      internalID: 6080873033162953269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_19
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 9
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d7204f7ba80e2a0800000000000000
+      internalID: -6710210922104586872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_20
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 11
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 471c0fa212a853560800000000000000
+      internalID: 7292887046655361396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Bomber_21
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 12
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a484612e3bde0e7e0800000000000000
+      internalID: -1738128099316971446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nautolan Ship - Bomber_0: 1660297600170083037
+      Nautolan Ship - Bomber_1: -1014905905867412264
+      Nautolan Ship - Bomber_10: 6928229264403705156
+      Nautolan Ship - Bomber_11: 6819948164043362323
+      Nautolan Ship - Bomber_12: 4269160002263832486
+      Nautolan Ship - Bomber_13: 261179810367893692
+      Nautolan Ship - Bomber_14: 1800424792950415212
+      Nautolan Ship - Bomber_15: -3031362199003486851
+      Nautolan Ship - Bomber_16: 7766385300907868670
+      Nautolan Ship - Bomber_17: -3546834664774957118
+      Nautolan Ship - Bomber_18: 6080873033162953269
+      Nautolan Ship - Bomber_19: -6710210922104586872
+      Nautolan Ship - Bomber_2: -9066779296062297812
+      Nautolan Ship - Bomber_20: 7292887046655361396
+      Nautolan Ship - Bomber_21: -1738128099316971446
+      Nautolan Ship - Bomber_3: -5122415570570412985
+      Nautolan Ship - Bomber_4: 1636987892674773762
+      Nautolan Ship - Bomber_5: -5540349678869818637
+      Nautolan Ship - Bomber_6: 8825950240013617774
+      Nautolan Ship - Bomber_7: -7017040347403979010
+      Nautolan Ship - Bomber_8: -6238895060691467548
+      Nautolan Ship - Bomber_9: -8537873870925648632
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
