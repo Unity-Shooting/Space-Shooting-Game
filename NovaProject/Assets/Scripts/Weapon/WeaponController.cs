@@ -35,7 +35,7 @@ public class WeaponController : MonoBehaviour
     /// </summary>
     public void Shooting()
     {
-        // autoCannonController.Shooting(); // 자동 대포 발사 (현재는 주석 처리)
-        bigSpaceGunController.Shooting(); // 대형 우주포 발사
+        autoCannonController.Shooting(); // 자동 대포 발사
+        //bigSpaceGunController.Shooting(); // 대형 우주포 발사
     }
 }
