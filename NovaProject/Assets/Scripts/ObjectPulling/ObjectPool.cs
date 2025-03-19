@@ -68,8 +68,9 @@ public class ObjectPool
     // 사용이 끝난 오브젝트를 풀로 반환하는 메서드
     public void Return(GameObject obj)
     {
-        obj.SetActive(false);
         pool.Enqueue(obj);
+        obj.SetActive(false);
+        Debug.Log("오브젝트풀리턴완료");
     }
 
 }

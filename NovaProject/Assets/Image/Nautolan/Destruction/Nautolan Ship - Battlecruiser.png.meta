@@ -1,0 +1,555 @@
+fileFormatVersion: 2
+guid: 676fa33c99f21fe40a1c2329ed5ae2a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6678284162802153378
+    second: Nautolan Ship - Battlecruiser_0
+  - first:
+      213: 3396560307285346090
+    second: Nautolan Ship - Battlecruiser_1
+  - first:
+      213: 3609701336813592969
+    second: Nautolan Ship - Battlecruiser_2
+  - first:
+      213: -2797421092305200382
+    second: Nautolan Ship - Battlecruiser_3
+  - first:
+      213: 514411937487289042
+    second: Nautolan Ship - Battlecruiser_4
+  - first:
+      213: -4528244728328911700
+    second: Nautolan Ship - Battlecruiser_5
+  - first:
+      213: -7262243701683189210
+    second: Nautolan Ship - Battlecruiser_6
+  - first:
+      213: -6656818765847373137
+    second: Nautolan Ship - Battlecruiser_7
+  - first:
+      213: 8460666327232229593
+    second: Nautolan Ship - Battlecruiser_8
+  - first:
+      213: -5878598058745209794
+    second: Nautolan Ship - Battlecruiser_9
+  - first:
+      213: 5500655537807312270
+    second: Nautolan Ship - Battlecruiser_10
+  - first:
+      213: -207485823774919907
+    second: Nautolan Ship - Battlecruiser_11
+  - first:
+      213: 2284527927805214407
+    second: Nautolan Ship - Battlecruiser_12
+  - first:
+      213: -7802646160631774662
+    second: Nautolan Ship - Battlecruiser_13
+  - first:
+      213: -7889616024491914655
+    second: Nautolan Ship - Battlecruiser_14
+  - first:
+      213: -8289430479131126627
+    second: Nautolan Ship - Battlecruiser_15
+  - first:
+      213: -624781971290645030
+    second: Nautolan Ship - Battlecruiser_16
+  - first:
+      213: -7126296868270002636
+    second: Nautolan Ship - Battlecruiser_17
+  - first:
+      213: 5036162643301741486
+    second: Nautolan Ship - Battlecruiser_18
+  - first:
+      213: -7960716783289054825
+    second: Nautolan Ship - Battlecruiser_19
+  - first:
+      213: 6337661201972756123
+    second: Nautolan Ship - Battlecruiser_20
+  - first:
+      213: 8891204068223278019
+    second: Nautolan Ship - Battlecruiser_21
+  - first:
+      213: -1071849817682705896
+    second: Nautolan Ship - Battlecruiser_22
+  - first:
+      213: 784733496668669095
+    second: Nautolan Ship - Battlecruiser_23
+  - first:
+      213: -2642254748761269640
+    second: Nautolan Ship - Battlecruiser_24
+  - first:
+      213: 6208708417944558975
+    second: Nautolan Ship - Battlecruiser_25
+  - first:
+      213: 2557260115982058900
+    second: Nautolan Ship - Battlecruiser_26
+  - first:
+      213: -740308322813140393
+    second: Nautolan Ship - Battlecruiser_27
+  - first:
+      213: 2141313482645076250
+    second: Nautolan Ship - Battlecruiser_28
+  - first:
+      213: 4150512898349959162
+    second: Nautolan Ship - Battlecruiser_29
+  - first:
+      213: -4915074414575740142
+    second: Nautolan Ship - Battlecruiser_30
+  - first:
+      213: 2576296579756387304
+    second: Nautolan Ship - Battlecruiser_31
+  - first:
+      213: -5990332981267921449
+    second: Nautolan Ship - Battlecruiser_32
+  - first:
+      213: 9100775724978947258
+    second: Nautolan Ship - Battlecruiser_33
+  - first:
+      213: 3062829448285291581
+    second: Nautolan Ship - Battlecruiser_34
+  - first:
+      213: 5410167539537193012
+    second: Nautolan Ship - Battlecruiser_35
+  - first:
+      213: 690205399736623414
+    second: Nautolan Ship - Battlecruiser_36
+  - first:
+      213: -4569047964447580868
+    second: Nautolan Ship - Battlecruiser_37
+  - first:
+      213: -6755980787852115713
+    second: Nautolan Ship - Battlecruiser_38
+  - first:
+      213: 1954387083923442380
+    second: Nautolan Ship - Battlecruiser_39
+  - first:
+      213: -3928200396615764688
+    second: Nautolan Ship - Battlecruiser_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a770f020180eac50800000000000000
+      internalID: 6678284162802153378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a274fed8a91032f20800000000000000
+      internalID: 3396560307285346090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981e606ad3c381230800000000000000
+      internalID: 3609701336813592969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b96f186509d29d0800000000000000
+      internalID: -2797421092305200382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da76228eee832700800000000000000
+      internalID: 514411937487289042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca48be749617821c0800000000000000
+      internalID: -4528244728328911700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a0bd094d3573b90800000000000000
+      internalID: -7262243701683189210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa538f0a9a3e93a0800000000000000
+      internalID: -6656818765847373137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d039c5b2335a6570800000000000000
+      internalID: 8460666327232229593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cd03336360b6ea0800000000000000
+      internalID: -5878598058745209794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e854ac26111465c40800000000000000
+      internalID: 5500655537807312270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Battlecruiser_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1377f91ebcde1df0800000000000000
+      internalID: -207485823774919907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bc6879a043651574d975de5ad8979798
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nautolan Ship - Battlecruiser_0: 6678284162802153378
+      Nautolan Ship - Battlecruiser_1: 3396560307285346090
+      Nautolan Ship - Battlecruiser_10: 5500655537807312270
+      Nautolan Ship - Battlecruiser_11: -207485823774919907
+      Nautolan Ship - Battlecruiser_2: 3609701336813592969
+      Nautolan Ship - Battlecruiser_3: -2797421092305200382
+      Nautolan Ship - Battlecruiser_4: 514411937487289042
+      Nautolan Ship - Battlecruiser_5: -4528244728328911700
+      Nautolan Ship - Battlecruiser_6: -7262243701683189210
+      Nautolan Ship - Battlecruiser_7: -6656818765847373137
+      Nautolan Ship - Battlecruiser_8: 8460666327232229593
+      Nautolan Ship - Battlecruiser_9: -5878598058745209794
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
