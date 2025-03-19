@@ -1,6 +1,15 @@
 using UnityEngine;
 
 /// <summary>
+/// 무기 유형을 정의하는 열거형.
+/// </summary>
+enum WeaponType
+{
+    AutoCannon,  // 자동 대포
+    BigSpaceGun  // 대형 우주포
+}
+
+/// <summary>
 /// 플레이어의 이동 및 공격을 관리하는 컨트롤러 클래스.
 /// </summary>
 public class PlayerController : MonoBehaviour
@@ -14,6 +23,36 @@ public class PlayerController : MonoBehaviour
     /// 플레이어 이동 속도.
     /// </summary>
     public float speed = 5f;
+
+    /// <summary>
+    /// 기본 엔진 게임 오브젝트.
+    /// </summary>
+    public GameObject BaseEngine;
+
+    /// <summary>
+    /// 대형 펄스 엔진 게임 오브젝트.
+    /// </summary>
+    public GameObject BigPulseEngine;
+
+    /// <summary>
+    /// 기본 엔진 효과 애니메이터.
+    /// </summary>
+    public Animator amBaseEngineEffects;
+
+    /// <summary>
+    /// 대형 펄스 엔진 효과 애니메이터.
+    /// </summary>
+    public Animator amBigPulseEngineEffects;
+
+    /// <summary>
+    /// 전면 방어막 애니메이터.
+    /// </summary>
+    public Animator FrontSideShield;
+
+    /// <summary>
+    /// 무기 컨트롤러 참조.
+    /// </summary>
+    public WeaponController weaponCotroller;
 
     /// <summary>
     /// 입력된 이동 방향 벡터.
@@ -50,11 +89,21 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
+    /// 객체가 비활성화될 때 호출되며, 공격 이벤트를 해제한다.
+    /// </summary>
+    private void OnDisable()
+    {
+        inputSystem.Player.Attack.performed -= _ => Attack(); // 공격 입력 이벤트 해제
+        inputSystem.Disable(); // 입력 시스템 비활성화
+    }
+
+    /// <summary>
     /// 플레이어의 공격을 실행하는 메서드.
     /// </summary>
     private void Attack()
     {
         Debug.Log($"{TAG} : Attack"); // 공격 발생 로그 출력
+        weaponCotroller.Shooting(); // 무기 발사
     }
 
     /// <summary>
@@ -62,7 +111,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Start()
     {
-
     }
 
     /// <summary>
@@ -78,6 +126,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position +  speed * Time.deltaTime * moveInput); // 이동 처리
+        rb.MovePosition(rb.position + speed * Time.deltaTime * moveInput); // 이동 처리
     }
 }
