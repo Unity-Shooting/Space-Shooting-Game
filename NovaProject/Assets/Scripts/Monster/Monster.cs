@@ -28,12 +28,7 @@ public abstract class Monster : MonoBehaviour
     {
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");  // 파괴 애니메이션 재생
                                                                          // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
-        foreach (Transform child in transform) // transform 이 자식 오브젝트들을 보관하고 있어서 이런 foreach로 자식을 한바퀴 돌 수 있음
-        {                                      // 파괴 애니메이션이 시작되면서 Engine,Shield 등을 꺼주기
-            child.gameObject.SetActive(false); // 자식 오브젝트 비활성화
-        }
-
-
+        DestroyAllChildren();  // 파괴애니메이션 시작하면서 실드, 엔진 등 자식오브젝트 꺼주기
     }
 
     // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
@@ -65,11 +60,25 @@ public abstract class Monster : MonoBehaviour
         HP = MaxHP;
     }
 
+    /// <summary>
+    /// Destroy() 대신 사용합니다. 오브젝트 풀로 리턴
+    /// </summary>
     protected void Release()
     {
         Debug.Log("Release 호출");
         isReleased = true;
         PoolManager.instance.Return(gameObject);
+    }
+
+    /// <summary>
+    /// transform 이 자식 오브젝트들을 보관하고 있어서 이런 foreach로 자식을 한바퀴 돌 수 있음
+    /// 파괴 애니메이션이 시작되면서 Engine,Shield 등을 꺼주기</summary>
+    private void DestroyAllChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false); // 자식 오브젝트 비활성화
+        }
     }
 
 }
