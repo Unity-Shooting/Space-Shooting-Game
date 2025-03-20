@@ -160,10 +160,10 @@ TextureImporter:
       name: Nautolan Ship - Scout - Weapons_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 13
-        width: 34
-        height: 30
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: Nautolan Ship - Scout - Weapons_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 13
-        width: 34
-        height: 31
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Nautolan Ship - Scout - Weapons_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 13
-        width: 34
-        height: 31
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: Nautolan Ship - Scout - Weapons_3
       rect:
         serializedVersion: 2
-        x: 207
-        y: 13
-        width: 34
-        height: 31
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +248,10 @@ TextureImporter:
       name: Nautolan Ship - Scout - Weapons_4
       rect:
         serializedVersion: 2
-        x: 271
-        y: 13
-        width: 34
-        height: 31
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,10 +270,10 @@ TextureImporter:
       name: Nautolan Ship - Scout - Weapons_5
       rect:
         serializedVersion: 2
-        x: 335
-        y: 13
-        width: 34
-        height: 31
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,10 +292,10 @@ TextureImporter:
       name: Nautolan Ship - Scout - Weapons_6
       rect:
         serializedVersion: 2
-        x: 399
-        y: 13
-        width: 34
-        height: 31
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,7 +314,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4f33df37bc8aa2e4cb402ef950ec7368
     internalID: 0
     vertices: []
     indices: 

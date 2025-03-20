@@ -163,10 +163,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 3
-        width: 14
-        height: 18
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,10 +185,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_1
       rect:
         serializedVersion: 2
-        x: 89
-        y: 3
-        width: 14
-        height: 18
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,10 +207,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_2
       rect:
         serializedVersion: 2
-        x: 153
-        y: 2
-        width: 14
-        height: 19
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_3
       rect:
         serializedVersion: 2
-        x: 217
-        y: 3
-        width: 14
-        height: 18
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,10 +251,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_4
       rect:
         serializedVersion: 2
-        x: 281
-        y: 3
-        width: 14
-        height: 18
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_5
       rect:
         serializedVersion: 2
-        x: 345
-        y: 3
-        width: 14
-        height: 18
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_6
       rect:
         serializedVersion: 2
-        x: 409
-        y: 2
-        width: 14
-        height: 19
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,10 +317,10 @@ TextureImporter:
       name: Nautolan Ship - Frigate - Engine Effect_7
       rect:
         serializedVersion: 2
-        x: 473
-        y: 3
-        width: 14
-        height: 18
+        x: 448
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,7 +339,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2602eebed65611542bd626fd1a98a8c5
     internalID: 0
     vertices: []
     indices: 
