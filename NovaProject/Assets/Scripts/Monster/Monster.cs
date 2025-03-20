@@ -27,13 +27,21 @@ public abstract class Monster : MonoBehaviour
     public virtual void Die()
     {
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");  // 파괴 애니메이션 재생
-                                                                              // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
+                                                                         // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
+        foreach (Transform child in transform) // transform 이 자식 오브젝트들을 보관하고 있어서 이런 foreach로 자식을 한바퀴 돌 수 있음
+        {                                      // 파괴 애니메이션이 시작되면서 Engine,Shield 등을 꺼주기
+            child.gameObject.SetActive(false); // 자식 오브젝트 비활성화
+        }
+
+
     }
 
     // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
-    public virtual void Init(Vector2 pos, Vector2 dir)
+    public virtual void Init(Vector3 pos, Vector2 dir)
     {
+        Debug.Log($"Init의 pos {pos}");
         transform.position = pos;
+        Debug.Log($"Init의 transform.position {transform.position}");
         direction = dir;
     }
     public virtual void Move() // dir 방향으로 speed 속도로 이동
@@ -41,7 +49,7 @@ public abstract class Monster : MonoBehaviour
         transform.Translate(direction * MoveSpeed * Time.deltaTime);
     }
 
-    public virtual void Damaged(int damage) // 데미지를 받을 때 체력 깎기
+    public virtual void TakeDamage(int damage) // 데미지를 받을 때 체력 깎기
     {
         HP -= damage;
         Debug.Log($"{this.name} damaged : {damage} HP : {HP}");
@@ -55,7 +63,6 @@ public abstract class Monster : MonoBehaviour
     {
         isReleased = false;
         HP = MaxHP;
-        this.gameObject.GetComponent<Animator>().SetBool("Destroyed", false);
     }
 
     protected void Release()
