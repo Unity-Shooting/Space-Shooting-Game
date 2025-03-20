@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
 
     /// <summary>
+    /// 플레이어 체력
+    /// </summary>
+    public int health = 10;
+
+    /// <summary>
     /// 마우스 방향대로 플레이어 방향을 바라보도록 설정하는 플래그.
     /// </summary>
     public bool useMouseDirection = false;
@@ -74,6 +79,28 @@ public class PlayerController : MonoBehaviour
     /// Rigidbody2D 컴포넌트 참조 (물리 이동 처리를 위해 필요함).
     /// </summary>
     private Rigidbody2D rb;
+
+    /// <summary>
+    /// GameManager 인스턴스 참조 (게임 관리 기능을 위해 필요함).
+    /// </summary>
+    private GameManager _gm;
+
+    /// <summary>
+    /// GameManager 인스턴스를 초기화합니다.
+    /// </summary>
+    /// <param name="gm">초기화할 GameManager 인스턴스</param>
+    public void Init(GameManager gm)
+    {
+        _gm = gm;
+    }
+
+    /// <summary>
+    /// GameManager의 UI 변경 기능을 테스트합니다.
+    /// </summary>
+    public void testGmFunc()
+    {
+        _gm.changeUI();
+    }
 
     /// <summary>
     /// 초기화 작업을 수행하는 Awake 메서드.
@@ -157,8 +184,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Attack()
     {
-        Debug.Log($"{TAG} : Attack"); // 공격 발생 로그 출력
+        Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
         weaponCotroller.Shooting(); // 무기 발사
+
+        // test
+        testGmFunc(); // Player쪽에서 gm 함수 실행 테스트
     }
 
     /// <summary>
@@ -182,5 +212,24 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = GetMouseVectorFromPosition(obj.position); // 현재 위치에서 마우스 방향 벡터 가져오기
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // 방향 벡터를 각도로 변환 (보정 포함)
         obj.rotation = Quaternion.Euler(0f, 0f, angle); // 회전 적용
+    }
+
+    /// <summary>
+    /// 충돌 감지 시 실행되는 함수.
+    /// </summary>
+    /// <param name="collision">충돌한 객체의 Collider2D</param>
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // TODO: 임시 무적 기능 추가
+        // TODO: 데미지 애니메이션 적용
+        // TODO: 화면 흔들림 효과 적용
+
+        // Debug.Log($"[{TAG}] OnTriggerEnter2D. tag : {collision.gameObject.tag}");
+
+        if (collision.gameObject.tag == "Bullet") 
+        {
+            if (--health < 1) health = 0; // 총알과 충돌 시 체력 감소.
+            //Destroy(collision.gameObject);
+        }
     }
 }
