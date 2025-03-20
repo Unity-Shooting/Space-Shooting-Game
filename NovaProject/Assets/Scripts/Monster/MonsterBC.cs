@@ -10,7 +10,7 @@ public class MonsterBC : Monster
     }
     void Update()
     {
-        Move(direction);
+        Move();
     }
 
     public override void Shoot()
@@ -25,30 +25,10 @@ public class MonsterBC : Monster
         Debug.Log("Death");
     }
 
-    public override void Init()  // 인수 없을 때 초기화. 테스트용이고 실제로 쓸일은 없을것으로 보임
-    {
-        transform.position = new Vector3(0, 3.5f, -9.0f);
-        direction = Vector2.down;
-    }
-
-    public override void Init(Vector2 pos, Vector2 dir)  // 스폰매니저에서 몬스터 생성 후 위치와 진행방향 지정
-    {
-        transform.position = pos;
-        direction = dir;
-    }
-
-
-
     private void OnDisable() // 파괴될 때 정리해야할 것 있으면 여기에서 하기. 지금은 안썼지만 Invoke를 쓰게되면 여기서 캔슬해줄것
     {
     }
 
-    public override void Die()
-    {
-        this.gameObject.GetComponent<Animator>().SetBool("Destroyed", true);  // 파괴 애니메이션 재생
-                                                                   // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
-
-    }
 
     private void OnBecameInvisible() // 카메라 밖으로 나가면 오브젝트 풀로 반환
     {                               // 다른 함수에서 반환해도 해당 메서드가 실행되기 때문에(비활성화 되면서 카메라에서 사라지는것으로 인식하는듯함)
