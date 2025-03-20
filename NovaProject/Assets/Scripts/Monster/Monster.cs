@@ -23,21 +23,29 @@ public abstract class Monster : MonoBehaviour
 
     // 상속받은 클래스에서 구현 할 메서드들
     public abstract void Shoot();
-    public abstract void Init();
-    // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
-    public abstract void Init(Vector2 a, Vector2 b);
-    public abstract void Die();
 
-    public virtual void Move(Vector2 dir) // dir 방향으로 speed 속도로 이동
+    public virtual void Die()
     {
-        transform.Translate(dir * MoveSpeed * Time.deltaTime);
+        this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");  // 파괴 애니메이션 재생
+                                                                              // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
+    }
+
+    // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
+    public virtual void Init(Vector2 pos, Vector2 dir)
+    {
+        transform.position = pos;
+        direction = dir;
+    }
+    public virtual void Move() // dir 방향으로 speed 속도로 이동
+    {
+        transform.Translate(direction * MoveSpeed * Time.deltaTime);
     }
 
     public virtual void Damaged(int damage) // 데미지를 받을 때 체력 깎기
     {
         HP -= damage;
         Debug.Log($"{this.name} damaged : {damage} HP : {HP}");
-        if (HP < 0)  // 체력 0이 되면 죽으면서 몬스터별 죽을 때 액션 수행
+        if (HP <= 0)  // 체력 0이 되면 죽으면서 몬스터별 죽을 때 액션 수행
         {
             Debug.Log($"{this.name} destroyed");
             Die();
