@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: b9a33d184e050a743b86db51b497f2b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1469079586094788901
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_0
+  - first:
+      213: -2375219153281055912
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_1
+  - first:
+      213: -4512842321175586747
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_2
+  - first:
+      213: -6316374831952816939
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_3
+  - first:
+      213: 2379974856373308035
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_4
+  - first:
+      213: 4612027088602928045
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_5
+  - first:
+      213: -8191160521130588855
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_6
+  - first:
+      213: 7247585043279569708
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_7
+  - first:
+      213: 4189768698981313003
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_8
+  - first:
+      213: -5990114182975757398
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_9
+  - first:
+      213: 7280652381837710459
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_10
+  - first:
+      213: -2120167988316306352
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_11
+  - first:
+      213: -1325254313204728108
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_12
+  - first:
+      213: 9009313325063352565
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_13
+  - first:
+      213: -9188074063672471080
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_14
+  - first:
+      213: -1234474906239153722
+    second: Nautolan Ship - Torpedo Ship - Engine Effect_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52135fb9918336410800000000000000
+      internalID: 1469079586094788901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8538af8b3c6890fd0800000000000000
+      internalID: -2375219153281055912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548daf6a1d92f51c0800000000000000
+      internalID: -4512842321175586747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d41c315e8ab758a0800000000000000
+      internalID: -6316374831952816939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 7
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a0e70b58e570120800000000000000
+      internalID: 2379974856373308035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_5
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 7
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da318a69336310040800000000000000
+      internalID: 4612027088602928045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 945cec797e6235e80800000000000000
+      internalID: -8191160521130588855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_7
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23ec109238949460800000000000000
+      internalID: 7247585043279569708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_8
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9e4d1fe6c052a30800000000000000
+      internalID: 4189768698981313003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_9
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa363b733e6dedca0800000000000000
+      internalID: -5990114182975757398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_10
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74d98844c21a0560800000000000000
+      internalID: 7280652381837710459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_11
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0548040a276a392e0800000000000000
+      internalID: -2120167988316306352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_12
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 7
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4deb0604930cb9de0800000000000000
+      internalID: -1325254313204728108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_13
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 7
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f0389a5cb2870d70800000000000000
+      internalID: 9009313325063352565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_14
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d192d0d1576d7080800000000000000
+      internalID: -9188074063672471080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Torpedo Ship - Engine Effect_15
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 8
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c94b710d934edee0800000000000000
+      internalID: -1234474906239153722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nautolan Ship - Torpedo Ship - Engine Effect_0: 1469079586094788901
+      Nautolan Ship - Torpedo Ship - Engine Effect_1: -2375219153281055912
+      Nautolan Ship - Torpedo Ship - Engine Effect_10: 7280652381837710459
+      Nautolan Ship - Torpedo Ship - Engine Effect_11: -2120167988316306352
+      Nautolan Ship - Torpedo Ship - Engine Effect_12: -1325254313204728108
+      Nautolan Ship - Torpedo Ship - Engine Effect_13: 9009313325063352565
+      Nautolan Ship - Torpedo Ship - Engine Effect_14: -9188074063672471080
+      Nautolan Ship - Torpedo Ship - Engine Effect_15: -1234474906239153722
+      Nautolan Ship - Torpedo Ship - Engine Effect_2: -4512842321175586747
+      Nautolan Ship - Torpedo Ship - Engine Effect_3: -6316374831952816939
+      Nautolan Ship - Torpedo Ship - Engine Effect_4: 2379974856373308035
+      Nautolan Ship - Torpedo Ship - Engine Effect_5: 4612027088602928045
+      Nautolan Ship - Torpedo Ship - Engine Effect_6: -8191160521130588855
+      Nautolan Ship - Torpedo Ship - Engine Effect_7: 7247585043279569708
+      Nautolan Ship - Torpedo Ship - Engine Effect_8: 4189768698981313003
+      Nautolan Ship - Torpedo Ship - Engine Effect_9: -5990114182975757398
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

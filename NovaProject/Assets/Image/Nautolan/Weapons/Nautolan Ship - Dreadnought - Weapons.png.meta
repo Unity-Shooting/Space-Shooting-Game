@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: 8c6aaf1b9e310e1438d240e3e65d23f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6247583421192499704
+    second: Nautolan Ship - Dreadnought - Weapons_0
+  - first:
+      213: -5810258591891579210
+    second: Nautolan Ship - Dreadnought - Weapons_1
+  - first:
+      213: 5631356993464093177
+    second: Nautolan Ship - Dreadnought - Weapons_2
+  - first:
+      213: -8094407130264813632
+    second: Nautolan Ship - Dreadnought - Weapons_3
+  - first:
+      213: -2661992115395321619
+    second: Nautolan Ship - Dreadnought - Weapons_4
+  - first:
+      213: -2866767514686450807
+    second: Nautolan Ship - Dreadnought - Weapons_5
+  - first:
+      213: 2820123298751066362
+    second: Nautolan Ship - Dreadnought - Weapons_6
+  - first:
+      213: -7123408002806563791
+    second: Nautolan Ship - Dreadnought - Weapons_7
+  - first:
+      213: 6517989446992020140
+    second: Nautolan Ship - Dreadnought - Weapons_8
+  - first:
+      213: 8928411036103396658
+    second: Nautolan Ship - Dreadnought - Weapons_9
+  - first:
+      213: 8921841951072541802
+    second: Nautolan Ship - Dreadnought - Weapons_10
+  - first:
+      213: 2646976198602635230
+    second: Nautolan Ship - Dreadnought - Weapons_11
+  - first:
+      213: 7307546299100521228
+    second: Nautolan Ship - Dreadnought - Weapons_12
+  - first:
+      213: 3862044999223313704
+    second: Nautolan Ship - Dreadnought - Weapons_13
+  - first:
+      213: 8662368207879389899
+    second: Nautolan Ship - Dreadnought - Weapons_14
+  - first:
+      213: 4409926420317809858
+    second: Nautolan Ship - Dreadnought - Weapons_15
+  - first:
+      213: 3974118632603184901
+    second: Nautolan Ship - Dreadnought - Weapons_16
+  - first:
+      213: 2259692812978135728
+    second: Nautolan Ship - Dreadnought - Weapons_17
+  - first:
+      213: 2825503492162256995
+    second: Nautolan Ship - Dreadnought - Weapons_18
+  - first:
+      213: -4783866328257045059
+    second: Nautolan Ship - Dreadnought - Weapons_19
+  - first:
+      213: 8756346399702532696
+    second: Nautolan Ship - Dreadnought - Weapons_20
+  - first:
+      213: -7435521428380878564
+    second: Nautolan Ship - Dreadnought - Weapons_21
+  - first:
+      213: 2826713864193651890
+    second: Nautolan Ship - Dreadnought - Weapons_22
+  - first:
+      213: 6600916235796546885
+    second: Nautolan Ship - Dreadnought - Weapons_23
+  - first:
+      213: 7124649468386017528
+    second: Nautolan Ship - Dreadnought - Weapons_24
+  - first:
+      213: 3049825798420541680
+    second: Nautolan Ship - Dreadnought - Weapons_25
+  - first:
+      213: 1978954107663769456
+    second: Nautolan Ship - Dreadnought - Weapons_26
+  - first:
+      213: 6541699226752197680
+    second: Nautolan Ship - Dreadnought - Weapons_27
+  - first:
+      213: -7180038904478768112
+    second: Nautolan Ship - Dreadnought - Weapons_28
+  - first:
+      213: -2711422327934873277
+    second: Nautolan Ship - Dreadnought - Weapons_29
+  - first:
+      213: 6122571993305159839
+    second: Nautolan Ship - Dreadnought - Weapons_30
+  - first:
+      213: 163611012266592013
+    second: Nautolan Ship - Dreadnought - Weapons_31
+  - first:
+      213: -2634466735612757488
+    second: Nautolan Ship - Dreadnought - Weapons_32
+  - first:
+      213: -5483473508434892688
+    second: Nautolan Ship - Dreadnought - Weapons_33
+  - first:
+      213: -6551621379205260410
+    second: Nautolan Ship - Dreadnought - Weapons_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e8333caff1c49a0800000000000000
+      internalID: -6247583421192499704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be14214890dd5fa0800000000000000
+      internalID: -5810258591891579210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_2
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9c6de6959962e40800000000000000
+      internalID: 5631356993464093177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_3
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf3d2dd993eaaf80800000000000000
+      internalID: -8094407130264813632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_4
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0a8fe5644be0bd0800000000000000
+      internalID: -2661992115395321619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_5
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9831c7952223738d0800000000000000
+      internalID: -2866767514686450807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_6
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af03cd4d237132720800000000000000
+      internalID: 2820123298751066362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_7
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c3a82b922942d90800000000000000
+      internalID: -7123408002806563791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_8
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca244b54edc847a50800000000000000
+      internalID: 6517989446992020140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_9
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23dce97588618eb70800000000000000
+      internalID: 8928411036103396658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_10
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c5bdb0cffb0db70800000000000000
+      internalID: 8921841951072541802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_11
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7bf9e04d2fbb420800000000000000
+      internalID: 2646976198602635230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_12
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c036b9954ae996560800000000000000
+      internalID: 7307546299100521228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_13
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825874df67db89530800000000000000
+      internalID: 3862044999223313704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_14
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2c9486df9e63870800000000000000
+      internalID: 8662368207879389899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_15
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 11
+        width: 74
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc27a8e6b4333d30800000000000000
+      internalID: 4409926420317809858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_16
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50fe29f27d7e62730800000000000000
+      internalID: 3974118632603184901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_17
+      rect:
+        serializedVersion: 2
+        x: 2203
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2a01b14aa0c5f10800000000000000
+      internalID: 2259692812978135728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_18
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36005f9b474363720800000000000000
+      internalID: 2825503492162256995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_19
+      rect:
+        serializedVersion: 2
+        x: 2459
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd5943abea4c9db0800000000000000
+      internalID: -4783866328257045059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_20
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8524a8c48aac48970800000000000000
+      internalID: 8756346399702532696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_21
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c197d8de7a8bfc890800000000000000
+      internalID: -7435521428380878564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_22
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b43fec68418a3720800000000000000
+      internalID: 2826713864193651890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_23
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54503c2e75a2b9b50800000000000000
+      internalID: 6600916235796546885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_24
+      rect:
+        serializedVersion: 2
+        x: 3099
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f0035881f6dfd260800000000000000
+      internalID: 7124649468386017528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_25
+      rect:
+        serializedVersion: 2
+        x: 3227
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0bdada768235a20800000000000000
+      internalID: 3049825798420541680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_26
+      rect:
+        serializedVersion: 2
+        x: 3355
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f5916a648a67b10800000000000000
+      internalID: 1978954107663769456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_27
+      rect:
+        serializedVersion: 2
+        x: 3483
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034230e89c8c8ca50800000000000000
+      internalID: 6541699226752197680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_28
+      rect:
+        serializedVersion: 2
+        x: 3611
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 014ee0968a06b5c90800000000000000
+      internalID: -7180038904478768112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_29
+      rect:
+        serializedVersion: 2
+        x: 3739
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341116b22c71f5ad0800000000000000
+      internalID: -2711422327934873277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_30
+      rect:
+        serializedVersion: 2
+        x: 3867
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9895b40aceb7f450800000000000000
+      internalID: 6122571993305159839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_31
+      rect:
+        serializedVersion: 2
+        x: 3995
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d070e7b4953454200800000000000000
+      internalID: 163611012266592013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_32
+      rect:
+        serializedVersion: 2
+        x: 4123
+        y: 11
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01af733467e707bd0800000000000000
+      internalID: -2634466735612757488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_33
+      rect:
+        serializedVersion: 2
+        x: 4251
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078297295e9c6e3b0800000000000000
+      internalID: -5483473508434892688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Dreadnought - Weapons_34
+      rect:
+        serializedVersion: 2
+        x: 4379
+        y: 11
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b9d9d4117f315a0800000000000000
+      internalID: -6551621379205260410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nautolan Ship - Dreadnought - Weapons_0: -6247583421192499704
+      Nautolan Ship - Dreadnought - Weapons_1: -5810258591891579210
+      Nautolan Ship - Dreadnought - Weapons_10: 8921841951072541802
+      Nautolan Ship - Dreadnought - Weapons_11: 2646976198602635230
+      Nautolan Ship - Dreadnought - Weapons_12: 7307546299100521228
+      Nautolan Ship - Dreadnought - Weapons_13: 3862044999223313704
+      Nautolan Ship - Dreadnought - Weapons_14: 8662368207879389899
+      Nautolan Ship - Dreadnought - Weapons_15: 4409926420317809858
+      Nautolan Ship - Dreadnought - Weapons_16: 3974118632603184901
+      Nautolan Ship - Dreadnought - Weapons_17: 2259692812978135728
+      Nautolan Ship - Dreadnought - Weapons_18: 2825503492162256995
+      Nautolan Ship - Dreadnought - Weapons_19: -4783866328257045059
+      Nautolan Ship - Dreadnought - Weapons_2: 5631356993464093177
+      Nautolan Ship - Dreadnought - Weapons_20: 8756346399702532696
+      Nautolan Ship - Dreadnought - Weapons_21: -7435521428380878564
+      Nautolan Ship - Dreadnought - Weapons_22: 2826713864193651890
+      Nautolan Ship - Dreadnought - Weapons_23: 6600916235796546885
+      Nautolan Ship - Dreadnought - Weapons_24: 7124649468386017528
+      Nautolan Ship - Dreadnought - Weapons_25: 3049825798420541680
+      Nautolan Ship - Dreadnought - Weapons_26: 1978954107663769456
+      Nautolan Ship - Dreadnought - Weapons_27: 6541699226752197680
+      Nautolan Ship - Dreadnought - Weapons_28: -7180038904478768112
+      Nautolan Ship - Dreadnought - Weapons_29: -2711422327934873277
+      Nautolan Ship - Dreadnought - Weapons_3: -8094407130264813632
+      Nautolan Ship - Dreadnought - Weapons_30: 6122571993305159839
+      Nautolan Ship - Dreadnought - Weapons_31: 163611012266592013
+      Nautolan Ship - Dreadnought - Weapons_32: -2634466735612757488
+      Nautolan Ship - Dreadnought - Weapons_33: -5483473508434892688
+      Nautolan Ship - Dreadnought - Weapons_34: -6551621379205260410
+      Nautolan Ship - Dreadnought - Weapons_4: -2661992115395321619
+      Nautolan Ship - Dreadnought - Weapons_5: -2866767514686450807
+      Nautolan Ship - Dreadnought - Weapons_6: 2820123298751066362
+      Nautolan Ship - Dreadnought - Weapons_7: -7123408002806563791
+      Nautolan Ship - Dreadnought - Weapons_8: 6517989446992020140
+      Nautolan Ship - Dreadnought - Weapons_9: 8928411036103396658
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

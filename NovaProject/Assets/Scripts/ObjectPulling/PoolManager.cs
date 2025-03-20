@@ -8,19 +8,12 @@ public class PoolManager : MonoBehaviour
 {
 
     // 싱글톤 인스턴스
-    private static PoolManager instance;
-    public static PoolManager Instance
+    public static PoolManager instance;
+
+    private void Awake()
     {
-        get
-        {
-            if (instance == null)
-            {
-                GameObject go = new GameObject("PoolManager");
-                instance = go.AddComponent<PoolManager>();
-                DontDestroyOnLoad(go);
-            }
-            return instance;
-        }
+        if (instance == null)
+            instance = this;
     }
 
     // 프리팹 이름을 키로 사용하는 풀 딕셔너리
@@ -57,6 +50,7 @@ public class PoolManager : MonoBehaviour
         string key = obj.name.Replace("(Clone)", "");
         if (pools.ContainsKey(key))
         {
+            Debug.Log("PoolManager의 Return");
             pools[key].Return(obj);
         }
     }
