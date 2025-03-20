@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f5bab3ae0e54d4704ab33d094effe0e5
+guid: 1599298e6f2294f3b9e14d65260c0ef0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -548361080881072038
-    second: background_4_0
+      213: -6003664297215767608
+    second: pixelart_starfield_diagonal_diffraction_spikes_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_4_0
+      name: pixelart_starfield_diagonal_diffraction_spikes_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 224
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a583f659084d368f0800000000000000
-      internalID: -548361080881072038
+      spriteID: 8cb42c56123beaca0800000000000000
+      internalID: -6003664297215767608
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixelart_starfield_diagonal_diffraction_spikes_0: -6003664297215767608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
