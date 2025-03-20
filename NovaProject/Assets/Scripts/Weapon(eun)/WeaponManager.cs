@@ -82,6 +82,29 @@ public enum WeaponType
             Instantiate(skillPrefab, firePoint.position, firePoint.rotation);
         }
 
+        public void SwitchWeapon(int weaponIndex)
+        {
+            // ÀÔ·ÂµÈ ÀÎµ¦½º¿¡ µû¶ó ¹«±â¸¦ º¯°æ
+            switch (weaponIndex)
+            {
+                case 1:
+                    currentWeapon = WeaponType.ElectroGun;
+                    Debug.Log("ElectroGun ÀåÂøµÊ");
+                    break;
+                case 2:
+                    currentWeapon = WeaponType.FlameCannon;
+                    Debug.Log("FlameCannon ÀåÂøµÊ");
+                    break;
+                case 3:
+                    currentWeapon = WeaponType.AquaCannon;
+                    Debug.Log("AquaCannon ÀåÂøµÊ");
+                    break;
+                default:
+                    Debug.LogError("Àß¸øµÈ ¹«±â ÀÎµ¦½º: " + weaponIndex);
+                    break;
+            }
+        }
+
 
         void Start()
         {

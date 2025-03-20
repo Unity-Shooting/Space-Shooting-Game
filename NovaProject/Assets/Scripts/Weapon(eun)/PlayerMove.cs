@@ -45,6 +45,20 @@ public class PlayerMove : MonoBehaviour
         {
             weaponManager.UseSkill();
         }
+
+        // 1, 2, 3 키로 무기 변경
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weaponManager.SwitchWeapon(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weaponManager.SwitchWeapon(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            weaponManager.SwitchWeapon(3);
+        }
     }
 
     private void FixedUpdate()

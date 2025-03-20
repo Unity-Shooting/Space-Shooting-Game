@@ -27,7 +27,18 @@ public class PBullet : MonoBehaviour
     {
         if (collision.CompareTag("Monster"))
         {
-            // 몬스터에게 피해
+            // 몬스터 스크립트 가져오기
+            monster monster = collision.GetComponent<monster>();
+            if (monster != null)
+            {
+                monster.TakeDamage(attack); // 몬스터에게 데미지 입힘
+            }
+
+            // 충돌 이펙트 생성 (필요한 경우)
+            if (effect != null)
+            {
+                Instantiate(effect, transform.position, Quaternion.identity);
+            }
 
             // 총알 삭제
             Destroy(gameObject);
