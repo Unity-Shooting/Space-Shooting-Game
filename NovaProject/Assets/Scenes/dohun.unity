@@ -192,8 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53ac04823d03b54f8033ff9c92ebf7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawntimer: 100
-  monsterA: {fileID: 5617194428290990308, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
+  spawntimer: 0.3
+  monsterA: {fileID: 0}
 --- !u!4 &1070491077
 Transform:
   m_ObjectHideFlags: 0
