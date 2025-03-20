@@ -792,6 +792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterFighter
       objectReference: {fileID: 0}
+    - target: {fileID: 5373194346479705691, guid: 9fce673cd577229488213aeacf6c4aaf, type: 3}
+      propertyPath: m_TagString
+      value: Monster
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
