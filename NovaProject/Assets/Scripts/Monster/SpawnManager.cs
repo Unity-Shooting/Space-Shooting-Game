@@ -20,8 +20,8 @@ public class SpawnManager : MonoBehaviour
     {
         while (true) // 스폰타이머 간격으로 monsterA 소환
         {
-            yield return new WaitForSeconds(spawntimer);
             SpawnMonster(monsterA,transform.position,Vector2.down);
+            yield return new WaitForSeconds(spawntimer);
             Debug.Log(transform.position);
         }
     }

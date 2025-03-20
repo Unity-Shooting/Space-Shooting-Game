@@ -11,6 +11,11 @@ public abstract class MbBase : MonoBehaviour
     [SerializeField] protected int BaseAttack;
     [SerializeField] protected float BaseMoveSpeed;
 
+    public virtual void Init(Vector2 pos, Vector2 dir)
+    {
+        transform.position = pos;
+        direction = dir;
+    }
     public virtual void Move()
     {
         transform.Translate(MoveSpeed * direction * Time.deltaTime);
@@ -35,5 +40,10 @@ public abstract class MbBase : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
     {
         
+    }
+
+    protected virtual void OnBecameInvisible()
+    {
+        Release();
     }
 }

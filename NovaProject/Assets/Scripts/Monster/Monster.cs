@@ -22,8 +22,13 @@ public abstract class Monster : MonoBehaviour
     [SerializeField] protected float BaseMoveSpeed; // 속도 
     [SerializeField] protected float BaseAttackSpeed;
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
+    
 
     // 상속받은 클래스에서 구현 할 메서드들
+
+    // 보스가 아닌 몬스터들은 모두 일정한 간격으로 사격을 실행할 예정이기떄문에
+    // 코루틴보다 인보크리피팅을 사용해서 Shoot을 불러올 예정
+    // 따라서 OnDisable()에서 CancleInvoke 해줌
     public abstract void Shoot();
 
 
@@ -65,6 +70,11 @@ public abstract class Monster : MonoBehaviour
         Attack = BaseAttack;
         MoveSpeed = BaseMoveSpeed;
         AttackSpeed = BaseAttackSpeed;
+    }
+    
+    protected virtual void OnDisable()  // 대부분의 몬스터는 Shoot()를 InvokeRepeating 할 예정이기때문에 비활성화시 취소
+    {                                   // 만약 인보크 하지 않는 경우여도 성능상 크게 문제가 없다고 하니 부모클래스에서 일괄실행
+        CancelInvoke("Shoot");
     }
 
     /// <summary>
