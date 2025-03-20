@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 3ebfc86228700fb49b5e85cfbedf9139
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4162339017019704573
+    second: Nautolan Ship - Scout - Engine Effect_0
+  - first:
+      213: -2417963978457147864
+    second: Nautolan Ship - Scout - Engine Effect_1
+  - first:
+      213: 211147704883330518
+    second: Nautolan Ship - Scout - Engine Effect_2
+  - first:
+      213: 4112144763909216714
+    second: Nautolan Ship - Scout - Engine Effect_3
+  - first:
+      213: 217814098032141683
+    second: Nautolan Ship - Scout - Engine Effect_4
+  - first:
+      213: 1340272229705620886
+    second: Nautolan Ship - Scout - Engine Effect_5
+  - first:
+      213: -7380523217553611609
+    second: Nautolan Ship - Scout - Engine Effect_6
+  - first:
+      213: 407190786990179886
+    second: Nautolan Ship - Scout - Engine Effect_7
+  - first:
+      213: -5777676679864673245
+    second: Nautolan Ship - Scout - Engine Effect_8
+  - first:
+      213: -468922658540129199
+    second: Nautolan Ship - Scout - Engine Effect_9
+  - first:
+      213: -3144963568786256160
+    second: Nautolan Ship - Scout - Engine Effect_10
+  - first:
+      213: -6257983521553336908
+    second: Nautolan Ship - Scout - Engine Effect_11
+  - first:
+      213: 7932495621946587551
+    second: Nautolan Ship - Scout - Engine Effect_12
+  - first:
+      213: 4184759732872431038
+    second: Nautolan Ship - Scout - Engine Effect_13
+  - first:
+      213: 5117563147058432393
+    second: Nautolan Ship - Scout - Engine Effect_14
+  - first:
+      213: -7469127529760944134
+    second: Nautolan Ship - Scout - Engine Effect_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 9
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30bbacf87b66c36c0800000000000000
+      internalID: -4162339017019704573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 9
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8261f50929aa17ed0800000000000000
+      internalID: -2417963978457147864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 7
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddb5b808b52ee200800000000000000
+      internalID: 211147704883330518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 7
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac99acd20e5411930800000000000000
+      internalID: 4112144763909216714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 6
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3752744a4c4d50300800000000000000
+      internalID: 217814098032141683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 6
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d9ce9ed7a999210800000000000000
+      internalID: 1340272229705620886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_6
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 10
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a4a131cc3d139990800000000000000
+      internalID: -7380523217553611609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_7
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 10
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e268c560dd1a6a500800000000000000
+      internalID: 407190786990179886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_8
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 9
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c9b9dcba191dfa0800000000000000
+      internalID: -5777676679864673245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_9
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 9
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1547596935d0e79f0800000000000000
+      internalID: -468922658540129199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_10
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 7
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee43f20c48da54d0800000000000000
+      internalID: -3144963568786256160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_11
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 7
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5b093b42d2729a0800000000000000
+      internalID: -6257983521553336908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_12
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 6
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99b7707db2e51e60800000000000000
+      internalID: 7932495621946587551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_13
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 6
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb548342ec0431a30800000000000000
+      internalID: 4184759732872431038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_14
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 7
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9894c08719c350740800000000000000
+      internalID: 5117563147058432393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan Ship - Scout - Engine Effect_15
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 7
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff0286b514585890800000000000000
+      internalID: -7469127529760944134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nautolan Ship - Scout - Engine Effect_0: -4162339017019704573
+      Nautolan Ship - Scout - Engine Effect_1: -2417963978457147864
+      Nautolan Ship - Scout - Engine Effect_10: -3144963568786256160
+      Nautolan Ship - Scout - Engine Effect_11: -6257983521553336908
+      Nautolan Ship - Scout - Engine Effect_12: 7932495621946587551
+      Nautolan Ship - Scout - Engine Effect_13: 4184759732872431038
+      Nautolan Ship - Scout - Engine Effect_14: 5117563147058432393
+      Nautolan Ship - Scout - Engine Effect_15: -7469127529760944134
+      Nautolan Ship - Scout - Engine Effect_2: 211147704883330518
+      Nautolan Ship - Scout - Engine Effect_3: 4112144763909216714
+      Nautolan Ship - Scout - Engine Effect_4: 217814098032141683
+      Nautolan Ship - Scout - Engine Effect_5: 1340272229705620886
+      Nautolan Ship - Scout - Engine Effect_6: -7380523217553611609
+      Nautolan Ship - Scout - Engine Effect_7: 407190786990179886
+      Nautolan Ship - Scout - Engine Effect_8: -5777676679864673245
+      Nautolan Ship - Scout - Engine Effect_9: -468922658540129199
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
