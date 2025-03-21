@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4180384956262053054}
   - component: {fileID: 4407646620213106773}
   - component: {fileID: 3624011697771894403}
+  - component: {fileID: 1769611069763575919}
   m_Layer: 0
   m_Name: MbBullet
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4250677989521320448, guid: 42e22fe53df72564f8d8d2ce9a609bbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -176,3 +177,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1769611069763575919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3562256426376269140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05500254233efe469af6d668b111e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseAttack: 10
+  BaseMoveSpeed: 2

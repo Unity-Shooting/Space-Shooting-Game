@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6049159443332692451}
   - component: {fileID: 9154811440851508956}
   - component: {fileID: 713548137254960382}
+  - component: {fileID: 1212117833245098836}
   m_Layer: 0
   m_Name: MbRay
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4990295452883742205, guid: a85957a4f59905e438ccae8f2eb0be21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,3 +186,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1212117833245098836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3400607540404654113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124c2c2ade315eb48b85f3ba14509375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseAttack: 10
+  BaseMoveSpeed: 2

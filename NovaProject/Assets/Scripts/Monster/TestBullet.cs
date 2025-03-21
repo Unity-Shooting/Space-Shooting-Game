@@ -15,12 +15,5 @@ public class TestBullet : MbBase
         Move();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("Monster"))
-        {
-            IDamageable obj = collision.GetComponent<IDamageable>();
-            obj.TakeDamage(1000);
-        }
-    }
+    
 }

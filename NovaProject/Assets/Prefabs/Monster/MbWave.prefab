@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 894978786699689478}
   - component: {fileID: 3586761672013353465}
   - component: {fileID: 7655860910052006176}
+  - component: {fileID: 7020679316053035219}
   m_Layer: 0
   m_Name: MbWave
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6811620035437689126, guid: 2b8f9b9eaca313b429d9003d6ecbf725, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -176,3 +177,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7020679316053035219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874095946861611724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c52e752c070fa14db7d3107858c35da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseAttack: 10
+  BaseMoveSpeed: 2

@@ -28,6 +28,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     [SerializeField] protected float BaseAttackSpeed;
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
     
+    
 
     // 상속받은 클래스에서 구현 할 메서드들
 
@@ -55,7 +56,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     }
     public virtual void Move() // dir 방향으로 speed 속도로 이동
     {
-        transform.Translate(MoveSpeed * Time.deltaTime * direction);
+        transform.Translate(MoveSpeed * Time.deltaTime * direction,Space.World);
     }
 
     public virtual void TakeDamage(int damage) // 데미지를 받을 때 체력 깎기

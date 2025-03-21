@@ -15,17 +15,26 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
     {
         transform.position = pos;
         direction = dir;
+
+        //초기화 할 때 탄이 나갈 방향이 아래쪽 수직이 아니라면 오브젝트 회전시키기
+        if (direction.normalized != Vector2.down)
+        {
+            float rotationangle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, rotationangle+90f);
+        }
     }
     public virtual void Move()
     {
-        transform.Translate(MoveSpeed * direction * Time.deltaTime);
+        transform.Translate(MoveSpeed * direction * Time.deltaTime,Space.World);  // 이동을 월드좌표 기준으로해서 rotation 영향 안받기
     }
 
     protected virtual void OnEnable() // 초기화 Start() 대신 사용
     {
+        transform.rotation = Quaternion.identity;
         isReleased = false;
         Attack = BaseAttack;
         MoveSpeed = BaseMoveSpeed;
+        direction = Vector2.zero;
     }
 
     protected virtual void Release() // 오브젝트 풀로 리턴 
@@ -39,6 +48,13 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
 
     protected virtual void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
     {
+        ////테스트용으로 몬스터랑 충돌
+        //if (collision.gameObject.CompareTag("Monster"))
+        //{
+        //    IDamageable obj = collision.GetComponent<IDamageable>();
+        //    obj.TakeDamage(1000);
+        //    Release();
+        //}
         
     }
 
