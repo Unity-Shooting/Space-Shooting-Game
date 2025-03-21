@@ -1,7 +1,7 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public abstract class MbBase : MonoBehaviour
+public abstract class MbBase : MonoBehaviour, IBulletInit
 {
     protected bool isReleased = false; // 중복반환 방지용 플래그
     public Vector2 direction { get; protected set; }
@@ -11,7 +11,7 @@ public abstract class MbBase : MonoBehaviour
     [SerializeField] protected int BaseAttack;
     [SerializeField] protected float BaseMoveSpeed;
 
-    public virtual void Init(Vector2 pos, Vector2 dir)
+    public virtual void Init(Vector2 pos, Vector2 dir, int type)
     {
         transform.position = pos;
         direction = dir;

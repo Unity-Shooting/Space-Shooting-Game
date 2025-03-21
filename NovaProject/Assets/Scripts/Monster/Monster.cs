@@ -4,7 +4,12 @@ using UnityEngine;
 // 몬스터마다 이동이나 사격을 다르게 하려면 1945때랑 다르게 몬스터별로 클래스를 따로 써야 할 것 같아서
 // 공통적으로 필요한 부분 
 // 또한 어떤 몬스터를 만들더라도 스폰매니저에선 Monster.abc() 형태로 대부분의 기능을 사용 할 수 있도록 시도
-public abstract class Monster : MonoBehaviour
+
+/// <summary>
+/// 각 몬스터가 각자 가져야 할 프로퍼티
+/// Gameobject Launcher
+/// </summary>
+public abstract class Monster : MonoBehaviour, IDamageable
 {
     protected bool isReleased = false;  // 오브젝트 풀링 시 Release 함수를 호출해서 SetActive(false)로 비활성화 되면
                                         // OnBecameInvisible가 같이 호출돼는 문제를 해결하기 위한 트리거

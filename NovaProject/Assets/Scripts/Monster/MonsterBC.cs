@@ -6,7 +6,6 @@ public class MonsterBC : Monster
     protected override void OnEnable()  // Start()랑 같은 역할 한다고 보시면 됩니다
     {
         base.OnEnable();    // 상속받은 Monster 클래스의 OnEnable() 실행. 공통적인 변수들 초기화는 저기서 했음
-                            //StartCoroutine(Death()); // 파괴 애니매이션 테스트용
 
         InvokeRepeating("Shoot", 1, 1);
     }
@@ -18,15 +17,9 @@ public class MonsterBC : Monster
     public override void Shoot()  
     {
         MbBullet bul = PoolManager.instance.Get(Bullet).GetComponent<MbBullet>();
-        bul.Init(transform.position, Vector2.down);
+        bul.Init(transform.position, Vector2.down,0);
     }
 
-    IEnumerator Death()  // 파괴 애니메이션 테스트용 코루틴
-    {
-        yield return new WaitForSeconds(0.1f);
-        Die();
-        Debug.Log("Death");
-    }
 
 
 
