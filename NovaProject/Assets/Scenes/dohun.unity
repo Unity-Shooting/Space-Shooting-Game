@@ -301,63 +301,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1103256700
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678412989237233898, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798339448652487226, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-      propertyPath: m_Name
-      value: MonsterBomber
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
 --- !u!1 &1516072066
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +388,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1635567411
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344767210820265654, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: BaseAttackSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344767210820265654, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: BaseAttackStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501819258851257190, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_Name
+      value: MonsterFF
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
 --- !u!1 &1666958034
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,4 +585,4 @@ SceneRoots:
   - {fileID: 1049524947}
   - {fileID: 1070491077}
   - {fileID: 1666958039}
-  - {fileID: 1103256700}
+  - {fileID: 1635567411}

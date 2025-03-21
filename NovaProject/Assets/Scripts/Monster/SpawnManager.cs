@@ -11,9 +11,11 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject monsterA;
 
+    
+
     void Start()
     {
-        StartCoroutine(Spawn());
+        //StartCoroutine(Spawn());
     }
 
     IEnumerator Spawn() // 프리펩 잘 됐는지 테스트용 스폰

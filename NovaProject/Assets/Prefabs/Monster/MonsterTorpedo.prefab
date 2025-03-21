@@ -199,7 +199,8 @@ MonoBehaviour:
   BaseHP: 0
   BaseAttack: 0
   BaseMoveSpeed: 0
-  BaseAttackSpeed: 0
+  BaseAttackSpeed: 1
+  BaseAttackStart: 1
   Bullet: {fileID: 7338323941969291318, guid: 70448297f3c196a4c9ac497e7b10794a, type: 3}
   Launcher1: {fileID: 4979111974346953988}
   Launcher2: {fileID: 3626259731060642680}

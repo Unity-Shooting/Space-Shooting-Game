@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class MonsterFF : Monster
 {
@@ -16,7 +17,23 @@ public class MonsterFF : Monster
 
     public override void Shoot()
     {
-        IBulletInit bullet = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-        bullet.Init(Launcher.transform.position, Vector2.down, 0);
+        int count = 3; // 5발 발사
+        float angle = 60f; // 부채꼴 각도
+        float intervalangle = angle / (count - 1); // 각 탄환 사이의 각도
+        float baseangle = -angle / 2f; // 제일 왼쪽 탄환의 각도
+
+
+        for (int i = 0; i < count; i++)
+        {
+            float bulletangle = baseangle + intervalangle * i;
+
+            Vector2 shootdir = Quaternion.Euler(0, 0, bulletangle) * Vector2.down;
+
+
+            IBulletInit bullet1 = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
+            bullet1.Init(Launcher.transform.position, shootdir, 0);
+
+
+        }
     }
 }
