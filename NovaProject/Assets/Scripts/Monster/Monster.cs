@@ -20,12 +20,14 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public int Attack { get; protected set; }
     public float MoveSpeed { get; protected set; }  
     public float AttackSpeed { get; protected set; }
+    public float AttackStart { get; protected set; }
     public Vector2 direction { get; protected set; } // 진행 방향
  // 인스펙터에서 조절할 수치들은 스크립트에서 초기값 안넣기(헷갈림)
     [SerializeField] protected int BaseHP;
     [SerializeField] protected int BaseAttack; // 공격력
     [SerializeField] protected float BaseMoveSpeed; // 속도 
     [SerializeField] protected float BaseAttackSpeed;
+    [SerializeField] protected float BaseAttackStart; // 첫 공격까지 지연시간
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
     
     
@@ -71,11 +73,13 @@ public abstract class Monster : MonoBehaviour, IDamageable
     }
     protected virtual void OnEnable()  // 오브젝트풀에서 가져올 때 활성화(초기화)
     {
+        transform.rotation = Quaternion.identity;
         isReleased = false;
         HP = BaseHP;
         Attack = BaseAttack;
         MoveSpeed = BaseMoveSpeed;
         AttackSpeed = BaseAttackSpeed;
+        AttackStart = BaseAttackStart;
     }
     
     protected virtual void OnDisable()  // 대부분의 몬스터는 Shoot()를 InvokeRepeating 할 예정이기때문에 비활성화시 취소

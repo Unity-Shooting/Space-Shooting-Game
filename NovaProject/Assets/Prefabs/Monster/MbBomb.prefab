@@ -190,3 +190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseAttack: 10
   BaseMoveSpeed: 2
+  explodetime: 2
+  bulletcount: 12
+  bullet: {fileID: 3562256426376269140, guid: a56b278e9e7ff7346a06f953b7ef8386, type: 3}
