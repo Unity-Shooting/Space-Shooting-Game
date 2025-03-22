@@ -13,7 +13,7 @@ enum WeaponType
 /// <summary>
 /// 플레이어의 이동 및 공격을 관리하는 컨트롤러 클래스.
 /// </summary>
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     /// <summary>
     /// 디버깅을 위한 태그 문자열.
@@ -24,11 +24,6 @@ public class PlayerController : MonoBehaviour
     /// 플레이어 이동 속도.
     /// </summary>
     public float speed = 5f;
-
-    /// <summary>
-    /// 플레이어 체력
-    /// </summary>
-    public int health = 10;
 
     /// <summary>
     /// 마우스 방향대로 플레이어 방향을 바라보도록 설정하는 플래그.
@@ -81,35 +76,17 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     /// <summary>
-    /// GameManager 인스턴스 참조 (게임 관리 기능을 위해 필요함).
-    /// </summary>
-    private GameManager _gm;
-
-    /// <summary>
-    /// GameManager 인스턴스를 초기화합니다.
-    /// </summary>
-    /// <param name="gm">초기화할 GameManager 인스턴스</param>
-    public void Init(GameManager gm)
-    {
-        _gm = gm;
-    }
-
-    /// <summary>
-    /// GameManager의 UI 변경 기능을 테스트합니다.
-    /// </summary>
-    public void testGmFunc()
-    {
-        _gm.changeUI();
-    }
-
-    /// <summary>
     /// 초기화 작업을 수행하는 Awake 메서드.
     /// Rigidbody2D 및 입력 시스템을 초기화한다.
     /// </summary>
-    private void Awake()
+    protected override void Awake()
     {
         inputSystem = new MyInputSystemActions(); // 입력 시스템 초기화
         rb = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
+
+        //if(GameManager.Instance.logging) Debug.Log($"[{TAG}] Awake before base.Awake");
+        base.Awake(); // 나중에 실행해야 Null에러 안남
+        //if(GameManager.Instance.logging) Debug.Log($"[{TAG}] Awake after base.Awake")
     }
 
     /// <summary>
@@ -184,11 +161,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Attack()
     {
-        Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
+        if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
         weaponCotroller.Shooting(); // 무기 발사
-
-        // test
-        testGmFunc(); // Player쪽에서 gm 함수 실행 테스트
     }
 
     /// <summary>
@@ -224,11 +198,12 @@ public class PlayerController : MonoBehaviour
         // TODO: 데미지 애니메이션 적용
         // TODO: 화면 흔들림 효과 적용
 
-        // Debug.Log($"[{TAG}] OnTriggerEnter2D. tag : {collision.gameObject.tag}");
+        //if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] OnTriggerEnter2D. tag : {collision.gameObject.tag}");
 
         if (collision.gameObject.tag == "Bullet") 
         {
-            if (--health < 1) health = 0; // 총알과 충돌 시 체력 감소.
+            //if (--health < 1) health = 0; // 총알과 충돌 시 체력 감소.
+            PlayerHealth.Instance.TakeDamage(1); // 체력 감소
             //Destroy(collision.gameObject);
         }
     }

@@ -789,6 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4812023954894002825}
   - component: {fileID: 714166229628561872}
+  - component: {fileID: 7337777958016577804}
   - component: {fileID: 2680075233246703296}
   - component: {fileID: 930384080245315698}
   m_Layer: 0
@@ -838,6 +839,19 @@ MonoBehaviour:
   amBigPulseEngineEffects: {fileID: 6520354049849059072}
   FrontSideShield: {fileID: 728497673043094858}
   weaponCotroller: {fileID: 8958621419842788747}
+--- !u!114 &7337777958016577804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140144775861856095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa0cd73bf288c3418b3452dbccfd8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
 --- !u!50 &2680075233246703296
 Rigidbody2D:
   serializedVersion: 5
