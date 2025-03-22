@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 1385550842}
   m_Layer: 0
   m_Name: Stage2_Layer2_star
-  m_TagString: Star
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1201,7 +1201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1718357396
 Transform:
   m_ObjectHideFlags: 0
