@@ -7,7 +7,7 @@ public class MonsterSC : Monster
     {
         base.OnEnable();    // 상속받은 Monster 클래스의 OnEnable() 실행. 공통적인 변수들 초기화는 저기서 했음
 
-        InvokeRepeating("Shoot", 1, 1);
+        InvokeRepeating("Shoot", AttackStart, AttackSpeed);
     }
     void Update()
     {
