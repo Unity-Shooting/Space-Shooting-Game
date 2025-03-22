@@ -702,6 +702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8446070911118561535}
   - component: {fileID: 1758988190989285065}
+  - component: {fileID: 5196757600098081789}
   m_Layer: 0
   m_Name: Main Ship - Base - Full health
   m_TagString: Untagged
@@ -779,6 +780,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5196757600098081789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866670335912400699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01529be67f5edf428ec43ce6ea13fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashDuration: 0.1
+  refeatCnt: 3
+  flashMat: {fileID: 2100000, guid: be1638d343d5013408a1b6347c897225, type: 2}
 --- !u!1 &5140144775861856095
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,8 +847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  health: 10
   useMouseDirection: 0
+  Base: {fileID: 4866670335912400699}
   BaseEngine: {fileID: 1599047868199262096}
   BigPulseEngine: {fileID: 8103812103822836268}
   amBaseEngineEffects: {fileID: 4332085115390089908}
