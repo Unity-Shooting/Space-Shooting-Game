@@ -27,7 +27,7 @@ public class PBullet : MonoBehaviour
         {
             // 타겟을 향해 이동 (타겟을 추적)
             Vector3 direction = target.position - transform.position;
-            float step = homingSpeed * Time.deltaTime; // 이동 속도 계산
+            float step = homingSpeed * Time.deltaTime; // 이동 속도 계산ㄴ
             transform.position = Vector2.MoveTowards(transform.position, target.position, step); // 타겟 쪽으로 이동
 
 
