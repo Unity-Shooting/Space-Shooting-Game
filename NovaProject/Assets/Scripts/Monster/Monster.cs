@@ -30,7 +30,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     [SerializeField] protected float BaseAttackSpeed;
     [SerializeField] protected float BaseAttackStart; // 첫 공격까지 지연시간
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
-    [SerializeField] protected int Score; // 발사할 총알 프리펩
+    [SerializeField] protected int Score; // 몬스터가 죽으면 얻을 점수
 
 
 
@@ -76,6 +76,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
         {
             Debug.Log($"{this.name} destroyed");
             Die();
+            ScoreManager.instance.AddScore(Score);
         }
     }
     protected virtual void OnEnable()  // 오브젝트풀에서 가져올 때 활성화(초기화)

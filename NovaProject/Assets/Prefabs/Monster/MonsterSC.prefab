@@ -414,11 +414,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c1a75f3cffb8742a0833271585e243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHP: 0
+  BaseHP: 1
   BaseAttack: 0
   BaseMoveSpeed: 2
   BaseAttackSpeed: 1
   BaseAttackStart: 1
   Bullet: {fileID: 5271424222290606162, guid: a9b529bc48168c84eb70fa0b92ac4b5c, type: 3}
+  Score: 100
   Launcher: {fileID: 1785074785066200237}
   curveRate: 0.5

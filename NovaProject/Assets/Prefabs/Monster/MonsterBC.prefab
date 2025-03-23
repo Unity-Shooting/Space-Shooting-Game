@@ -306,12 +306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ed5817663b0c44f8c4d396dbb5082b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHP: 0
+  BaseHP: 1
   BaseAttack: 0
   BaseMoveSpeed: 1
   BaseAttackSpeed: 1
   BaseAttackStart: 1
   Bullet: {fileID: 3562256426376269140, guid: a56b278e9e7ff7346a06f953b7ef8386, type: 3}
+  Score: 100
   Launcher1: {fileID: 2730668387862323158}
   Launcher2: {fileID: 377516543163406485}
 --- !u!1 &2730668387862323158

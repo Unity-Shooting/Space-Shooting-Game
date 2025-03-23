@@ -304,12 +304,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82674b7b048e994b8111e1a18bda512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHP: 0
+  BaseHP: 1
   BaseAttack: 0
   BaseMoveSpeed: 0.5
   BaseAttackSpeed: 20
   BaseAttackStart: 1
   Bullet: {fileID: 5409783700533553224, guid: 3436fd649127d324ca1b85acd879cc1c, type: 3}
+  Score: 100
   Launcher: {fileID: 7643359382949798757}
 --- !u!1 &7643359382949798757
 GameObject:

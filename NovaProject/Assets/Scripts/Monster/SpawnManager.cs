@@ -18,7 +18,6 @@ public class WaveData
 {
     public int startTime;
     public SpawnTimelineSO timeline;
-
 }
 
 public class SpawnManager : MonoBehaviour
