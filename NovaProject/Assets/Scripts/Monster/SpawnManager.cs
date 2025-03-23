@@ -15,11 +15,13 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(Spawn());
+        StartCoroutine(Spawn());
     }
 
     IEnumerator Spawn() // 프리펩 잘 됐는지 테스트용 스폰
     {
+
+        SpawnMonster(monsterA, new Vector3(0.3f, 2.0f, 0), Vector2.right);
         while (true) // 스폰타이머 간격으로 monsterA 소환
         {
             SpawnMonster(monsterA,transform.position,Vector2.down);

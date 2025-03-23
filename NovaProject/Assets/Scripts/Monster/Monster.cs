@@ -42,10 +42,11 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
     public virtual void Die()
     {
+        CancelInvoke("Shooting");
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");  // 파괴 애니메이션 재생
                                                                          // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
         DestroyAllChildren();  // 파괴애니메이션 시작하면서 실드, 엔진 등 자식오브젝트 꺼주기
-        Release();
+        
     }
 
     // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
@@ -55,6 +56,13 @@ public abstract class Monster : MonoBehaviour, IDamageable
         transform.position = pos;
         Debug.Log($"Init의 transform.position {transform.position}");
         direction = dir;
+
+        // 방향벡터에 맞춰서 이미지 회전
+        if (direction.normalized != Vector2.down)
+        {
+            float rotationangle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, rotationangle + 90f);
+        }
     }
     public virtual void Move() // dir 방향으로 speed 속도로 이동
     {

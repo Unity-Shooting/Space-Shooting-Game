@@ -306,10 +306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHP: 0
   BaseAttack: 0
-  BaseMoveSpeed: 0
+  BaseMoveSpeed: 1
   BaseAttackSpeed: 20
   BaseAttackStart: 1
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 5409783700533553224, guid: 3436fd649127d324ca1b85acd879cc1c, type: 3}
   Launcher: {fileID: 7643359382949798757}
 --- !u!1 &7643359382949798757
 GameObject:

@@ -15,5 +15,12 @@ public class TestBullet : MbBase
         Move();
     }
 
-    
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("충돌 발생");
+        var i = collision.gameObject.GetComponent<IDamageable>();
+        i.TakeDamage(100);
+    }
+
 }

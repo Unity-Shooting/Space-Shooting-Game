@@ -200,3 +200,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseAttack: 10
   BaseMoveSpeed: 2
+  hoamingPower: 1
+  maxHoamingAngle: 75
