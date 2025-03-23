@@ -15,6 +15,7 @@ enum WeaponType
 /// </summary>
 public class PlayerController : Singleton<PlayerController>
 {
+
     /// <summary>
     /// 디버깅을 위한 태그 문자열.
     /// </summary>
@@ -167,7 +168,9 @@ public class PlayerController : Singleton<PlayerController>
     private void Attack()
     {
         //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
-        weaponCotroller.Shooting(); // 무기 발사
+        //weaponCotroller.Shooting(); // 무기 발사          2025 - 03 -23 
+       // am.SetTrigger("shoot");         // 2025 - 03 -23  추가
+        SFXManager.Instance.ShootSound();       // 2025 - 03 -23  추가
     }
 
     /// <summary>
