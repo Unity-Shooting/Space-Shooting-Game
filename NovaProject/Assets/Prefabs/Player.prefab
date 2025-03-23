@@ -873,7 +873,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c93ea9fc9649141428d0f938fe6e6f78, type: 3}
   - {fileID: 21300000, guid: af8e30c798345db479129b263df61008, type: 3}
   hp: 10
-  recoveryTime: 1
+  invincibleTime: 1
 --- !u!50 &2680075233246703296
 Rigidbody2D:
   serializedVersion: 5

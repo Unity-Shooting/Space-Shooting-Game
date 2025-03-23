@@ -36,6 +36,6 @@ public class BigSpaceGunController : MonoBehaviour, IWeaponController
     public void Shooting()
     {
         // TODO: 애니메이션 재생 로직 추가
-        Instantiate(bullet, launcher1.position, Quaternion.identity); // 발사 위치에서 탄환 생성
+        Instantiate(bullet, launcher1.position, PlayerController.Instance.transform.rotation); // 발사 위치에서 탄환 생성
     }
 }
