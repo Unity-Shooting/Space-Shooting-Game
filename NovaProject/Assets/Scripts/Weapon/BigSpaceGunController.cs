@@ -12,15 +12,21 @@ public class BigSpaceGunController : MonoBehaviour, IWeaponController
     public GameObject bullet;
 
     /// <summary>
+    /// 오토캐논 애니메이터.
+    /// </summary>
+    private Animator am;
+
+    /// <summary>
     /// 발사 위치.
     /// </summary>
     public Transform launcher1;
 
     /// <summary>
-    /// Unity의 기본 Start 메서드 (현재는 사용되지 않음).
+    /// Unity의 기본 Awake 메서드 
     /// </summary>
-    void Start()
+    void Awake()
     {
+        am = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -35,7 +41,11 @@ public class BigSpaceGunController : MonoBehaviour, IWeaponController
     /// </summary>
     public void Shooting()
     {
-        // TODO: 애니메이션 재생 로직 추가
+        am.SetTrigger("shoot");
+    }
+
+    public void delayShoot()
+    {
         Instantiate(bullet, launcher1.position, PlayerController.Instance.transform.rotation); // 발사 위치에서 탄환 생성
     }
 }
