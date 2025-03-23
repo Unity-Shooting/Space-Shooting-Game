@@ -57,6 +57,16 @@ public class PlayerController : Singleton<PlayerController>
     public Animator amBigPulseEngineEffects;
 
     /// <summary>
+    /// 오토캐논 애니메이터.
+    /// </summary>
+    public Animator amAutoCannon;
+
+    /// <summary>
+    /// 빅스페이스건 애니메이터.
+    /// </summary>
+    public Animator amBigSpaceGun;
+
+    /// <summary>
     /// 전면 방어막 애니메이터 (방어 기능을 담당할 것으로 예상됨).
     /// </summary>
     public Animator FrontSideShield;
@@ -102,7 +112,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         inputSystem.Enable(); // 입력 시스템 활성화
         inputSystem.Player.Attack.performed += _ => Attack(); // 공격 입력 이벤트 등록
-        inputSystem.Player.Click.performed += _ => Attack(); // 클릭 입력 이벤트 등록 (마우스 클릭도 공격 처리)
+        inputSystem.Player.Click.performed += _ => Click(); // 클릭 입력 이벤트 등록 (마우스 클릭도 공격 처리)
     }
 
     /// <summary>
@@ -111,7 +121,7 @@ public class PlayerController : Singleton<PlayerController>
     private void OnDisable()
     {
         inputSystem.Player.Attack.performed -= _ => Attack(); // 공격 입력 이벤트 해제
-        inputSystem.Player.Click.performed -= _ => Attack(); // 클릭 입력 이벤트 해제
+        inputSystem.Player.Click.performed -= _ => Click(); // 클릭 입력 이벤트 해제
         inputSystem.Disable(); // 입력 시스템 비활성화
     }
 
@@ -169,8 +179,18 @@ public class PlayerController : Singleton<PlayerController>
     {
         //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
         //weaponCotroller.Shooting(); // 무기 발사          2025 - 03 -23 
-       // am.SetTrigger("shoot");         // 2025 - 03 -23  추가
-        SFXManager.Instance.ShootSound();       // 2025 - 03 -23  추가
+        // am.SetTrigger("shoot");         // 2025 - 03 -23  추가
+        //SFXManager.Instance.ShootSound();       // 2025 - 03 -23  추가
+
+        amAutoCannon.SetTrigger("shoot");
+    }
+
+    /// <summary>
+    /// 마우스 클릭 시 이벤트
+    /// </summary>
+    private void Click()
+    {
+
     }
 
     /// <summary>
