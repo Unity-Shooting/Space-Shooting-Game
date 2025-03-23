@@ -43,7 +43,7 @@ public class MbBomb : MbBase
         for (int i = 0; i < bulletcount; i++)
         {
             float shootangle = angle2 * i;
-            Vector2 shootdir = Quaternion.Euler(0, 0, shootangle) * Vector2.down;
+            Vector2 shootdir = Quaternion.Euler(0, 0, shootangle) * direction;
             IBulletInit bul = PoolManager.instance.Get(bullet).GetComponent<IBulletInit>();
             bul.Init(transform.position, shootdir,0);
         }

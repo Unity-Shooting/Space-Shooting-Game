@@ -27,7 +27,7 @@ public class MonsterFF : Monster
         {
             float bulletangle = baseangle + intervalangle * i;
 
-            Vector2 shootdir = Quaternion.Euler(0, 0, bulletangle) * Vector2.down;
+            Vector2 shootdir = Quaternion.Euler(0, 0, bulletangle) * direction;
 
 
             IBulletInit bullet1 = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();

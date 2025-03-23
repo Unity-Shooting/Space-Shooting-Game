@@ -17,6 +17,6 @@ public class MonsterBomber : Monster
     public override void Shoot()
     {
         IBulletInit bullet = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-        bullet.Init(Launcher.transform.position, Vector2.down, 0);
+        bullet.Init(Launcher.transform.position, direction, 0);
     }
 }

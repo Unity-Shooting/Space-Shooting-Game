@@ -18,8 +18,8 @@ public class MonsterTorpedo : Monster
     public override void Shoot()
     {
         IBulletInit bullet1 = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-        bullet1.Init(Launcher1.transform.position, Vector2.down, 0);
+        bullet1.Init(Launcher1.transform.position, direction, 0);
         IBulletInit bullet2 = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-        bullet2.Init(Launcher2.transform.position, Vector2.down, 0);
+        bullet2.Init(Launcher2.transform.position, direction, 0);
     }
 }

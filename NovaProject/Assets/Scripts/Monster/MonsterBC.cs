@@ -30,7 +30,7 @@ public class MonsterBC : Monster
         {
             float bulletangle = baseangle + intervalangle * i + shake;
 
-            Vector2 shootdir = Quaternion.Euler(0, 0, bulletangle) * Vector2.down;
+            Vector2 shootdir = Quaternion.Euler(0, 0, bulletangle) * direction;
             if (ShootingShakeFlag == 1)
             {
                 IBulletInit bullet1 = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();

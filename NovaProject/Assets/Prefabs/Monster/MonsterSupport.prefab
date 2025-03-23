@@ -306,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHP: 0
   BaseAttack: 0
-  BaseMoveSpeed: 1
+  BaseMoveSpeed: 0.5
   BaseAttackSpeed: 20
   BaseAttackStart: 1
   Bullet: {fileID: 5409783700533553224, guid: 3436fd649127d324ca1b85acd879cc1c, type: 3}

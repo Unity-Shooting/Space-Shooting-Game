@@ -56,7 +56,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
         Debug.Log($"Init의 pos {pos}");
         transform.position = pos;
         Debug.Log($"Init의 transform.position {transform.position}");
-        direction = dir;
+        direction = dir.normalized;
         this.type = type;
 
         // 방향벡터에 맞춰서 이미지 회전

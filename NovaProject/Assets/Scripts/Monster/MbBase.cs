@@ -14,7 +14,7 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
     public virtual void Init(Vector2 pos, Vector2 dir, int type)
     {
         transform.position = pos;
-        direction = dir;
+        direction = dir.normalized;
 
         RotateToDirection();
     }

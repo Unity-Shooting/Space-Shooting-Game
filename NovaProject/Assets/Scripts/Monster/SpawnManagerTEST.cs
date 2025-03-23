@@ -8,10 +8,15 @@ public class SpawnManagerTest : MonoBehaviour
     [SerializeField]
     private float spawntimer;
 
-    [SerializeField]
-    private GameObject monsterA;
+    [SerializeField] private GameObject monsterBC;
+    [SerializeField] private GameObject monsterBomber;
+    [SerializeField] private GameObject monsterFF;
+    [SerializeField] private GameObject monsterFighter;
+    [SerializeField] private GameObject monsterSC;
+    [SerializeField] private GameObject monsterSupport;
+    [SerializeField] private GameObject monsterTorpedo;
 
-    
+
 
     void Start()
     {
@@ -21,13 +26,37 @@ public class SpawnManagerTest : MonoBehaviour
     IEnumerator Spawn() // 프리펩 잘 됐는지 테스트용 스폰
     {
 
-        SpawnMonster(monsterA, new Vector3(-0.3f, 2.0f, 0), Vector2.right,1);
-        while (true) // 스폰타이머 간격으로 monsterA 소환
-        {
-            SpawnMonster(monsterA,transform.position,Vector2.down,2);
-            yield return new WaitForSeconds(spawntimer);
-            Debug.Log(transform.position);
-        }
+        //SpawnMonster(monsterA, new Vector3(-0.3f, 2.0f, 0), Vector2.right,1);
+        //while (true) // 스폰타이머 간격으로 monsterA 소환
+        //{
+        //    SpawnMonster(monsterA,transform.position,Vector2.down,2);
+        //    yield return new WaitForSeconds(spawntimer);
+        //    Debug.Log(transform.position);
+        //}
+
+        Vector2 tmpdir = new Vector2(0.2f, -1f).normalized;
+        SpawnMonster(monsterBC, new Vector3(-0.5f, 3.5f, 0), tmpdir, 1);
+        yield return new WaitForSeconds(5f);
+        SpawnMonster(monsterBomber, new Vector3(-0.5f, 3.5f, 0), tmpdir, 1);
+        yield return new WaitForSeconds(5f);
+        SpawnMonster(monsterFF, new Vector3(-0.5f, 3.5f, 0), tmpdir, 1);
+        yield return new WaitForSeconds(5f);
+        SpawnMonster(monsterFighter, new Vector3(-0.5f, 3.5f, 0), tmpdir, 1);
+        yield return new WaitForSeconds(5f);
+        SpawnMonster(monsterSC, new Vector3(-0.5f, 3.5f, 0), tmpdir, 1);
+
+        SpawnMonster(monsterSC, new Vector3(-2.0f, 0.0f, 1), Vector2.right, 1);
+        SpawnMonster(monsterSC, new Vector3(2.0f, 0.0f, 2), Vector2.left, 2);
+        yield return new WaitForSeconds(5f);
+        SpawnMonster(monsterSupport, new Vector3(-0.5f, 3.5f, 0), tmpdir, 1);
+        yield return new WaitForSeconds(5f);
+        SpawnMonster(monsterTorpedo, new Vector3(-0.5f, 3.5f, 0), tmpdir, 1);
+        yield return new WaitForSeconds(5f);
+
+
+
+
+
     }
     /// <summary>
     /// 몬스터프리펩, 스폰위치, 초기진행방향
