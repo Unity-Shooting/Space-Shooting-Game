@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5754371851494538939}
   - component: {fileID: 8974062151467907915}
   - component: {fileID: 8672097519524520041}
+  - component: {fileID: 6536470841171023589}
   m_Layer: 0
   m_Name: MonsterTorpedo
   m_TagString: Monster
@@ -183,6 +184,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.875, y: 0.65625}
   m_Direction: 1
+--- !u!114 &6536470841171023589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690555114328573488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf3b195f9331304cab04243addb1f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseHP: 1
+  BaseAttack: 0
+  BaseMoveSpeed: 0.5
+  BaseAttackSpeed: 1
+  BaseAttackStart: 1
+  Bullet: {fileID: 7338323941969291318, guid: 70448297f3c196a4c9ac497e7b10794a, type: 3}
+  Launcher1: {fileID: 4979111974346953988}
+  Launcher2: {fileID: 3626259731060642680}
 --- !u!1 &4979111974346953988
 GameObject:
   m_ObjectHideFlags: 0

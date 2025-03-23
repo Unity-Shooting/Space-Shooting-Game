@@ -50,7 +50,6 @@ public class PoolManager : MonoBehaviour
         string key = obj.name.Replace("(Clone)", "");
         if (pools.ContainsKey(key))
         {
-            Debug.Log("PoolManager¿« Return");
             pools[key].Return(obj);
         }
     }

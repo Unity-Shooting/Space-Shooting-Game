@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 2893433066332135731}
   - component: {fileID: 2779965796689559798}
   - component: {fileID: 5983451852701257641}
+  - component: {fileID: 158345198931977453}
   m_Layer: 0
   m_Name: MonsterBC
   m_TagString: Monster
@@ -293,6 +294,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.18862486}
   m_Size: {x: 2.3125, y: 2.4665003}
   m_Direction: 0
+--- !u!114 &158345198931977453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583548365865125169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ed5817663b0c44f8c4d396dbb5082b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseHP: 0
+  BaseAttack: 0
+  BaseMoveSpeed: 1
+  BaseAttackSpeed: 1
+  BaseAttackStart: 1
+  Bullet: {fileID: 3562256426376269140, guid: a56b278e9e7ff7346a06f953b7ef8386, type: 3}
+  Launcher1: {fileID: 2730668387862323158}
+  Launcher2: {fileID: 377516543163406485}
 --- !u!1 &2730668387862323158
 GameObject:
   m_ObjectHideFlags: 0
