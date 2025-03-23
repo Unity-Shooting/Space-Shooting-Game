@@ -8,6 +8,4 @@ public class MbBullet : MbBase
     {
         Move();
     }
-
-
 }

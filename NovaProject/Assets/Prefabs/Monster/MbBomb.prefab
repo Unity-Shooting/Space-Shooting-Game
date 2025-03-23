@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3149308984332913204}
   - component: {fileID: 8112850158916731986}
   - component: {fileID: 5850521705155385286}
+  - component: {fileID: 6987966306960138101}
   m_Layer: 0
   m_Name: MbBomb
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1670050155456109725, guid: 3f2878ccac4a7b744a311e2e73b3a33a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -175,3 +176,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6987966306960138101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740662105732729779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bf7f87fa0c7984ab99d95753b9b8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseAttack: 10
+  BaseMoveSpeed: 2
+  explodetime: 2
+  bulletcount: 12
+  bullet: {fileID: 3562256426376269140, guid: a56b278e9e7ff7346a06f953b7ef8386, type: 3}

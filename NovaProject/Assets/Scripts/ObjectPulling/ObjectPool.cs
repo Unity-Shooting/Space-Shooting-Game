@@ -70,7 +70,6 @@ public class ObjectPool
     {
         pool.Enqueue(obj);
         obj.SetActive(false);
-        Debug.Log("오브젝트풀리턴완료");
     }
 
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8040790608484401887}
   - component: {fileID: 3948570333087862904}
   - component: {fileID: 8076784025119420640}
+  - component: {fileID: 4633419931337393088}
   m_Layer: 0
   m_Name: MbRocket
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1072295468644889672, guid: 888bac9a0deb8d94dbc98112330bcd9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,3 +186,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4633419931337393088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7338323941969291318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf7554631938f24fa39ac55f7f651be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseAttack: 10
+  BaseMoveSpeed: 2
+  hoamingPower: 1
+  maxHoamingAngle: 75

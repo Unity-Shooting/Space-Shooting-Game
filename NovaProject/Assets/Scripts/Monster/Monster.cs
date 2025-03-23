@@ -4,7 +4,12 @@ using UnityEngine;
 // 몬스터마다 이동이나 사격을 다르게 하려면 1945때랑 다르게 몬스터별로 클래스를 따로 써야 할 것 같아서
 // 공통적으로 필요한 부분 
 // 또한 어떤 몬스터를 만들더라도 스폰매니저에선 Monster.abc() 형태로 대부분의 기능을 사용 할 수 있도록 시도
-public abstract class Monster : MonoBehaviour
+
+/// <summary>
+/// 각 몬스터가 각자 가져야 할 프로퍼티
+/// Gameobject Launcher
+/// </summary>
+public abstract class Monster : MonoBehaviour, IDamageable
 {
     protected bool isReleased = false;  // 오브젝트 풀링 시 Release 함수를 호출해서 SetActive(false)로 비활성화 되면
                                         // OnBecameInvisible가 같이 호출돼는 문제를 해결하기 위한 트리거
@@ -13,16 +18,20 @@ public abstract class Monster : MonoBehaviour
                                         // OnEnable에서 false로 초기화, Release() 함수에서 true로 만들어서 OnBecameInvisible에서 Release를 막음
     public int HP { get; protected set; }  // 초기값이랑 구분해둔 이유 : 재생성 시 초기화 하기 위해
     public int Attack { get; protected set; }
-    public float MoveSpeed { get; protected set; }  
+    public float MoveSpeed { get; protected set; }
     public float AttackSpeed { get; protected set; }
+    public float AttackStart { get; protected set; }
     public Vector2 direction { get; protected set; } // 진행 방향
- // 인스펙터에서 조절할 수치들은 스크립트에서 초기값 안넣기(헷갈림)
+    public int type { get; protected set; }
+    // 인스펙터에서 조절할 수치들은 스크립트에서 초기값 안넣기(헷갈림)
     [SerializeField] protected int BaseHP;
     [SerializeField] protected int BaseAttack; // 공격력
     [SerializeField] protected float BaseMoveSpeed; // 속도 
     [SerializeField] protected float BaseAttackSpeed;
+    [SerializeField] protected float BaseAttackStart; // 첫 공격까지 지연시간
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
-    
+
+
 
     // 상속받은 클래스에서 구현 할 메서드들
 
@@ -34,23 +43,28 @@ public abstract class Monster : MonoBehaviour
 
     public virtual void Die()
     {
+        CancelInvoke("Shooting");
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");  // 파괴 애니메이션 재생
                                                                          // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
         DestroyAllChildren();  // 파괴애니메이션 시작하면서 실드, 엔진 등 자식오브젝트 꺼주기
-        Release();
+
     }
 
     // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
-    public virtual void Init(Vector3 pos, Vector2 dir)
+    public virtual void Init(Vector3 pos, Vector2 dir, int type)
     {
         Debug.Log($"Init의 pos {pos}");
         transform.position = pos;
         Debug.Log($"Init의 transform.position {transform.position}");
-        direction = dir;
+        direction = dir.normalized;
+        this.type = type;
+
+        // 방향벡터에 맞춰서 이미지 회전
+        RotateToDirection();
     }
     public virtual void Move() // dir 방향으로 speed 속도로 이동
     {
-        transform.Translate(MoveSpeed * Time.deltaTime * direction);
+        transform.Translate(MoveSpeed * Time.deltaTime * direction, Space.World);
     }
 
     public virtual void TakeDamage(int damage) // 데미지를 받을 때 체력 깎기
@@ -65,13 +79,16 @@ public abstract class Monster : MonoBehaviour
     }
     protected virtual void OnEnable()  // 오브젝트풀에서 가져올 때 활성화(초기화)
     {
+        transform.rotation = Quaternion.identity;
         isReleased = false;
         HP = BaseHP;
         Attack = BaseAttack;
         MoveSpeed = BaseMoveSpeed;
         AttackSpeed = BaseAttackSpeed;
+        AttackStart = BaseAttackStart;
+        type = 0;
     }
-    
+
     protected virtual void OnDisable()  // 대부분의 몬스터는 Shoot()를 InvokeRepeating 할 예정이기때문에 비활성화시 취소
     {                                   // 만약 인보크 하지 않는 경우여도 성능상 크게 문제가 없다고 하니 부모클래스에서 일괄실행
         CancelInvoke("Shoot");
@@ -110,4 +127,10 @@ public abstract class Monster : MonoBehaviour
         Release();
     }
 
+    protected void RotateToDirection()
+    {
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // 이미지가 아래방향이니까 90도 보정
+
+    }
 }

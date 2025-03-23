@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 571429574079197163}
   - component: {fileID: 5655123339153983578}
   - component: {fileID: 671811365515914710}
+  - component: {fileID: 3344767210820265654}
   m_Layer: 0
   m_Name: MonsterFF
   m_TagString: Monster
@@ -402,3 +403,22 @@ CapsuleCollider2D:
   m_Offset: {x: -2.888567e-16, y: 0}
   m_Size: {x: 1.5635751, y: 1.1353582}
   m_Direction: 1
+--- !u!114 &3344767210820265654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501819258851257190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6573a7cd65f5547889f191d0094e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseHP: 0
+  BaseAttack: 0
+  BaseMoveSpeed: 1
+  BaseAttackSpeed: 1
+  BaseAttackStart: 1
+  Bullet: {fileID: 6874095946861611724, guid: 56cf9dc1ee3a5644b9897fc0c00ba6e8, type: 3}
+  Launcher: {fileID: 5200817631940360085}
