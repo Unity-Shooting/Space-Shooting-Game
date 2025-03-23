@@ -22,7 +22,10 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public float AttackSpeed { get; protected set; }
     public float AttackStart { get; protected set; }
     public Vector2 direction { get; protected set; } // 진행 방향
+
     public int type { get; protected set; }
+    private bool isDead = false;
+    public bool IsDead => isDead; // isDead를 바깥에 보내주기
     // 인스펙터에서 조절할 수치들은 스크립트에서 초기값 안넣기(헷갈림)
     [SerializeField] protected int BaseHP;
     [SerializeField] protected int BaseAttack; // 공격력
@@ -30,7 +33,8 @@ public abstract class Monster : MonoBehaviour, IDamageable
     [SerializeField] protected float BaseAttackSpeed;
     [SerializeField] protected float BaseAttackStart; // 첫 공격까지 지연시간
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
-    [SerializeField] protected int Score; // 발사할 총알 프리펩
+    [SerializeField] protected int Score; // 몬스터가 죽으면 얻을 점수
+    [SerializeField] protected GameObject DesturctionEffect;
 
 
 
@@ -42,21 +46,11 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public abstract void Shoot();
 
 
-    public virtual void Die()
-    {
-        CancelInvoke("Shooting");
-        this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");  // 파괴 애니메이션 재생
-                                                                         // 애니매이션 종료시 Release() 호출하도록 애니메이션 클립 설정해둠
-        DestroyAllChildren();  // 파괴애니메이션 시작하면서 실드, 엔진 등 자식오브젝트 꺼주기
-
-    }
 
     // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
     public virtual void Init(Vector3 pos, Vector2 dir, int type)
     {
-        Debug.Log($"Init의 pos {pos}");
         transform.position = pos;
-        Debug.Log($"Init의 transform.position {transform.position}");
         direction = dir.normalized;
         this.type = type;
 
@@ -70,13 +64,30 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
     public virtual void TakeDamage(int damage) // 데미지를 받을 때 체력 깎기
     {
+        if (isDead) return;
         HP -= damage;
         Debug.Log($"{this.name} damaged : {damage} HP : {HP}");
         if (HP <= 0)  // 체력 0이 되면 죽으면서 몬스터별 죽을 때 액션 수행
         {
+            isDead = true;
             Debug.Log($"{this.name} destroyed");
             Die();
         }
+    }
+
+    void Die()
+    {
+            CancelInvoke("Shooting");
+            ScoreManager.instance.AddScore(Score);
+            Release();
+
+            Debug.Log("Die");
+
+            // 파괴 애니메이션 재생
+            var DE = PoolManager.instance.Get(DesturctionEffect);
+            DE.transform.position = transform.position;
+            DE.transform.rotation = transform.rotation;
+            DE.SetActive(true);
     }
     protected virtual void OnEnable()  // 오브젝트풀에서 가져올 때 활성화(초기화)
     {
@@ -88,6 +99,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
         AttackSpeed = BaseAttackSpeed;
         AttackStart = BaseAttackStart;
         type = 0;
+        isDead = false;
     }
 
     protected virtual void OnDisable()  // 대부분의 몬스터는 Shoot()를 InvokeRepeating 할 예정이기때문에 비활성화시 취소

@@ -7,6 +7,8 @@ public class MbRocket : MbBase, IDamageable
     [SerializeField] private float maxHoamingAngle;
     [SerializeField] private float maxHP;
     private float HP;
+    private bool isDead = false;
+    public bool IsDead => isDead;
 
     void Update()
     {
@@ -37,9 +39,13 @@ public class MbRocket : MbBase, IDamageable
 
     public void TakeDamage(int  damage)
     {
+        
+
         HP -= damage;
-        if (HP < 0)
+        if (HP <= 0)
         {
+            if (isDead) return;
+            isDead = true;
             Release();
         }
     }
@@ -48,6 +54,7 @@ public class MbRocket : MbBase, IDamageable
         // 다른 총알들은 가지지 않는 체력을 가지기 때문에 따로 초기화
         base.OnEnable();
         HP = maxHP;
+        isDead = false;
     }
 
 }

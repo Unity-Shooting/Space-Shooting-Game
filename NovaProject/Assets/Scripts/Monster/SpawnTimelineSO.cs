@@ -8,5 +8,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Spawn/Timeline")]
 public class SpawnTimelineSO : ScriptableObject
 {
+    [TextArea(2,5)]
+    public string memo;
     public List<SpawnEventData> spawnEvents = new();
+    
 }

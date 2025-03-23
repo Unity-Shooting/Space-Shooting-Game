@@ -11,6 +11,8 @@ public class MbRay : MbBase
     [SerializeField] private GameObject Circle;
     private MonsterSupport caster; // 레이저 지속시간 중에 시전몬스터 사망 체크
 
+
+
     // Update is called once per frame
     void Update()
     {
