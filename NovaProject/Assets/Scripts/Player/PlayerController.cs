@@ -166,7 +166,7 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     private void Attack()
     {
-        if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
+        //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
         weaponCotroller.Shooting(); // 무기 발사
     }
 

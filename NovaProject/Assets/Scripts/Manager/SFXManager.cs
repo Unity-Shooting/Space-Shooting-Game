@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SoundEffectManager : Singleton<SoundEffectManager>
+public class SFXManager : Singleton<SFXManager>
 {
     private AudioSource audioSource;
     public AudioClip damageSound;
