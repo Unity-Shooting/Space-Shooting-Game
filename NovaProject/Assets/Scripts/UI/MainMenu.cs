@@ -26,6 +26,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("띵동 : ");     //테스트용
         //SceneManager.LoadScene("OneStageScene"); //1스테이지 시작   추후 만들어지면 주석 풀 예정
+        SceneManager.LoadScene("StageOne");
     }
 
     void OnExitButtonClick()
