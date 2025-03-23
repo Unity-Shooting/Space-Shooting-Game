@@ -31,6 +31,11 @@ public class PlayerController : Singleton<PlayerController>
     public bool useMouseDirection = false;
 
     /// <summary>
+    /// 기본 게임 오브젝트 (플레이어 이동 시 사용됨).
+    /// </summary>
+    public GameObject Base;
+
+    /// <summary>
     /// 기본 엔진 게임 오브젝트 (플레이어 이동 시 사용됨).
     /// </summary>
     public GameObject BaseEngine;
@@ -161,7 +166,7 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     private void Attack()
     {
-        if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
+        //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
         weaponCotroller.Shooting(); // 무기 발사
     }
 
@@ -188,23 +193,4 @@ public class PlayerController : Singleton<PlayerController>
         obj.rotation = Quaternion.Euler(0f, 0f, angle); // 회전 적용
     }
 
-    /// <summary>
-    /// 충돌 감지 시 실행되는 함수.
-    /// </summary>
-    /// <param name="collision">충돌한 객체의 Collider2D</param>
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // TODO: 임시 무적 기능 추가
-        // TODO: 데미지 애니메이션 적용
-        // TODO: 화면 흔들림 효과 적용
-
-        //if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] OnTriggerEnter2D. tag : {collision.gameObject.tag}");
-
-        if (collision.gameObject.tag == "Bullet") 
-        {
-            //if (--health < 1) health = 0; // 총알과 충돌 시 체력 감소.
-            PlayerHealth.Instance.TakeDamage(1); // 체력 감소
-            //Destroy(collision.gameObject);
-        }
-    }
 }
