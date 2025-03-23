@@ -67,6 +67,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
         PlayerController.Instance.Base.gameObject.GetComponent<Flash>().Run(); // 플레이어가 피격 시 깜빡이는 효과 실행
         StartCoroutine(RecoveryRoutine()); // 일정 시간 후 다시 대미지를 받을 수 있도록 무적 해제
         ScreenShakeManager.Instance.ShakeScreen(); // 화면 흔들림 효과 적용
+        SoundEffectManager.Instance.PlayDamageSound();
     }
 
     /// <summary>

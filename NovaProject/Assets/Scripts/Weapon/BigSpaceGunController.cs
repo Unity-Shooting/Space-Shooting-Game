@@ -46,6 +46,7 @@ public class BigSpaceGunController : MonoBehaviour, IWeaponController
 
     public void delayShoot()
     {
+        SoundEffectManager.Instance.ShootSound();
         Instantiate(bullet, launcher1.position, PlayerController.Instance.transform.rotation); // 발사 위치에서 탄환 생성
     }
 }

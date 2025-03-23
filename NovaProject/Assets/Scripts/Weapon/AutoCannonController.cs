@@ -47,7 +47,7 @@ public class AutoCannonController : MonoBehaviour, IWeaponController
     public void Shooting()
     {
         am.SetTrigger("shoot");
-
+        SoundEffectManager.Instance.ShootSound();
         Instantiate(bullet, launcher1.position, PlayerController.Instance.transform.rotation); // 첫 번째 발사 위치에서 탄환 생성
         Instantiate(bullet, launcher2.position, PlayerController.Instance.transform.rotation); // 두 번째 발사 위치에서 탄환 생성
     }

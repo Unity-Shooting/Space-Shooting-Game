@@ -24,6 +24,14 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
+    /// Start
+    /// </summary>
+    private void Start()
+    {
+        BGMManager.Instance.PlayBGM1();
+    }
+
+    /// <summary>
     /// 프레임마다 호출되는 업데이트 함수.
     /// </summary>
     void Update()
@@ -45,5 +53,6 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 0;
         if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] GameOver");
+        BGMManager.Instance.PlayBGM2();
     }
 }
