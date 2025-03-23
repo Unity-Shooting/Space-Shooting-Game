@@ -103,8 +103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  attack: 10
-  effect: {fileID: 0}
+  attack: 15
+  effect: {fileID: 9004376150018468411, guid: 5a913314a7afa814bb6cfd7daff3a802, type: 3}
+  isHoming: 0
+  homingSpeed: 4
+  homingRange: 10
 --- !u!50 &2736615001999603522
 Rigidbody2D:
   serializedVersion: 5

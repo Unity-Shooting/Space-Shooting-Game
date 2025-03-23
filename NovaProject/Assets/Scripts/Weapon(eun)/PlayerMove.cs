@@ -31,34 +31,12 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+
         // 이동 입력 업데이트
         moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        // 스페이스바로 기본 총알 발사
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            weaponManager.Fire();
-        }
+        
 
-        // B키로 스킬 사용
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            weaponManager.UseSkill();
-        }
-
-        // 1, 2, 3 키로 무기 변경
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            weaponManager.SwitchWeapon(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            weaponManager.SwitchWeapon(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            weaponManager.SwitchWeapon(3);
-        }
     }
 
     private void FixedUpdate()

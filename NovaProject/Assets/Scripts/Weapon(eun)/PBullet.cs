@@ -83,7 +83,8 @@ public class PBullet : MonoBehaviour
             // 충돌 이펙트 생성 (필요한 경우)
             if (effect != null)
             {
-                Instantiate(effect, transform.position, Quaternion.identity);
+                GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
+                Destroy(effectInstance, 1f);  // 이펙트가 1초 후 자동으로 삭제되도록 설정
             }
 
             // 총알 삭제
