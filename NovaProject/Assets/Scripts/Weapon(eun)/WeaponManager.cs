@@ -87,16 +87,25 @@ namespace WeaponEun
                     {
                         bulletScript2.isHoming = true; // ElectroGun만 타겟팅 활성화
                     }
+
+                    SFXManager.Instance.ShootSound();
+
                     break;
 
                 case WeaponType.FlameCannon:
                     Instantiate(F_Bullet[power], firePoint1.position, firePoint1.rotation);
                     Instantiate(F_Bullet[power], firePoint2.position, firePoint2.rotation);
+
+                    SFXManager.Instance.ShootSound();
+
                     break;
 
                 case WeaponType.AquaCannon:
                     Instantiate(A_Bullet[power], firePoint1.position, firePoint1.rotation);
                     Instantiate(A_Bullet[power], firePoint2.position, firePoint2.rotation);
+
+                    SFXManager.Instance.ShootSound();
+
                     break;
 
                 default:
