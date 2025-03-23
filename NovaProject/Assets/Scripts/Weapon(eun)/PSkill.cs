@@ -24,6 +24,9 @@ public class PSkill : MonoBehaviour
     private float homingSpeed = 5.0f; // 타겟팅 속도
     private float homingRange = 10f; // 타겟팅 범위
 
+    
+
+
     void Start()
     {
         // 플레이어의 Transform을 가져와서 playerTransform에 할당
