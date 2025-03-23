@@ -170,7 +170,7 @@ public class PlayerController : Singleton<PlayerController>
         //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
         //weaponCotroller.Shooting(); // 무기 발사          2025 - 03 -23 
        // am.SetTrigger("shoot");         // 2025 - 03 -23  추가
-        SFXManager.Instance.ShootSound();       // 2025 - 03 -23  추가
+        //SFXManager.Instance.ShootSound();       // 2025 - 03 -23  추가
     }
 
     /// <summary>

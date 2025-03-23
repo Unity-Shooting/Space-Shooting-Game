@@ -8,11 +8,11 @@ public class BGMManager : Singleton<BGMManager>
     public AudioClip BGM2;
     public AudioMixer audioMixer;
 
-    void Start()
+    protected override void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        base.Awake();
     }
-
     public void PlayBGM1()
     {
         audioMixer.SetFloat("BGM", Mathf.Log10(1f) * 20);
