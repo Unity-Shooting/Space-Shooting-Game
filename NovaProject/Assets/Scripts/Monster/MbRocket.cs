@@ -31,10 +31,7 @@ public class MbRocket : MbBase, IDamageable
             direction = Vector2.Lerp(direction, toPlayer, hoamingPower * Time.deltaTime);
         }
         // 미사일 스프라이트를 회전시켜주기
-        // 객체 자체가 회전하니까 이 회전에 이동방향이 영향받지 않도록 Move는 World 좌표 기준으로 설정!!
-        float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        // z축회전인데 Quaternion.Euler이 오른쪽을 바라보는 이미지 기준으로 회전시켜주니까 90f 더해서 보정
-        transform.rotation = Quaternion.Euler(0,0,rotationAngle+90f);
+        RotateToDirection();
 
     }
 

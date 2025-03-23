@@ -5,7 +5,7 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
 {
     protected bool isReleased = false; // 중복반환 방지용 플래그
     public Vector2 direction { get; protected set; }
-    public int Attack {  get; protected set; }
+    public int Attack { get; protected set; }
     public float MoveSpeed { get; protected set; }
 
     [SerializeField] protected int BaseAttack;
@@ -16,16 +16,11 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
         transform.position = pos;
         direction = dir;
 
-        //초기화 할 때 탄이 나갈 방향이 아래쪽 수직이 아니라면 오브젝트 회전시키기
-        if (direction.normalized != Vector2.down)
-        {
-            float rotationangle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, rotationangle+90f);
-        }
+        RotateToDirection();
     }
     public virtual void Move()
     {
-        transform.Translate(MoveSpeed * direction * Time.deltaTime,Space.World);  // 이동을 월드좌표 기준으로해서 rotation 영향 안받기
+        transform.Translate(MoveSpeed * direction * Time.deltaTime, Space.World);  // 이동을 월드좌표 기준으로해서 rotation 영향 안받기
     }
 
     protected virtual void OnEnable() // 초기화 Start() 대신 사용
@@ -55,11 +50,17 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
         //    obj.TakeDamage(1000);
         //    Release();
         //}
-        
+
     }
 
     protected virtual void OnBecameInvisible()
     {
         Release();
+    }
+
+    protected void RotateToDirection()
+    {
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // 이미지가 아래방향이니까 90도 보정
     }
 }

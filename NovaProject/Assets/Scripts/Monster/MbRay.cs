@@ -14,6 +14,8 @@ public class MbRay : MbBase
     // Update is called once per frame
     void Update()
     {
+        // 본체와 위치 동기화
+        transform.position = caster.Launcher.transform.position;
     }
 
     protected override void OnEnable()
@@ -45,8 +47,6 @@ public class MbRay : MbBase
         while (timer < warningTime)  // 경고표시 깜빡이는 부분
         {
             timer += Time.deltaTime;
-            // 본체와 위치 동기화
-            transform.position = caster.transform.position;
 
             if (caster == null || !caster.gameObject.activeInHierarchy)  // 시전자가 없거나 비활성화 되면 종료
             {

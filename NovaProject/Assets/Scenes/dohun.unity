@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 1070491077}
   - component: {fileID: 1070491076}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: SpawnManagerTEST
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawntimer: 30
-  monsterA: {fileID: 2109277826356061369, guid: 6fa7e5651b5faf24cbd4ceaee5fb57f4, type: 3}
+  monsterA: {fileID: 3593970628241394944, guid: 642627fe64eb7e8479e5bd4bbcf44781, type: 3}
 --- !u!4 &1070491077
 Transform:
   m_ObjectHideFlags: 0
@@ -598,11 +598,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2122273887588227487, guid: 1cd2761879edbf7409f9b30a0e8f43fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2122273887588227487, guid: 1cd2761879edbf7409f9b30a0e8f43fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.18
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2122273887588227487, guid: 1cd2761879edbf7409f9b30a0e8f43fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -639,6 +639,10 @@ PrefabInstance:
     - target: {fileID: 4253077063642353567, guid: 1cd2761879edbf7409f9b30a0e8f43fb, type: 3}
       propertyPath: m_Name
       value: Bullet_E
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253077063642353567, guid: 1cd2761879edbf7409f9b30a0e8f43fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8550292816745055528, guid: 1cd2761879edbf7409f9b30a0e8f43fb, type: 3}
