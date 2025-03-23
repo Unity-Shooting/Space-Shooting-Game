@@ -157,10 +157,10 @@ TextureImporter:
       name: Nautolan - Wave_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 26
-        width: 36
-        height: 11
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +179,10 @@ TextureImporter:
       name: Nautolan - Wave_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 24
-        width: 36
-        height: 13
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Nautolan - Wave_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 22
-        width: 36
-        height: 15
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: Nautolan - Wave_3
       rect:
         serializedVersion: 2
-        x: 206
-        y: 24
-        width: 36
-        height: 13
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: Nautolan - Wave_4
       rect:
         serializedVersion: 2
-        x: 270
-        y: 22
-        width: 36
-        height: 15
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Nautolan - Wave_5
       rect:
         serializedVersion: 2
-        x: 334
-        y: 25
-        width: 36
-        height: 12
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,7 +289,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 35a838869d1e56042be3f89625e3f967
     internalID: 0
     vertices: []
     indices: 

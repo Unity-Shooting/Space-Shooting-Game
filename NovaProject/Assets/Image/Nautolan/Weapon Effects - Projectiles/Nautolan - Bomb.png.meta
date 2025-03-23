@@ -187,10 +187,10 @@ TextureImporter:
       name: Nautolan - Bomb_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 2
-        width: 8
-        height: 12
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,10 +209,10 @@ TextureImporter:
       name: Nautolan - Bomb_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 4
-        width: 12
-        height: 8
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Nautolan - Bomb_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 4
-        width: 12
-        height: 8
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: Nautolan - Bomb_3
       rect:
         serializedVersion: 2
-        x: 52
-        y: 2
-        width: 8
-        height: 12
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: Nautolan - Bomb_4
       rect:
         serializedVersion: 2
-        x: 68
-        y: 2
-        width: 8
-        height: 12
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,10 +297,10 @@ TextureImporter:
       name: Nautolan - Bomb_5
       rect:
         serializedVersion: 2
-        x: 82
-        y: 4
-        width: 12
-        height: 8
+        x: 80
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +319,10 @@ TextureImporter:
       name: Nautolan - Bomb_6
       rect:
         serializedVersion: 2
-        x: 98
-        y: 4
-        width: 12
-        height: 8
+        x: 96
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,10 +341,10 @@ TextureImporter:
       name: Nautolan - Bomb_7
       rect:
         serializedVersion: 2
-        x: 116
-        y: 2
-        width: 8
-        height: 12
+        x: 112
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,10 +363,10 @@ TextureImporter:
       name: Nautolan - Bomb_8
       rect:
         serializedVersion: 2
-        x: 132
-        y: 2
-        width: 8
-        height: 12
+        x: 128
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,10 +385,10 @@ TextureImporter:
       name: Nautolan - Bomb_9
       rect:
         serializedVersion: 2
-        x: 146
-        y: 4
-        width: 12
-        height: 8
+        x: 144
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,10 +407,10 @@ TextureImporter:
       name: Nautolan - Bomb_10
       rect:
         serializedVersion: 2
-        x: 162
-        y: 4
-        width: 12
-        height: 8
+        x: 160
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,10 +429,10 @@ TextureImporter:
       name: Nautolan - Bomb_11
       rect:
         serializedVersion: 2
-        x: 180
-        y: 2
-        width: 8
-        height: 12
+        x: 176
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,10 +451,10 @@ TextureImporter:
       name: Nautolan - Bomb_12
       rect:
         serializedVersion: 2
-        x: 196
-        y: 2
-        width: 8
-        height: 12
+        x: 192
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,10 +473,10 @@ TextureImporter:
       name: Nautolan - Bomb_13
       rect:
         serializedVersion: 2
-        x: 210
-        y: 4
-        width: 12
-        height: 8
+        x: 208
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -495,10 +495,10 @@ TextureImporter:
       name: Nautolan - Bomb_14
       rect:
         serializedVersion: 2
-        x: 226
-        y: 4
-        width: 12
-        height: 8
+        x: 224
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,10 +517,10 @@ TextureImporter:
       name: Nautolan - Bomb_15
       rect:
         serializedVersion: 2
-        x: 244
-        y: 2
-        width: 8
-        height: 12
+        x: 240
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -539,7 +539,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 839d4da06f232034192cb28464df535c
     internalID: 0
     vertices: []
     indices: 
