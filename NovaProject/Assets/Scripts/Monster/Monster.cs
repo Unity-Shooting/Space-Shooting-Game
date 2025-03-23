@@ -30,6 +30,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     [SerializeField] protected float BaseAttackSpeed;
     [SerializeField] protected float BaseAttackStart; // 첫 공격까지 지연시간
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
+    [SerializeField] protected int Score; // 발사할 총알 프리펩
 
 
 
