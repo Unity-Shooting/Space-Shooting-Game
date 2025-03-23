@@ -422,4 +422,5 @@ MonoBehaviour:
   BaseAttackStart: 1
   Bullet: {fileID: 6874095946861611724, guid: 56cf9dc1ee3a5644b9897fc0c00ba6e8, type: 3}
   Score: 100
+  DesturctionEffect: {fileID: 3942192724042061088, guid: 479ab2a61ce52e644b5b48438f3af86b, type: 3}
   Launcher: {fileID: 5200817631940360085}

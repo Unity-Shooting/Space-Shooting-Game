@@ -421,5 +421,6 @@ MonoBehaviour:
   BaseAttackStart: 1
   Bullet: {fileID: 5271424222290606162, guid: a9b529bc48168c84eb70fa0b92ac4b5c, type: 3}
   Score: 100
+  DesturctionEffect: {fileID: 76009143805308515, guid: 58f026dd5cc95484fbe0566373ebc98b, type: 3}
   Launcher: {fileID: 1785074785066200237}
   curveRate: 0.5
