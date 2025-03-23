@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
 namespace WeaponEun {
 
-// 무기 유형을 정의하는 열거형
-public enum WeaponType
+    // 무기 유형을 정의하는 열거형
+    public enum WeaponType
 {
     // 임시 무기 이름
     ElectroGun, 
@@ -18,9 +19,8 @@ public enum WeaponType
         public WeaponType currentWeapon;
 
         // 총알 프리팹
-        public GameObject E_Bullet;
-        public GameObject F_Bullet;
-        public GameObject A_Bullet;
+        public GameObject[] E_Bullet, F_Bullet, A_Bullet;
+
 
         // 스킬 프리팹
         public GameObject E_Skill;
@@ -30,23 +30,51 @@ public enum WeaponType
         // 총알 발사 위치 (Player의 발사 위치)
         public Transform firePoint;
 
+        public int power = 0;
+        private GameObject powerup;
+
+
+        // 업그레이드 메소드
+        public void UpgradeWeapon()
+        {
+            power += 1;
+            if (power <= 1)
+                power = 1;
+
+            //파워업 메세지 출력
+            /*GameObject go = Instantiate(powerup, transform.position, Quaternion.identity);
+            Destroy(go, 1);*/
+        }
+
         // 총알 발사 메소드
         public void Fire()
         {
+
+            PBullet bulletScript = null; // PBullet 참조 변수 초기화
             switch (currentWeapon)
             {
                 case WeaponType.ElectroGun:
-                    FireBullet(E_Bullet);
+                    GameObject eBullet = Instantiate(E_Bullet[power], firePoint.position, firePoint.rotation);
+                    bulletScript = eBullet.GetComponent<PBullet>();
+
+                    // PBullet 스크립트를 찾고 isHoming 설정
+                    if (bulletScript != null)
+                    {
+                        bulletScript.isHoming = true; // ElectroGun만 타겟팅 활성화
+                    }
                     break;
+
                 case WeaponType.FlameCannon:
-                    FireBullet(F_Bullet);
+                    Instantiate(F_Bullet[power], firePoint.position, firePoint.rotation);
                     break;
+
                 case WeaponType.AquaCannon:
-                    FireBullet(A_Bullet);
+                    Instantiate(A_Bullet[power], firePoint.position, firePoint.rotation);
                     break;
+
                 default:
-                    Debug.LogError("알 수 없는 무기 유형");
-                    break;
+                    Debug.LogError("알 수 없는 무기 유형입니다.");
+                    return;
             }
         }
 
@@ -68,12 +96,6 @@ public enum WeaponType
             }
         }
 
-        // 총알 발사 메소드
-        private void FireBullet(GameObject bulletPrefab)
-        {
-            // 총알 생성
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        }
 
         // 스킬 발사 메소드
         private void FireSkill(GameObject skillPrefab)
