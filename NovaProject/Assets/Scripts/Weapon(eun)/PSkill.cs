@@ -109,8 +109,12 @@ public class PSkill : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 스킬이 몬스터와 충돌했을 때
-        if (collision.CompareTag("Monster"))
+        if (collision.gameObject.CompareTag("Monster"))
         {
+            IDamageable obj = collision.GetComponent<IDamageable>();
+            obj.TakeDamage(damage);
+
+
             // 몬스터와 충돌 시 스킬별 효과
             ApplySkillEffect(collision.gameObject);
 
@@ -155,18 +159,5 @@ public class PSkill : MonoBehaviour
                 break;
         }
     }
-
-    /*
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            IDamageable obj = collision.GetComponent<IDamageable>();
-            obj.TakeDamage(damage);
-        }
-    }
-
-*/
 
 }
