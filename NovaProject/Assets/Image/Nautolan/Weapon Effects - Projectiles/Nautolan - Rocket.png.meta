@@ -170,10 +170,10 @@ TextureImporter:
       name: Nautolan - Rocket_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 8
-        height: 24
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +192,10 @@ TextureImporter:
       name: Nautolan - Rocket_1
       rect:
         serializedVersion: 2
-        x: 21
+        x: 16
         y: 0
-        width: 6
-        height: 24
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Nautolan - Rocket_2
       rect:
         serializedVersion: 2
-        x: 37
+        x: 32
         y: 0
-        width: 6
-        height: 24
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Nautolan - Rocket_3
       rect:
         serializedVersion: 2
-        x: 52
+        x: 48
         y: 0
-        width: 8
-        height: 24
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Nautolan - Rocket_4
       rect:
         serializedVersion: 2
-        x: 69
+        x: 64
         y: 0
-        width: 6
-        height: 24
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: Nautolan - Rocket_5
       rect:
         serializedVersion: 2
-        x: 85
+        x: 80
         y: 0
-        width: 6
-        height: 24
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,7 +302,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bbc2d684c8f5b0a42b914ba660990d9a
     internalID: 0
     vertices: []
     indices: 

@@ -176,10 +176,10 @@ TextureImporter:
       name: Nautolan - Bullet_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: Nautolan - Bullet_1
       rect:
         serializedVersion: 2
-        x: 10
+        x: 9
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +220,10 @@ TextureImporter:
       name: Nautolan - Bullet_2
       rect:
         serializedVersion: 2
-        x: 19
+        x: 18
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: Nautolan - Bullet_3
       rect:
         serializedVersion: 2
-        x: 28
+        x: 27
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,10 +264,10 @@ TextureImporter:
       name: Nautolan - Bullet_4
       rect:
         serializedVersion: 2
-        x: 37
+        x: 36
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: Nautolan - Bullet_5
       rect:
         serializedVersion: 2
-        x: 46
+        x: 45
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: Nautolan - Bullet_6
       rect:
         serializedVersion: 2
-        x: 55
+        x: 54
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: Nautolan - Bullet_7
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 0
-        width: 7
-        height: 11
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,7 +352,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f4d40bc56a80a7b4b8b69aabc71c306d
     internalID: 0
     vertices: []
     indices: 
