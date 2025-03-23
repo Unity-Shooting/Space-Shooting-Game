@@ -13,9 +13,11 @@ public class SpawnEventData
     public float repeatInterval = 1f;
 }
 
-
+[System.Serializable]
 public class WaveData
 {
+    public int startTime;
+    public SpawnTimelineSO timeline;
 
 }
 
