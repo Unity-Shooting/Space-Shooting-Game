@@ -3,7 +3,7 @@ using UnityEngine;
 public class PBullet : MonoBehaviour
 {
     public float speed = 4.0f; // 총알 속도
-    public int attack = 10; // 공격력
+    public int damage = 10; // 공격력
     public GameObject effect; // 충돌 시 이펙트 프리팹
 
     public bool isHoming = false; // 타겟팅 여부(E_Bullet만 활성화)
@@ -71,14 +71,11 @@ public class PBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Monster"))
+        if (collision.gameObject.CompareTag("Monster"))
         {
-            // 몬스터 스크립트 가져오기
-            monster monster = collision.GetComponent<monster>();
-            if (monster != null)
-            {
-                monster.TakeDamage(attack); // 몬스터에게 데미지 입힘
-            }
+
+            IDamageable obj = collision.GetComponent<IDamageable>();
+            obj.TakeDamage(damage);
 
             // 충돌 이펙트 생성 (필요한 경우)
             if (effect != null)
