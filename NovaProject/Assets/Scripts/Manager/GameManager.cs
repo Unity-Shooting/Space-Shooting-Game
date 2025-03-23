@@ -40,4 +40,10 @@ public class GameManager : Singleton<GameManager>
     {
         if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] changeUI");
     }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] GameOver");
+    }
 }
