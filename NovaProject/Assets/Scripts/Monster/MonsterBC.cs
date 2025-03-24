@@ -6,11 +6,10 @@ public class MonsterBC : Monster
     [SerializeField] private GameObject Launcher1;
     [SerializeField] private GameObject Launcher2;
     int ShootingShakeFlag = 1;
-    protected override void OnEnable()  // Start()랑 같은 역할 한다고 보시면 됩니다
+    protected override void StartAfterInit()
     {
-        base.OnEnable();    // 상속받은 Monster 클래스의 OnEnable() 실행. 공통적인 변수들 초기화는 저기서 했음
-
-        InvokeRepeating("Shoot", AttackStart, AttackSpeed);
+        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // 사격 시작
+        
     }
     void Update()
     {
