@@ -1,192 +1,199 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// ¹«±â À¯ÇüÀ» Á¤ÀÇÇÏ´Â ¿­°ÅÇü.
+/// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 /// </summary>
 enum WeaponType
 {
-    AutoCannon,  // ÀÚµ¿ ´ëÆ÷
-    BigSpaceGun  // ´ëÇü ¿ìÁÖÆ÷
+    AutoCannon,  // ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
+    BigSpaceGun  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 }
 
 /// <summary>
-/// ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿ ¹× °ø°ÝÀ» °ü¸®ÇÏ´Â ÄÁÆ®·Ñ·¯ Å¬·¡½º.
+/// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½.
 /// </summary>
 public class PlayerController : Singleton<PlayerController>
 {
 
     /// <summary>
-    /// µð¹ö±ëÀ» À§ÇÑ ÅÂ±× ¹®ÀÚ¿­.
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Â±ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½.
     /// </summary>
     private const string TAG = "PlayerController";
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾î ÀÌµ¿ ¼Óµµ.
+    /// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½.
     /// </summary>
     public float speed = 5f;
 
     /// <summary>
-    /// ¸¶¿ì½º ¹æÇâ´ë·Î ÇÃ·¹ÀÌ¾î ¹æÇâÀ» ¹Ù¶óº¸µµ·Ï ¼³Á¤ÇÏ´Â ÇÃ·¡±×.
+    /// ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸µï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½.
     /// </summary>
     public bool useMouseDirection = false;
 
     /// <summary>
-    /// ±âº» °ÔÀÓ ¿ÀºêÁ§Æ® (ÇÃ·¹ÀÌ¾î ÀÌµ¿ ½Ã »ç¿ëµÊ).
+    /// ï¿½âº» ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® (ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½).
     /// </summary>
     public GameObject Base;
 
     /// <summary>
-    /// ±âº» ¿£Áø °ÔÀÓ ¿ÀºêÁ§Æ® (ÇÃ·¹ÀÌ¾î ÀÌµ¿ ½Ã »ç¿ëµÊ).
+    /// ï¿½âº» ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® (ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½).
     /// </summary>
     public GameObject BaseEngine;
 
     /// <summary>
-    /// ´ëÇü ÆÞ½º ¿£Áø °ÔÀÓ ¿ÀºêÁ§Æ® (ÃßÁø·Â °­È­ ½Ã »ç¿ëµÉ ¼öµµ ÀÖÀ½).
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½).
     /// </summary>
     public GameObject BigPulseEngine;
 
     /// <summary>
-    /// ±âº» ¿£Áø È¿°ú ¾Ö´Ï¸ÞÀÌÅÍ.
+    /// ï¿½âº» ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½.
     /// </summary>
     public Animator amBaseEngineEffects;
 
     /// <summary>
-    /// ´ëÇü ÆÞ½º ¿£Áø È¿°ú ¾Ö´Ï¸ÞÀÌÅÍ.
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½.
     /// </summary>
     public Animator amBigPulseEngineEffects;
 
     /// <summary>
-    /// ¿ÀÅäÄ³³í ¾Ö´Ï¸ÞÀÌÅÍ.
+    /// ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½.
     /// </summary>
     public Animator amAutoCannon;
 
     /// <summary>
-    /// ºò½ºÆäÀÌ½º°Ç ¾Ö´Ï¸ÞÀÌÅÍ.
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½.
     /// </summary>
     public Animator amBigSpaceGun;
 
     /// <summary>
-    /// Àü¸é ¹æ¾î¸· ¾Ö´Ï¸ÞÀÌÅÍ (¹æ¾î ±â´ÉÀ» ´ã´çÇÒ °ÍÀ¸·Î ¿¹»óµÊ).
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î¸· ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½).
     /// </summary>
     public Animator FrontSideShield;
 
     /// <summary>
-    /// ¹«±â ÄÁÆ®·Ñ·¯ ÂüÁ¶ (ÇÃ·¹ÀÌ¾îÀÇ ¹«±â ¹ß»ç¸¦ °ü¸®ÇÔ).
+    /// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ç¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½).
     /// </summary>
     public WeaponController weaponCotroller;
 
     /// <summary>
-    /// ÀÔ·ÂµÈ ÀÌµ¿ ¹æÇâ º¤ÅÍ.
+    /// ï¿½Ô·Âµï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
     /// </summary>
     private Vector2 moveInput;
 
     /// <summary>
-    /// »ç¿ëÀÚ ÀÔ·ÂÀ» °ü¸®ÇÏ´Â Ä¿½ºÅÒ ÀÔ·Â ½Ã½ºÅÛ °´Ã¼.
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼.
     /// </summary>
     private MyInputSystemActions inputSystem;
 
     /// <summary>
-    /// Rigidbody2D ÄÄÆ÷³ÍÆ® ÂüÁ¶ (¹°¸® ÀÌµ¿ Ã³¸®¸¦ À§ÇØ ÇÊ¿äÇÔ).
+    /// Rigidbody2D ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½).
     /// </summary>
     private Rigidbody2D rb;
+    /// <summary>
+    /// Main Cameraì˜ í¬ê¸°ë¥¼ ê°€ì ¸ì™€ì„œ Playerì˜ ë°˜ê²½ì„ ì œí•œ.
+    /// </summary>
+    private Camera cam;
 
     /// <summary>
-    /// ÃÊ±âÈ­ ÀÛ¾÷À» ¼öÇàÇÏ´Â Awake ¸Þ¼­µå.
-    /// Rigidbody2D ¹× ÀÔ·Â ½Ã½ºÅÛÀ» ÃÊ±âÈ­ÇÑ´Ù.
+    /// ï¿½Ê±ï¿½È­ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Awake ï¿½Þ¼ï¿½ï¿½ï¿½.
+    /// Rigidbody2D ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ï¿½Ñ´ï¿½.
     /// </summary>
     protected override void Awake()
     {
-        inputSystem = new MyInputSystemActions(); // ÀÔ·Â ½Ã½ºÅÛ ÃÊ±âÈ­
-        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        inputSystem = new MyInputSystemActions(); // ï¿½Ô·ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        cam = Camera.main; // main ì¹´ë©”ë¼ ì €ìž¥.
 
         //if(GameManager.Instance.logging) Debug.Log($"[{TAG}] Awake before base.Awake");
-        base.Awake(); // ³ªÁß¿¡ ½ÇÇàÇØ¾ß Null¿¡·¯ ¾È³²
+        base.Awake(); // ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ Nullï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½
         //if(GameManager.Instance.logging) Debug.Log($"[{TAG}] Awake after base.Awake")
     }
 
     /// <summary>
-    /// °´Ã¼°¡ È°¼ºÈ­µÉ ¶§ È£ÃâµÇ¸ç, ÀÔ·Â ½Ã½ºÅÛÀ» È°¼ºÈ­ÇÏ°í °ø°Ý ÀÌº¥Æ®¸¦ ¹ÙÀÎµùÇÑ´Ù.
+    /// ï¿½ï¿½Ã¼ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½Ç¸ï¿½, ï¿½Ô·ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½Ñ´ï¿½.
     /// </summary>
     private void OnEnable()
     {
-        inputSystem.Enable(); // ÀÔ·Â ½Ã½ºÅÛ È°¼ºÈ­
-        inputSystem.Player.Attack.performed += _ => Attack(); // °ø°Ý ÀÔ·Â ÀÌº¥Æ® µî·Ï
-        inputSystem.Player.Click.performed += _ => Click(); // Å¬¸¯ ÀÔ·Â ÀÌº¥Æ® µî·Ï (¸¶¿ì½º Å¬¸¯µµ °ø°Ý Ã³¸®)
+        inputSystem.Enable(); // ï¿½Ô·ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­
+        inputSystem.Player.Attack.performed += _ => Attack(); // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½
+        inputSystem.Player.Click.performed += _ => Click(); // Å¬ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½)
     }
 
     /// <summary>
-    /// °´Ã¼°¡ ºñÈ°¼ºÈ­µÉ ¶§ È£ÃâµÇ¸ç, °ø°Ý ÀÌº¥Æ®¸¦ ÇØÁ¦ÇÑ´Ù.
+    /// ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½Ç¸ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
     /// </summary>
     private void OnDisable()
     {
-        inputSystem.Player.Attack.performed -= _ => Attack(); // °ø°Ý ÀÔ·Â ÀÌº¥Æ® ÇØÁ¦
-        inputSystem.Player.Click.performed -= _ => Click(); // Å¬¸¯ ÀÔ·Â ÀÌº¥Æ® ÇØÁ¦
-        inputSystem.Disable(); // ÀÔ·Â ½Ã½ºÅÛ ºñÈ°¼ºÈ­
+        inputSystem.Player.Attack.performed -= _ => Attack(); // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+        inputSystem.Player.Click.performed -= _ => Click(); // Å¬ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+        inputSystem.Disable(); // ï¿½Ô·ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
     }
 
     /// <summary>
-    /// ¸Å ÇÁ·¹ÀÓ¸¶´Ù È£ÃâµÇ¸ç, ÇÃ·¹ÀÌ¾îÀÇ ¹æÇâ°ú ÀÌµ¿À» Ã³¸®ÇÑ´Ù.
+    /// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½ È£ï¿½ï¿½Ç¸ï¿½, ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ñ´ï¿½.
     /// </summary>
     private void Update()
     {
-        direction(); // ÇÃ·¹ÀÌ¾î°¡ ¹Ù¶óº¸´Â ¹æÇâ ¾÷µ¥ÀÌÆ®
-        move(); // ÇÃ·¹ÀÌ¾î ÀÌµ¿ Ã³¸®
+        direction(); // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+        move(); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ìµï¿½ Ã³ï¿½ï¿½
     }
 
     /// <summary>
-    /// ÀÏÁ¤ÇÑ °£°ÝÀ¸·Î È£ÃâµÇ¸ç, Rigidbody2D¸¦ ÀÌ¿ëÇØ ½ÇÁ¦ ÀÌµ¿À» Ã³¸®ÇÑ´Ù.
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½Ç¸ï¿½, Rigidbody2Dï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ñ´ï¿½.
     /// </summary>
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + speed * Time.deltaTime * moveInput); // Rigidbody2D ±â¹Ý ÀÌµ¿ Ã³¸®
+        ClampToCameraView(); // Rigidbody2Dì˜ ë²”ìœ„ë¥¼ Cam ë²”ìœ„ ì•ˆìœ¼ë¡œ ì œí•œ.
+        rb.MovePosition(rb.position + speed * Time.deltaTime * moveInput); // Rigidbody2D ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ Ã³ï¿½ï¿½
     }
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾îÀÇ ¹æÇâÀ» Á¤ÇÏ´Â ¸Þ¼­µå.
-    /// ¸¶¿ì½ºÀÇ À§Ä¡¿¡ µû¶ó ¹Ù¶óº¸´Â ¹æÇâÀÌ ´Þ¶óÁø´Ù.
+    /// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½.
+    /// ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¶ï¿½ï¿½ï¿½ï¿½ï¿½.
     /// </summary>
     private void direction()
     {
         if (useMouseDirection)
         {
-            RotateTowardsMouse(transform); // ¸¶¿ì½º¸¦ ¹Ù¶óº¸µµ·Ï È¸Àü
+            RotateTowardsMouse(transform); // ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½Ù¶óº¸µï¿½ï¿½ï¿½ È¸ï¿½ï¿½
         }
     }
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿À» Ã³¸®ÇÏ´Â ¸Þ¼­µå.
-    /// ÀÔ·Â°ªÀ» ¹Þ¾Æ ÀÌµ¿ ¹æÇâÀ» °áÁ¤ÇÏ°í, ¿£Áø È¿°ú¸¦ È°¼ºÈ­ÇÑ´Ù.
+    /// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½.
+    /// ï¿½Ô·Â°ï¿½ï¿½ï¿½ ï¿½Þ¾ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½Ñ´ï¿½.
     /// </summary>
     private void move()
     {
-        moveInput = inputSystem.Player.Move.ReadValue<Vector2>(); // ÀÌµ¿ ÀÔ·Â°ª ¾÷µ¥ÀÌÆ®
+        moveInput = inputSystem.Player.Move.ReadValue<Vector2>(); // ï¿½Ìµï¿½ ï¿½Ô·Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 
         if (moveInput.y > 0)
         {
-            amBaseEngineEffects.SetBool("power", true); // ¿£Áø È¿°ú È°¼ºÈ­
+            amBaseEngineEffects.SetBool("power", true); // ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ È°ï¿½ï¿½È­
         }
         else
         {
-            amBaseEngineEffects.SetBool("power", false); // ¿£Áø È¿°ú ºñÈ°¼ºÈ­
+            amBaseEngineEffects.SetBool("power", false); // ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         }
     }
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾îÀÇ °ø°ÝÀ» ½ÇÇàÇÏ´Â ¸Þ¼­µå.
+    /// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½.
     /// </summary>
     private void Attack()
     {
-        //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // °ø°Ý ¹ß»ý ·Î±× Ãâ·Â
-        //weaponCotroller.Shooting(); // ¹«±â ¹ß»ç          2025 - 03 -23 
-        // am.SetTrigger("shoot");         // 2025 - 03 -23  Ãß°¡
-        //SFXManager.Instance.ShootSound();       // 2025 - 03 -23  Ãß°¡
+        //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½Î±ï¿½ ï¿½ï¿½ï¿½
+        //weaponCotroller.Shooting(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½          2025 - 03 -23 
+        // am.SetTrigger("shoot");         // 2025 - 03 -23  ï¿½ß°ï¿½
+        //SFXManager.Instance.ShootSound();       // 2025 - 03 -23  ï¿½ß°ï¿½
 
         amAutoCannon.SetTrigger("shoot");
     }
 
     /// <summary>
-    /// ¸¶¿ì½º Å¬¸¯ ½Ã ÀÌº¥Æ®
+    /// ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìºï¿½Æ®
     /// </summary>
     private void Click()
     {
@@ -194,26 +201,49 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     /// <summary>
-    /// Æ¯Á¤ À§Ä¡¿¡¼­ ¸¶¿ì½º ¹æÇâ º¤ÅÍ¸¦ ¹ÝÈ¯ÇÏ´Â ÇÔ¼ö.
+    /// Æ¯ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½È¯ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½.
     /// </summary>
     Vector3 GetMouseVectorFromPosition(Vector3 position)
     {
-        Vector2 mouseScreenPos = Mouse.current.position.ReadValue(); // ¸¶¿ì½º È­¸é ÁÂÇ¥ °¡Á®¿À±â
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, 0)); // ¸¶¿ì½ºÀÇ ¿ùµå ÁÂÇ¥ º¯È¯
-        mouseWorldPos.z = 0; // 2D È¯°æÀÌ¹Ç·Î z °ªÀ» 0À¸·Î ¼³Á¤
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue(); // ï¿½ï¿½ï¿½ì½º È­ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, 0)); // ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½È¯
+        mouseWorldPos.z = 0; // 2D È¯ï¿½ï¿½ï¿½Ì¹Ç·ï¿½ z ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        Vector3 mouseDirection = (mouseWorldPos - position).normalized; // ¹æÇâ º¤ÅÍ °è»ê
+        Vector3 mouseDirection = (mouseWorldPos - position).normalized; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         return mouseDirection;
     }
 
     /// <summary>
-    /// ¿ÀºêÁ§Æ®¸¦ ¸¶¿ì½º ¹æÇâÀ¸·Î È¸Àü½ÃÅ°´Â ÇÔ¼ö.
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ô¼ï¿½.
     /// </summary>
     void RotateTowardsMouse(Transform obj)
     {
-        Vector3 direction = GetMouseVectorFromPosition(obj.position); // ÇöÀç À§Ä¡¿¡¼­ ¸¶¿ì½º ¹æÇâ º¤ÅÍ °¡Á®¿À±â
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // ¹æÇâ º¤ÅÍ¸¦ °¢µµ·Î º¯È¯ (º¸Á¤ Æ÷ÇÔ)
-        obj.rotation = Quaternion.Euler(0f, 0f, angle); // È¸Àü Àû¿ë
+        Vector3 direction = GetMouseVectorFromPosition(obj.position); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+        obj.rotation = Quaternion.Euler(0f, 0f, angle); // È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    }
+    /// <summary>
+    /// Rigidbody2Dì˜ ìœ„ì¹˜ê°€ ì¹´ë©”ë¼ë¥¼ ë„˜ì–´ê°€ì§€ ì•Šë„ë¡ ì œí•œí•œë‹¤.
+    /// </summary>
+    void ClampToCameraView()
+    {
+        Vector3 camPos = cam.transform.position; // ì¹´ë©”ë¼ ë·°ì˜ ì¤‘ì•™ ì¢Œí‘œ
+        float height = cam.orthographicSize; // ì¹´ë©”ë¼ì˜ Y í¬ê¸°ì˜ ì ˆë°˜
+        float width = height * cam.aspect; // ì¹´ë©”ë¼ì˜ X í¬ê¸°ì˜ ì ˆë°˜
+
+        // í™”ë©´ì˜ ê²½ê³„ ê³„ì‚° (ì¹´ë©”ë¼ ì¤‘ì‹¬ + í™”ë©´ í¬ê¸°)
+        float minX = camPos.x - width;  // ìµœì†Œ Xê°’ = ì¹´ë©”ë¼ ì¤‘ì•™ - ì¹´ë©”ë¼ X í¬ê¸°ì˜ ì ˆë°˜
+        float maxX = camPos.x + width;  // ìµœëŒ€ Xê°’ = ì¹´ë©”ë¼ ì¤‘ì•™ + ì¹´ë©”ë¼ X í¬ê¸°ì˜ ì ˆë°˜
+        float minY = camPos.y - height; // ìµœì†Œ Yê°’ = ì¹´ë©”ë¼ ì¤‘ì•™ - ì¹´ë©”ë¼ Y í¬ê¸°ì˜ ì ˆë°˜
+        float maxY = camPos.y + height; // ìµœëŒ€ Yê°’ = ì¹´ë©”ë¼ ì¤‘ì•™ + ì¹´ë©”ë¼ Y í¬ê¸°ì˜ ì ˆë°˜
+
+        // ìš°ì£¼ì„  ìœ„ì¹˜ ì œí•œ
+        Vector2 clampedPos = new Vector2(
+            Mathf.Clamp(transform.position.x, minX, maxX),
+            Mathf.Clamp(transform.position.y, minY, maxY)
+        );
+
+        rb.position = clampedPos;
     }
 
 }
