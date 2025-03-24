@@ -108,27 +108,22 @@ public class PSkill : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 스킬이 몬스터와 충돌했을 때
         if (collision.gameObject.CompareTag("Monster"))
         {
+
             IDamageable obj = collision.GetComponent<IDamageable>();
-            obj.TakeDamage(damage);
-
-
-            // 몬스터와 충돌 시 스킬별 효과
-            ApplySkillEffect(collision.gameObject);
-
-
-            // 충돌 이펙트 생성 (필요한 경우)
-            if (effect != null)
+            if (!obj.IsDead)
             {
-                GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
-                Destroy(effectInstance, 1f);  // 이펙트가 1초 후 자동으로 삭제되도록 설정
-            }
+                obj.TakeDamage(damage);
 
-            // 충돌 후 스킬 삭제
-            if (skillType == SkillType.Rocket)
-            {
+                // 충돌 이펙트 생성 (필요한 경우)
+                if (effect != null)
+                {
+                    GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
+                    Destroy(effectInstance, 1f);  // 이펙트가 1초 후 자동으로 삭제되도록 설정
+                }
+
+                // 총알 삭제
                 Destroy(gameObject);
             }
         }
