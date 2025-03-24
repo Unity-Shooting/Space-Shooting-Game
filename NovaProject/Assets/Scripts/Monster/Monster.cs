@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // 모든 몬스터들이 상속 할 추상클래스
@@ -79,17 +80,17 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
     void Die()
     {
-            CancelInvoke("Shooting");
-            ScoreManager.instance.AddScore(Score);
-            Release();
+        CancelInvoke("Shooting");
+        ScoreManager.instance.AddScore(Score);
+        Release();
 
-            Debug.Log("Die");
+        Debug.Log("Die");
 
-            // 파괴 애니메이션 재생
-            var DE = PoolManager.instance.Get(DesturctionEffect);
-            DE.transform.position = transform.position;
-            DE.transform.rotation = transform.rotation;
-            DE.SetActive(true);
+        // 파괴 애니메이션 재생
+        var DE = PoolManager.instance.Get(DesturctionEffect);
+        DE.transform.position = transform.position;
+        DE.transform.rotation = transform.rotation;
+        DE.SetActive(true);
     }
     protected virtual void OnEnable()  // 오브젝트풀에서 가져올 때 활성화(초기화)
     {
@@ -100,7 +101,6 @@ public abstract class Monster : MonoBehaviour, IDamageable
         MoveSpeed = BaseMoveSpeed;
         AttackSpeed = BaseAttackSpeed;
         AttackStart = BaseAttackStart;
-        type = 0;
         isDead = false;
     }
 
@@ -148,4 +148,6 @@ public abstract class Monster : MonoBehaviour, IDamageable
         transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // 이미지가 아래방향이니까 90도 보정
 
     }
+
+
 }

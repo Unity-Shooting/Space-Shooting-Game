@@ -43,13 +43,6 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
 
     protected virtual void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
     {
-        ////테스트용으로 몬스터랑 충돌
-        //if (collision.gameObject.CompareTag("Monster"))
-        //{
-        //    IDamageable obj = collision.GetComponent<IDamageable>();
-        //    obj.TakeDamage(1000);
-        //    Release();
-        //}
 
         if(collision.CompareTag("Player"))
         {
