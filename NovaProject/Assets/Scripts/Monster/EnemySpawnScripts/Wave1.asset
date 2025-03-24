@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa276294b3028f46a38789e832c108a, type: 3}
+  m_Name: Wave1
+  m_EditorClassIdentifier: 
+  memo: "\uAC04\uB2E8\uD558\uACE0 \uAE30\uBCF8\uC801\uC778 \uC2A4\uD3F0 \uD14C\uC2A4\uD2B8!!!!!!"
+  spawnEvents:
+  - memo: 
+    spawnTime: 2
+    monster: {fileID: 1583548365865125169, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
+    position: {x: 1.5, y: 3, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - memo: 
+    spawnTime: 4
+    monster: {fileID: 5373194346479705691, guid: 9fce673cd577229488213aeacf6c4aaf, type: 3}
+    position: {x: -1.5, y: 3, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 3
+    repeatInterval: 1
+  - memo: 
+    spawnTime: 6
+    monster: {fileID: 3593970628241394944, guid: 642627fe64eb7e8479e5bd4bbcf44781, type: 3}
+    position: {x: -2, y: -1, z: 0}
+    direction: {x: 1, y: 1}
+    type: 1
+    repeatCount: 5
+    repeatInterval: 1
+  - memo: 
+    spawnTime: 8
+    monster: {fileID: 4690555114328573488, guid: 1cc08a1e5fcb7754db69222049686854, type: 3}
+    position: {x: -1, y: 3, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - memo: 
+    spawnTime: 8
+    monster: {fileID: 4690555114328573488, guid: 1cc08a1e5fcb7754db69222049686854, type: 3}
+    position: {x: -1, y: 3, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0

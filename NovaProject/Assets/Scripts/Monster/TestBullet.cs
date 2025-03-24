@@ -18,9 +18,12 @@ public class TestBullet : MbBase
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("面倒 惯积");
-        var i = collision.gameObject.GetComponent<IDamageable>();
-        i.TakeDamage(100);
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            Debug.Log("面倒 惯积");
+            var i = collision.gameObject.GetComponent<IDamageable>();
+            i.TakeDamage(100);
+        }
     }
 
 }

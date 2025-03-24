@@ -415,10 +415,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6573a7cd65f5547889f191d0094e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHP: 0
+  BaseHP: 1
   BaseAttack: 0
   BaseMoveSpeed: 1
   BaseAttackSpeed: 1
   BaseAttackStart: 1
   Bullet: {fileID: 6874095946861611724, guid: 56cf9dc1ee3a5644b9897fc0c00ba6e8, type: 3}
+  Score: 100
+  DesturctionEffect: {fileID: 3942192724042061088, guid: 479ab2a61ce52e644b5b48438f3af86b, type: 3}
   Launcher: {fileID: 5200817631940360085}
