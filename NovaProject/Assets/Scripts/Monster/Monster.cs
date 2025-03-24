@@ -75,6 +75,8 @@ public abstract class Monster : MonoBehaviour, IDamageable
         }
     }
 
+
+
     void Die()
     {
             CancelInvoke("Shooting");
