@@ -43,6 +43,10 @@ public class PSkill : MonoBehaviour
         {
             FindTarget(); // 가장 가까운 몬스터를 타겟으로 찾음
         }
+
+        // 3초 후 자동 삭제
+        Destroy(gameObject,3f);
+
     }
 
     void Update()
@@ -72,6 +76,11 @@ public class PSkill : MonoBehaviour
                 Vector3 direction = target.position - transform.position;
                 float step = homingSpeed * Time.deltaTime; // 이동 속도 계산
                 transform.position = Vector2.MoveTowards(transform.position, target.position, step); // 타겟 쪽으로 이동
+            }
+            else
+            {
+                // 타겟이 없으면 위로 이동
+                transform.Translate(Vector2.up * speed * Time.deltaTime);
             }
         }
         else

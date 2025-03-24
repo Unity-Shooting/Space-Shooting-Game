@@ -19,6 +19,10 @@ public class PBullet : MonoBehaviour
             // 타겟 찾기 (E_Bullet일 경우)
             FindTarget();
         }
+
+        // 5초 후 자동 삭제
+        Destroy(gameObject, 5f);
+
     }
 
     void Update()
