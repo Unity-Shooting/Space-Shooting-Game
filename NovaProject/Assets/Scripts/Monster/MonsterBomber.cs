@@ -8,12 +8,10 @@ public class MonsterBomber : Monster
     /// 정지하는데 걸리는 시간
     /// </summary>
     [SerializeField] private float stopDuration;
-    protected override void OnEnable()  // Start()랑 같은 역할 한다고 보시면 됩니다
+    protected override void StartAfterInit()
     {
-        base.OnEnable();    // 상속받은 Monster 클래스의 OnEnable() 실행. 공통적인 변수들 초기화는 저기서 했음
-
-        InvokeRepeating("Shoot", AttackStart, AttackSpeed);
-        StartCoroutine(StopDuringDuration(type, stopDuration));
+        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // 사격 시작
+        StartCoroutine(StopDuringDuration(type, stopDuration));  // type초 후 stopDuration동안 서서히 정지
     }
     void Update()
     {

@@ -57,7 +57,20 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
         // 방향벡터에 맞춰서 이미지 회전
         RotateToDirection();
+        StartAfterInit();
     }
+
+    /// <summary>
+    /// Start()랑 비슷한 역할로 사용
+    /// OnEable()는 오브젝트풀에서 재활용된 오브젝트들의 초기값을 프리팹거로 초기화해주는 기능이고
+    /// 이건 Invoke, Coroutine등을 시작할 때 쓰면 됨
+    /// 분리한 이유 : OnEnable는 Init() 전에 호출되기 때문에 스폰할때 지정한 위치, 방향,type등이 초기화되지 않은 상태에서 실행됨
+    /// </summary>
+    protected virtual void StartAfterInit()
+    {
+
+    }
+
     public virtual void Move() // dir 방향으로 speed 속도로 이동
     {
         transform.Translate(MoveSpeed * Time.deltaTime * direction, Space.World);
