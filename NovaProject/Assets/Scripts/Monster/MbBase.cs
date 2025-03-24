@@ -51,6 +51,12 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
         //    Release();
         //}
 
+        if(collision.CompareTag("Player"))
+        {
+            PlayerHealth.Instance.TakeDamage(Attack);
+            Release();
+        }
+
     }
 
     protected virtual void OnBecameInvisible()
