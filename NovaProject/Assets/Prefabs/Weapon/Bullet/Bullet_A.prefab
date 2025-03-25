@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ca876d49c6c7046b0047729184a09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  attack: 12
+  speed: 5
+  damage: 10
   effect: {fileID: 9004376150018468411, guid: 5a913314a7afa814bb6cfd7daff3a802, type: 3}
   isHoming: 0
   homingSpeed: 5

@@ -10,9 +10,10 @@ namespace WeaponEun
     public enum WeaponType
     {
         // 임시 무기 이름
-        ElectroGun,
-        FlameCannon,
-        AquaCannon
+        Laser,
+        Rocket,
+        Missile
+
     }
 
     public class WeaponManager : MonoBehaviour
@@ -21,20 +22,20 @@ namespace WeaponEun
         public WeaponType currentWeapon;
 
         // 총알 프리팹
-        public GameObject[] E_Bullet, F_Bullet, A_Bullet;
-
+        public GameObject[] Bullet_1, Bullet_2, Bullet_3;
 
         // 스킬 프리팹
-        public GameObject E_Skill, F_Skill, A_Skill;
+        public GameObject Skill_1, Skill_2, Skill_3;
 
         // 총알 발사 위치 (Player의 발사 위치)
         public Transform firePoint1, firePoint2, firePoint3;
 
+        // 총알 파워(업그레이드 단계)
         public int power = 0;
         private GameObject powerup;
-        
+
         // Rocket 관련 변수
-        private bool isRocket = false;
+        private bool isRocket = false; // Rocket 스킬 활성화 여부
         private float rocketTime = 4f; // 로켓 발사 지속 시간 (초)
         private float rocketCool = 0.3f; // 발사 간격 (초)
         private float rocketTimer = 0f; // 발사 타이머
@@ -45,19 +46,102 @@ namespace WeaponEun
         private float missileCool = 0.3f; // Missile 발사 간격 (초)
         private float missileTimer = 0f; // Missile 발사 타이머
 
-
+        // 스킬 쿨타임 관리
         private bool isSkillOnCooldown = false; // 스킬 쿨타임 여부
         private float skillCooldown = 10f; // 스킬 쿨타임
         private float skillCooldownTimer = 0f; // 스킬 쿨타임 타이머
 
 
 
-        // 업그레이드 메소드
+        // 무기 프리팹들을 저장할 변수
+        public GameObject[] weaPrefabs; // 엔진 프리팹 배열
+        private int currentWeaIndex = 0; // 현재 활성화된 엔진의 인덱스
+
+        // 엔진 프리팹들을 저장할 변수
+        public GameObject[] enginePrefabs; // 엔진 프리팹 배열
+        private int currentEngineIndex = 0; // 현재 활성화된 엔진의 인덱스
+
+        // 무기 모양을 변경하는 함수
+        public void ChangeWeapon()
+        {
+            // 현재 엔진을 비활성화
+            weaPrefabs[currentWeaIndex].SetActive(false);
+
+            // 새로운 엔진 인덱스를 설정
+            currentWeaIndex = (currentWeaIndex + 1) % weaPrefabs.Length;
+
+            // 새로운 엔진을 활성화
+            SetWeaponActive(currentWeaIndex);
+        }
+
+        // 무기를 원래대로 되돌리는 함수
+        public void ResetWeapon()
+        {
+            // 현재 무기를 비활성화
+            weaPrefabs[currentWeaIndex].SetActive(false);
+
+            // 무기 인덱스를 0으로 초기화하여 기본 엔진을 활성화
+            currentWeaIndex = 0;
+
+            // 기본 무기를 활성화
+            SetWeaponActive(currentWeaIndex);
+        }
+
+        // 지정된 인덱스의 무기를 활성화/비활성화하는 함수
+        private void SetWeaponActive(int index)
+        {
+            if (index >= 0 && index < weaPrefabs.Length)
+            {
+                weaPrefabs[index].SetActive(true);
+            }
+        }
+
+        // 엔진 모양을 변경하는 함수
+        public void ChangeEngine()
+        {
+            // 현재 엔진을 비활성화
+            enginePrefabs[currentEngineIndex].SetActive(false);
+
+            // 새로운 엔진 인덱스를 설정
+            currentEngineIndex = (currentEngineIndex + 1) % enginePrefabs.Length;
+
+            // 새로운 엔진을 활성화
+            SetEngineActive(currentEngineIndex);
+        }
+
+        // 엔진을 원래대로 되돌리는 함수
+        public void ResetEngine()
+        {
+            // 현재 엔진을 비활성화
+            enginePrefabs[currentEngineIndex].SetActive(false);
+
+            // 엔진 인덱스를 0으로 초기화하여 기본 엔진을 활성화
+            currentEngineIndex = 0;
+
+            // 기본 엔진을 활성화
+            SetEngineActive(currentEngineIndex);
+        }
+
+        // 지정된 인덱스의 엔진을 활성화/비활성화하는 함수
+        private void SetEngineActive(int index)
+        {
+            if (index >= 0 && index < enginePrefabs.Length)
+            {
+                enginePrefabs[index].SetActive(true);
+            }
+        }
+
+
+
+
+        // 총알 업그레이드 메소드
         public void UpgradeWeapon()
         {
             power += 1;
             if (power > 2)
                 power = 2;
+
+            Debug.Log("power up");
 
             //파워업 메세지 출력
             /*GameObject go = Instantiate(powerup, transform.position, Quaternion.identity);
@@ -71,9 +155,9 @@ namespace WeaponEun
             PBullet bulletScript2 = null; // 두 번째 총알에 대한 PBullet 참조 변수 초기화
             switch (currentWeapon)
             {
-                case WeaponType.ElectroGun:
+                case WeaponType.Laser:
                     // 첫 번째 총알 발사
-                    GameObject eBullet1 = Instantiate(E_Bullet[power], firePoint1.position, firePoint1.rotation);
+                    GameObject eBullet1 = Instantiate(Bullet_1[power], firePoint1.position, firePoint1.rotation);
                     bulletScript1 = eBullet1.GetComponent<PBullet>();
                     if (bulletScript1 != null)
                     {
@@ -81,7 +165,7 @@ namespace WeaponEun
                     }
 
                     // 두 번째 총알 발사
-                    GameObject eBullet2 = Instantiate(E_Bullet[power], firePoint2.position, firePoint2.rotation);
+                    GameObject eBullet2 = Instantiate(Bullet_1[power], firePoint2.position, firePoint2.rotation);
                     bulletScript2 = eBullet2.GetComponent<PBullet>();
                     if (bulletScript2 != null)
                     {
@@ -92,21 +176,23 @@ namespace WeaponEun
 
                     break;
 
-                case WeaponType.FlameCannon:
-                    Instantiate(F_Bullet[power], firePoint1.position, firePoint1.rotation);
-                    Instantiate(F_Bullet[power], firePoint2.position, firePoint2.rotation);
+
+                case WeaponType.Rocket:
+                    Instantiate(Bullet_2[power], firePoint1.position, firePoint1.rotation);
+                    Instantiate(Bullet_2[power], firePoint2.position, firePoint2.rotation);
 
                     SFXManager.Instance.ShootSound();
 
                     break;
 
-                case WeaponType.AquaCannon:
-                    Instantiate(A_Bullet[power], firePoint1.position, firePoint1.rotation);
-                    Instantiate(A_Bullet[power], firePoint2.position, firePoint2.rotation);
+                case WeaponType.Missile:
+                    Instantiate(Bullet_3[power], firePoint1.position, firePoint1.rotation);
+                    Instantiate(Bullet_3[power], firePoint2.position, firePoint2.rotation);
 
                     SFXManager.Instance.ShootSound();
 
                     break;
+
 
                 default:
                     Debug.LogError("알 수 없는 무기 유형입니다.");
@@ -114,7 +200,6 @@ namespace WeaponEun
 
             }
         }
-
 
 
         // 스킬 발사 메소드
@@ -131,19 +216,19 @@ namespace WeaponEun
 
             switch (currentWeapon)
             {
-                case WeaponType.ElectroGun:
-                    Instantiate(E_Skill, firePoint3.position, firePoint3.rotation);
+                case WeaponType.Laser:
+                    Instantiate(Skill_1, firePoint1.position, firePoint1.rotation);
                     break;
 
-                case WeaponType.FlameCannon:
-                    isRocket = true;
-                    rocketTime = 4f;
-                    rocketTimer = rocketCool;
+                case WeaponType.Rocket:
+                    isRocket = true; // rocket 스킬 활성화
+                    rocketTime = 4f; // 지속 시간 설정
+                    rocketTimer = rocketCool; // 발사 간격 설정
                     break;
 
-                case WeaponType.AquaCannon:
+                case WeaponType.Missile:
                     isMissile = true; // Missile 스킬 활성화
-                    missileTime = 4f; // 발사 지속 시간 설정
+                    missileTime = 4f; // 지속 시간 설정
                     missileTimer = missileCool; // 발사 간격 설정
                     break;
 
@@ -159,32 +244,60 @@ namespace WeaponEun
             switch (weaponIndex)
             {
                 case 1:
-                    currentWeapon = WeaponType.ElectroGun;
-                    Debug.Log("ElectroGun 장착됨");
+                    currentWeapon = WeaponType.Laser;
+                    Debug.Log("Laser 장착됨");
                     break;
                 case 2:
-                    currentWeapon = WeaponType.FlameCannon;
-                    Debug.Log("FlameCannon 장착됨");
+                    currentWeapon = WeaponType.Rocket;
+                    Debug.Log("Rocket 장착됨");
                     break;
                 case 3:
-                    currentWeapon = WeaponType.AquaCannon;
-                    Debug.Log("AquaCannon 장착됨");
+                    currentWeapon = WeaponType.Missile;
+                    Debug.Log("Missile 장착됨");
                     break;
                 default:
                     Debug.LogError("잘못된 무기 인덱스: " + weaponIndex);
                     break;
             }
+
+            // 무기와 엔진을 변경하려면 이곳에서 엔진과 무기 상태를 저장하도록 수정
+            // Reset을 먼저 해줘야 기본 상태로 되돌아가고, 그 후에 변경
+            ResetEngine(); // 엔진 상태 초기화
+            ResetWeapon(); // 무기 상태 초기화
+
+            if (weaponIndex == 2)
+            {
+                // Laser 무기일 경우 엔진과 무기를 변경
+                ChangeEngine();
+                ChangeWeapon();
+            }
+            else if (weaponIndex == 1)
+            {
+                // AutoCannon 무기일 경우 엔진과 무기를 변경
+                ChangeEngine();
+                ChangeWeapon();
+            }
+            else if (weaponIndex == 3)
+            {
+                // test 무기일 경우 엔진과 무기를 변경
+                ChangeEngine();
+                ChangeWeapon();
+            }
+
+
+
         }
 
 
         void Start()
         {
-
+            // 시작 시 첫 번째 엔진을 활성화하고 나머지는 비활성화
+            SetEngineActive(currentEngineIndex);
         }
 
         void Update()
         {
-            // B키로 스킬 사용 (WeaponManager 안에서 처리)
+            // B키로 스킬 사용 
             if (Input.GetKeyDown(KeyCode.B))
             {
                 FireSkill();
@@ -213,10 +326,10 @@ namespace WeaponEun
             // 스킬 쿨타임 타이머 업데이트
             if (isSkillOnCooldown)
             {
-                skillCooldownTimer -= Time.deltaTime;
+                skillCooldownTimer -= Time.deltaTime; // 프레임당 경과 시간을 쿨타임 타이머에서 차감
                 if (skillCooldownTimer <= 0f)
                 {
-                    isSkillOnCooldown = false;
+                    isSkillOnCooldown = false; // 쿨타임이 끝났음을 표시
                 }
             }
 
@@ -224,33 +337,33 @@ namespace WeaponEun
             // 로켓 스킬 처리
             if (isRocket)
             {
-                rocketTimer -= Time.deltaTime;
+                rocketTimer -= Time.deltaTime; // 로켓 발사 간격 타이머 업데이트
 
                 if (rocketTimer <= 0f)
                 {
-                    Instantiate(F_Skill, firePoint3.position, firePoint3.rotation);
-                    rocketTimer = rocketCool;
+                    Instantiate(Skill_2, firePoint3.position, firePoint3.rotation); // 로켓 발사
+                    rocketTimer = rocketCool; // 발사 간격 타이머 리셋
                 }
 
-                rocketTime -= Time.deltaTime;
+                rocketTime -= Time.deltaTime; // 로켓 스킬의 전체 지속시간 업데이트
                 if (rocketTime <= 0f)
                 {
-                    isRocket = false;
+                    isRocket = false; // 로켓 스킬 종료
                 }
             }
 
             // Missile 스킬 처리
             if (isMissile)
             {
-                missileTimer -= Time.deltaTime;
+                missileTimer -= Time.deltaTime; // 미사일 발사 간격 타이머 업데이트
 
                 if (missileTimer <= 0f)
                 {
-                    Instantiate(A_Skill, firePoint3.position, firePoint3.rotation); // Missile 발사
+                    Instantiate(Skill_3, firePoint3.position, firePoint3.rotation); // Missile 발사
                     missileTimer = missileCool; // 타이머 리셋
                 }
 
-                missileTime -= Time.deltaTime;
+                missileTime -= Time.deltaTime; // 미사일 스킬의 전체 지속시간 업데이트
                 if (missileTime <= 0f)
                 {
                     isMissile = false; // Missile 스킬 종료

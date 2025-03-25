@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int attackIncrease = 5; // 아이템으로 증가하는 공격력
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

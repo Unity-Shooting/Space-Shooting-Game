@@ -17,6 +17,7 @@ public class PlayerMove : MonoBehaviour
     // 이동 입력값
     private Vector2 moveInput;
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>(); // Rigidbody2D 초기화
@@ -26,7 +27,6 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()
@@ -34,8 +34,6 @@ public class PlayerMove : MonoBehaviour
 
         // 이동 입력 업데이트
         moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        
 
     }
 

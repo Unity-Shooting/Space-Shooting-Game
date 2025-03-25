@@ -12,29 +12,29 @@ public class PSkill : MonoBehaviour
     public float speed = 5.0f; // 스킬 속도
     public int damage = 20; // 스킬 기본 공격력
     public SkillType skillType; // 스킬 유형
-    public GameObject effect; // 스킬 사용 시 효과 프리팹
+    public GameObject effect; // 스킬 사용 시 생성될 이펙트 프리팹
 
     // Laser 관련 변수
     private Transform pos; // 플레이어의 위치를 저장할 변수
     private float laserT = 4.0f; // 레이저 지속 시간 (초)
-    private float laserTimer = 0f; // 타이머 변수
+    private float laserTimer = 0f; // 레이저 지속 시간을 추적하는 타이머
 
     // Rocket 관련 변수
-    private Transform target; // 타겟 몬스터의 위치
+    private Transform target; // 로켓 타겟이 되는 몬스터의 위치
     private float homingSpeed = 5.0f; // 타겟팅 속도
     private float homingRange = 10f; // 타겟팅 범위
 
-    
+
 
 
     void Start()
     {
-        // 플레이어의 Transform을 가져와서 playerTransform에 할당
+        // 플레이어 위치를 가져와 저장
         pos = GameObject.FindWithTag("Player").transform;
 
         if (skillType == SkillType.Laser)
         {
-            // 레이저가 소환되면 타이머 시작
+            // 레이저 스킬이 활성화되면 타이머 시작
             laserTimer = laserT;
         }
 
@@ -44,8 +44,8 @@ public class PSkill : MonoBehaviour
             FindTarget(); // 가장 가까운 몬스터를 타겟으로 찾음
         }
 
-        // 3초 후 자동 삭제
-        Destroy(gameObject,3f);
+        // 스킬 3초 후 자동 삭제
+        Destroy(gameObject, 3f);
 
     }
 
@@ -54,21 +54,21 @@ public class PSkill : MonoBehaviour
         // Laser 스킬만 플레이어 위치에 맞게 이동
         if (skillType == SkillType.Laser)
         {
+
             if (pos != null)
             {
-                // 레이저는 플레이어 위치에 따라 고정되며, 플레이어 위치에서 y축 5.5만큼 위에 위치
                 transform.position = pos.position + (Vector3.up * 5.5f);
             }
 
-            // 레이저가 활성화된 시간이 지나면 삭제
-            laserTimer -= Time.deltaTime; // 매 프레임마다 타이머 감소
 
+            // 레이저 지속 시간이 끝나면 삭제
+            laserTimer -= Time.deltaTime; // 매 프레임마다 타이머 감소
             if (laserTimer <= 0f)
             {
                 Destroy(gameObject); // 타이머가 0 이하가 되면 레이저 삭제
             }
         }
-        if (skillType == SkillType.Rocket)
+        else if (skillType == SkillType.Rocket)
         {
             if (target != null)
             {
@@ -90,21 +90,22 @@ public class PSkill : MonoBehaviour
         }
     }
 
-    
+
 
     // 타겟팅 범위 내에서 가장 가까운 몬스터를 찾는 메소드
     private void FindTarget()
     {
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster");
-        float closestDistance = Mathf.Infinity; // 가장 가까운 몬스터의 거리
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster"); // 몬스터 태그로 검색
+        float closestDistance = Mathf.Infinity; // 최소 거리를 무한대로 초기화
 
+        // 모든 몬스터를 순회하면서 가장 가까운 몬스터를 찾음
         foreach (GameObject monster in monsters)
         {
-            float distance = Vector3.Distance(transform.position, monster.transform.position);
+            float distance = Vector3.Distance(transform.position, monster.transform.position); // 현재 총알 위치와 몬스터 거리 계산
             if (distance < closestDistance && distance <= homingRange)
             {
-                closestDistance = distance;
-                target = monster.transform; // 가장 가까운 몬스터를 타겟으로 설정
+                closestDistance = distance; // 최소 거리 갱신
+                target = monster.transform; // 타겟으로 설정
             }
         }
     }
@@ -125,7 +126,7 @@ public class PSkill : MonoBehaviour
             {
                 obj.TakeDamage(damage);
 
-                // 충돌 이펙트 생성 (필요한 경우)
+                // 충돌 이펙트 생성 
                 if (effect != null)
                 {
                     GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
@@ -141,6 +142,9 @@ public class PSkill : MonoBehaviour
     private void ApplySkillEffect(GameObject monster)
     {
         // 스킬 유형별 효과 적용
+
+/*
+
         switch (skillType)
         {
             case SkillType.Laser:
@@ -162,6 +166,9 @@ public class PSkill : MonoBehaviour
                 Debug.LogError("알 수 없는 스킬 유형");
                 break;
         }
+
+*/
+
     }
 
 }
