@@ -2,34 +2,48 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int attackIncrease = 5; // ¾ÆÀÌÅÛÀ¸·Î Áõ°¡ÇÏ´Â °ø°İ·Â
+    public int attackIncrease = 5; // ì•„ì´í…œìœ¼ë¡œ ì¦ê°€í•˜ëŠ” ê³µê²©ë ¥
+
+    /*
+     * ëŒ€í˜„ ì‘ì„±  : 2025 - 03 - 25
+     */
+    //ì•„ì´í…œ ê°€ì† ì†ë„
+    public float ItemVelocity = 20f; //ì•„ì´í…œì— ì ìš©í•  ì†ë„ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë³€ìˆ˜
+    Rigidbody2D rig = null; //2D ë¬¼ë¦¬ ì—”ì§„ì—ì„œ ë¬¼ì²´ì— ë¬¼ë¦¬ì  ìƒí˜¸ì‘ìš©ì„ ì²˜ë¦¬í•˜ëŠ” ì»´í¬ë„ŒíŠ¸ë¥¼ ì €ì¥í•  ë³€ìˆ˜
+    /**/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Player¿Í Ãæµ¹! ¾ÆÀÌÅÛ È¿°ú ¹ßµ¿!");
+            Debug.Log("Playerì™€ ì¶©ëŒ! ì•„ì´í…œ íš¨ê³¼ ë°œë™!");
             WeaponEun.WeaponManager weaponManager = collision.GetComponent<WeaponEun.WeaponManager>();
             if (weaponManager != null)
             {
-                weaponManager.UpgradeWeapon(); // ¾÷±×·¹ÀÌµå ¸Ş¼­µå È£Ãâ
+                weaponManager.UpgradeWeapon(); // ì—…ê·¸ë ˆì´ë“œ ë©”ì„œë“œ í˜¸ì¶œ
             }
             else
             {
-                Debug.LogError("WeaponManager¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. ÇÃ·¹ÀÌ¾î¿¡ WeaponManager°¡ ºÙ¾îÀÖ´ÂÁö È®ÀÎÇÏ¼¼¿ä.");
+                Debug.LogError("WeaponManagerë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. í”Œë ˆì´ì–´ì— WeaponManagerê°€ ë¶™ì–´ìˆëŠ”ì§€ í™•ì¸í•˜ì„¸ìš”.");
             }
 
-            Destroy(gameObject); // ¾ÆÀÌÅÛ Á¦°Å
+            Destroy(gameObject); // ì•„ì´í…œ ì œê±°
         }
         else
         {
-            Debug.Log("Ãæµ¹ÇßÁö¸¸ Player°¡ ¾Æ´Ô: " + collision.name);
+            Debug.Log("ì¶©ëŒí–ˆì§€ë§Œ Playerê°€ ì•„ë‹˜: " + collision.name);
         }
     }
 
     void Start()
     {
-
+        /*
+        * ëŒ€í˜„ ì‘ì„±  : 2025 - 03 - 25
+        */
+        {
+            rig = GetComponent<Rigidbody2D>(); //í˜„ì¬ ê²Œì„ ê°ì²´ì— ì—°ê²°ëœ Rigidbody2D ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜¤ê¸°
+            rig.AddForce(new Vector3(ItemVelocity, ItemVelocity, 0f));  //í˜ì„ ì¶”ê°€í•˜ëŠ” ë©”ì„œë“œ ... ì›€ì§ì´ê²Œ í•˜ëŠ” ì½”ë“œ
+        }
     }
 
     void Update()

@@ -39,7 +39,7 @@ public class PWRManager : MonoBehaviour
         {
             StartCoroutine(FillOverTime(duration));
         }
-        if (Input.GetKeyDown(KeyCode.B) && Ammo.fillAmount == 1f)
+        if (Input.GetKeyDown(KeyCode.B) && Ammo.fillAmount == 1f) 
         {
             StartCoroutine(FillOverTimeAmmo(duration));
         }
