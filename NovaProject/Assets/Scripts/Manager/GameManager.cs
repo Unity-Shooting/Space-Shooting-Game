@@ -1,22 +1,22 @@
 using UnityEngine;
 
 /// <summary>
-/// 게임을 총괄하는 GameManager 클래스.
+/// 寃뚯엫?쓣 珥앷큵?븯?뒗 GameManager ?겢?옒?뒪.
 /// </summary>
 public class GameManager : Singleton<GameManager>
 {
     /// <summary>
-    /// GameManager의 로그 태그.
+    /// GameManager?쓽 濡쒓렇 ?깭洹?.
     /// </summary>
     private const string TAG = "GameManager";
 
     /// <summary>
-    /// 디버깅 로그 출력 ON/OFF
+    /// ?뵒踰꾧퉭 濡쒓렇 異쒕젰 ON/OFF
     /// </summary>
     public bool logOn = true;
 
     /// <summary>
-    /// 초기화 함수.
+    /// 珥덇린?솕 ?븿?닔.
     /// </summary>
     protected override void Awake()
     {
@@ -32,17 +32,17 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
-    /// 프레임마다 호출되는 업데이트 함수.
+    /// ?봽?젅?엫留덈떎 ?샇異쒕릺?뒗 ?뾽?뜲?씠?듃 ?븿?닔.
     /// </summary>
     void Update()
     {
-        // TODO: 플레이어의 체력이 0 이하이면 게임 종료 등의 문구 띄우기
-        // TODO: UI 화면에 표시하기
+        // TODO: ?뵆?젅?씠?뼱?쓽 泥대젰?씠 0 ?씠?븯?씠硫? 寃뚯엫 醫낅즺 ?벑?쓽 臾멸뎄 ?쓣?슦湲?
+        // TODO: UI ?솕硫댁뿉 ?몴?떆?븯湲?
         //if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] health : {PlayerHealth.Instance.hp}");
     }
 
     /// <summary>
-    /// GameManager의 UI 변경 함수를 실행하는 테스트 함수.
+    /// GameManager?쓽 UI 蹂?寃? ?븿?닔瑜? ?떎?뻾?븯?뒗 ?뀒?뒪?듃 ?븿?닔.
     /// </summary>
     public void changeUI()
     {
