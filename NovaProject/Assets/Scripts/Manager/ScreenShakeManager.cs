@@ -2,30 +2,30 @@ using Unity.Cinemachine;
 using UnityEngine;
 
 /// <summary>
-/// È­¸é Èçµé¸² È¿°ú¸¦ °ü¸®ÇÏ´Â Å¬·¡½ºÀÔ´Ï´Ù.
+/// í™”ë©´ í”ë“¤ë¦¼ íš¨ê³¼ë¥¼ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
 /// </summary>
 public class ScreenShakeManager : Singleton<ScreenShakeManager>
 {
     /// <summary>
-    /// CinemachineÀÇ Ãæ°İ ¼Ò½º¸¦ ÀúÀåÇÏ´Â º¯¼öÀÔ´Ï´Ù.
+    /// Cinemachineì˜ ì¶©ê²© ì†ŒìŠ¤ë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜ì…ë‹ˆë‹¤. 
     /// </summary>
     private CinemachineImpulseSource source;
 
     /// <summary>
-    /// ½Ì±ÛÅæ ÀÎ½ºÅÏ½º°¡ ÃÊ±âÈ­µÉ ¶§ È£ÃâµË´Ï´Ù.
+    /// ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ê°€ ì´ˆê¸°í™”ë  ë•Œ í˜¸ì¶œë©ë‹ˆë‹¤.
     /// </summary>
     protected override void Awake()
     {
-        source = GetComponent<CinemachineImpulseSource>(); // CinemachineImpulseSource ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿È
+        source = GetComponent<CinemachineImpulseSource>(); // CinemachineImpulseSource ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜´
         
-        base.Awake(); // ½Ì±ÛÅæ ÆĞÅÏ¿¡¼­ ±âº» Awake ½ÇÇà
+        base.Awake(); // ì‹±ê¸€í†¤ íŒ¨í„´ì—ì„œ ê¸°ë³¸ Awake ì‹¤í–‰
     }
 
     /// <summary>
-    /// È­¸é Èçµé¸² È¿°ú¸¦ ½ÇÇàÇÏ´Â ¸Ş¼­µåÀÔ´Ï´Ù.
+    /// í™”ë©´ í”ë“¤ë¦¼ íš¨ê³¼ë¥¼ ì‹¤í–‰í•˜ëŠ” ë©”ì„œë“œì…ë‹ˆë‹¤.
     /// </summary>
     public void ShakeScreen()
     {
-        source.GenerateImpulse(); // Ãæ°İÀ» ¹ß»ı½ÃÄÑ Ä«¸Ş¶ó Èçµé¸² È¿°ú Àû¿ë
+        source.GenerateImpulse(); // ì¶©ê²©ì„ ë°œìƒì‹œì¼œ ì¹´ë©”ë¼ í”ë“¤ë¦¼ íš¨ê³¼ ì ìš©
     }
 }
