@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +27,21 @@ public class PlayerController : Singleton<PlayerController>
     /// 플레이어 이동 속도.
     /// </summary>
     public float speed = 5f;
+
+    /// <summary>
+    /// 실드 지속 시간
+    /// </summary>
+    public float shieldDuration = 3f;
+
+    /// <summary>
+    /// 실드 남은 쿨타임
+    /// </summary>
+    public float shieldCoolTime = 10f;
+
+    /// <summary>
+    /// 실드 가능
+    /// </summary>
+    private bool isShieldReady = true;
 
     /// <summary>
     /// 마우스 방향대로 플레이어 방향을 바라보도록 설정하는 플래그.
@@ -73,6 +89,11 @@ public class PlayerController : Singleton<PlayerController>
     public Animator FrontSideShield;
 
     /// <summary>
+    /// 방어막 애니메이터
+    /// </summary>
+    public GameObject RoundShield;
+
+    /// <summary>
     /// 무기 컨트롤러 참조 (플레이어의 무기 발사를 관리함).
     /// </summary>
     public WeaponController weaponCotroller;
@@ -118,8 +139,9 @@ public class PlayerController : Singleton<PlayerController>
     private void OnEnable()
     {
         inputSystem.Enable(); // 입력 시스템 활성화
-        inputSystem.Player.Attack.performed += _ => Attack(); // 공격 입력 이벤트 등록
-        inputSystem.Player.Click.performed += _ => Click(); // 클릭 입력 이벤트 등록 (마우스 클릭도 공격 처리)
+        inputSystem.Player.Space.performed += _ => Attack(); // 공격 입력 이벤트 등록
+        inputSystem.Player.LeftClick.performed += _ => Click(); // 클릭 입력 이벤트 등록 (마우스 클릭도 공격 처리)
+        inputSystem.Player.Shift.performed += _ => Shield(); // 실드
     }
 
     /// <summary>
@@ -127,8 +149,9 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     private void OnDisable()
     {
-        inputSystem.Player.Attack.performed -= _ => Attack(); // 공격 입력 이벤트 해제
-        inputSystem.Player.Click.performed -= _ => Click(); // 클릭 입력 이벤트 해제
+        inputSystem.Player.Space.performed -= _ => Attack(); // 공격 입력 이벤트 해제
+        inputSystem.Player.LeftClick.performed -= _ => Click(); // 클릭 입력 이벤트 해제
+        inputSystem.Player.Shift.performed -= _ => Shield(); // 실드 이벤트 해제
         inputSystem.Disable(); // 입력 시스템 비활성화
     }
 
@@ -194,11 +217,52 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     /// <summary>
-    /// 마우스 클릭 시 이벤트
+    /// 마우스 왼쪽 버튼 클릭 시 이벤트
     /// </summary>
     private void Click()
     {
 
+    }
+
+    /// <summary>
+    /// 플레이어가 실드를 활성화하는 메서드
+    /// </summary>
+    private void Shield()
+    {
+        if (isShieldReady) // 실드가 사용 가능한 상태인지 확인
+        {
+            isShieldReady = false; // 실드 사용 가능 상태를 비활성화
+            PlayerHealth.Instance.isShieldOn = true; // 플레이어의 체력 시스템에서 실드 활성화
+            RoundShield.SetActive(true); // 실드 오브젝트 활성화
+            StartCoroutine(CloseShield()); // 실드를 일정 시간이 지난 후 비활성화하는 코루틴 시작
+        }
+        else
+        {
+            if (GameManager.Instance.logOn) Debug.Log($"실드 쿨타임 : {shieldCoolTime}");
+        }
+    }
+
+    /// <summary>
+    /// 일정 시간이 지나면 실드를 비활성화하고, 쿨타임을 초기화하는 코루틴
+    /// </summary>
+    IEnumerator CloseShield()
+    {
+        float maxShieldCoolTime = shieldCoolTime; // 실드의 최대 쿨타임을 저장
+        for (int i = 0; i < maxShieldCoolTime; i++) // 실드 지속 시간 동안 반복
+        {
+            yield return new WaitForSeconds(1f); // 1초 대기
+            shieldCoolTime--; // 남은 쿨타임 감소
+            if (i == shieldDuration - 1) // 실드 지속 시간이 끝나면 실드 비활성화
+            {
+                PlayerHealth.Instance.isShieldOn = false;
+                RoundShield.SetActive(false);
+            }
+            if (i == maxShieldCoolTime - 1) // 쿨타임이 끝나면 실드를 다시 사용할 수 있도록 설정
+            {
+                isShieldReady = true;
+                shieldCoolTime = maxShieldCoolTime;
+            }
+        }
     }
 
     /// <summary>
