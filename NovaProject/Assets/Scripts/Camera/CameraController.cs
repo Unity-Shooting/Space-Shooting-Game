@@ -5,39 +5,39 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     /// <summary>
-    /// Cinemachine Ä«¸Ş¶ó ¹è¿­ (¿©·¯ °³ÀÇ Ä«¸Ş¶ó ¼³Á¤)
+    /// Cinemachine ì¹´ë©”ë¼ ë°°ì—´ (ì—¬ëŸ¬ ê°œì˜ ì¹´ë©”ë¼ ì„¤ì •) 
     /// </summary>
     public CinemachineCamera[] ccs;
 
     /// <summary>
-    /// ÇöÀç È°¼ºÈ­µÈ Ä«¸Ş¶ó ¹øÈ£ (0ºÎÅÍ ½ÃÀÛ)
+    /// í˜„ì¬ í™œì„±í™”ëœ ì¹´ë©”ë¼ ë²ˆí˜¸ (0ë¶€í„° ì‹œì‘)
     /// </summary>
     public int cameraNum = 0;
 
     /// <summary>
-    /// ÀÌÀü¿¡ È°¼ºÈ­µÈ Ä«¸Ş¶ó ¹øÈ£ (º¯°æÀ» ÃßÀûÇÏ±â À§ÇØ »ç¿ë)
+    /// ì´ì „ì— í™œì„±í™”ëœ ì¹´ë©”ë¼ ë²ˆí˜¸ (ë³€ê²½ì„ ì¶”ì í•˜ê¸° ìœ„í•´ ì‚¬ìš©)
     /// </summary>
     private int pastCameraNum = 0;
 
     void Update()
     {
-        if (pastCameraNum != cameraNum) // ÀÌÀü Ä«¸Ş¶ó¿Í ÇöÀç Ä«¸Ş¶ó ¹øÈ£°¡ ´Ù¸£¸é Ä«¸Ş¶ó¸¦ º¯°æ
+        if (pastCameraNum != cameraNum) // ì´ì „ ì¹´ë©”ë¼ì™€ í˜„ì¬ ì¹´ë©”ë¼ ë²ˆí˜¸ê°€ ë‹¤ë¥´ë©´ ì¹´ë©”ë¼ë¥¼ ë³€ê²½
         {
-            pastCameraNum = cameraNum;  // ÀÌÀü Ä«¸Ş¶ó ¹øÈ£¸¦ ÇöÀç ¹øÈ£·Î ¾÷µ¥ÀÌÆ®
-            changeCamera(cameraNum);    // Ä«¸Ş¶ó º¯°æ ÇÔ¼ö È£Ãâ
+            pastCameraNum = cameraNum;  // ì´ì „ ì¹´ë©”ë¼ ë²ˆí˜¸ë¥¼ í˜„ì¬ ë²ˆí˜¸ë¡œ ì—…ë°ì´íŠ¸
+            changeCamera(cameraNum);    // ì¹´ë©”ë¼ ë³€ê²½ í•¨ìˆ˜ í˜¸ì¶œ
         }
     }
 
     /// <summary>
-    /// ÁöÁ¤µÈ Ä«¸Ş¶ó ¹øÈ£¿¡ ¸ÂÃç Ä«¸Ş¶ó¸¦ ÀüÈ¯ÇÏ´Â ÇÔ¼ö
+    /// ì§€ì •ëœ ì¹´ë©”ë¼ ë²ˆí˜¸ì— ë§ì¶° ì¹´ë©”ë¼ë¥¼ ì „í™˜í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="num">È°¼ºÈ­ÇÒ Ä«¸Ş¶ó ¹øÈ£</param>
+    /// <param name="num">í™œì„±í™”í•  ì¹´ë©”ë¼ ë²ˆí˜¸</param>
     void changeCamera(int num)
     {
-        for (int i = 0; i < ccs.Length; i++) // ¸ğµç Ä«¸Ş¶ó¸¦ ¼øÈ¸ÇÏ¸ç È°¼ºÈ­/ºñÈ°¼ºÈ­ Ã³¸®
+        for (int i = 0; i < ccs.Length; i++) // ëª¨ë“  ì¹´ë©”ë¼ë¥¼ ìˆœíšŒí•˜ë©° í™œì„±í™”/ë¹„í™œì„±í™” ì²˜ë¦¬
         {
-            if (i == num) ccs[i].Priority = 5; // ÇöÀç Ä«¸Ş¶ó ¹øÈ£¿Í ÀÏÄ¡ÇÏ¸é ¿ì¼±¼øÀ§¸¦ 5·Î ¼³Á¤
-            else ccs[i].Priority = 0; // ³ª¸ÓÁö Ä«¸Ş¶ó´Â ¿ì¼±¼øÀ§¸¦ 0À¸·Î ¼³Á¤
+            if (i == num) ccs[i].Priority = 5; // í˜„ì¬ ì¹´ë©”ë¼ ë²ˆí˜¸ì™€ ì¼ì¹˜í•˜ë©´ ìš°ì„ ìˆœìœ„ë¥¼ 5ë¡œ ì„¤ì •
+            else ccs[i].Priority = 0; // ë‚˜ë¨¸ì§€ ì¹´ë©”ë¼ëŠ” ìš°ì„ ìˆœìœ„ë¥¼ 0ìœ¼ë¡œ ì„¤ì •
         }
     }
 }
