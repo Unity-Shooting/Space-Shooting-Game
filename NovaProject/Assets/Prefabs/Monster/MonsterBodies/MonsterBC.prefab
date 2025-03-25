@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ed5817663b0c44f8c4d396dbb5082b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseHP: 1
+  BaseHP: 100
   BaseAttack: 0
   BaseMoveSpeed: 1.5
   BaseAttackSpeed: 2

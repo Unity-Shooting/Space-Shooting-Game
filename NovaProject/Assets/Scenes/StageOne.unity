@@ -2510,7 +2510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pwr: {fileID: 2102104687}
-  Hp: {fileID: 932641456}
+  Ammo: {fileID: 0}
+  images: []
+  duration: 10
 --- !u!1 &1777286523
 GameObject:
   m_ObjectHideFlags: 0

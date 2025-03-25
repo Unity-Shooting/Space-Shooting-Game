@@ -15,11 +15,31 @@ MonoBehaviour:
   waves:
   - startTime: 0
     timeline: {fileID: 11400000, guid: 0b09eb304dcb24fca8a28c5b96fff3dc, type: 2}
-  - startTime: 0
+  - startTime: 10
+    timeline: {fileID: 11400000, guid: 8e0a8023014ec4294b227624d75dbeee, type: 2}
+  - startTime: 20
+    timeline: {fileID: 11400000, guid: cc316a2ff6b4741dbbeba17cf3dd589e, type: 2}
+  - startTime: 25
+    timeline: {fileID: 11400000, guid: abef7c8cb71ea43d39da3a08a332c116, type: 2}
+  - startTime: 30
+    timeline: {fileID: 11400000, guid: 1acd1f31a35d343479b3a0a954ed8319, type: 2}
+  - startTime: 35
+    timeline: {fileID: 11400000, guid: 471c751f915a94e3bbc78ca570d1b483, type: 2}
+  - startTime: 45
+    timeline: {fileID: 11400000, guid: cbc58612a754040038c021d0aaee127f, type: 2}
+  - startTime: 55
     timeline: {fileID: 11400000, guid: 0b09eb304dcb24fca8a28c5b96fff3dc, type: 2}
-  - startTime: 0
-    timeline: {fileID: 11400000, guid: 0b09eb304dcb24fca8a28c5b96fff3dc, type: 2}
-  - startTime: 0
-    timeline: {fileID: 11400000, guid: 0b09eb304dcb24fca8a28c5b96fff3dc, type: 2}
-  - startTime: 0
-    timeline: {fileID: 11400000, guid: 0b09eb304dcb24fca8a28c5b96fff3dc, type: 2}
+  - startTime: 55
+    timeline: {fileID: 11400000, guid: abef7c8cb71ea43d39da3a08a332c116, type: 2}
+  - startTime: 65
+    timeline: {fileID: 11400000, guid: 471c751f915a94e3bbc78ca570d1b483, type: 2}
+  - startTime: 70
+    timeline: {fileID: 11400000, guid: 9f252bffcd1064918a395ae579504b29, type: 2}
+  - startTime: 80
+    timeline: {fileID: 11400000, guid: 3f5d3063956164b70b0d1c0ab193ef39, type: 2}
+  - startTime: 90
+    timeline: {fileID: 11400000, guid: 3b15bb738c1644a4e9e6ce01e95d9340, type: 2}
+  - startTime: 100
+    timeline: {fileID: 11400000, guid: 7128b46792efe4e79aa63e40e593589b, type: 2}
+  - startTime: 110
+    timeline: {fileID: 11400000, guid: 56d11d9cfe8db45288fb1df1286e4360, type: 2}
