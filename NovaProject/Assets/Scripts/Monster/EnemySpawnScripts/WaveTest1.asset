@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa276294b3028f46a38789e832c108a, type: 3}
+  m_Name: WaveTest1
+  m_EditorClassIdentifier: 
+  memo: "\uD14C\uC2A4\uD2B8\uC6A9 \uC6E8\uC774\uBE0C! \uBAA8\uB4E0 \uBAAC\uC2A4\uD130
+    \uBF51\uC544\uBCF4\uAE30"
+  spawnEvents:
+  - spawnTime: 2
+    monster: {fileID: 4690555114328573488, guid: 1cc08a1e5fcb7754db69222049686854, type: 3}
+    position: {x: 0, y: 3.5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 1
+    repeatCount: 0
+    repeatInterval: 0

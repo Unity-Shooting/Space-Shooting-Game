@@ -1,33 +1,33 @@
 using UnityEngine;
 
 /// <summary>
-/// ÀÚµ¿ ´ëÆ÷(AutoCannon)¸¦ Á¦¾îÇÏ´Â ÄÁÆ®·Ñ·¯ Å¬·¡½º.
-/// IWeaponController ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ´Ù.
+/// ìë™ ëŒ€í¬(AutoCannon)ë¥¼ ì œì–´í•˜ëŠ” ì»¨íŠ¸ë¡¤ëŸ¬ í´ë˜ìŠ¤. 
+/// IWeaponController ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œë‹¤.
 /// </summary>
 public class AutoCannonController : MonoBehaviour, IWeaponController
 {
     /// <summary>
-    /// ¹ß»çµÉ ÅºÈ¯ ÇÁ¸®ÆÕ.
+    /// ë°œì‚¬ë  íƒ„í™˜ í”„ë¦¬íŒ¹.
     /// </summary>
     public GameObject bullet;
 
     /// <summary>
-    /// ¿ÀÅäÄ³³í ¾Ö´Ï¸ŞÀÌÅÍ.
+    /// ì˜¤í† ìºë…¼ ì• ë‹ˆë©”ì´í„°.
     /// </summary>
     private Animator am;
 
     /// <summary>
-    /// Ã¹ ¹øÂ° ¹ß»ç À§Ä¡.
+    /// ì²« ë²ˆì§¸ ë°œì‚¬ ìœ„ì¹˜.
     /// </summary>
     public Transform launcher1;
 
     /// <summary>
-    /// µÎ ¹øÂ° ¹ß»ç À§Ä¡.
+    /// ë‘ ë²ˆì§¸ ë°œì‚¬ ìœ„ì¹˜.
     /// </summary>
     public Transform launcher2;
 
     /// <summary>
-    /// UnityÀÇ ±âº» Awake ¸Ş¼­µå 
+    /// Unityì˜ ê¸°ë³¸ Awake ë©”ì„œë“œ 
     /// </summary>
     void Awake()
     {
@@ -35,20 +35,20 @@ public class AutoCannonController : MonoBehaviour, IWeaponController
     }
 
     /// <summary>
-    /// ¸Å ÇÁ·¹ÀÓ¸¶´Ù È£ÃâµÇ´Â UnityÀÇ ±âº» Update ¸Ş¼­µå (ÇöÀç´Â »ç¿ëµÇÁö ¾ÊÀ½).
+    /// ë§¤ í”„ë ˆì„ë§ˆë‹¤ í˜¸ì¶œë˜ëŠ” Unityì˜ ê¸°ë³¸ Update ë©”ì„œë“œ (í˜„ì¬ëŠ” ì‚¬ìš©ë˜ì§€ ì•ŠìŒ).
     /// </summary>
     void Update()
     {
     }
 
     /// <summary>
-    /// ÀÚµ¿ ´ëÆ÷¸¦ ¹ß»çÇÏ´Â ¸Ş¼­µå.
+    /// ìë™ ëŒ€í¬ë¥¼ ë°œì‚¬í•˜ëŠ” ë©”ì„œë“œ.
     /// </summary>
     public void Shooting()
     {
         am.SetTrigger("shoot");
         SFXManager.Instance.ShootSound();
-        Instantiate(bullet, launcher1.position, PlayerController.Instance.transform.rotation); // Ã¹ ¹øÂ° ¹ß»ç À§Ä¡¿¡¼­ ÅºÈ¯ »ı¼º
-        Instantiate(bullet, launcher2.position, PlayerController.Instance.transform.rotation); // µÎ ¹øÂ° ¹ß»ç À§Ä¡¿¡¼­ ÅºÈ¯ »ı¼º
+        Instantiate(bullet, launcher1.position, PlayerController.Instance.transform.rotation); // ì²« ë²ˆì§¸ ë°œì‚¬ ìœ„ì¹˜ì—ì„œ íƒ„í™˜ ìƒì„±
+        Instantiate(bullet, launcher2.position, PlayerController.Instance.transform.rotation); // ë‘ ë²ˆì§¸ ë°œì‚¬ ìœ„ì¹˜ì—ì„œ íƒ„í™˜ ìƒì„±
     }
 }

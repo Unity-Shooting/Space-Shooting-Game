@@ -1,41 +1,41 @@
 using UnityEngine;
 
 /// <summary>
-/// ÇÃ·¹ÀÌ¾îÀÇ ¹«±â¸¦ °ü¸®ÇÏ´Â ÄÁÆ®·Ñ·¯ Å¬·¡½º.
+/// í”Œë ˆì´ì–´ì˜ ë¬´ê¸°ë¥¼ ê´€ë¦¬í•˜ëŠ” ì»¨íŠ¸ë¡¤ëŸ¬ í´ë˜ìŠ¤. 
 /// </summary>
 public class WeaponController : MonoBehaviour
 {
     /// <summary>
-    /// ÀÚµ¿ ´ëÆ÷(AutoCannon) ÄÁÆ®·Ñ·¯.
+    /// ìë™ ëŒ€í¬(AutoCannon) ì»¨íŠ¸ë¡¤ëŸ¬.
     /// </summary>
     public AutoCannonController autoCannonController;
 
     /// <summary>
-    /// ´ëÇü ¿ìÁÖÆ÷(BigSpaceGun) ÄÁÆ®·Ñ·¯.
+    /// ëŒ€í˜• ìš°ì£¼í¬(BigSpaceGun) ì»¨íŠ¸ë¡¤ëŸ¬.
     /// </summary>
     public BigSpaceGunController bigSpaceGunController;
 
     /// <summary>
-    /// UnityÀÇ ±âº» Start ¸Ş¼­µå (ÇöÀç´Â »ç¿ëµÇÁö ¾ÊÀ½).
+    /// Unityì˜ ê¸°ë³¸ Start ë©”ì„œë“œ (í˜„ì¬ëŠ” ì‚¬ìš©ë˜ì§€ ì•ŠìŒ).
     /// </summary>
     void Start()
     {
     }
 
     /// <summary>
-    /// ¸Å ÇÁ·¹ÀÓ¸¶´Ù È£ÃâµÇ¸ç, ¹«±â º¯°æ ±â´ÉÀ» Ã³¸®ÇÒ ¿¹Á¤.
+    /// ë§¤ í”„ë ˆì„ë§ˆë‹¤ í˜¸ì¶œë˜ë©°, ë¬´ê¸° ë³€ê²½ ê¸°ëŠ¥ì„ ì²˜ë¦¬í•  ì˜ˆì •.
     /// </summary>
     void Update()
     {
-        // TODO: ¹«±â º¯°æ ·ÎÁ÷ Ãß°¡
+        // TODO: ë¬´ê¸° ë³€ê²½ ë¡œì§ ì¶”ê°€
     }
 
     /// <summary>
-    /// ÇöÀç ¼±ÅÃµÈ ¹«±â¸¦ ¹ß»çÇÏ´Â ¸Ş¼­µå.
+    /// í˜„ì¬ ì„ íƒëœ ë¬´ê¸°ë¥¼ ë°œì‚¬í•˜ëŠ” ë©”ì„œë“œ.
     /// </summary>
     public void Shooting()
     {
-        autoCannonController.Shooting(); // ÀÚµ¿ ´ëÆ÷ ¹ß»ç
-        //bigSpaceGunController.Shooting(); // ´ëÇü ¿ìÁÖÆ÷ ¹ß»ç
+        autoCannonController.Shooting(); // ìë™ ëŒ€í¬ ë°œì‚¬
+        //bigSpaceGunController.Shooting(); // ëŒ€í˜• ìš°ì£¼í¬ ë°œì‚¬
     }
 }
