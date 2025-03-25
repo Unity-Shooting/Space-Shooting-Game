@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cc977181d7675446a975683d9e03050
   - enabled: 1
-    path: Assets/Scenes/DaehyunScenes_MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: add4b12386b66894e9b173d57f98c69a
   - enabled: 1
     path: Assets/Scenes/StageOne.unity
