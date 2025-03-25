@@ -1,39 +1,39 @@
 using UnityEngine;
 
 /// <summary>
-/// ÅºÈ¯(Bullet)ÀÇ ÀÌµ¿ ¹× ¼Ó¼ºÀ» Á¦¾îÇÏ´Â Å¬·¡½º.
+/// íƒ„í™˜(Bullet)ì˜ ì´ë™ ë° ì†ì„±ì„ ì œì–´í•˜ëŠ” í´ë˜ìŠ¤. 
 /// </summary>
 public class Bullet : MonoBehaviour
 {
     /// <summary>
-    /// ÅºÈ¯ÀÇ ÀÌµ¿ ¼Óµµ.
+    /// íƒ„í™˜ì˜ ì´ë™ ì†ë„.
     /// </summary>
     public float speed = 3f;
 
     /// <summary>
-    /// ÅºÈ¯ÀÌ ÀûÁß ½Ã ÀÔÈ÷´Â ÇÇÇØ·®.
+    /// íƒ„í™˜ì´ ì ì¤‘ ì‹œ ì…íˆëŠ” í”¼í•´ëŸ‰.
     /// </summary>
     public float damage = 3f;
 
     /// <summary>
-    /// Rigidbody2D ÄÄÆ÷³ÍÆ® ÂüÁ¶.
+    /// Rigidbody2D ì»´í¬ë„ŒíŠ¸ ì°¸ì¡°.
     /// </summary>
     private Rigidbody2D rb;
 
     /// <summary>
-    /// °´Ã¼°¡ »ı¼ºµÉ ¶§ È£ÃâµÇ¸ç, Rigidbody2D¸¦ ÃÊ±âÈ­ÇÑ´Ù.
+    /// ê°ì²´ê°€ ìƒì„±ë  ë•Œ í˜¸ì¶œë˜ë©°, Rigidbody2Dë¥¼ ì´ˆê¸°í™”í•œë‹¤.
     /// </summary>
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
     }
 
     /// <summary>
-    /// ¸Å ÇÁ·¹ÀÓ¸¶´Ù È£ÃâµÇ¸ç, ÅºÈ¯À» ÀüÁø½ÃÅ²´Ù.
+    /// ë§¤ í”„ë ˆì„ë§ˆë‹¤ í˜¸ì¶œë˜ë©°, íƒ„í™˜ì„ ì „ì§„ì‹œí‚¨ë‹¤.
     /// </summary>
     void Update()
     {
-        // rb.MovePosition(rb.position + speed * Time.deltaTime * Vector2.up); // ³Ê¹« ´À·Á¼­ »ç¿ëÇÏÁö ¾ÊÀ½
-        transform.Translate(speed * Time.deltaTime * Vector2.up); // ÅºÈ¯ ÀÌµ¿
+        // rb.MovePosition(rb.position + speed * Time.deltaTime * Vector2.up); // ë„ˆë¬´ ëŠë ¤ì„œ ì‚¬ìš©í•˜ì§€ ì•ŠìŒ
+        transform.Translate(speed * Time.deltaTime * Vector2.up); // íƒ„í™˜ ì´ë™
     }
 }

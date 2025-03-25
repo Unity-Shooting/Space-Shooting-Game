@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // 모든 몬스터들이 상속 할 추상클래스
@@ -56,7 +57,20 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
         // 방향벡터에 맞춰서 이미지 회전
         RotateToDirection();
+        StartAfterInit();
     }
+
+    /// <summary>
+    /// Start()랑 비슷한 역할로 사용
+    /// OnEable()는 오브젝트풀에서 재활용된 오브젝트들의 초기값을 프리팹거로 초기화해주는 기능이고
+    /// 이건 Invoke, Coroutine등을 시작할 때 쓰면 됨
+    /// 분리한 이유 : OnEnable는 Init() 전에 호출되기 때문에 스폰할때 지정한 위치, 방향,type등이 초기화되지 않은 상태에서 실행됨
+    /// </summary>
+    protected virtual void StartAfterInit()
+    {
+
+    }
+
     public virtual void Move() // dir 방향으로 speed 속도로 이동
     {
         transform.Translate(MoveSpeed * Time.deltaTime * direction, Space.World);
@@ -75,19 +89,21 @@ public abstract class Monster : MonoBehaviour, IDamageable
         }
     }
 
+
+
     void Die()
     {
-            CancelInvoke("Shooting");
-            ScoreManager.instance.AddScore(Score);
-            Release();
+        CancelInvoke("Shooting");
+        ScoreManager.instance.AddScore(Score);
+        Release();
 
-            Debug.Log("Die");
+        Debug.Log("Die");
 
-            // 파괴 애니메이션 재생
-            var DE = PoolManager.instance.Get(DesturctionEffect);
-            DE.transform.position = transform.position;
-            DE.transform.rotation = transform.rotation;
-            DE.SetActive(true);
+        // 파괴 애니메이션 재생
+        var DE = PoolManager.instance.Get(DesturctionEffect);
+        DE.transform.position = transform.position;
+        DE.transform.rotation = transform.rotation;
+        DE.SetActive(true);
     }
     protected virtual void OnEnable()  // 오브젝트풀에서 가져올 때 활성화(초기화)
     {
@@ -98,7 +114,6 @@ public abstract class Monster : MonoBehaviour, IDamageable
         MoveSpeed = BaseMoveSpeed;
         AttackSpeed = BaseAttackSpeed;
         AttackStart = BaseAttackStart;
-        type = 0;
         isDead = false;
     }
 
@@ -146,4 +161,6 @@ public abstract class Monster : MonoBehaviour, IDamageable
         transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // 이미지가 아래방향이니까 90도 보정
 
     }
+
+
 }
