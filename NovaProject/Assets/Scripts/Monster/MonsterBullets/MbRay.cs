@@ -5,7 +5,7 @@ using static UnityEditor.PlayerSettings;
 public class MbRay : MbBase
 {
     [SerializeField] private float warningTime;
-    [SerializeField] private float rayDuration;
+    [SerializeField] public float rayDuration;
     [SerializeField] private SpriteRenderer Warning;
     [SerializeField] private SpriteRenderer Ray;
     [SerializeField] private GameObject Circle;
