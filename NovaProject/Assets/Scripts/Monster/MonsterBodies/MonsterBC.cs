@@ -8,7 +8,7 @@ public class MonsterBC : Monster
     int ShootingShakeFlag = 1;
     protected override void StartAfterInit()
     {
-        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // »ç°İ ½ÃÀÛ
+        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // ì‚¬ê²© ì‹œì‘
         
     }
     void Update()
@@ -18,12 +18,12 @@ public class MonsterBC : Monster
 
     public override void Shoot()
     {
-        // BC´Â ºÎÃ¤²ÃÅº¸·À» °¢µµ¸¦ ¹Ù²ã°¡¸é¼­ »Ñ¸±°ÍÀÓ
-        int count = 5; // 5¹ß ¹ß»ç
-        float angle = 60f; // ºÎÃ¤²Ã °¢µµ
-        float intervalangle = angle / (count - 1); // °¢ ÅºÈ¯ »çÀÌÀÇ °¢µµ
-        float baseangle = -angle / 2f; // Á¦ÀÏ ¿ŞÂÊ ÅºÈ¯ÀÇ °¢µµ
-        float shake = 5f * ShootingShakeFlag;
+        // BCëŠ” ë¶€ì±„ê¼´íƒ„ë§‰ì„ ê°ë„ë¥¼ ë°”ê¿”ê°€ë©´ì„œ ë¿Œë¦´ê²ƒì„
+        int count = 6; // 6ë°œ ë°œì‚¬
+        float angle = 95f; // ë¶€ì±„ê¼´ ê°ë„
+        float intervalangle = angle / (count - 1); // ê° íƒ„í™˜ ì‚¬ì´ì˜ ê°ë„
+        float baseangle = -angle / 2f; // ì œì¼ ì™¼ìª½ íƒ„í™˜ì˜ ê°ë„
+        float shake = 8f * ShootingShakeFlag;
 
         for (int i = 0; i < count; i++)
         {
