@@ -11,7 +11,7 @@ public class MonsterSupport : Monster
     protected override void StartAfterInit()
     {
         InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // 사격 시작
-        StartCoroutine(StopDuringDuration(type, stopDuration));  // type초 후 stopDuration동안 서서히 정지
+        StartCoroutine(ShootAndReturn(type, stopDuration));  // type초 후 stopDuration동안 서서히 정지
     }
     void Update()
     {
@@ -28,20 +28,15 @@ public class MonsterSupport : Monster
         ray.Init(Launcher.transform.position, direction, this);
     }
 
-    /// <summary>
-    /// delay초 후에 감속을 시작해 duration동안 멈추는 함수
-    /// FF, Bomber, Torpedo, Support가 사용
-    /// 위 4가지 유형의 몬스터는 생성할 때 type를 delay로 사용 ( 0이면 멈추지 않음)
-    /// </summary>
-    /// <param name="delay"></param>
-    /// <param name="duration"></param>
-    /// <returns></returns>
-    protected IEnumerator StopDuringDuration(float delay, float duration)
+/// <summary>
+/// Support전용 나와서 쏘고 돌아가기
+/// </summary>
+/// <param name="delay"></param>
+/// <param name="duration"></param>
+/// <returns></returns>
+    protected IEnumerator ShootAndReturn(float delay, float duration)
     {
-        // 몬스터 생성시 type를 정지까지 지연시간으로 사용할건데 0이면 정지하지 않는 패턴
-        // 0이면 멈추지 않고 계속 가도록 코루틴 중지! 10이상으로 줄 일은 없을테니
-        // 추가 패턴이 필요한 경우 11 등으로 줄 수 있게 10이상이어도 정지하지 않음
-        if (delay == 0 || delay >= 10) yield break;
+        
 
         yield return new WaitForSeconds(delay);
         float time = 0;
@@ -54,5 +49,16 @@ public class MonsterSupport : Monster
         }
 
         MoveSpeed = 0f; // 시간이 지난 후에 완전히 정지하도록 보장
+
+        // 레이저 지속시간 동안 대기 후
+        yield return new WaitForSeconds(Bullet.GetComponent<MbRay>().rayDuration-0.5f);
+
+        time = 0;
+        while(time < duration)
+        {
+            time += Time.deltaTime;
+            MoveSpeed = Mathf.Lerp(0f,initMoveSpeed, time / duration) * -1;
+        }
+        
     }
 }
