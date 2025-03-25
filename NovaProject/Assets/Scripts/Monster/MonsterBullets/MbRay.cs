@@ -9,14 +9,14 @@ public class MbRay : MbBase
     [SerializeField] private SpriteRenderer Warning;
     [SerializeField] private SpriteRenderer Ray;
     [SerializeField] private GameObject Circle;
-    private MonsterSupport caster; // ·¹ÀÌÀú Áö¼Ó½Ã°£ Áß¿¡ ½ÃÀü¸ó½ºÅÍ »ç¸Á Ã¼Å©
+    private MonsterSupport caster; // ë ˆì´ì € ì§€ì†ì‹œê°„ ì¤‘ì— ì‹œì „ëª¬ìŠ¤í„° ì‚¬ë§ ì²´í¬
 
 
 
     // Update is called once per frame
     void Update()
     {
-        // º»Ã¼¿Í À§Ä¡ µ¿±âÈ­
+        // ë³¸ì²´ì™€ ìœ„ì¹˜ ë™ê¸°í™”
         transform.position = caster.Launcher.transform.position;
     }
 
@@ -28,10 +28,11 @@ public class MbRay : MbBase
 
     public void Init(Vector2 pos, Vector2 dir, MonsterSupport caster)
     {
-        // ÃÑ¾Ë ¹ü¿ë ÃÊ±âÈ­ ÇÏ°í
+        // ì´ì•Œ ë²”ìš© ì´ˆê¸°í™” í•˜ê³ 
         base.Init(pos, dir, 0);
-        // ½ÃÀüÀÚ Á¤º¸ ¹Ş¾Æ¿À±â
+        // ì‹œì „ì ì •ë³´ ë°›ì•„ì˜¤ê¸°
         this.caster = caster;
+        warningTime = caster.stopDuration;
 
 
         StartCoroutine(LazerSequence());
@@ -41,16 +42,16 @@ public class MbRay : MbBase
     {
         float timer = 0f;
 
-        //»ı¼º ½Ã Äİ¶óÀÌ´õ ²¨¹ö¸®°í ¿ö´× ¸ÕÀú ±ò±â 
+        //ìƒì„± ì‹œ ì½œë¼ì´ë” êº¼ë²„ë¦¬ê³  ì›Œë‹ ë¨¼ì € ê¹”ê¸° 
         GetComponent<BoxCollider2D>().enabled = false;
         Warning.enabled = true;
         Ray.enabled = false;
 
-        while (timer < warningTime)  // °æ°íÇ¥½Ã ±ôºıÀÌ´Â ºÎºĞ
+        while (timer < warningTime)  // ê²½ê³ í‘œì‹œ ê¹œë¹¡ì´ëŠ” ë¶€ë¶„
         {
             timer += Time.deltaTime;
 
-            if (caster == null || !caster.gameObject.activeInHierarchy)  // ½ÃÀüÀÚ°¡ ¾ø°Å³ª ºñÈ°¼ºÈ­ µÇ¸é Á¾·á
+            if (caster == null || !caster.gameObject.activeInHierarchy)  // ì‹œì „ìê°€ ì—†ê±°ë‚˜ ë¹„í™œì„±í™” ë˜ë©´ ì¢…ë£Œ
             {
                 if (caster == null)
                     Debug.Log("caster is null");
@@ -59,21 +60,21 @@ public class MbRay : MbBase
                 yield break;
             }
 
-            //°æ°í ±ôºıÀÌ±â
+            //ê²½ê³  ê¹œë¹¡ì´ê¸°
             float alpha = Mathf.PingPong(Time.time * 2f, 1f);
             Color c = Warning.color;
             c.a = alpha;
             Warning.color = c;
 
-            //¸ó½ºÅÍ ¾Õ¿¡ ¿ø Ä¿Áö±â
+            //ëª¬ìŠ¤í„° ì•ì— ì› ì»¤ì§€ê¸°
             float scale = Mathf.Lerp(0, 0.3f, timer / warningTime);
             Circle.transform.localScale = new Vector3(scale, scale, 1);
 
-            yield return null; // ÇÁ·¹ÀÓ´ÜÀ§·Î ´ë±â?
+            yield return null; // í”„ë ˆì„ë‹¨ìœ„ë¡œ ëŒ€ê¸°?
         }
-        Warning.enabled = false;  // °æ°í ²ô°í ·¹ÀÌÀú ÄÑ±â
+        Warning.enabled = false;  // ê²½ê³  ë„ê³  ë ˆì´ì € ì¼œê¸°
         Ray.enabled = true;
-        GetComponent<BoxCollider2D>().enabled = true; // Äİ¶óÀÌ´õ È°¼ºÈ­
+        GetComponent<BoxCollider2D>().enabled = true; // ì½œë¼ì´ë” í™œì„±í™”
 
         yield return new WaitForSeconds(rayDuration);
 

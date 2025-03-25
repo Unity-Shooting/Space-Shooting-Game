@@ -5,13 +5,13 @@ public class MonsterSupport : Monster
 {
     [SerializeField] public GameObject Launcher;
     /// <summary>
-    /// Á¤ÁöÇÏ´Âµ¥ °É¸®´Â ½Ã°£
+    /// ì •ì§€í•˜ëŠ”ë° ê±¸ë¦¬ëŠ” ì‹œê°„
     /// </summary>
-    [SerializeField] private float stopDuration;
+    [SerializeField] public float stopDuration;
     protected override void StartAfterInit()
     {
-        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // »ç°İ ½ÃÀÛ
-        StartCoroutine(ShootAndReturn(type, stopDuration));  // typeÃÊ ÈÄ stopDurationµ¿¾È ¼­¼­È÷ Á¤Áö
+        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // ì‚¬ê²© ì‹œì‘
+        StartCoroutine(ShootAndReturn(type, stopDuration));  // typeì´ˆ í›„ stopDurationë™ì•ˆ ì„œì„œíˆ ì •ì§€
     }
     void Update()
     {
@@ -22,14 +22,14 @@ public class MonsterSupport : Monster
     {
         //IBulletInit bullet = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
         //bullet.Init(Launcher.transform.position, Vector2.down, 0);
-        // ÀÌ ¸ó½ºÅÍ´Â ·¹ÀÌÀú¸¦ ¹ß»çÇÏ´Âµ¥ ·¹ÀÌÀú¸¦ Áß°£¿¡ ¸ØÃß±â À§ÇØ¼­ ÀÎ¼ö¸¦ ÇÏ³ª ´õ ³Ö¾î¾ßÇÔ
-        // IBulletInit·Î ¹ü¿ë ÀÎÅÍÆäÀÌ½º ¸ø¾²°í µû·Î ·¹ÀÌÀú Å¬·¡½º·Î °¡Á®¿È
+        // ì´ ëª¬ìŠ¤í„°ëŠ” ë ˆì´ì €ë¥¼ ë°œì‚¬í•˜ëŠ”ë° ë ˆì´ì €ë¥¼ ì¤‘ê°„ì— ë©ˆì¶”ê¸° ìœ„í•´ì„œ ì¸ìˆ˜ë¥¼ í•˜ë‚˜ ë” ë„£ì–´ì•¼í•¨
+        // IBulletInitë¡œ ë²”ìš© ì¸í„°í˜ì´ìŠ¤ ëª»ì“°ê³  ë”°ë¡œ ë ˆì´ì € í´ë˜ìŠ¤ë¡œ ê°€ì ¸ì˜´
         MbRay ray = PoolManager.instance.Get(Bullet).GetComponent<MbRay>();
         ray.Init(Launcher.transform.position, direction, this);
     }
 
 /// <summary>
-/// SupportÀü¿ë ³ª¿Í¼­ ½î°í µ¹¾Æ°¡±â
+/// Supportì „ìš© ë‚˜ì™€ì„œ ì˜ê³  ëŒì•„ê°€ê¸°
 /// </summary>
 /// <param name="delay"></param>
 /// <param name="duration"></param>
@@ -44,20 +44,21 @@ public class MonsterSupport : Monster
         while (time < duration)
         {
             time += Time.deltaTime;
-            MoveSpeed = Mathf.Lerp(initMoveSpeed, 0f, time / duration); // Áö³­ ½Ã°£¿¡ µû¶ó ¼Óµµ¸¦ ÃÊ±â¼Óµµ~0À¸·Î º¸°£
+            MoveSpeed = Mathf.Lerp(initMoveSpeed, 0f, time / duration); // ì§€ë‚œ ì‹œê°„ì— ë”°ë¼ ì†ë„ë¥¼ ì´ˆê¸°ì†ë„~0ìœ¼ë¡œ ë³´ê°„
             yield return null;
         }
 
-        MoveSpeed = 0f; // ½Ã°£ÀÌ Áö³­ ÈÄ¿¡ ¿ÏÀüÈ÷ Á¤ÁöÇÏµµ·Ï º¸Àå
+        MoveSpeed = 0f; // ì‹œê°„ì´ ì§€ë‚œ í›„ì— ì™„ì „íˆ ì •ì§€í•˜ë„ë¡ ë³´ì¥
 
-        // ·¹ÀÌÀú Áö¼Ó½Ã°£ µ¿¾È ´ë±â ÈÄ
-        yield return new WaitForSeconds(Bullet.GetComponent<MbRay>().rayDuration-0.5f);
+        // ë ˆì´ì € ì§€ì†ì‹œê°„ ë™ì•ˆ ëŒ€ê¸° í›„
+        yield return new WaitForSeconds(Bullet.GetComponent<MbRay>().rayDuration);
 
         time = 0;
         while(time < duration)
         {
             time += Time.deltaTime;
             MoveSpeed = Mathf.Lerp(0f,initMoveSpeed, time / duration) * -1;
+            yield return null;
         }
         
     }

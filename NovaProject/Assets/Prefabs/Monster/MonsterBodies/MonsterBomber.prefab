@@ -416,11 +416,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHP: 1
   BaseAttack: 0
-  BaseMoveSpeed: 1
-  BaseAttackSpeed: 1
+  BaseMoveSpeed: 10
+  BaseAttackSpeed: 2
   BaseAttackStart: 1
   Bullet: {fileID: 3740662105732729779, guid: 8a640c641dbff3e47af64664bd77836d, type: 3}
   Score: 100
   DesturctionEffect: {fileID: 5545183702240210105, guid: bc7425fdc1894864aa67f7b67560ded6, type: 3}
   Launcher: {fileID: 3850628943420447184}
-  stopDuration: 2
+  stopDuration: 1
