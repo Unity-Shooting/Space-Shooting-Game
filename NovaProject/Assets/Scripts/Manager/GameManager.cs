@@ -120,7 +120,8 @@ public class GameManager : Singleton<GameManager>
         BGMManager.Instance.PlayBGM2();
         -> ShowGameOverScreen() 안에 집어넣음
          */
-
+        PWRManager.Instance.Run = false;
+        Debug.Log("Run : "+ PWRManager.Instance.Run);
         StartCoroutine(ShowGameOverScreen());   //코루틴 실행
     }
 
@@ -163,9 +164,9 @@ public class GameManager : Singleton<GameManager>
         /*
          대현 코드 추가 : 2025 - 03 - 26 GameStart, GameOver 이미지 추가 및 2초 출력
          */
-        if (CanClick && isFadingText && Input.GetMouseButtonDown(0))
+        if (CanClick && isFadingText && Input.GetKeyDown(KeyCode.Z))
         {
-            isFadingText = false; // 🔹 코루틴 종료 플래그 설정
+            isFadingText = false; // 코루틴 종료 플래그 설정
             CanClick = false;
             LoadMainMenu();
         }
