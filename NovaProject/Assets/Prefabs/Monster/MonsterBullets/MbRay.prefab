@@ -335,7 +335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7799966146494874425
 Transform:
   m_ObjectHideFlags: 0
@@ -415,7 +415,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.59713686}
+  m_Offset: {x: 0, y: -4.746901}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -425,7 +425,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.20971975, y: 1.2041423}
+  m_Size: {x: 0.20971975, y: 9.503671}
   m_EdgeRadius: 0
 --- !u!114 &3518645222202372780
 MonoBehaviour:
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124c2c2ade315eb48b85f3ba14509375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseAttack: 0
+  BaseAttack: 1
   BaseMoveSpeed: 0
   warningTime: 3
   rayDuration: 2

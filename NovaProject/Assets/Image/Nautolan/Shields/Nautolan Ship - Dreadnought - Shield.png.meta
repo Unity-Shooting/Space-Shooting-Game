@@ -129,7 +129,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -212,10 +212,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 5
-        width: 114
-        height: 114
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 5
-        width: 114
-        height: 114
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_2
       rect:
         serializedVersion: 2
-        x: 263
-        y: 5
-        width: 114
-        height: 114
+        x: 256
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +278,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_3
       rect:
         serializedVersion: 2
-        x: 391
-        y: 5
-        width: 114
-        height: 114
+        x: 384
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,10 +300,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_4
       rect:
         serializedVersion: 2
-        x: 519
-        y: 5
-        width: 114
-        height: 114
+        x: 512
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +322,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_5
       rect:
         serializedVersion: 2
-        x: 647
-        y: 5
-        width: 114
-        height: 114
+        x: 640
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_6
       rect:
         serializedVersion: 2
-        x: 775
-        y: 5
-        width: 114
-        height: 114
+        x: 768
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,10 +366,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_7
       rect:
         serializedVersion: 2
-        x: 903
-        y: 5
-        width: 114
-        height: 114
+        x: 896
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,10 +388,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_8
       rect:
         serializedVersion: 2
-        x: 1031
-        y: 5
-        width: 114
-        height: 114
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,10 +410,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_9
       rect:
         serializedVersion: 2
-        x: 1159
-        y: 5
-        width: 114
-        height: 114
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,10 +432,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_10
       rect:
         serializedVersion: 2
-        x: 1287
-        y: 5
-        width: 114
-        height: 114
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,10 +454,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_11
       rect:
         serializedVersion: 2
-        x: 1415
-        y: 5
-        width: 114
-        height: 114
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -476,10 +476,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_12
       rect:
         serializedVersion: 2
-        x: 1543
-        y: 5
-        width: 114
-        height: 114
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,10 +498,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_13
       rect:
         serializedVersion: 2
-        x: 1671
-        y: 5
-        width: 114
-        height: 114
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,10 +520,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_14
       rect:
         serializedVersion: 2
-        x: 1799
-        y: 5
-        width: 114
-        height: 114
+        x: 1792
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -542,10 +542,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_15
       rect:
         serializedVersion: 2
-        x: 1927
-        y: 5
-        width: 114
-        height: 114
+        x: 1920
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -564,10 +564,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_16
       rect:
         serializedVersion: 2
-        x: 2055
-        y: 5
-        width: 114
-        height: 114
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,10 +586,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_17
       rect:
         serializedVersion: 2
-        x: 2183
-        y: 5
-        width: 114
-        height: 114
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -608,10 +608,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_18
       rect:
         serializedVersion: 2
-        x: 2311
-        y: 5
-        width: 114
-        height: 114
+        x: 2304
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,10 +630,10 @@ TextureImporter:
       name: Nautolan Ship - Dreadnought - Shield_19
       rect:
         serializedVersion: 2
-        x: 2439
-        y: 5
-        width: 114
-        height: 114
+        x: 2432
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -652,7 +652,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a5d95be462e1dd74d91286b88cb151c9
     internalID: 0
     vertices: []
     indices: 

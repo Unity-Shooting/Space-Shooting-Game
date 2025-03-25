@@ -53,6 +53,7 @@ public class WaveData
 /// </summary>
 public class SpawnManager : Singleton<SpawnManager>
 {
+    [SerializeField] private MonsterBoss boss;
     [SerializeField] private List<StageWaveSO> stages = new();  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
 
     void Start()
@@ -99,7 +100,7 @@ public class SpawnManager : Singleton<SpawnManager>
         }
     }
 
-    IEnumerator SpawnWave(SpawnTimelineSO timeline)
+    public IEnumerator SpawnWave(SpawnTimelineSO timeline)
     {
         timeline.spawnEvents.Sort((a, b) => a.spawnTime.CompareTo(b.spawnTime)); // 오름차순 정렬로 혹시모를 휴먼에러 대비
         float currentTime = 0;

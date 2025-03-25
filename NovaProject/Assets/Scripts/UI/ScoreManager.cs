@@ -5,15 +5,15 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    public int score = 0; // ÇöÀç Á¡¼ö
-    public Image[] digitImages; // ScoreDigit_1 ~ ScoreDigit_6 ÂüÁ¶
-    public Sprite[] numberSprites; // 0~9 ¼ıÀÚ ÀÌ¹ÌÁö ½ºÇÁ¶óÀÌÆ® ¹è¿­
+    public int score = 0; // í˜„ì¬ ì ìˆ˜
+    public Image[] digitImages; // ScoreDigit_1 ~ ScoreDigit_6 ì°¸ì¡°
+    public Sprite[] numberSprites; // 0~9 ìˆ«ì ì´ë¯¸ì§€ ìŠ¤í”„ë¼ì´íŠ¸ ë°°ì—´
 
     private void Awake()
     {
-        if (instance == null)    //Á¤ÀûÀ¸·Î ÀÚ½ÅÀ» Ã¼Å© ÇÑ´Ù.
+        if (instance == null)    //ì •ì ìœ¼ë¡œ ìì‹ ì„ ì²´í¬ í•œë‹¤.
         {
-            instance = this;   //ÀÚ±â ÀÚ½ÅÀ» ÀúÀåÇÑ´Ù.
+            instance = this;   //ìê¸° ìì‹ ì„ ì €ì¥í•œë‹¤.
         }
     }
 
@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        TestScore();
+        
     }
 
     public void AddScore(int amount)
@@ -33,29 +33,29 @@ public class ScoreManager : MonoBehaviour
         UpdateScore();
     }
     
-    //TestScore()´Â ¸» ±×´ë·Î Å×½ºÆ®¿ë
-    public void TestScore()
+    //TestScore()ëŠ” ë§ ê·¸ëŒ€ë¡œ í…ŒìŠ¤íŠ¸ìš©
+/*    public void TestScore()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             score += 100;
             UpdateScore();
         }
-    }
+    }*/
 
     void UpdateScore()
     {
-        string scoreStr = score.ToString("D6"); // 6ÀÚ¸® ¼ıÀÚ·Î º¯È¯ (000123 µî)
+        string scoreStr = score.ToString("D6"); // 6ìë¦¬ ìˆ«ìë¡œ ë³€í™˜ (000123 ë“±)
         for (int i = 0; i < digitImages.Length; i++)
         {
-            int digit = scoreStr[i] - '0'; // ¹®ÀÚ '0'À» »©¼­ Á¤¼ö º¯È¯
+            int digit = scoreStr[i] - '0'; // ë¬¸ì '0'ì„ ë¹¼ì„œ ì •ìˆ˜ ë³€í™˜
             Convert.ToInt32(scoreStr[i]);
             Debug.Log(Convert.ToInt32(scoreStr[i]) +"="+Convert.ToInt32(scoreStr[i]));
             /*
-             * Convert.ToInt32(scoreStr[i])¸¦ ¾²°Ô µÇ¸é ¾Æ½ºÅ°°ªÀ¸·Î ³ª¿Í¼­ ¿øÇÏ´Â ¼ıÀÚ·Î º¯È¯ÀÌ ¾ÈµÊ
-             * '1' -> ¾Æ½ºÅ°°ª : 49
-             * '0' -> ¾Æ½ºÅ°°ª : 48
-             *  scoreStr[i] - '0';  ¸¸¾à scoreStr[1] = '1'ÀÌ¸é
+             * Convert.ToInt32(scoreStr[i])ë¥¼ ì“°ê²Œ ë˜ë©´ ì•„ìŠ¤í‚¤ê°’ìœ¼ë¡œ ë‚˜ì™€ì„œ ì›í•˜ëŠ” ìˆ«ìë¡œ ë³€í™˜ì´ ì•ˆë¨
+             * '1' -> ì•„ìŠ¤í‚¤ê°’ : 49
+             * '0' -> ì•„ìŠ¤í‚¤ê°’ : 48
+             *  scoreStr[i] - '0';  ë§Œì•½ scoreStr[1] = '1'ì´ë©´
              *  ->49 - 48
              *  = 1
              */

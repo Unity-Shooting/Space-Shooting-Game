@@ -3,27 +3,28 @@ using UnityEngine;
 
 public abstract class MbBase : MonoBehaviour, IBulletInit
 {
-    protected bool isReleased = false; // Áßº¹¹İÈ¯ ¹æÁö¿ë ÇÃ·¡±×
+    protected bool isReleased = false; // ì¤‘ë³µë°˜í™˜ ë°©ì§€ìš© í”Œë˜ê·¸
     public Vector2 direction { get; protected set; }
     public int Attack { get; protected set; }
     public float MoveSpeed { get; protected set; }
 
     [SerializeField] protected int BaseAttack;
     [SerializeField] protected float BaseMoveSpeed;
+    protected int type;
 
     public virtual void Init(Vector2 pos, Vector2 dir, int type)
     {
         transform.position = pos;
         direction = dir.normalized;
-
+        this.type = type;
         RotateToDirection();
     }
     public virtual void Move()
     {
-        transform.Translate(MoveSpeed * direction * Time.deltaTime, Space.World);  // ÀÌµ¿À» ¿ùµåÁÂÇ¥ ±âÁØÀ¸·ÎÇØ¼­ rotation ¿µÇâ ¾È¹Ş±â
+        transform.Translate(MoveSpeed * direction * Time.deltaTime, Space.World);  // ì´ë™ì„ ì›”ë“œì¢Œí‘œ ê¸°ì¤€ìœ¼ë¡œí•´ì„œ rotation ì˜í–¥ ì•ˆë°›ê¸°
     }
 
-    protected virtual void OnEnable() // ÃÊ±âÈ­ Start() ´ë½Å »ç¿ë
+    protected virtual void OnEnable() // ì´ˆê¸°í™” Start() ëŒ€ì‹  ì‚¬ìš©
     {
         transform.rotation = Quaternion.identity;
         isReleased = false;
@@ -32,7 +33,7 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
         direction = Vector2.zero;
     }
 
-    protected virtual void Release() // ¿ÀºêÁ§Æ® Ç®·Î ¸®ÅÏ 
+    protected virtual void Release() // ì˜¤ë¸Œì íŠ¸ í’€ë¡œ ë¦¬í„´ 
     {
         if (!isReleased)
         {
@@ -41,7 +42,7 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
         }
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision) // ÇÃ·¹ÀÌ¾î Ãæµ¹ ½Ã ¾×¼Ç
+    protected virtual void OnTriggerEnter2D(Collider2D collision) // í”Œë ˆì´ì–´ ì¶©ëŒ ì‹œ ì•¡ì…˜
     {
 
         if(collision.CompareTag("Player"))
@@ -60,6 +61,6 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
     protected void RotateToDirection()
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // ÀÌ¹ÌÁö°¡ ¾Æ·¡¹æÇâÀÌ´Ï±î 90µµ º¸Á¤
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // ì´ë¯¸ì§€ê°€ ì•„ë˜ë°©í–¥ì´ë‹ˆê¹Œ 90ë„ ë³´ì •
     }
 }

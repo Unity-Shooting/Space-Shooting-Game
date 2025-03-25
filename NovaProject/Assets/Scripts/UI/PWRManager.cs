@@ -11,12 +11,21 @@ public class PWRManager : MonoBehaviour
     public Image Ammo;
     public Image[] images;
 
-    public float duration = 10f; // 10초 동안 fillAmount 증가
+    public float duration;
 
 
 
     void Start()
     {
+        duration = PlayerController.Instance.shieldCoolTime;
+
+        //오류 로그로 인한 수정
+        if (images == null || images.Length < 3)
+        {
+            Debug.LogError($"크기가 부족합니다! (현재 크기: {images.Length})");
+            return; 
+        }
+
         HideAllImages();
         ShowImage(1);
         // ScoreManager.instance.AddScore(100); ScoreManager 인스턴스 테스트
@@ -25,12 +34,12 @@ public class PWRManager : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift ) && Pwr.fillAmount == 1f)
         {
             StartCoroutine(FillOverTime(duration));
         }
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && Ammo.fillAmount == 1f) 
         {
             StartCoroutine(FillOverTimeAmmo(duration));
         }
@@ -38,11 +47,25 @@ public class PWRManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
         if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
 
+
     }
 
     public void ShowImage(int index)
     {
-        HideAllImages(); // 모든 이미지를 비활성화
+
+        if (images == null || index < 1 || index > images.Length)
+        {
+            Debug.LogWarning($"잘못된 인덱스 접근: {index}, images 배열 크기: {images.Length}");
+            return;
+        }
+
+        HideAllImages();
+
+        images[index - 1].gameObject.SetActive(true); //  인덱스 조정 (0부터 시작)
+        
+        //오류 로그로 인한 수정
+        
+        /*HideAllImages(); // 모든 이미지를 비활성화
 
         switch (index)
         {
@@ -58,7 +81,7 @@ public class PWRManager : MonoBehaviour
             default:
                 Debug.LogWarning("잘못된 번호입니다.");
                 break;
-        }
+        }*/
     }
 
     void HideAllImages()
