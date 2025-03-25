@@ -423,4 +423,4 @@ MonoBehaviour:
   Score: 100
   DesturctionEffect: {fileID: 76009143805308515, guid: 58f026dd5cc95484fbe0566373ebc98b, type: 3}
   Launcher: {fileID: 1785074785066200237}
-  curveRate: 0.5
+  curveRate: 0.3

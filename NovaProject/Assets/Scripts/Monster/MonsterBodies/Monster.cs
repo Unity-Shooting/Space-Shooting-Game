@@ -1,87 +1,88 @@
 using System.Collections;
 using UnityEngine;
 
-// ¸ğµç ¸ó½ºÅÍµéÀÌ »ó¼Ó ÇÒ Ãß»óÅ¬·¡½º
-// ¸ó½ºÅÍ¸¶´Ù ÀÌµ¿ÀÌ³ª »ç°İÀ» ´Ù¸£°Ô ÇÏ·Á¸é 1945¶§¶û ´Ù¸£°Ô ¸ó½ºÅÍº°·Î Å¬·¡½º¸¦ µû·Î ½á¾ß ÇÒ °Í °°¾Æ¼­
-// °øÅëÀûÀ¸·Î ÇÊ¿äÇÑ ºÎºĞ 
-// ¶ÇÇÑ ¾î¶² ¸ó½ºÅÍ¸¦ ¸¸µé´õ¶óµµ ½ºÆù¸Å´ÏÀú¿¡¼± Monster.abc() ÇüÅÂ·Î ´ëºÎºĞÀÇ ±â´ÉÀ» »ç¿ë ÇÒ ¼ö ÀÖµµ·Ï ½Ãµµ
+// ëª¨ë“  ëª¬ìŠ¤í„°ë“¤ì´ ìƒì† í•  ì¶”ìƒí´ë˜ìŠ¤
+// ëª¬ìŠ¤í„°ë§ˆë‹¤ ì´ë™ì´ë‚˜ ì‚¬ê²©ì„ ë‹¤ë¥´ê²Œ í•˜ë ¤ë©´ 1945ë•Œë‘ ë‹¤ë¥´ê²Œ ëª¬ìŠ¤í„°ë³„ë¡œ í´ë˜ìŠ¤ë¥¼ ë”°ë¡œ ì¨ì•¼ í•  ê²ƒ ê°™ì•„ì„œ
+// ê³µí†µì ìœ¼ë¡œ í•„ìš”í•œ ë¶€ë¶„ 
+// ë˜í•œ ì–´ë–¤ ëª¬ìŠ¤í„°ë¥¼ ë§Œë“¤ë”ë¼ë„ ìŠ¤í°ë§¤ë‹ˆì €ì—ì„  Monster.abc() í˜•íƒœë¡œ ëŒ€ë¶€ë¶„ì˜ ê¸°ëŠ¥ì„ ì‚¬ìš© í•  ìˆ˜ ìˆë„ë¡ ì‹œë„
 
 /// <summary>
-/// °¢ ¸ó½ºÅÍ°¡ °¢ÀÚ °¡Á®¾ß ÇÒ ÇÁ·ÎÆÛÆ¼
+/// ê° ëª¬ìŠ¤í„°ê°€ ê°ì ê°€ì ¸ì•¼ í•  í”„ë¡œí¼í‹°
 /// Gameobject Launcher
 /// </summary>
 public abstract class Monster : MonoBehaviour, IDamageable
 {
-    protected bool isReleased = false;  // ¿ÀºêÁ§Æ® Ç®¸µ ½Ã Release ÇÔ¼ö¸¦ È£ÃâÇØ¼­ SetActive(false)·Î ºñÈ°¼ºÈ­ µÇ¸é
-                                        // OnBecameInvisible°¡ °°ÀÌ È£ÃâµÅ´Â ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇÑ Æ®¸®°Å
-                                        // OnDisable¿¡¼­ OnBecameInvisible¸¦ ¸·´Â ¹æ¹ıÀÌ ÀÖ´Ù°í ÇÏ´Âµ¥
-                                        // ÀÏ´Ü Áö±İ ÇÁ·Î±×·¥¿¡¼± DisalbeÀÌ ´õ ´Ê°Ô ½ÇÇàµÅ¼­ ¾ÈµÉ°Í°°³×¿ä
-                                        // OnEnable¿¡¼­ false·Î ÃÊ±âÈ­, Release() ÇÔ¼ö¿¡¼­ true·Î ¸¸µé¾î¼­ OnBecameInvisible¿¡¼­ Release¸¦ ¸·À½
-    public int HP { get; protected set; }  // ÃÊ±â°ªÀÌ¶û ±¸ºĞÇØµĞ ÀÌÀ¯ : Àç»ı¼º ½Ã ÃÊ±âÈ­ ÇÏ±â À§ÇØ
+    protected bool isReleased = false;  // ì˜¤ë¸Œì íŠ¸ í’€ë§ ì‹œ Release í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•´ì„œ SetActive(false)ë¡œ ë¹„í™œì„±í™” ë˜ë©´
+                                        // OnBecameInvisibleê°€ ê°™ì´ í˜¸ì¶œë¼ëŠ” ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•œ íŠ¸ë¦¬ê±°
+                                        // OnDisableì—ì„œ OnBecameInvisibleë¥¼ ë§‰ëŠ” ë°©ë²•ì´ ìˆë‹¤ê³  í•˜ëŠ”ë°
+                                        // ì¼ë‹¨ ì§€ê¸ˆ í”„ë¡œê·¸ë¨ì—ì„  Disalbeì´ ë” ëŠ¦ê²Œ ì‹¤í–‰ë¼ì„œ ì•ˆë ê²ƒê°™ë„¤ìš”
+                                        // OnEnableì—ì„œ falseë¡œ ì´ˆê¸°í™”, Release() í•¨ìˆ˜ì—ì„œ trueë¡œ ë§Œë“¤ì–´ì„œ OnBecameInvisibleì—ì„œ Releaseë¥¼ ë§‰ìŒ
+    public int HP { get; protected set; }  // ì´ˆê¸°ê°’ì´ë‘ êµ¬ë¶„í•´ë‘” ì´ìœ  : ì¬ìƒì„± ì‹œ ì´ˆê¸°í™” í•˜ê¸° ìœ„í•´
     public int Attack { get; protected set; }
     public float MoveSpeed { get; protected set; }
     public float AttackSpeed { get; protected set; }
     public float AttackStart { get; protected set; }
-    public Vector2 direction { get; protected set; } // ÁøÇà ¹æÇâ
+    public Vector2 direction { get; protected set; } // ì§„í–‰ ë°©í–¥
 
     public int type { get; protected set; }
     private bool isDead = false;
-    public bool IsDead => isDead; // isDead¸¦ ¹Ù±ù¿¡ º¸³»ÁÖ±â
-    // ÀÎ½ºÆåÅÍ¿¡¼­ Á¶ÀıÇÒ ¼öÄ¡µéÀº ½ºÅ©¸³Æ®¿¡¼­ ÃÊ±â°ª ¾È³Ö±â(Çò°¥¸²)
+    public bool IsDead => isDead; // isDeadë¥¼ ë°”ê¹¥ì— ë³´ë‚´ì£¼ê¸°
+    // ì¸ìŠ¤í™í„°ì—ì„œ ì¡°ì ˆí•  ìˆ˜ì¹˜ë“¤ì€ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì´ˆê¸°ê°’ ì•ˆë„£ê¸°(í—·ê°ˆë¦¼)
     [SerializeField] protected int BaseHP;
-    [SerializeField] protected int BaseAttack; // °ø°İ·Â
-    [SerializeField] protected float BaseMoveSpeed; // ¼Óµµ 
+    [SerializeField] protected int BaseAttack; // ê³µê²©ë ¥
+    [SerializeField] protected float BaseMoveSpeed; // ì†ë„ 
     [SerializeField] protected float BaseAttackSpeed;
-    [SerializeField] protected float BaseAttackStart; // Ã¹ °ø°İ±îÁö Áö¿¬½Ã°£
-    [SerializeField] protected GameObject Bullet; // ¹ß»çÇÒ ÃÑ¾Ë ÇÁ¸®Æé
-    [SerializeField] protected int Score; // ¸ó½ºÅÍ°¡ Á×À¸¸é ¾òÀ» Á¡¼ö
+    [SerializeField] protected float BaseAttackStart; // ì²« ê³µê²©ê¹Œì§€ ì§€ì—°ì‹œê°„
+    [SerializeField] protected GameObject Bullet; // ë°œì‚¬í•  ì´ì•Œ í”„ë¦¬í©
+    [SerializeField] protected int Score; // ëª¬ìŠ¤í„°ê°€ ì£½ìœ¼ë©´ ì–»ì„ ì ìˆ˜
     [SerializeField] protected GameObject DesturctionEffect;
 
 
 
-    // »ó¼Ó¹ŞÀº Å¬·¡½º¿¡¼­ ±¸Çö ÇÒ ¸Ş¼­µåµé
+    // ìƒì†ë°›ì€ í´ë˜ìŠ¤ì—ì„œ êµ¬í˜„ í•  ë©”ì„œë“œë“¤
 
-    // º¸½º°¡ ¾Æ´Ñ ¸ó½ºÅÍµéÀº ¸ğµÎ ÀÏÁ¤ÇÑ °£°İÀ¸·Î »ç°İÀ» ½ÇÇàÇÒ ¿¹Á¤ÀÌ±â‹š¹®¿¡
-    // ÄÚ·çÆ¾º¸´Ù ÀÎº¸Å©¸®ÇÇÆÃÀ» »ç¿ëÇØ¼­ ShootÀ» ºÒ·¯¿Ã ¿¹Á¤
-    // µû¶ó¼­ OnDisable()¿¡¼­ CancleInvoke ÇØÁÜ
+    // ë³´ìŠ¤ê°€ ì•„ë‹Œ ëª¬ìŠ¤í„°ë“¤ì€ ëª¨ë‘ ì¼ì •í•œ ê°„ê²©ìœ¼ë¡œ ì‚¬ê²©ì„ ì‹¤í–‰í•  ì˜ˆì •ì´ê¸°ë–„ë¬¸ì—
+    // ì½”ë£¨í‹´ë³´ë‹¤ ì¸ë³´í¬ë¦¬í”¼íŒ…ì„ ì‚¬ìš©í•´ì„œ Shootì„ ë¶ˆëŸ¬ì˜¬ ì˜ˆì •
+    // ë”°ë¼ì„œ OnDisable()ì—ì„œ CancleInvoke í•´ì¤Œ
     public abstract void Shoot();
 
 
 
-    // ½ºÆù¸Å´ÏÀú¿¡¼­ GetÀ¸·Î ¿ÀºêÁ§Æ® °¡Á®¿Â ´ÙÀ½¿¡´Â ¹İµå½Ã Init ÇØÁÖ±â
+    // ìŠ¤í°ë§¤ë‹ˆì €ì—ì„œ Getìœ¼ë¡œ ì˜¤ë¸Œì íŠ¸ ê°€ì ¸ì˜¨ ë‹¤ìŒì—ëŠ” ë°˜ë“œì‹œ Init í•´ì£¼ê¸°
     public virtual void Init(Vector3 pos, Vector2 dir, int type)
     {
         transform.position = pos;
         direction = dir.normalized;
         this.type = type;
 
-        // ¹æÇâº¤ÅÍ¿¡ ¸ÂÃç¼­ ÀÌ¹ÌÁö È¸Àü
+        // ë°©í–¥ë²¡í„°ì— ë§ì¶°ì„œ ì´ë¯¸ì§€ íšŒì „
         RotateToDirection();
         StartAfterInit();
     }
 
     /// <summary>
-    /// Start()¶û ºñ½ÁÇÑ ¿ªÇÒ·Î »ç¿ë
-    /// OnEable()´Â ¿ÀºêÁ§Æ®Ç®¿¡¼­ ÀçÈ°¿ëµÈ ¿ÀºêÁ§Æ®µéÀÇ ÃÊ±â°ªÀ» ÇÁ¸®ÆÕ°Å·Î ÃÊ±âÈ­ÇØÁÖ´Â ±â´ÉÀÌ°í
-    /// ÀÌ°Ç Invoke, CoroutineµîÀ» ½ÃÀÛÇÒ ¶§ ¾²¸é µÊ
-    /// ºĞ¸®ÇÑ ÀÌÀ¯ : OnEnable´Â Init() Àü¿¡ È£ÃâµÇ±â ¶§¹®¿¡ ½ºÆùÇÒ¶§ ÁöÁ¤ÇÑ À§Ä¡, ¹æÇâ,typeµîÀÌ ÃÊ±âÈ­µÇÁö ¾ÊÀº »óÅÂ¿¡¼­ ½ÇÇàµÊ
+    /// Start()ë‘ ë¹„ìŠ·í•œ ì—­í• ë¡œ ì‚¬ìš©
+    /// OnEable()ëŠ” ì˜¤ë¸Œì íŠ¸í’€ì—ì„œ ì¬í™œìš©ëœ ì˜¤ë¸Œì íŠ¸ë“¤ì˜ ì´ˆê¸°ê°’ì„ í”„ë¦¬íŒ¹ê±°ë¡œ ì´ˆê¸°í™”í•´ì£¼ëŠ” ê¸°ëŠ¥ì´ê³ 
+    /// ì´ê±´ Invoke, Coroutineë“±ì„ ì‹œì‘í•  ë•Œ ì“°ë©´ ë¨
+    /// ë¶„ë¦¬í•œ ì´ìœ  : OnEnableëŠ” Init() ì „ì— í˜¸ì¶œë˜ê¸° ë•Œë¬¸ì— ìŠ¤í°í• ë•Œ ì§€ì •í•œ ìœ„ì¹˜, ë°©í–¥,typeë“±ì´ ì´ˆê¸°í™”ë˜ì§€ ì•Šì€ ìƒíƒœì—ì„œ ì‹¤í–‰ë¨
     /// </summary>
     protected virtual void StartAfterInit()
     {
 
     }
 
-    public virtual void Move() // dir ¹æÇâÀ¸·Î speed ¼Óµµ·Î ÀÌµ¿
+    public virtual void Move() // dir ë°©í–¥ìœ¼ë¡œ speed ì†ë„ë¡œ ì´ë™
     {
-        transform.Translate(MoveSpeed * Time.deltaTime * direction, Space.World);
+        // ì¸ìŠ¤í™í„°ì°½ì—ì„œ MoveSpeedë¥¼ 1ë¡œ í•´ë„ ë„ˆë¬´ ë¹¨ë¼ì„œ ë³´ì •ìš©ìœ¼ë¡œ 0.1ì„ ê³±í•´ì¤Œ
+        transform.Translate(MoveSpeed * Time.deltaTime * direction * 0.1f, Space.World);
     }
 
-    public virtual void TakeDamage(int damage) // µ¥¹ÌÁö¸¦ ¹ŞÀ» ¶§ Ã¼·Â ±ğ±â
+    public virtual void TakeDamage(int damage) // ë°ë¯¸ì§€ë¥¼ ë°›ì„ ë•Œ ì²´ë ¥ ê¹ê¸°
     {
         if (isDead) return;
         HP -= damage;
         Debug.Log($"{this.name} damaged : {damage} HP : {HP}");
-        if (HP <= 0)  // Ã¼·Â 0ÀÌ µÇ¸é Á×À¸¸é¼­ ¸ó½ºÅÍº° Á×À» ¶§ ¾×¼Ç ¼öÇà
+        if (HP <= 0)  // ì²´ë ¥ 0ì´ ë˜ë©´ ì£½ìœ¼ë©´ì„œ ëª¬ìŠ¤í„°ë³„ ì£½ì„ ë•Œ ì•¡ì…˜ ìˆ˜í–‰
         {
             isDead = true;
             Debug.Log($"{this.name} destroyed");
@@ -99,13 +100,13 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
         Debug.Log("Die");
 
-        // ÆÄ±« ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ı
+        // íŒŒê´´ ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ
         var DE = PoolManager.instance.Get(DesturctionEffect);
         DE.transform.position = transform.position;
         DE.transform.rotation = transform.rotation;
         DE.SetActive(true);
     }
-    protected virtual void OnEnable()  // ¿ÀºêÁ§Æ®Ç®¿¡¼­ °¡Á®¿Ã ¶§ È°¼ºÈ­(ÃÊ±âÈ­)
+    protected virtual void OnEnable()  // ì˜¤ë¸Œì íŠ¸í’€ì—ì„œ ê°€ì ¸ì˜¬ ë•Œ í™œì„±í™”(ì´ˆê¸°í™”)
     {
         transform.rotation = Quaternion.identity;
         isReleased = false;
@@ -117,18 +118,18 @@ public abstract class Monster : MonoBehaviour, IDamageable
         isDead = false;
     }
 
-    protected virtual void OnDisable()  // ´ëºÎºĞÀÇ ¸ó½ºÅÍ´Â Shoot()¸¦ InvokeRepeating ÇÒ ¿¹Á¤ÀÌ±â¶§¹®¿¡ ºñÈ°¼ºÈ­½Ã Ãë¼Ò
-    {                                   // ¸¸¾à ÀÎº¸Å© ÇÏÁö ¾Ê´Â °æ¿ì¿©µµ ¼º´É»ó Å©°Ô ¹®Á¦°¡ ¾ø´Ù°í ÇÏ´Ï ºÎ¸ğÅ¬·¡½º¿¡¼­ ÀÏ°ı½ÇÇà
+    protected virtual void OnDisable()  // ëŒ€ë¶€ë¶„ì˜ ëª¬ìŠ¤í„°ëŠ” Shoot()ë¥¼ InvokeRepeating í•  ì˜ˆì •ì´ê¸°ë•Œë¬¸ì— ë¹„í™œì„±í™”ì‹œ ì·¨ì†Œ
+    {                                   // ë§Œì•½ ì¸ë³´í¬ í•˜ì§€ ì•ŠëŠ” ê²½ìš°ì—¬ë„ ì„±ëŠ¥ìƒ í¬ê²Œ ë¬¸ì œê°€ ì—†ë‹¤ê³  í•˜ë‹ˆ ë¶€ëª¨í´ë˜ìŠ¤ì—ì„œ ì¼ê´„ì‹¤í–‰
         CancelInvoke("Shoot");
     }
 
     /// <summary>
-    /// Destroy() ´ë½Å »ç¿ëÇÕ´Ï´Ù. ¿ÀºêÁ§Æ® Ç®·Î ¸®ÅÏ
+    /// Destroy() ëŒ€ì‹  ì‚¬ìš©í•©ë‹ˆë‹¤. ì˜¤ë¸Œì íŠ¸ í’€ë¡œ ë¦¬í„´
     /// </summary>
     protected void Release()
     {
 
-        if (!isReleased) // Áßº¹¸®ÅÏ ¹æÁö
+        if (!isReleased) // ì¤‘ë³µë¦¬í„´ ë°©ì§€
         {
             isReleased = true;
             PoolManager.instance.Return(gameObject);
@@ -136,29 +137,29 @@ public abstract class Monster : MonoBehaviour, IDamageable
     }
 
     /// <summary>
-    /// transform ÀÌ ÀÚ½Ä ¿ÀºêÁ§Æ®µéÀ» º¸°üÇÏ°í ÀÖ¾î¼­ ÀÌ·± foreach·Î ÀÚ½ÄÀ» ÇÑ¹ÙÄû µ¹ ¼ö ÀÖÀ½
-    /// ÆÄ±« ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ½ÃÀÛµÇ¸é¼­ Engine,Shield µîÀ» ²¨ÁÖ±â</summary>
+    /// transform ì´ ìì‹ ì˜¤ë¸Œì íŠ¸ë“¤ì„ ë³´ê´€í•˜ê³  ìˆì–´ì„œ ì´ëŸ° foreachë¡œ ìì‹ì„ í•œë°”í€´ ëŒ ìˆ˜ ìˆìŒ
+    /// íŒŒê´´ ì• ë‹ˆë©”ì´ì…˜ì´ ì‹œì‘ë˜ë©´ì„œ Engine,Shield ë“±ì„ êº¼ì£¼ê¸°</summary>
     private void DestroyAllChildren()
     {
         foreach (Transform child in transform)
         {
-            child.gameObject.SetActive(false); // ÀÚ½Ä ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
+            child.gameObject.SetActive(false); // ìì‹ ì˜¤ë¸Œì íŠ¸ ë¹„í™œì„±í™”
         }
     }
 
-    protected virtual void OnBecameInvisible() // Ä«¸Ş¶ó ¹ÛÀ¸·Î ³ª°¡¸é ¿ÀºêÁ§Æ® Ç®·Î ¹İÈ¯
-    {                               // ´Ù¸¥ ÇÔ¼ö¿¡¼­ ¹İÈ¯ÇØµµ ÇØ´ç ¸Ş¼­µå°¡ ½ÇÇàµÇ±â ¶§¹®¿¡(ºñÈ°¼ºÈ­ µÇ¸é¼­ Ä«¸Ş¶ó¿¡¼­ »ç¶óÁö´Â°ÍÀ¸·Î ÀÎ½ÄÇÏ´ÂµíÇÔ)
-                                    // Release()°¡ È£ÃâµÇ¸é isReleased¸¦ True·Î ÇØ¼­ Áßº¹½ÇÇàÀ» ¹æÁöÇÔ
-                                    // ÀÌ°Å ¾ÈÇÏ´Ï±î °°Àº ¿ÀºêÁ§Æ®¸¦ µÎ¹ø¾¿ ¹İÈ¯ÇØ¼­ ¿ÀºêÁ§Æ® Ç® 10Ä­À» ´Ù ¾²°í Ã³À½À¸·Î µ¹¾Æ¿À¸é
-                                    // °°Àº ¿ÀºêÁ§Æ®°¡ µÎ¹ø¾¿ È£ÃâµÅ¼­ ÇÑ¹ÙÄû µ¹¶§¸¶´Ù µÎ¹è¾¿ ´À·ÁÁö´Â Çö»óÀÌ ¹ß»ı
-                                    // ´À·ÁÁö´Â°Í»Ó¸¸ÀÌ ¾Æ´Ï¶ó ÇÑ ¿ÀºêÁ§Æ®¸¦ µÎ¹ø ¾¿ ºÎ¸£´Ï ÀÌ°ÍÀú°Í ¹®Á¦°¡ Ä¿¼­ ²À ½Å°æ½á¾ßÇÒµí!!
+    protected virtual void OnBecameInvisible() // ì¹´ë©”ë¼ ë°–ìœ¼ë¡œ ë‚˜ê°€ë©´ ì˜¤ë¸Œì íŠ¸ í’€ë¡œ ë°˜í™˜
+    {                               // ë‹¤ë¥¸ í•¨ìˆ˜ì—ì„œ ë°˜í™˜í•´ë„ í•´ë‹¹ ë©”ì„œë“œê°€ ì‹¤í–‰ë˜ê¸° ë•Œë¬¸ì—(ë¹„í™œì„±í™” ë˜ë©´ì„œ ì¹´ë©”ë¼ì—ì„œ ì‚¬ë¼ì§€ëŠ”ê²ƒìœ¼ë¡œ ì¸ì‹í•˜ëŠ”ë“¯í•¨)
+                                    // Release()ê°€ í˜¸ì¶œë˜ë©´ isReleasedë¥¼ Trueë¡œ í•´ì„œ ì¤‘ë³µì‹¤í–‰ì„ ë°©ì§€í•¨
+                                    // ì´ê±° ì•ˆí•˜ë‹ˆê¹Œ ê°™ì€ ì˜¤ë¸Œì íŠ¸ë¥¼ ë‘ë²ˆì”© ë°˜í™˜í•´ì„œ ì˜¤ë¸Œì íŠ¸ í’€ 10ì¹¸ì„ ë‹¤ ì“°ê³  ì²˜ìŒìœ¼ë¡œ ëŒì•„ì˜¤ë©´
+                                    // ê°™ì€ ì˜¤ë¸Œì íŠ¸ê°€ ë‘ë²ˆì”© í˜¸ì¶œë¼ì„œ í•œë°”í€´ ëŒë•Œë§ˆë‹¤ ë‘ë°°ì”© ëŠë ¤ì§€ëŠ” í˜„ìƒì´ ë°œìƒ
+                                    // ëŠë ¤ì§€ëŠ”ê²ƒë¿ë§Œì´ ì•„ë‹ˆë¼ í•œ ì˜¤ë¸Œì íŠ¸ë¥¼ ë‘ë²ˆ ì”© ë¶€ë¥´ë‹ˆ ì´ê²ƒì €ê²ƒ ë¬¸ì œê°€ ì»¤ì„œ ê¼­ ì‹ ê²½ì¨ì•¼í• ë“¯!!
         Release();
     }
 
     protected void RotateToDirection()
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // ÀÌ¹ÌÁö°¡ ¾Æ·¡¹æÇâÀÌ´Ï±î 90µµ º¸Á¤
+        transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // ì´ë¯¸ì§€ê°€ ì•„ë˜ë°©í–¥ì´ë‹ˆê¹Œ 90ë„ ë³´ì •
 
     }
 

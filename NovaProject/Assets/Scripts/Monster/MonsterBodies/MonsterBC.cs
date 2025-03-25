@@ -19,11 +19,11 @@ public class MonsterBC : Monster
     public override void Shoot()
     {
         // BC는 부채꼴탄막을 각도를 바꿔가면서 뿌릴것임
-        int count = 5; // 5발 발사
-        float angle = 60f; // 부채꼴 각도
+        int count = 6; // 6발 발사
+        float angle = 95f; // 부채꼴 각도
         float intervalangle = angle / (count - 1); // 각 탄환 사이의 각도
         float baseangle = -angle / 2f; // 제일 왼쪽 탄환의 각도
-        float shake = 5f * ShootingShakeFlag;
+        float shake = 8f * ShootingShakeFlag;
 
         for (int i = 0; i < count; i++)
         {

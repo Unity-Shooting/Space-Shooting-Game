@@ -4,40 +4,40 @@ using System.Threading;
 using UnityEngine;
 
 /// <summary>
-/// ¸ó½ºÅÍ ÇÑ °³Ã¼ÀÇ ½ÇÇà¿¡ °üÇÑ Á¤º¸, ¹İº¹µµ °¡´ÉÇÔ!
+/// ëª¬ìŠ¤í„° í•œ ê°œì²´ì˜ ì‹¤í–‰ì— ê´€í•œ ì •ë³´, ë°˜ë³µë„ ê°€ëŠ¥í•¨!
 /// </summary>
 [System.Serializable]
 public class SpawnEventData
 {
 
-    [Header("±âº» ¼³Á¤")]
-    [Tooltip("ÀÌ ÀÌº¥Æ®°¡ ½ÇÇàµÉ ½Ã°£ (ÃÊ ´ÜÀ§)")]
+    [Header("ê¸°ë³¸ ì„¤ì •")]
+    [Tooltip("ì´ ì´ë²¤íŠ¸ê°€ ì‹¤í–‰ë  ì‹œê°„ (ì´ˆ ë‹¨ìœ„)")]
     public float spawnTime;
 
-    [Tooltip("½ºÆùµÉ ¸ó½ºÅÍ ÇÁ¸®ÆÕ")]
+    [Tooltip("ìŠ¤í°ë  ëª¬ìŠ¤í„° í”„ë¦¬íŒ¹")]
     public GameObject monster;
 
-    [Tooltip("½ºÆù À§Ä¡")]
+    [Tooltip("ìŠ¤í° ìœ„ì¹˜")]
     public Vector3 position;
 
-    [Tooltip("ÃÊ±â ÀÌµ¿ ¹æÇâ")]
+    [Tooltip("ì´ˆê¸° ì´ë™ ë°©í–¥")]
     public Vector2 direction;
 
-    [Tooltip("¸ó½ºÅÍ Å¸ÀÔ / ÆĞÅÏ ºĞ±â¿ë")]
+    [Tooltip("ëª¬ìŠ¤í„° íƒ€ì… / íŒ¨í„´ ë¶„ê¸°ìš©")]
     public int type;
 
-    [Header("¹İº¹ ¼³Á¤")]
-    [Tooltip("¸î ¹ø ¹İº¹ÇÒÁö")]
+    [Header("ë°˜ë³µ ì„¤ì •")]
+    [Tooltip("ëª‡ ë²ˆ ë°˜ë³µí• ì§€")]
     public int repeatCount = 1;
 
-    [Tooltip("¹İº¹ °£°İ (ÃÊ)")]
+    [Tooltip("ë°˜ë³µ ê°„ê²© (ì´ˆ)")]
     public float repeatInterval = 1f;
 }
 
 /// <summary>
-/// ÇÏ³ªÀÇ Wave¿¡ ´ëÇÑ Á¤º¸
-/// SpawnTimelineSO ¾È¿¡´Â ¿©·¯°³ÀÇ SpawnEventDataÀÇ ¸®½ºÆ®°¡ µé¾îÀÖÀ½
-/// ÀÌ ½ºÅ×ÀÌÁöÁö°¡ ½ÃÀÛÇÏ°í startTime ÈÄ¿¡, SpawnTileline¿¡ µé¾îÀÖ´Â ¼ÒÈ¯ÀÌº¥Æ®µéÀ» ½Ã°£ ¼ø¼­´ë·Î ½ÇÇà
+/// í•˜ë‚˜ì˜ Waveì— ëŒ€í•œ ì •ë³´
+/// SpawnTimelineSO ì•ˆì—ëŠ” ì—¬ëŸ¬ê°œì˜ SpawnEventDataì˜ ë¦¬ìŠ¤íŠ¸ê°€ ë“¤ì–´ìˆìŒ
+/// ì´ ìŠ¤í…Œì´ì§€ì§€ê°€ ì‹œì‘í•˜ê³  startTime í›„ì—, SpawnTilelineì— ë“¤ì–´ìˆëŠ” ì†Œí™˜ì´ë²¤íŠ¸ë“¤ì„ ì‹œê°„ ìˆœì„œëŒ€ë¡œ ì‹¤í–‰
 /// </summary>
 [System.Serializable]
 public class WaveData
@@ -47,52 +47,52 @@ public class WaveData
 }
 
 /// <summary>
-/// ÀüÃ¼ÀûÀ¸·Î ¸ó½ºÅÍ ½ºÆùÀ» °ü¸®ÇÔ
-/// ½Ì±ÛÅæÇüÅÂ·Î °ÔÀÓ¸Å´ÏÀú¿¡¼­ °¢ ½ºÅ×ÀÌÁö°¡ ½ÃÀÛÇÒ¶§
-/// StartStage(stageindex) ÇØÁÖ¸é ³¡!
+/// ì „ì²´ì ìœ¼ë¡œ ëª¬ìŠ¤í„° ìŠ¤í°ì„ ê´€ë¦¬í•¨
+/// ì‹±ê¸€í†¤í˜•íƒœë¡œ ê²Œì„ë§¤ë‹ˆì €ì—ì„œ ê° ìŠ¤í…Œì´ì§€ê°€ ì‹œì‘í• ë•Œ
+/// StartStage(stageindex) í•´ì£¼ë©´ ë!
 /// </summary>
 public class SpawnManager : Singleton<SpawnManager>
 {
-    [SerializeField] private List<StageWaveSO> stages = new();  // ÇÏ³ªÀÇ ½ºÅ×ÀÌÁöµ¿¾È ½ÇÇàµÉ ¿©·¯ WavaDataÀÇ ¸®½ºÆ®¸¦ °¡Áö°íÀÖÀ½
+    [SerializeField] private List<StageWaveSO> stages = new();  // í•˜ë‚˜ì˜ ìŠ¤í…Œì´ì§€ë™ì•ˆ ì‹¤í–‰ë  ì—¬ëŸ¬ WavaDataì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì§€ê³ ìˆìŒ
 
     void Start()
     {
-        StartStage(1);   // Å×½ºÆ®¿ë ÄÚµå. 1½ºÅ×ÀÌ¿¡ ÀúÀåµÈ Á¤º¸ ¹Ù·Î ½ÇÇà
+        StartStage(1);   // í…ŒìŠ¤íŠ¸ìš© ì½”ë“œ. 1ìŠ¤í…Œì´ì— ì €ì¥ëœ ì •ë³´ ë°”ë¡œ ì‹¤í–‰
     }
     /// <summary>
-    /// ÇØ´ç ½ºÅ×ÀÌÁöÀÇ ½ºÆùÀ» ½ÃÀÛ
+    /// í•´ë‹¹ ìŠ¤í…Œì´ì§€ì˜ ìŠ¤í°ì„ ì‹œì‘
     /// </summary>
     /// <param name="i"></param>
     void StartStage(int stageIndex)
     {
         if (stageIndex < 1 || stageIndex > stages.Count)
-            Debug.LogWarning("½ºÅ×ÀÌÁö ÀÎµ¦½º ¿À·ù");
+            Debug.LogWarning("ìŠ¤í…Œì´ì§€ ì¸ë±ìŠ¤ ì˜¤ë¥˜");
         StartCoroutine(WaveStarter(stages[stageIndex - 1].waves));
     }
 
     /// <summary>
-    /// ÇÑ ½ºÅ×ÀÌÁö´Â ¿©·¯°³ÀÇ wave·Î ±¸¼º
-    /// °¢ wave¿¡ ÁöÁ¤µÈ startTimeÀÌ Áö³ª¸é ÇØ´ç wave¸¦ ½ÇÇàÇÔ
+    /// í•œ ìŠ¤í…Œì´ì§€ëŠ” ì—¬ëŸ¬ê°œì˜ waveë¡œ êµ¬ì„±
+    /// ê° waveì— ì§€ì •ëœ startTimeì´ ì§€ë‚˜ë©´ í•´ë‹¹ waveë¥¼ ì‹¤í–‰í•¨
     /// </summary>
     /// <param name="waves"></param>
     /// <returns></returns>
     IEnumerator WaveStarter(List<WaveData> waves)
     {
-        float currentTime = 0;  // ½Ã°£Ã¼Å©
+        float currentTime = 0;  // ì‹œê°„ì²´í¬
         int i = 0;
 
-        // ÈŞ¸Õ¿¡·¯ ¹æÁö¸¦ À§ÇØ ½Ã°£ ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇØÁÜ
+        // íœ´ë¨¼ì—ëŸ¬ ë°©ì§€ë¥¼ ìœ„í•´ ì‹œê°„ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•´ì¤Œ
         waves.Sort((x, y) => x.startTime.CompareTo(y.startTime));
 
 
         while (i < waves.Count)
         {
-            currentTime += Time.deltaTime; // ÇöÀç ½Ã°£ ±¸ÇÏ±â
+            currentTime += Time.deltaTime; // í˜„ì¬ ì‹œê°„ êµ¬í•˜ê¸°
 
             var wave = waves[i];
             if (currentTime >= wave.startTime)
             {
-                StartCoroutine(SpawnWave(wave.timeline)); // ÇØ´ç wave ½ºÆù ½ÃÀÛ!
+                StartCoroutine(SpawnWave(wave.timeline)); // í•´ë‹¹ wave ìŠ¤í° ì‹œì‘!
                 i++;
             }
             yield return null;
@@ -101,7 +101,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
     IEnumerator SpawnWave(SpawnTimelineSO timeline)
     {
-        timeline.spawnEvents.Sort((a, b) => a.spawnTime.CompareTo(b.spawnTime)); // ¿À¸§Â÷¼ø Á¤·Ä·Î È¤½Ã¸ğ¸¦ ÈŞ¸Õ¿¡·¯ ´ëºñ
+        timeline.spawnEvents.Sort((a, b) => a.spawnTime.CompareTo(b.spawnTime)); // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ë¡œ í˜¹ì‹œëª¨ë¥¼ íœ´ë¨¼ì—ëŸ¬ ëŒ€ë¹„
         float currentTime = 0;
         int i = 0;
         while (i < timeline.spawnEvents.Count)
@@ -138,21 +138,20 @@ public class SpawnManager : Singleton<SpawnManager>
 
 
     /// <summary>
-    /// ¸ó½ºÅÍÇÁ¸®Æé, ½ºÆùÀ§Ä¡, ÃÊ±âÁøÇà¹æÇâ, ¸ó½ºÅÍ Çàµ¿Å¸ÀÔ
+    /// ëª¬ìŠ¤í„°í”„ë¦¬í©, ìŠ¤í°ìœ„ì¹˜, ì´ˆê¸°ì§„í–‰ë°©í–¥, ëª¬ìŠ¤í„° í–‰ë™íƒ€ì…
     /// </summary>
     /// <param name="monster"></param>
     /// <param name="pos"></param>
     /// <param name="dir"></param>
-    /// ÀÌ ÇÔ¼ö¸¦ ¸¸µç ÀÌÀ¯´Â ¿ÀºêÁ§Æ® Ç®¸µ Æ¯¼º»ó ÇÑ¹ø ¾²°í³­ ¿ÀºêÁ§Æ®´Â À§Ä¡°ªÀÌ ÀÌ»óÇÏ°Ô µé¾î°¡ ÀÖ¾î¼­
-    /// ¹İµå½Ã À§Ä¡°ªÀ» ³Ö¾îÁà¾ßÇÏ´Âµ¥(InstantiateÃ³·³ ÇÁ¸®Æé ÃÊ±â°ªÀ¸·Î »ı¼ºµÇÁö ¾ÊÀ½)
-    /// ¾ğÁ¨°¡ ÇÑ¹øÀº ±î¸Ô°í ¾ÈÇÒ°Í°°¾Æ¼­ ÇÔ¼ö·Î ¹­¾îµ×½À´Ï´Ù
+    /// ì´ í•¨ìˆ˜ë¥¼ ë§Œë“  ì´ìœ ëŠ” ì˜¤ë¸Œì íŠ¸ í’€ë§ íŠ¹ì„±ìƒ í•œë²ˆ ì“°ê³ ë‚œ ì˜¤ë¸Œì íŠ¸ëŠ” ìœ„ì¹˜ê°’ì´ ì´ìƒí•˜ê²Œ ë“¤ì–´ê°€ ìˆì–´ì„œ
+    /// ë°˜ë“œì‹œ ìœ„ì¹˜ê°’ì„ ë„£ì–´ì¤˜ì•¼í•˜ëŠ”ë°(Instantiateì²˜ëŸ¼ í”„ë¦¬í© ì´ˆê¸°ê°’ìœ¼ë¡œ ìƒì„±ë˜ì§€ ì•ŠìŒ)
+    /// ì–¸ì  ê°€ í•œë²ˆì€ ê¹Œë¨¹ê³  ì•ˆí• ê²ƒê°™ì•„ì„œ í•¨ìˆ˜ë¡œ ë¬¶ì–´ë’€ìŠµë‹ˆë‹¤
     private void SpawnMonster(GameObject monster, Vector3 pos, Vector2 dir, int type)
     {
-        var go = PoolManager.instance.Get(monster);    // ¿ÀºêÁ§Æ® Ç®¸µ¿¡¼­ »ı¼º Instantiate´ë½Å ¾´´Ù°í »ı°¢ÇÏ¸é µÉ°Í°°½À´Ï´Ù
-        Debug.Log($"½ºÆù¸Å´ÏÀúÀÇ ½ºÆù¸ó½ºÅÍ {pos}");
-        go.GetComponent<Monster>().Init(pos, dir, type); // ¸ó½ºÅÍ ¾È¿¡¼­ OnEnable·Î ÃÊ±âÈ­ ÇÒ ¼ö ÀÖ±ä ÇÏÁö¸¸
-                                                         // ½ºÆùÀ§Ä¡, ÁøÇà¹æÇâÀ» »ı¼ºÇÏ¸é¼­ ÁÙ ¼ö ÀÖ¾î¾ß ´Ù¾çÇÑ °æ·Î·Î
-                                                         // ¸ó½ºÅÍ¸¦ º¸³¾ ¼ö ÀÖÀ»°Í °°¾Æ¼­ ½ºÆù¸Å´ÏÀú¿¡¼­ À§Ä¡ ¹æÇâ ÁöÁ¤
+        var go = PoolManager.instance.Get(monster);    // ì˜¤ë¸Œì íŠ¸ í’€ë§ì—ì„œ ìƒì„± InstantiateëŒ€ì‹  ì“´ë‹¤ê³  ìƒê°í•˜ë©´ ë ê²ƒê°™ìŠµë‹ˆë‹¤
+        go.GetComponent<Monster>().Init(pos, dir, type); // ëª¬ìŠ¤í„° ì•ˆì—ì„œ OnEnableë¡œ ì´ˆê¸°í™” í•  ìˆ˜ ìˆê¸´ í•˜ì§€ë§Œ
+                                                         // ìŠ¤í°ìœ„ì¹˜, ì§„í–‰ë°©í–¥ì„ ìƒì„±í•˜ë©´ì„œ ì¤„ ìˆ˜ ìˆì–´ì•¼ ë‹¤ì–‘í•œ ê²½ë¡œë¡œ
+                                                         // ëª¬ìŠ¤í„°ë¥¼ ë³´ë‚¼ ìˆ˜ ìˆì„ê²ƒ ê°™ì•„ì„œ ìŠ¤í°ë§¤ë‹ˆì €ì—ì„œ ìœ„ì¹˜ ë°©í–¥ ì§€ì •
 
     }
 }
