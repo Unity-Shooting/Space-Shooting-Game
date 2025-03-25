@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - startTime: 0
-    timeline: {fileID: 11400000, guid: b13f6a18fb22cda43b4802732e82fb52, type: 2}
+    timeline: {fileID: 11400000, guid: 906a1d0d6a3b84475822c05491ac60d4, type: 2}

@@ -44,7 +44,7 @@ public class BackgroundRGBAControll : MonoBehaviour
             alpha += Time.deltaTime * rgbaDirection * colorSpeed;
 
             //Color.a의 값은 float 0부터 1까지이며, 0에서 투명하고 1에서 완전히 보인다.
-            // 알파가 0 또는 1에 도달하면 방향 반전
+            // 알파가 0 또는 0.5에 도달하면 방향 반전
             if (alpha <= 0f)
             {
                 alpha = 0f;
@@ -68,27 +68,28 @@ public class BackgroundRGBAControll : MonoBehaviour
             //해당 객체의 마테리얼의 Color 값 불러오기
             Color colorTemp = material.color;
 
-            // Adjust the color transition value
+            //Color.b 값을 변경
             blue += Time.deltaTime * rgbaDirection * colorSpeed;
 
-            // Reverse direction when hitting limits (0 = Red, 1 = Purple)
+            // Color.b 값을 0부터 1까지 반복 (0 = Red, 1 = Purple)
             if (blue >= 1f)
             {
-                blue = 1f;
-                rgbaDirection = -1f;
+                blue = 1f; //1일때
+                rgbaDirection = -1f; //방향을 -로
             }
             else if (blue <= 0f)
             {
-                blue = 0f;
-                rgbaDirection = 1f;
+                blue = 0f; //1일때
+                rgbaDirection = 1f; //방향을 +로
             }
 
-            // Interpolate between Red (1,0,0) and Purple (1,0,1)
-            colorTemp.r = 1f;   // Always full red
-            colorTemp.g = 0f;   // No green
-            colorTemp.b = blue; // Smoothly transition blue (0 → 1 → 0)
+            // 빨간색과 보라색으로 RGB값을 보간
+            // Red (1,0,0) and Purple (1,0,1)
+            colorTemp.r = 1f;   // Red는 항상 1
+            colorTemp.g = 0f;   // Green은 항상 0
+            colorTemp.b = blue; // Blue는 부드럽게 변화 (0 → 1 → 0)
 
-            // Apply color
+            // 마테리얼의 Color에 RGBA적용
             material.color = colorTemp;
 
         }
