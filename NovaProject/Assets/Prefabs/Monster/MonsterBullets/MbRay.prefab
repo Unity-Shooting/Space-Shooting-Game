@@ -442,7 +442,7 @@ MonoBehaviour:
   BaseAttack: 0
   BaseMoveSpeed: 0
   warningTime: 3
-  rayDuration: 10
+  rayDuration: 2
   Warning: {fileID: 2417527110913449363}
   Ray: {fileID: 1284666913627560210}
   Circle: {fileID: 1829087601738658226}
