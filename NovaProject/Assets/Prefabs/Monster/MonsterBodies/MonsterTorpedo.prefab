@@ -198,8 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHP: 1
   BaseAttack: 0
-  BaseMoveSpeed: 0.5
-  BaseAttackSpeed: 1
+  BaseMoveSpeed: 5
+  BaseAttackSpeed: 2.5
   BaseAttackStart: 1
   Bullet: {fileID: 7338323941969291318, guid: 70448297f3c196a4c9ac497e7b10794a, type: 3}
   Score: 100
