@@ -3,55 +3,55 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
-/// ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀ» °ü¸®ÇÏ´Â Å¬·¡½ºÀÔ´Ï´Ù.
+/// í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì„ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
 /// </summary>
 public class PlayerHealth : Singleton<PlayerHealth>
 {
-    private const string TAG = "Health"; // ·Î±× Ãâ·Â ½Ã »ç¿ëµÉ ÅÂ±×
+    private const string TAG = "Health"; // ë¡œê·¸ ì¶œë ¥ ì‹œ ì‚¬ìš©ë  íƒœê·¸ì…ë‹ˆë‹¤.
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾îÀÇ ½ºÇÁ¶óÀÌÆ®¸¦ ÀúÀåÇÏ´Â º¯¼öÀÔ´Ï´Ù.
+    /// í”Œë ˆì´ì–´ì˜ ìŠ¤í”„ë¼ì´íŠ¸ë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜ì…ë‹ˆë‹¤.
     /// </summary>
     public Sprite[] baseSprites;
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾îÀÇ ÇöÀç Ã¼·ÂÀ» ÀúÀåÇÏ´Â º¯¼öÀÔ´Ï´Ù.
+    /// í”Œë ˆì´ì–´ì˜ í˜„ì¬ ì²´ë ¥ì„ ì €ì¥í•˜ëŠ” ë³€ìˆ˜ì…ë‹ˆë‹¤.
     /// </summary>
     public int hp;
 
     /// <summary>
-    /// ´ë¹ÌÁö¸¦ ¹ŞÀº ÈÄ ´Ù½Ã ´ë¹ÌÁö¸¦ ¹ŞÀ» ¼ö ÀÖµµ·Ï È¸º¹µÇ´Â ½Ã°£(ÃÊ ´ÜÀ§)
+    /// ëŒ€ë¯¸ì§€ë¥¼ ë°›ì€ í›„ ë‹¤ì‹œ ëŒ€ë¯¸ì§€ë¥¼ ë°›ì„ ìˆ˜ ìˆë„ë¡ íšŒë³µë˜ëŠ” ì‹œê°„(ì´ˆ ë‹¨ìœ„)
     /// </summary>
     public float invincibleTime = 1f;
 
     /// <summary>
-    /// ÇöÀç ´ë¹ÌÁö¸¦ ¹ŞÀ» ¼ö ÀÖ´ÂÁö ¿©ºÎ¸¦ ³ªÅ¸³»´Â ÇÃ·¡±×
+    /// í˜„ì¬ ëŒ€ë¯¸ì§€ë¥¼ ë°›ì„ ìˆ˜ ìˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ë‚˜íƒ€ë‚´ëŠ” í”Œë˜ê·¸
     /// </summary>
     private bool canTakeDamage = true;
 
     /// <summary>
-    /// ½Ì±ÛÅæ ÀÎ½ºÅÏ½º°¡ ÃÊ±âÈ­µÉ ¶§ È£ÃâµË´Ï´Ù.
-    /// <para>Awake()¿¡¼­ GameManagerÀÇ ·Î±× »óÅÂ¸¦ Ã¼Å©ÇÏ°í ·Î±×¸¦ Ãâ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.</para>
+    /// ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ê°€ ì´ˆê¸°í™”ë  ë•Œ í˜¸ì¶œë©ë‹ˆë‹¤.
+    /// <para>Awake()ì—ì„œ GameManagerì˜ ë¡œê·¸ ìƒíƒœë¥¼ ì²´í¬í•˜ê³  ë¡œê·¸ë¥¼ ì¶œë ¥í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.</para>
     /// </summary>
     protected override void Awake()
     {
         // if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] Awake before base.Awake");
-        base.Awake(); // ½Ì±ÛÅæ ÆĞÅÏ¿¡¼­ ±âº» Awake ½ÇÇà
+        base.Awake(); // ì‹±ê¸€í†¤ íŒ¨í„´ì—ì„œ ê¸°ë³¸ Awake ì‹¤í–‰
         // if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] Awake after base.Awake");
     }
 
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾î°¡ ´ë¹ÌÁö¸¦ ¹ŞÀ» ¶§ È£ÃâµÇ´Â ¸Ş¼­µåÀÔ´Ï´Ù.
-    /// <para>Ã¼·ÂÀÌ °¨¼ÒÇÏ°í, È­¸é È¿°ú ¹× ¹«Àû ½Ã°£ Ã³¸®¸¦ ÇÕ´Ï´Ù.</para>
+    /// í”Œë ˆì´ì–´ê°€ ëŒ€ë¯¸ì§€ë¥¼ ë°›ì„ ë•Œ í˜¸ì¶œë˜ëŠ” ë©”ì„œë“œì…ë‹ˆë‹¤.
+    /// <para>ì²´ë ¥ì´ ê°ì†Œí•˜ê³ , í™”ë©´ íš¨ê³¼ ë° ë¬´ì  ì‹œê°„ ì²˜ë¦¬ë¥¼ í•©ë‹ˆë‹¤.</para>
     /// </summary>
-    /// <param name="num">ÀÔ·ÂµÈ ´ë¹ÌÁö °ª</param>
+    /// <param name="num">ì…ë ¥ëœ ëŒ€ë¯¸ì§€ ê°’</param>
     public void TakeDamage(int num)
     {
-        if (!canTakeDamage) return; // ¹«Àû »óÅÂ¶ó¸é ´ë¹ÌÁö¸¦ ¹ŞÁö ¾ÊÀ½
-        canTakeDamage = false; // ´ë¹ÌÁö¸¦ ¹Ş¾ÒÀ¸¹Ç·Î ¹«Àû »óÅÂ·Î º¯°æ
+        if (!canTakeDamage) return; // ë¬´ì  ìƒíƒœë¼ë©´ ëŒ€ë¯¸ì§€ë¥¼ ë°›ì§€ ì•ŠìŒ
+        canTakeDamage = false; // ëŒ€ë¯¸ì§€ë¥¼ ë°›ì•˜ìœ¼ë¯€ë¡œ ë¬´ì  ìƒíƒœë¡œ ë³€ê²½
 
-        // hp¿¡ µû¶ó sprite º¯°æ
-        if (--hp < 1) hp = 0; // Ã¼·Â °¨¼Ò ÈÄ 0 ÀÌÇÏ·Î ³»·Á°¡Áö ¾Êµµ·Ï Á¦ÇÑ
+        // hpì— ë”°ë¼ sprite ë³€ê²½
+        if (--hp < 1) hp = 0; // ì²´ë ¥ ê°ì†Œ í›„ 0 ì´í•˜ë¡œ ë‚´ë ¤ê°€ì§€ ì•Šë„ë¡ ì œí•œ
         SpriteRenderer pSR = PlayerController.Instance.Base.GetComponent<SpriteRenderer>();
         if (hp == 0)
         {
@@ -63,33 +63,33 @@ public class PlayerHealth : Singleton<PlayerHealth>
         else if (hp < 9) pSR.sprite = baseSprites[1];
         else pSR.sprite = baseSprites[0];
 
-        // if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] hp : {hp}"); // Ã¼·Â °¨¼Ò ÈÄ ·Î±× Ãâ·Â
-        PlayerController.Instance.Base.gameObject.GetComponent<Flash>().Run(); // ÇÃ·¹ÀÌ¾î°¡ ÇÇ°İ ½Ã ±ôºıÀÌ´Â È¿°ú ½ÇÇà
-        StartCoroutine(RecoveryRoutine()); // ÀÏÁ¤ ½Ã°£ ÈÄ ´Ù½Ã ´ë¹ÌÁö¸¦ ¹ŞÀ» ¼ö ÀÖµµ·Ï ¹«Àû ÇØÁ¦
-        ScreenShakeManager.Instance.ShakeScreen(); // È­¸é Èçµé¸² È¿°ú Àû¿ë
+        // if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] hp : {hp}"); // ì²´ë ¥ ê°ì†Œ í›„ ë¡œê·¸ ì¶œë ¥
+        PlayerController.Instance.Base.gameObject.GetComponent<Flash>().Run(); // í”Œë ˆì´ì–´ê°€ í”¼ê²© ì‹œ ê¹œë¹¡ì´ëŠ” íš¨ê³¼ ì‹¤í–‰
+        StartCoroutine(RecoveryRoutine()); // ì¼ì • ì‹œê°„ í›„ ë‹¤ì‹œ ëŒ€ë¯¸ì§€ë¥¼ ë°›ì„ ìˆ˜ ìˆë„ë¡ ë¬´ì  í•´ì œ
+        ScreenShakeManager.Instance.ShakeScreen(); // í™”ë©´ í”ë“¤ë¦¼ íš¨ê³¼ ì ìš©
         SFXManager.Instance.PlayDamageSound();
     }
 
     /// <summary>
-    /// ÀÏÁ¤ ½Ã°£ÀÌ Áö³ª¸é ´Ù½Ã ´ë¹ÌÁö¸¦ ¹ŞÀ» ¼ö ÀÖµµ·Ï ¼³Á¤ÇÏ´Â ÄÚ·çÆ¾
+    /// ì¼ì • ì‹œê°„ì´ ì§€ë‚˜ë©´ ë‹¤ì‹œ ëŒ€ë¯¸ì§€ë¥¼ ë°›ì„ ìˆ˜ ìˆë„ë¡ ì„¤ì •í•˜ëŠ” ì½”ë£¨í‹´
     /// </summary>
     IEnumerator RecoveryRoutine()
     {
-        yield return new WaitForSeconds(invincibleTime); // È¸º¹ ½Ã°£¸¸Å­ ´ë±â
-        canTakeDamage = true; // ´Ù½Ã ´ë¹ÌÁö¸¦ ¹ŞÀ» ¼ö ÀÖµµ·Ï ¼³Á¤
+        yield return new WaitForSeconds(invincibleTime); // íšŒë³µ ì‹œê°„ë§Œí¼ ëŒ€ê¸°
+        canTakeDamage = true; // ë‹¤ì‹œ ëŒ€ë¯¸ì§€ë¥¼ ë°›ì„ ìˆ˜ ìˆë„ë¡ ì„¤ì •
     }
 
     /// <summary>
-    /// Ãæµ¹ °¨Áö ½Ã ½ÇÇàµÇ´Â ÇÔ¼öÀÔ´Ï´Ù.
+    /// ì¶©ëŒ ê°ì§€ ì‹œ ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
     /// </summary>
-    /// <param name="collision">Ãæµ¹ÇÑ °´Ã¼ÀÇ Collider2D Á¤º¸</param>
+    /// <param name="collision">ì¶©ëŒí•œ ê°ì²´ì˜ Collider2D ì •ë³´</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] OnTriggerEnter2D. tag : {collision.gameObject.tag}");
-        if (collision.gameObject.tag == "Bullet") // Ãæµ¹ÇÑ °´Ã¼°¡ ÃÑ¾Ë(Bullet)ÀÏ °æ¿ì ´ë¹ÌÁö¸¦ ¹ŞÀ½
+        if (collision.gameObject.tag == "Bullet") // ì¶©ëŒí•œ ê°ì²´ê°€ ì´ì•Œ(Bullet)ì¼ ê²½ìš° ëŒ€ë¯¸ì§€ë¥¼ ë°›ìŒ
         {
-            // Destroy(collision.gameObject); // ÃÑ¾Ë °´Ã¼ Á¦°Å (ÁÖ¼® Ã³¸®µÊ)
-            TakeDamage(1); // Ã¼·Â 1 °¨¼Ò
+            // Destroy(collision.gameObject); // ì´ì•Œ ê°ì²´ ì œê±° (ì£¼ì„ ì²˜ë¦¬ë¨)
+            TakeDamage(1); // ì²´ë ¥ 1 ê°ì†Œ
         }
     }
 }

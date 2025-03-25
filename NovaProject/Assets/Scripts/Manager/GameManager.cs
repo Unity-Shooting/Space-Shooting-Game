@@ -1,22 +1,22 @@
 using UnityEngine;
 
 /// <summary>
-/// °ÔÀÓÀ» ÃÑ°ıÇÏ´Â GameManager Å¬·¡½º.
+/// ê²Œì„ì„ ì´ê´„í•˜ëŠ” GameManager í´ë˜ìŠ¤.
 /// </summary>
 public class GameManager : Singleton<GameManager>
 {
     /// <summary>
-    /// GameManagerÀÇ ·Î±× ÅÂ±×.
+    /// GameManagerì˜ ë¡œê·¸ íƒœê·¸.  
     /// </summary>
     private const string TAG = "GameManager";
 
     /// <summary>
-    /// µğ¹ö±ë ·Î±× Ãâ·Â ON/OFF
+    /// ë””ë²„ê¹… ë¡œê·¸ ì¶œë ¥ ON/OFF
     /// </summary>
     public bool logOn = true;
 
     /// <summary>
-    /// ÃÊ±âÈ­ ÇÔ¼ö.
+    /// ì´ˆê¸°í™” í•¨ìˆ˜.
     /// </summary>
     protected override void Awake()
     {
@@ -32,17 +32,17 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
-    /// ÇÁ·¹ÀÓ¸¶´Ù È£ÃâµÇ´Â ¾÷µ¥ÀÌÆ® ÇÔ¼ö.
+    /// í”„ë ˆì„ë§ˆë‹¤ í˜¸ì¶œë˜ëŠ” ì—…ë°ì´íŠ¸ í•¨ìˆ˜.
     /// </summary>
     void Update()
     {
-        // TODO: ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀÌ 0 ÀÌÇÏÀÌ¸é °ÔÀÓ Á¾·á µîÀÇ ¹®±¸ ¶ç¿ì±â
-        // TODO: UI È­¸é¿¡ Ç¥½ÃÇÏ±â
+        // TODO: í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì´ 0 ì´í•˜ì´ë©´ ê²Œì„ ì¢…ë£Œ ë“±ì˜ ë¬¸êµ¬ ë„ìš°ê¸°
+        // TODO: UI í™”ë©´ì— í‘œì‹œí•˜ê¸°
         //if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] health : {PlayerHealth.Instance.hp}");
     }
 
     /// <summary>
-    /// GameManagerÀÇ UI º¯°æ ÇÔ¼ö¸¦ ½ÇÇàÇÏ´Â Å×½ºÆ® ÇÔ¼ö.
+    /// GameManagerì˜ UI ë³€ê²½ í•¨ìˆ˜ë¥¼ ì‹¤í–‰í•˜ëŠ” í…ŒìŠ¤íŠ¸ í•¨ìˆ˜.
     /// </summary>
     public void changeUI()
     {

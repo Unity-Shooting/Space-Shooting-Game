@@ -3,197 +3,198 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// ���� ������ �����ϴ� ������.
+/// 무기 유형을 정의하는 열거형.
 /// </summary>
 enum WeaponType
 {
-    AutoCannon,  // �ڵ� ����
-    BigSpaceGun  // ���� ������
+    AutoCannon,  // 자동 대포
+    BigSpaceGun  // 대형 우주포
 }
 
 /// <summary>
-/// �÷��̾��� �̵� �� ������ �����ϴ� ��Ʈ�ѷ� Ŭ����.
+/// 플레이어의 이동 및 공격을 관리하는 컨트롤러 클래스.
 /// </summary>
 public class PlayerController : Singleton<PlayerController>
 {
 
     /// <summary>
-    /// ������� ���� �±� ���ڿ�.
+    /// 디버깅을 위한 태그 문자열.
     /// </summary>
     private const string TAG = "PlayerController";
 
     /// <summary>
-    /// �÷��̾� �̵� �ӵ�.
+    /// 플레이어 이동 속도.
     /// </summary>
     public float speed = 5f;
 
     /// <summary>
-    /// ���콺 ������ �÷��̾� ������ �ٶ󺸵��� �����ϴ� �÷���.
+    /// 마우스 방향대로 플레이어 방향을 바라보도록 설정하는 플래그.
     /// </summary>
     public bool useMouseDirection = false;
 
     /// <summary>
-    /// �⺻ ���� ������Ʈ (�÷��̾� �̵� �� ����).
+    /// 기본 게임 오브젝트 (플레이어 이동 시 사용됨).
     /// </summary>
     public GameObject Base;
 
     /// <summary>
-    /// �⺻ ���� ���� ������Ʈ (�÷��̾� �̵� �� ����).
+    /// 기본 엔진 게임 오브젝트 (플레이어 이동 시 사용됨).
     /// </summary>
     public GameObject BaseEngine;
 
     /// <summary>
-    /// ���� �޽� ���� ���� ������Ʈ (������ ��ȭ �� ���� ���� ����).
+    /// 대형 펄스 엔진 게임 오브젝트 (추진력 강화 시 사용될 수도 있음).
     /// </summary>
     public GameObject BigPulseEngine;
 
     /// <summary>
-    /// �⺻ ���� ȿ�� �ִϸ�����.
+    /// 기본 엔진 효과 애니메이터.
     /// </summary>
     public Animator amBaseEngineEffects;
 
     /// <summary>
-    /// ���� �޽� ���� ȿ�� �ִϸ�����.
+    /// 대형 펄스 엔진 효과 애니메이터.
     /// </summary>
     public Animator amBigPulseEngineEffects;
 
     /// <summary>
-    /// ����ĳ�� �ִϸ�����.
+    /// 오토캐논 애니메이터.
     /// </summary>
     public Animator amAutoCannon;
 
     /// <summary>
-    /// �����̽��� �ִϸ�����.
+    /// 빅스페이스건 애니메이터.
     /// </summary>
     public Animator amBigSpaceGun;
 
     /// <summary>
-    /// ���� �� �ִϸ����� (��� ����� ����� ������ �����).
+    /// 전면 방어막 애니메이터 (방어 기능을 담당할 것으로 예상됨).
     /// </summary>
     public Animator FrontSideShield;
 
     /// <summary>
-    /// ���� ��Ʈ�ѷ� ���� (�÷��̾��� ���� �߻縦 ������).
+    /// 무기 컨트롤러 참조 (플레이어의 무기 발사를 관리함).
     /// </summary>
     public WeaponController weaponCotroller;
 
     /// <summary>
-    /// �Էµ� �̵� ���� ����.
+    /// 입력된 이동 방향 벡터.
     /// </summary>
     private Vector2 moveInput;
 
     /// <summary>
-    /// ����� �Է��� �����ϴ� Ŀ���� �Է� �ý��� ��ü.
+    /// 사용자 입력을 관리하는 커스텀 입력 시스템 객체.
     /// </summary>
     private MyInputSystemActions inputSystem;
 
     /// <summary>
-    /// Rigidbody2D ������Ʈ ���� (���� �̵� ó���� ���� �ʿ���).
+    /// Rigidbody2D 컴포넌트 참조 (물리 이동 처리를 위해 필요함).
     /// </summary>
     private Rigidbody2D rb;
+
     /// <summary>
     /// Main Camera의 크기를 가져와서 Player의 반경을 제한.
     /// </summary>
     private Camera cam;
 
     /// <summary>
-    /// �ʱ�ȭ �۾��� �����ϴ� Awake �޼���.
-    /// Rigidbody2D �� �Է� �ý����� �ʱ�ȭ�Ѵ�.
+    /// 초기화 작업을 수행하는 Awake 메서드.
+    /// Rigidbody2D 및 입력 시스템을 초기화한다.
     /// </summary>
     protected override void Awake()
     {
-        inputSystem = new MyInputSystemActions(); // �Է� �ý��� �ʱ�ȭ
-        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D ������Ʈ ��������
+        inputSystem = new MyInputSystemActions(); // 입력 시스템 초기화
+        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
         cam = Camera.main; // main 카메라 저장.
 
         //if(GameManager.Instance.logging) Debug.Log($"[{TAG}] Awake before base.Awake");
-        base.Awake(); // ���߿� �����ؾ� Null���� �ȳ�
-        //if(GameManager.Instance.logging) Debug.Log($"[{TAG}] Awake after base.Awake")
+        base.Awake(); // 나중에 실행해야 Null에러 안남
+        //if(GameManager.Instance.logging) Debug.Log($"[{TAG}] Awake after base.Awake");
     }
 
     /// <summary>
-    /// ��ü�� Ȱ��ȭ�� �� ȣ��Ǹ�, �Է� �ý����� Ȱ��ȭ�ϰ� ���� �̺�Ʈ�� ���ε��Ѵ�.
+    /// 객체가 활성화될 때 호출되며, 입력 시스템을 활성화하고 공격 이벤트를 바인딩한다.
     /// </summary>
     private void OnEnable()
     {
-        inputSystem.Enable(); // �Է� �ý��� Ȱ��ȭ
-        inputSystem.Player.Attack.performed += _ => Attack(); // ���� �Է� �̺�Ʈ ���
-        inputSystem.Player.Click.performed += _ => Click(); // Ŭ�� �Է� �̺�Ʈ ��� (���콺 Ŭ���� ���� ó��)
+        inputSystem.Enable(); // 입력 시스템 활성화
+        inputSystem.Player.Attack.performed += _ => Attack(); // 공격 입력 이벤트 등록
+        inputSystem.Player.Click.performed += _ => Click(); // 클릭 입력 이벤트 등록 (마우스 클릭도 공격 처리)
     }
 
     /// <summary>
-    /// ��ü�� ��Ȱ��ȭ�� �� ȣ��Ǹ�, ���� �̺�Ʈ�� �����Ѵ�.
+    /// 객체가 비활성화될 때 호출되며, 공격 이벤트를 해제한다.
     /// </summary>
     private void OnDisable()
     {
-        inputSystem.Player.Attack.performed -= _ => Attack(); // ���� �Է� �̺�Ʈ ����
-        inputSystem.Player.Click.performed -= _ => Click(); // Ŭ�� �Է� �̺�Ʈ ����
-        inputSystem.Disable(); // �Է� �ý��� ��Ȱ��ȭ
+        inputSystem.Player.Attack.performed -= _ => Attack(); // 공격 입력 이벤트 해제
+        inputSystem.Player.Click.performed -= _ => Click(); // 클릭 입력 이벤트 해제
+        inputSystem.Disable(); // 입력 시스템 비활성화
     }
 
     /// <summary>
-    /// �� �����Ӹ��� ȣ��Ǹ�, �÷��̾��� ����� �̵��� ó���Ѵ�.
+    /// 매 프레임마다 호출되며, 플레이어의 방향과 이동을 처리한다.
     /// </summary>
     private void Update()
     {
-        direction(); // �÷��̾ �ٶ󺸴� ���� ������Ʈ
-        move(); // �÷��̾� �̵� ó��
+        direction(); // 플레이어가 바라보는 방향 업데이트
+        move(); // 플레이어 이동 처리
     }
 
     /// <summary>
-    /// ������ �������� ȣ��Ǹ�, Rigidbody2D�� �̿��� ���� �̵��� ó���Ѵ�.
+    /// 일정한 간격으로 호출되며, Rigidbody2D를 이용해 실제 이동을 처리한다.
     /// </summary>
     private void FixedUpdate()
     {
         ClampToCameraView(); // Rigidbody2D의 범위를 Cam 범위 안으로 제한.
-        rb.MovePosition(rb.position + speed * Time.deltaTime * moveInput); // Rigidbody2D ��� �̵� ó��
+        rb.MovePosition(rb.position + speed * Time.deltaTime * moveInput); // Rigidbody2D 기반 이동 처리
     }
 
     /// <summary>
-    /// �÷��̾��� ������ ���ϴ� �޼���.
-    /// ���콺�� ��ġ�� ���� �ٶ󺸴� ������ �޶�����.
+    /// 플레이어의 방향을 정하는 메서드.
+    /// 마우스의 위치에 따라 바라보는 방향이 달라진다.
     /// </summary>
     private void direction()
     {
         if (useMouseDirection)
         {
-            RotateTowardsMouse(transform); // ���콺�� �ٶ󺸵��� ȸ��
+            RotateTowardsMouse(transform); // 마우스를 바라보도록 회전
         }
     }
 
     /// <summary>
-    /// �÷��̾��� �̵��� ó���ϴ� �޼���.
-    /// �Է°��� �޾� �̵� ������ �����ϰ�, ���� ȿ���� Ȱ��ȭ�Ѵ�.
+    /// 플레이어의 이동을 처리하는 메서드.
+    /// 입력값을 받아 이동 방향을 결정하고, 엔진 효과를 활성화한다.
     /// </summary>
     private void move()
     {
-        moveInput = inputSystem.Player.Move.ReadValue<Vector2>(); // �̵� �Է°� ������Ʈ
+        moveInput = inputSystem.Player.Move.ReadValue<Vector2>(); // 이동 입력값 업데이트
 
         if (moveInput.y > 0)
         {
-            amBaseEngineEffects.SetBool("power", true); // ���� ȿ�� Ȱ��ȭ
+            amBaseEngineEffects.SetBool("power", true); // 엔진 효과 활성화
         }
         else
         {
-            amBaseEngineEffects.SetBool("power", false); // ���� ȿ�� ��Ȱ��ȭ
+            amBaseEngineEffects.SetBool("power", false); // 엔진 효과 비활성화
         }
     }
 
     /// <summary>
-    /// �÷��̾��� ������ �����ϴ� �޼���.
+    /// 플레이어의 공격을 실행하는 메서드.
     /// </summary>
     private void Attack()
     {
-        //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // ���� �߻� �α� ���
-        //weaponCotroller.Shooting(); // ���� �߻�          2025 - 03 -23 
-        // am.SetTrigger("shoot");         // 2025 - 03 -23  �߰�
-        //SFXManager.Instance.ShootSound();       // 2025 - 03 -23  �߰�
+        //if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Attack"); // 공격 발생 로그 출력
+        //weaponCotroller.Shooting(); // 무기 발사          2025 - 03 -23 
+        // am.SetTrigger("shoot");         // 2025 - 03 -23  추가
+        //SFXManager.Instance.ShootSound();       // 2025 - 03 -23  추가
 
         amAutoCannon.SetTrigger("shoot");
     }
 
     /// <summary>
-    /// ���콺 Ŭ�� �� �̺�Ʈ
+    /// 마우스 클릭 시 이벤트
     /// </summary>
     private void Click()
     {
@@ -201,27 +202,28 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     /// <summary>
-    /// Ư�� ��ġ���� ���콺 ���� ���͸� ��ȯ�ϴ� �Լ�.
+    /// 특정 위치에서 마우스 방향 벡터를 반환하는 함수.
     /// </summary>
     Vector3 GetMouseVectorFromPosition(Vector3 position)
     {
-        Vector2 mouseScreenPos = Mouse.current.position.ReadValue(); // ���콺 ȭ�� ��ǥ ��������
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, 0)); // ���콺�� ���� ��ǥ ��ȯ
-        mouseWorldPos.z = 0; // 2D ȯ���̹Ƿ� z ���� 0���� ����
+        Vector2 mouseScreenPos = Mouse.current.position.ReadValue(); // 마우스 화면 좌표 가져오기
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, 0)); // 마우스의 월드 좌표 변환
+        mouseWorldPos.z = 0; // 2D 환경이므로 z 값을 0으로 설정
 
-        Vector3 mouseDirection = (mouseWorldPos - position).normalized; // ���� ���� ���
+        Vector3 mouseDirection = (mouseWorldPos - position).normalized; // 방향 벡터 계산
         return mouseDirection;
     }
 
     /// <summary>
-    /// ������Ʈ�� ���콺 �������� ȸ����Ű�� �Լ�.
+    /// 오브젝트를 마우스 방향으로 회전시키는 함수.
     /// </summary>
     void RotateTowardsMouse(Transform obj)
     {
-        Vector3 direction = GetMouseVectorFromPosition(obj.position); // ���� ��ġ���� ���콺 ���� ���� ��������
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // ���� ���͸� ������ ��ȯ (���� ����)
-        obj.rotation = Quaternion.Euler(0f, 0f, angle); // ȸ�� ����
+        Vector3 direction = GetMouseVectorFromPosition(obj.position); // 현재 위치에서 마우스 방향 벡터 가져오기
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f; // 방향 벡터를 각도로 변환 (보정 포함)
+        obj.rotation = Quaternion.Euler(0f, 0f, angle); // 회전 적용
     }
+
     /// <summary>
     /// Rigidbody2D의 위치가 카메라를 넘어가지 않도록 제한한다.
     /// </summary>
