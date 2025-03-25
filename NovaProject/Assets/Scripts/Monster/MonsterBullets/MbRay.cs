@@ -10,6 +10,9 @@ public class MbRay : MbBase
     [SerializeField] private SpriteRenderer Ray;
     [SerializeField] private GameObject Circle;
     private MonsterSupport caster; // 레이저 지속시간 중에 시전몬스터 사망 체크
+                                   // int type가 1로 들어오면 caster에 관련된 처리를 하지 않음(보스가 시전한 광선임)
+
+    bool isRayHit = false; // 레이저 여러대 맞는일을 막기위해 한번 히트하면 더이상 히트하지않게
 
 
 
@@ -17,13 +20,16 @@ public class MbRay : MbBase
     void Update()
     {
         // 본체와 위치 동기화
-        transform.position = caster.Launcher.transform.position;
+        // 시전자가 보스인 경우는 안함
+        if (type != 1)
+            transform.position = caster.Launcher.transform.position;
     }
 
     protected override void OnEnable()
     {
         base.OnEnable();
         caster = null;
+        isRayHit = false;
     }
 
     public void Init(Vector2 pos, Vector2 dir, MonsterSupport caster)
@@ -33,7 +39,15 @@ public class MbRay : MbBase
         // 시전자 정보 받아오기
         this.caster = caster;
         warningTime = caster.stopDuration;
+        type = 0;
 
+
+        StartCoroutine(LazerSequence());
+    }
+
+    public override void Init(Vector2 pos, Vector2 dir, int type)
+    {
+        base.Init(pos, dir, type);
 
         StartCoroutine(LazerSequence());
     }
@@ -50,16 +64,17 @@ public class MbRay : MbBase
         while (timer < warningTime)  // 경고표시 깜빡이는 부분
         {
             timer += Time.deltaTime;
-
-            if (caster == null || !caster.gameObject.activeInHierarchy)  // 시전자가 없거나 비활성화 되면 종료
+            if (type != 1) // 시전자가 보스가 아니면서, 
             {
-                if (caster == null)
-                    Debug.Log("caster is null");
-                Debug.Log("Ray is released");
-                Release();
-                yield break;
+                if (caster == null || !caster.gameObject.activeInHierarchy)  // 시전자가 없거나 비활성화 되면 종료
+                {
+                    if (caster == null)
+                        Debug.Log("caster is null");
+                    Debug.Log("Ray is released");
+                    Release();
+                    yield break;
+                }
             }
-
             //경고 깜빡이기
             float alpha = Mathf.PingPong(Time.time * 2f, 1f);
             Color c = Warning.color;
@@ -82,5 +97,18 @@ public class MbRay : MbBase
 
     }
 
+    protected override void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
+    {
+        if (!isRayHit)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                PlayerHealth.Instance.TakeDamage(Attack);
+                isRayHit = true;
+                //Release();
+                //레이저는 맞는다고 바로 사라지면 이상하니까!
+            }
 
+        }
+    }
 }
