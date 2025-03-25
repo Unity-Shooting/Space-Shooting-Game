@@ -24,7 +24,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public float AttackStart { get; protected set; }
     public Vector2 direction { get; protected set; } // 진행 방향
 
-    public int type { get; protected set; }
+    public float type { get; protected set; }
     private bool isDead = false;
     public bool IsDead => isDead; // isDead를 바깥에 보내주기
     // 인스펙터에서 조절할 수치들은 스크립트에서 초기값 안넣기(헷갈림)
@@ -49,7 +49,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
 
     // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
-    public virtual void Init(Vector3 pos, Vector2 dir, int type)
+    public virtual void Init(Vector3 pos, Vector2 dir, float type)
     {
         transform.position = pos;
         direction = dir.normalized;
