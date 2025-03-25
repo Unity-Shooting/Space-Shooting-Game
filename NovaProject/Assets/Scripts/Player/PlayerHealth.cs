@@ -27,7 +27,12 @@ public class PlayerHealth : Singleton<PlayerHealth>
     /// <summary>
     /// 현재 대미지를 받을 수 있는지 여부를 나타내는 플래그
     /// </summary>
-    private bool canTakeDamage = true;
+    public bool canTakeDamage = true;
+
+    /// <summary>
+    /// 실드 상태에 따라 대미지 여부
+    /// </summary>
+    public bool isShieldOn = false;
 
     /// <summary>
     /// 싱글톤 인스턴스가 초기화될 때 호출됩니다.
@@ -47,6 +52,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     /// <param name="num">입력된 대미지 값</param>
     public void TakeDamage(int num)
     {
+        if (isShieldOn) return;
         if (!canTakeDamage) return; // 무적 상태라면 대미지를 받지 않음
         canTakeDamage = false; // 대미지를 받았으므로 무적 상태로 변경
 

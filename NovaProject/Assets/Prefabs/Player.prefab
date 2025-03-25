@@ -737,6 +737,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  shieldDuration: 3
+  shieldCoolTime: 10
+  isShieldReady: 1
   useMouseDirection: 0
   Base: {fileID: 4866670335912400699}
   BaseEngine: {fileID: 1599047868199262096}
@@ -746,6 +749,7 @@ MonoBehaviour:
   amAutoCannon: {fileID: 8406099317878762798}
   amBigSpaceGun: {fileID: 2501753717199047334}
   FrontSideShield: {fileID: 728497673043094858}
+  RoundShield: {fileID: 8290257816564435841}
   weaponCotroller: {fileID: 8958621419842788747}
 --- !u!114 &7337777958016577804
 MonoBehaviour:
@@ -766,6 +770,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: af8e30c798345db479129b263df61008, type: 3}
   hp: 10
   invincibleTime: 1
+  canTakeDamage: 1
+  isShieldOn: 0
 --- !u!50 &2680075233246703296
 Rigidbody2D:
   serializedVersion: 5
