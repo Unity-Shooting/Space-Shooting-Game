@@ -120,15 +120,26 @@ public class PWRManager : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.LeftShift ) && Pwr.fillAmount == 1f)
+        if (Input.GetKeyDown(KeyCode.LeftShift ) && Pwr.fillAmount == 1f)   //실드 게이지 UI 갱신 10초 쿨타임
         {
             StartCoroutine(FillOverTime(duration));
         }
-        if (Input.GetKeyDown(KeyCode.B) && Ammo.fillAmount == 1f) 
+        if (Input.GetKeyDown(KeyCode.B) && Ammo.fillAmount == 1f)   // B를 눌렀을때 , Ammo 게이지가 1f일때,
         {
-            StartCoroutine(FillOverTimeAmmo(duration));
+            if (images[0].gameObject.activeSelf && WeaponManager.Instance.MissileUnlocked)  //0번 이미지 Active일때, UI창에 미사일인 경우 && 미사일 해금 했을 경우
+            {
+                StartCoroutine(FillOverTimeAmmo(duration));
+            }
+            else if (images[1].gameObject.activeSelf && WeaponManager.Instance.LaserUnlocked) //1번 이미지 Active일때, UI창에 레이저인 경우 && 레이저 해금 했을 경우
+            {
+                StartCoroutine(FillOverTimeAmmo(duration));
+            }
+            else if (images[2].gameObject.activeSelf && WeaponManager.Instance.BombUnlocked) //2번 이미지 Active일때, UI창에 폭탄인 경우 && 폭탄 해금 했을 경우
+            {
+                StartCoroutine(FillOverTimeAmmo(duration));
+            }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
         if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
         if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
 
