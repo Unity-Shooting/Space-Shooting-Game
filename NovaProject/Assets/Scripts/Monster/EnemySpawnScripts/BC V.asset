@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa276294b3028f46a38789e832c108a, type: 3}
+  m_Name: BC V
+  m_EditorClassIdentifier: 
+  memo: 
+  spawnEvents:
+  - spawnTime: 0
+    monster: {fileID: 1583548365865125169, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
+    position: {x: 0, y: 5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 2
+    monster: {fileID: 1583548365865125169, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
+    position: {x: -1.5, y: 5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 2
+    monster: {fileID: 1583548365865125169, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
+    position: {x: 1.5, y: 5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 4
+    monster: {fileID: 1583548365865125169, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
+    position: {x: 2.5, y: 5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 4
+    monster: {fileID: 1583548365865125169, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
+    position: {x: 2.5, y: 5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    repeatCount: 0
+    repeatInterval: 0

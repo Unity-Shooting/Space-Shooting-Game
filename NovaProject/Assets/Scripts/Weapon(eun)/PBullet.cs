@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class PBullet : MonoBehaviour
 {
-    public float speed = 4.0f; // ÃÑ¾Ë ¼Óµµ
-    public int damage = 10; // °ø°Ý·Â
-    public GameObject effect; // Ãæµ¹ ½Ã ÀÌÆåÆ® ÇÁ¸®ÆÕ
+    public float speed = 4.0f; // ï¿½Ñ¾ï¿½ ï¿½Óµï¿½
+    public int damage = 10; // ï¿½ï¿½ï¿½Ý·ï¿½
+    public GameObject effect; // ï¿½æµ¹ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    public bool isHoming = false; // Å¸°ÙÆÃ ¿©ºÎ(E_Bullet¸¸ È°¼ºÈ­)
-    public float homingSpeed = 4f; // Å¸°ÙÆÃ ¼Óµµ
-    public float homingRange = 10f; // Å¸°ÙÆÃ ¹üÀ§
+    public bool isHoming = false; // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(E_Bulletï¿½ï¿½ È°ï¿½ï¿½È­)
+    public float homingSpeed = 4f; // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
+    public float homingRange = 10f; // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    private Transform target; // Å¸°Ù ¸ó½ºÅÍÀÇ À§Ä¡
+    private Transform target; // Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
 
     void Start()
     {
         if (isHoming)
         {
-            // Å¸°Ù Ã£±â (E_BulletÀÏ °æ¿ì)
+            // Å¸ï¿½ï¿½ Ã£ï¿½ï¿½ (E_Bulletï¿½ï¿½ ï¿½ï¿½ï¿½)
             FindTarget();
         }
     }
@@ -25,46 +25,45 @@ public class PBullet : MonoBehaviour
     {
         if(isHoming && target != null)
         {
-            // Å¸°ÙÀ» ÇâÇØ ÀÌµ¿ (Å¸°ÙÀ» ÃßÀû)
+            // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ (Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
             Vector3 direction = target.position - transform.position;
-            float step = homingSpeed * Time.deltaTime; // ÀÌµ¿ ¼Óµµ °è»ê¤¤
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step); // Å¸°Ù ÂÊÀ¸·Î ÀÌµ¿
+            float step = homingSpeed * Time.deltaTime; // ï¿½Ìµï¿½ ï¿½Óµï¿½ ï¿½ï¿½ê¤¤
+            transform.position = Vector2.MoveTowards(transform.position, target.position, step); // Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 
 
-            // È¸Àü (Å¸°ÙÀ» ÇâÇØ È¸Àü) 
+            // È¸ï¿½ï¿½ (Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½) 
 
 
         }
         else
         {
-            // Å¸°ÙÀÌ ¾øÀ¸¸é ±âº»ÀûÀÎ À§ÂÊ ¹æÇâÀ¸·Î ÀÌµ¿
+            // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
     }
 
     private void FindTarget()
     {
-        // Å¸°ÙÆÃ ¹üÀ§ ³»¿¡¼­ °¡Àå °¡±î¿î ¸ó½ºÅÍ Ã£±â
+        // Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster");
-        float closeDistance = Mathf.Infinity; // °¡Àå °¡±î¿î ¸ó½ºÅÍÀÇ °Å¸®
+        float closeDistance = Mathf.Infinity; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
 
-        // ¸ðµç ¸ó½ºÅÍ¸¦ ¼øÈ¸ÇÏ¸é¼­ °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Ã£À½
+        // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½È¸ï¿½Ï¸é¼­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ Ã£ï¿½ï¿½
         foreach (var monster in monsters)
         {
             float distance = Vector3.Distance(transform.position, monster.transform.position);
 
             if(distance < closeDistance && distance <= homingRange) 
             {
-                closeDistance = distance; // ÃÖ¼Ò °Å¸® °»½Å
-                target = monster.transform; // Å¸°ÙÀ¸·Î ¼³Á¤
+                closeDistance = distance; // ï¿½Ö¼ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+                target = monster.transform; // Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
         }
     }
 
-
     private void OnBecameInvisible()
     {
-        // È­¸é ¹ÛÀ¸·Î ³ª°¡¸é »èÁ¦
+        // È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Destroy(gameObject);
     }
 
@@ -77,14 +76,14 @@ public class PBullet : MonoBehaviour
             IDamageable obj = collision.GetComponent<IDamageable>();
             obj.TakeDamage(damage);
 
-            // Ãæµ¹ ÀÌÆåÆ® »ý¼º (ÇÊ¿äÇÑ °æ¿ì)
+            // ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ (ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½)
             if (effect != null)
             {
                 GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
-                Destroy(effectInstance, 1f);  // ÀÌÆåÆ®°¡ 1ÃÊ ÈÄ ÀÚµ¿À¸·Î »èÁ¦µÇµµ·Ï ¼³Á¤
+                Destroy(effectInstance, 1f);  // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
 
-            // ÃÑ¾Ë »èÁ¦
+            // ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½ï¿½
             Destroy(gameObject);
         }
     }
