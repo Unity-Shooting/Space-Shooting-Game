@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: eabe21298c758ea4c9a4923165479671
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7898424409476956689
+    second: Nairan - Support Ship -  Destruction_0
+  - first:
+      213: 8787572250830961200
+    second: Nairan - Support Ship -  Destruction_1
+  - first:
+      213: 1484606754446174504
+    second: Nairan - Support Ship -  Destruction_2
+  - first:
+      213: -6325443363498730134
+    second: Nairan - Support Ship -  Destruction_3
+  - first:
+      213: 720384168420176138
+    second: Nairan - Support Ship -  Destruction_4
+  - first:
+      213: 1060072809443464041
+    second: Nairan - Support Ship -  Destruction_5
+  - first:
+      213: 7816059202288172210
+    second: Nairan - Support Ship -  Destruction_6
+  - first:
+      213: 6841374955444927728
+    second: Nairan - Support Ship -  Destruction_7
+  - first:
+      213: 4298823265007104570
+    second: Nairan - Support Ship -  Destruction_8
+  - first:
+      213: -7862140673074057456
+    second: Nairan - Support Ship -  Destruction_9
+  - first:
+      213: -3996066656017723850
+    second: Nairan - Support Ship -  Destruction_10
+  - first:
+      213: -4728997081846065173
+    second: Nairan - Support Ship -  Destruction_11
+  - first:
+      213: 3638056693645636042
+    second: Nairan - Support Ship -  Destruction_12
+  - first:
+      213: 4707653568493844906
+    second: Nairan - Support Ship -  Destruction_13
+  - first:
+      213: 580664344925180239
+    second: Nairan - Support Ship -  Destruction_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 16
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112062c1727dc9d60800000000000000
+      internalID: 7898424409476956689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 16
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03afbd0576ab3f970800000000000000
+      internalID: 8787572250830961200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 16
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829e8e53af16a9410800000000000000
+      internalID: 1484606754446174504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 12
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d5ec746c28738a0800000000000000
+      internalID: -6325443363498730134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01ff7c95915ff900800000000000000
+      internalID: 720384168420176138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_5
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9639dea8a9226be00800000000000000
+      internalID: 1060072809443464041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_6
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc3fc7ee68387c60800000000000000
+      internalID: 7816059202288172210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_7
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc7c8a564271fe50800000000000000
+      internalID: 6841374955444927728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_8
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32feeebbfc78ab30800000000000000
+      internalID: 4298823265007104570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_9
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f254796b014e290800000000000000
+      internalID: -7862140673074057456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_10
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 12
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ec7456c8e1b88c0800000000000000
+      internalID: -3996066656017723850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_11
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 17
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7d4b8953a3f5eb0800000000000000
+      internalID: -4728997081846065173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_12
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 22
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1fa71a949fc7230800000000000000
+      internalID: 3638056693645636042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_13
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 25
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9fca37af1f45140800000000000000
+      internalID: 4707653568493844906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Support Ship -  Destruction_14
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 23
+        width: 75
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f41100d252fee0800800000000000000
+      internalID: 580664344925180239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nairan - Support Ship -  Destruction_0: 7898424409476956689
+      Nairan - Support Ship -  Destruction_1: 8787572250830961200
+      Nairan - Support Ship -  Destruction_10: -3996066656017723850
+      Nairan - Support Ship -  Destruction_11: -4728997081846065173
+      Nairan - Support Ship -  Destruction_12: 3638056693645636042
+      Nairan - Support Ship -  Destruction_13: 4707653568493844906
+      Nairan - Support Ship -  Destruction_14: 580664344925180239
+      Nairan - Support Ship -  Destruction_2: 1484606754446174504
+      Nairan - Support Ship -  Destruction_3: -6325443363498730134
+      Nairan - Support Ship -  Destruction_4: 720384168420176138
+      Nairan - Support Ship -  Destruction_5: 1060072809443464041
+      Nairan - Support Ship -  Destruction_6: 7816059202288172210
+      Nairan - Support Ship -  Destruction_7: 6841374955444927728
+      Nairan - Support Ship -  Destruction_8: 4298823265007104570
+      Nairan - Support Ship -  Destruction_9: -7862140673074057456
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
