@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 08984c36c9733364283412820f1fc2ab
+guid: 09e0804f46cd6e940bb10b7f9e219df6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2101493147699796950
-    second: START (48 x 8)_0
-  - first:
-      213: 311666989921633275
-    second: START (48 x 8)_1
-  - first:
-      213: -2564006636116401204
-    second: START (48 x 8)_2
-  - first:
-      213: 5135974386178834824
-    second: START (48 x 8)_3
-  - first:
-      213: 5046098708247310218
-    second: START (48 x 8)_4
+      213: -4348791568289514186
+    second: Button09Pause_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -164,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: START (48 x 8)_0
+      name: Button09Pause_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 9
-        height: 8
+        width: 134
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,96 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a24af69cd1ff5d2e0800000000000000
-      internalID: -2101493147699796950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: START (48 x 8)_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf38e7ed973435400800000000000000
-      internalID: 311666989921633275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: START (48 x 8)_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc3a9849c81da6cd0800000000000000
-      internalID: -2564006636116401204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: START (48 x 8)_3
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 881c1bf1e75a64740800000000000000
-      internalID: 5135974386178834824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: START (48 x 8)_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a8f63ae2a08570640800000000000000
-      internalID: 5046098708247310218
+      spriteID: 63db3e90c1df5a3c0800000000000000
+      internalID: -4348791568289514186
       vertices: []
       indices: 
       edges: []
@@ -277,7 +177,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -287,11 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      START (48 x 8)_0: -2101493147699796950
-      START (48 x 8)_1: 311666989921633275
-      START (48 x 8)_2: -2564006636116401204
-      START (48 x 8)_3: 5135974386178834824
-      START (48 x 8)_4: 5046098708247310218
+      Button09Pause_0: -4348791568289514186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
