@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6008542162048325370
+--- !u!1 &4461671099759352814
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8618963834783816160}
-  - component: {fileID: 1014577780919118051}
-  - component: {fileID: 6237835924466469074}
-  - component: {fileID: 7370409318593212195}
-  - component: {fileID: 8989652231431198273}
-  - component: {fileID: -565958657524310834}
+  - component: {fileID: 477850927078764590}
+  - component: {fileID: 703007214091745451}
+  - component: {fileID: 3243981775164209714}
+  - component: {fileID: 3706078290654132407}
+  - component: {fileID: 5924052776061912962}
+  - component: {fileID: 7693689527986164367}
   m_Layer: 6
-  m_Name: ItemB_Skill_Rocket
+  m_Name: ItemB_Skill_Bomb
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8618963834783816160
+--- !u!4 &477850927078764590
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008542162048325370}
+  m_GameObject: {fileID: 4461671099759352814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6420002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1014577780919118051
+--- !u!212 &703007214091745451
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008542162048325370}
+  m_GameObject: {fileID: 4461671099759352814}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6614499155338160327, guid: 4c13ae54d4d00ac4780b56cfbf902a3d, type: 3}
+  m_Sprite: {fileID: 7476406352141450584, guid: bf0eed0f20155f94da49508fdb87f80e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,14 +91,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6237835924466469074
+--- !u!50 &3243981775164209714
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008542162048325370}
+  m_GameObject: {fileID: 4461671099759352814}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -118,13 +118,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &7370409318593212195
+--- !u!61 &3706078290654132407
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008542162048325370}
+  m_GameObject: {fileID: 4461671099759352814}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -164,13 +164,13 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.53333336, y: 0.53333336}
   m_EdgeRadius: 0
---- !u!114 &8989652231431198273
+--- !u!114 &5924052776061912962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008542162048325370}
+  m_GameObject: {fileID: 4461671099759352814}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e348bc9531386d649ad70c341fc37798, type: 3}
@@ -178,16 +178,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackIncrease: 5
   ItemVelocity: 20
---- !u!114 &-565958657524310834
+--- !u!114 &7693689527986164367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008542162048325370}
+  m_GameObject: {fileID: 4461671099759352814}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 644feff89157804438d7689fea95f692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: Missile
+  skillName: Bomb
