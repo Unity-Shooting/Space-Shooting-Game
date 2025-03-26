@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6237835924466469074}
   - component: {fileID: 7370409318593212195}
   - component: {fileID: 8989652231431198273}
+  - component: {fileID: -565958657524310834}
   m_Layer: 6
   m_Name: ItemB_Skill_Rocket
   m_TagString: Item
@@ -177,3 +178,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackIncrease: 5
   ItemVelocity: 20
+--- !u!114 &-565958657524310834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008542162048325370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644feff89157804438d7689fea95f692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Missile
