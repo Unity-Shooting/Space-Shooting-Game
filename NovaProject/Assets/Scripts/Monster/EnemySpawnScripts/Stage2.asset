@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4be8c9b7fa1624aaba9fee35894f3c, type: 3}
   m_Name: Stage2
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - startTime: 0
+    timeline: {fileID: 11400000, guid: b116ccbc8693145808e96fd21c884721, type: 2}
+  - startTime: 5
+    timeline: {fileID: 11400000, guid: 6dc89dc1d13124edba9b1d4964f5f557, type: 2}
