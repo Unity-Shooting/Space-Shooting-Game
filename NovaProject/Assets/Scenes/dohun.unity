@@ -294,7 +294,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -507,7 +507,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -734,6 +734,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &553913438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553913439}
+  m_Layer: 0
+  m_Name: Launcher2
+  m_TagString: Untagged
+  m_Icon: {fileID: 4154780841294389669, guid: df9aec944f4474a04847b6d6375e4138, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &553913439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553913438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.311, y: 0.205, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 694433404}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560684721
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,6 +941,7 @@ GameObject:
   - component: {fileID: 694433403}
   - component: {fileID: 694433402}
   - component: {fileID: 694433405}
+  - component: {fileID: 694433406}
   m_Layer: 0
   m_Name: S1Fighter
   m_TagString: Untagged
@@ -1009,6 +1041,7 @@ Transform:
   m_Children:
   - {fileID: 348226575}
   - {fileID: 1264380014}
+  - {fileID: 553913439}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &694433405
@@ -1041,12 +1074,35 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.49238968
+--- !u!114 &694433406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694433401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb670269afa497a488c95908af0c494a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
+  BaseHP: 10
+  BaseAttack: 1
+  BaseMoveSpeed: 2
+  BaseAttackSpeed: 14.54
+  BaseAttackStart: 1
+  Bullet: {fileID: 5163471231254899717, guid: 3894f6576e6040644abfae83d110a1d5, type: 3}
+  Score: 0
+  DesturctionEffect: {fileID: 8430046309425923653, guid: f33de00e364bd4247895001b69df92cc, type: 3}
+  Launcher1: {fileID: 1264380013}
+  Launcher2: {fileID: 553913438}
 --- !u!1 &1033157591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1603,7 @@ Transform:
   m_GameObject: {fileID: 1264380013}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.34, z: 0}
+  m_LocalPosition: {x: -0.311, y: 0.205, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1758,7 +1814,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2136,7 +2192,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2407,7 +2463,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2554,6 +2610,7 @@ GameObject:
   - component: {fileID: 1960640830}
   - component: {fileID: 1960640829}
   - component: {fileID: 1960640832}
+  - component: {fileID: 1960640833}
   m_Layer: 0
   m_Name: S1BC
   m_TagString: Untagged
@@ -2692,6 +2749,28 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.11794314}
   m_Size: {x: 2.0166912, y: 2.8702269}
   m_Direction: 0
+--- !u!114 &1960640833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960640828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369e0efb39fcfd24480d873ff0479ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
+  BaseHP: 100
+  BaseAttack: 10
+  BaseMoveSpeed: 1
+  BaseAttackSpeed: 1.5
+  BaseAttackStart: 1
+  Bullet: {fileID: 7359008953394021154, guid: f1caefe39dab1e043bcf77f5f5dc559d, type: 3}
+  Score: 0
+  DesturctionEffect: {fileID: 6909474056937248150, guid: 0535f5425ef914348b303ca5b8e75b05, type: 3}
+  Launcher: {fileID: 67655150}
 --- !u!1001 &2073115789
 PrefabInstance:
   m_ObjectHideFlags: 0
