@@ -25,6 +25,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public Vector2 direction { get; protected set; } // 진행 방향
 
     public float type { get; protected set; }
+    public int itemType;
     private bool isDead = false;
     public bool IsDead => isDead; // isDead를 바깥에 보내주기
     // 인스펙터에서 조절할 수치들은 스크립트에서 초기값 안넣기(헷갈림)
@@ -39,6 +40,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
 
 
+
     // 상속받은 클래스에서 구현 할 메서드들
 
     // 보스가 아닌 몬스터들은 모두 일정한 간격으로 사격을 실행할 예정이기떄문에
@@ -49,11 +51,12 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
 
     // 스폰매니저에서 Get으로 오브젝트 가져온 다음에는 반드시 Init 해주기
-    public virtual void Init(Vector3 pos, Vector2 dir, float type)
+    public virtual void Init(Vector3 pos, Vector2 dir, float type, int itemtype)
     {
         transform.position = pos;
         direction = dir.normalized;
         this.type = type;
+        this.itemType = itemtype;
 
         // 방향벡터에 맞춰서 이미지 회전
         RotateToDirection();
@@ -105,6 +108,12 @@ public abstract class Monster : MonoBehaviour, IDamageable
         DE.transform.position = transform.position;
         DE.transform.rotation = transform.rotation;
         DE.SetActive(true);
+
+        // 아이템을 가졌다면 드랍
+        if (itemType != 0)
+        {
+            SpawnManager.Instance.SpawnItem(itemType, transform.position);
+        }
     }
     protected virtual void OnEnable()  // 오브젝트풀에서 가져올 때 활성화(초기화)
     {

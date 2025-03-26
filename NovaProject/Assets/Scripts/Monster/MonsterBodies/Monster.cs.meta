@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: 3113b1ee6225e4c499817f4622e618e4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Bullet: {instanceID: 0}
+  - DesturctionEffect: {instanceID: 0}
+  - itemPower: {instanceID: 0}
+  - itemSkillLaser: {instanceID: 0}
+  - itemSkillMissile: {instanceID: 0}
+  - itemSkillBomb: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
