@@ -26,6 +26,9 @@ public class SpawnEventData
     [Tooltip("몬스터 타입 / 패턴 분기용")]
     public float type;
 
+    [Tooltip("아이템 코드")]
+    public int item;
+
     [Header("반복 설정")]
     [Tooltip("몇 번 반복할지")]
     public int repeatCount = 1;
@@ -56,6 +59,12 @@ public class SpawnManager : Singleton<SpawnManager>
     [SerializeField] private MonsterBoss boss;
     [SerializeField] private List<StageWaveSO> stages = new();  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
 
+    [Header("아이템 프리펩")]
+    
+    [SerializeField] protected GameObject itemSkillMissile;
+    [SerializeField] protected GameObject itemSkillLaser;
+    [SerializeField] protected GameObject itemSkillBomb;
+    [SerializeField] protected GameObject itemPower;
     void Start()
     {
         StartStage(1);   // 테스트용 코드. 1스테이에 저장된 정보 바로 실행
@@ -128,7 +137,7 @@ public class SpawnManager : Singleton<SpawnManager>
         }
         for (int i = 0; i < count; i++)
         {
-            SpawnMonster(eventData.monster, eventData.position, eventData.direction, eventData.type);
+            SpawnMonster(eventData.monster, eventData.position, eventData.direction, eventData.type, eventData.item);
             if (i == eventData.repeatCount - 1)
                 break;
             yield return new WaitForSeconds(eventData.repeatInterval);
@@ -147,12 +156,39 @@ public class SpawnManager : Singleton<SpawnManager>
     /// 이 함수를 만든 이유는 오브젝트 풀링 특성상 한번 쓰고난 오브젝트는 위치값이 이상하게 들어가 있어서
     /// 반드시 위치값을 넣어줘야하는데(Instantiate처럼 프리펩 초기값으로 생성되지 않음)
     /// 언젠가 한번은 까먹고 안할것같아서 함수로 묶어뒀습니다
-    private void SpawnMonster(GameObject monster, Vector3 pos, Vector2 dir, float type)
+    private void SpawnMonster(GameObject monster, Vector3 pos, Vector2 dir, float type, int itemtype)
     {
         var go = PoolManager.instance.Get(monster);    // 오브젝트 풀링에서 생성 Instantiate대신 쓴다고 생각하면 될것같습니다
-        go.GetComponent<Monster>().Init(pos, dir, type); // 몬스터 안에서 OnEnable로 초기화 할 수 있긴 하지만
+        go.GetComponent<Monster>().Init(pos, dir, type, itemtype); // 몬스터 안에서 OnEnable로 초기화 할 수 있긴 하지만
                                                          // 스폰위치, 진행방향을 생성하면서 줄 수 있어야 다양한 경로로
                                                          // 몬스터를 보낼 수 있을것 같아서 스폰매니저에서 위치 방향 지정
 
     }
+
+
+    /// <summary>
+    /// 전달받은 아이템 코드에 맞는 아이템을 몬스터 위치에 생성
+    /// 1 미사일 2 레이저 3 밤 4 파워업
+    /// </summary>
+    /// <param name="itemcode"></param>
+    /// <param name="pos"></param>
+    public void SpawnItem(int itemcode, Vector2 pos)
+    {
+        switch (itemcode)
+        {
+            case 1:
+        Instantiate(itemSkillMissile, pos, Quaternion.identity);
+                break;
+            case 2:
+                Instantiate(itemSkillLaser, pos, Quaternion.identity);
+                break;
+            case 3:
+                Instantiate(itemSkillBomb, pos, Quaternion.identity);
+                break;
+            case 4:
+                Instantiate(itemPower, pos, Quaternion.identity);
+                break;
+        }
+    }
+
 }
