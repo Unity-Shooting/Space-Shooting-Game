@@ -6,22 +6,22 @@ public class Item : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Player¿Í Ãæµ¹! ¾ÆÀÌÅÛ È¿°ú ¹ßµ¿!");
-            WeaponEun.WeaponManager weaponManager = collision.GetComponent<WeaponEun.WeaponManager>();
+            Debug.Log("Playerì™€ ì¶©ëŒ! ì•„ì´í…œ íš¨ê³¼ ë°œë™!");
+            WeaponManager weaponManager = collision.GetComponent<WeaponManager>();
             if (weaponManager != null)
             {
-                weaponManager.UpgradeWeapon(); // ¾÷±×·¹ÀÌµå ¸Ş¼­µå È£Ãâ
+                weaponManager.UpgradeWeapon(); // ì—…ê·¸ë ˆì´ë“œ ë©”ì„œë“œ í˜¸ì¶œ
             }
             else
             {
-                Debug.LogError("WeaponManager¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. ÇÃ·¹ÀÌ¾î¿¡ WeaponManager°¡ ºÙ¾îÀÖ´ÂÁö È®ÀÎÇÏ¼¼¿ä.");
+                Debug.LogError("WeaponManagerë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. í”Œë ˆì´ì–´ì— WeaponManagerê°€ ë¶™ì–´ìˆëŠ”ì§€ í™•ì¸í•˜ì„¸ìš”.");
             }
 
-            Destroy(gameObject); // ¾ÆÀÌÅÛ Á¦°Å
+            Destroy(gameObject); // ì•„ì´í…œ ì œê±°
         }
         else
         {
-            Debug.Log("Ãæµ¹ÇßÁö¸¸ Player°¡ ¾Æ´Ô: " + collision.name);
+            Debug.Log("ì¶©ëŒí–ˆì§€ë§Œ Playerê°€ ì•„ë‹˜: " + collision.name);
         }
     }
 

@@ -2,56 +2,53 @@ using UnityEngine;
 
 public enum SkillType
 {
+    Missile,
     Laser,
-    Rocket,
-    Missile
+    Bomb
 }
 
 public class PSkill : MonoBehaviour
 {
-    public float speed = 5.0f; // ½ºÅ³ ¼Óµµ
-    public int damage = 20; // ½ºÅ³ ±âº» °ø°İ·Â
-    public SkillType skillType; // ½ºÅ³ À¯Çü
-    public GameObject effect; // ½ºÅ³ »ç¿ë ½Ã »ı¼ºµÉ ÀÌÆåÆ® ÇÁ¸®ÆÕ
+    public float speed = 5.0f; // ìŠ¤í‚¬ ì†ë„
+    public int damage = 20; // ìŠ¤í‚¬ ê¸°ë³¸ ê³µê²©ë ¥
+    public SkillType skillType; // ìŠ¤í‚¬ ìœ í˜•
+    public GameObject effect; // ìŠ¤í‚¬ ì‚¬ìš© ì‹œ ìƒì„±ë  ì´í™íŠ¸ í”„ë¦¬íŒ¹
 
-    // Laser °ü·Ã º¯¼ö
-    private Transform pos; // ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡¸¦ ÀúÀåÇÒ º¯¼ö
-    private float laserT = 4.0f; // ·¹ÀÌÀú Áö¼Ó ½Ã°£ (ÃÊ)
-    private float laserTimer = 0f; // ·¹ÀÌÀú Áö¼Ó ½Ã°£À» ÃßÀûÇÏ´Â Å¸ÀÌ¸Ó
+    // Laser ê´€ë ¨ ë³€ìˆ˜
+    private Transform pos; // í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜ë¥¼ ì €ì¥í•  ë³€ìˆ˜
+    private float laserT = 4.0f; // ë ˆì´ì € ì§€ì† ì‹œê°„ (ì´ˆ)
+    private float laserTimer = 0f; // ë ˆì´ì € ì§€ì† ì‹œê°„ì„ ì¶”ì í•˜ëŠ” íƒ€ì´ë¨¸
 
-    // Rocket °ü·Ã º¯¼ö
-    private Transform target; // ·ÎÄÏ Å¸°ÙÀÌ µÇ´Â ¸ó½ºÅÍÀÇ À§Ä¡
-    private float homingSpeed = 5.0f; // Å¸°ÙÆÃ ¼Óµµ
-    private float homingRange = 10f; // Å¸°ÙÆÃ ¹üÀ§
-
-
-
+    // missile ê´€ë ¨ ë³€ìˆ˜
+    private Transform target; // ë¡œì¼“ íƒ€ê²Ÿì´ ë˜ëŠ” ëª¬ìŠ¤í„°ì˜ ìœ„ì¹˜
+    private float homingSpeed = 5.0f; // íƒ€ê²ŸíŒ… ì†ë„
+    private float homingRange = 10f; // íƒ€ê²ŸíŒ… ë²”ìœ„
 
     void Start()
     {
-        // ÇÃ·¹ÀÌ¾î À§Ä¡¸¦ °¡Á®¿Í ÀúÀå
+        // í”Œë ˆì´ì–´ ìœ„ì¹˜ë¥¼ ê°€ì ¸ì™€ ì €ì¥
         pos = GameObject.FindWithTag("Player").transform;
 
         if (skillType == SkillType.Laser)
         {
-            // ·¹ÀÌÀú ½ºÅ³ÀÌ È°¼ºÈ­µÇ¸é Å¸ÀÌ¸Ó ½ÃÀÛ
+            // ë ˆì´ì € ìŠ¤í‚¬ì´ í™œì„±í™”ë˜ë©´ íƒ€ì´ë¨¸ ì‹œì‘
             laserTimer = laserT;
         }
 
-        // Rocket ½ºÅ³ÀÎ °æ¿ì Å¸°ÙÀ» Ã£µµ·Ï ¼³Á¤
-        if (skillType == SkillType.Rocket)
+        // Missile ìŠ¤í‚¬ì¸ ê²½ìš° íƒ€ê²Ÿì„ ì°¾ë„ë¡ ì„¤ì •
+        if (skillType == SkillType.Missile)
         {
-            FindTarget(); // °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Å¸°ÙÀ¸·Î Ã£À½
+            FindTarget(); // ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ë¥¼ íƒ€ê²Ÿìœ¼ë¡œ ì°¾ìŒ
         }
 
-        // ½ºÅ³ 3ÃÊ ÈÄ ÀÚµ¿ »èÁ¦
+        // ìŠ¤í‚¬ 3ì´ˆ í›„ ìë™ ì‚­ì œ
         Destroy(gameObject, 3f);
 
     }
 
     void Update()
     {
-        // Laser ½ºÅ³¸¸ ÇÃ·¹ÀÌ¾î À§Ä¡¿¡ ¸Â°Ô ÀÌµ¿
+        // Laser ìŠ¤í‚¬ë§Œ í”Œë ˆì´ì–´ ìœ„ì¹˜ì— ë§ê²Œ ì´ë™
         if (skillType == SkillType.Laser)
         {
 
@@ -61,58 +58,59 @@ public class PSkill : MonoBehaviour
             }
 
 
-            // ·¹ÀÌÀú Áö¼Ó ½Ã°£ÀÌ ³¡³ª¸é »èÁ¦
-            laserTimer -= Time.deltaTime; // ¸Å ÇÁ·¹ÀÓ¸¶´Ù Å¸ÀÌ¸Ó °¨¼Ò
+            // ë ˆì´ì € ì§€ì† ì‹œê°„ì´ ëë‚˜ë©´ ì‚­ì œ
+            laserTimer -= Time.deltaTime; // ë§¤ í”„ë ˆì„ë§ˆë‹¤ íƒ€ì´ë¨¸ ê°ì†Œ
             if (laserTimer <= 0f)
             {
-                Destroy(gameObject); // Å¸ÀÌ¸Ó°¡ 0 ÀÌÇÏ°¡ µÇ¸é ·¹ÀÌÀú »èÁ¦
+                Destroy(gameObject); // íƒ€ì´ë¨¸ê°€ 0 ì´í•˜ê°€ ë˜ë©´ ë ˆì´ì € ì‚­ì œ
             }
         }
-        else if (skillType == SkillType.Rocket)
+        else if (skillType == SkillType.Missile)
         {
-            if (target != null)
+            if (target != null && target.gameObject.activeInHierarchy) 
             {
-                // Å¸°ÙÀ» ÇâÇØ ·ÎÄÏ ÀÌµ¿ (Å¸°ÙÀ» ÃßÀû)
+                // íƒ€ê²Ÿì„ í–¥í•´ ë¡œì¼“ ì´ë™ (íƒ€ê²Ÿì„ ì¶”ì )
                 Vector3 direction = target.position - transform.position;
-                float step = homingSpeed * Time.deltaTime; // ÀÌµ¿ ¼Óµµ °è»ê
-                transform.position = Vector2.MoveTowards(transform.position, target.position, step); // Å¸°Ù ÂÊÀ¸·Î ÀÌµ¿
+                float step = homingSpeed * Time.deltaTime; // ì´ë™ ì†ë„ ê³„ì‚°
+                transform.position = Vector2.MoveTowards(transform.position, target.position, step); // íƒ€ê²Ÿ ìª½ìœ¼ë¡œ ì´ë™
             }
             else
             {
-                // Å¸°ÙÀÌ ¾øÀ¸¸é À§·Î ÀÌµ¿
+                // íƒ€ê²Ÿì´ ì—†ìœ¼ë©´ ìœ„ë¡œ ì´ë™
                 transform.Translate(Vector2.up * speed * Time.deltaTime);
             }
         }
         else
         {
-            // ´Ù¸¥ ½ºÅ³ÀÏ °æ¿ì ±âº»ÀûÀ¸·Î À§ÂÊÀ¸·Î ÀÌµ¿
+            // ë‹¤ë¥¸ ìŠ¤í‚¬ì¼ ê²½ìš° ê¸°ë³¸ì ìœ¼ë¡œ ìœ„ìª½ìœ¼ë¡œ ì´ë™
             transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
     }
 
 
 
-    // Å¸°ÙÆÃ ¹üÀ§ ³»¿¡¼­ °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Ã£´Â ¸Ş¼Òµå
+    // íƒ€ê²ŸíŒ… ë²”ìœ„ ë‚´ì—ì„œ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ë¥¼ ì°¾ëŠ” ë©”ì†Œë“œ
     private void FindTarget()
     {
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster"); // ¸ó½ºÅÍ ÅÂ±×·Î °Ë»ö
-        float closestDistance = Mathf.Infinity; // ÃÖ¼Ò °Å¸®¸¦ ¹«ÇÑ´ë·Î ÃÊ±âÈ­
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster"); // ëª¬ìŠ¤í„° íƒœê·¸ë¡œ ê²€ìƒ‰
+        float closestDistance = homingRange;
 
-        // ¸ğµç ¸ó½ºÅÍ¸¦ ¼øÈ¸ÇÏ¸é¼­ °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Ã£À½
+
+        // ëª¨ë“  ëª¬ìŠ¤í„°ë¥¼ ìˆœíšŒí•˜ë©´ì„œ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ë¥¼ ì°¾ìŒ
         foreach (GameObject monster in monsters)
         {
-            float distance = Vector3.Distance(transform.position, monster.transform.position); // ÇöÀç ÃÑ¾Ë À§Ä¡¿Í ¸ó½ºÅÍ °Å¸® °è»ê
+            float distance = Vector3.Distance(transform.position, monster.transform.position); // í˜„ì¬ ì´ì•Œ ìœ„ì¹˜ì™€ ëª¬ìŠ¤í„° ê±°ë¦¬ ê³„ì‚°
             if (distance < closestDistance && distance <= homingRange)
             {
-                closestDistance = distance; // ÃÖ¼Ò °Å¸® °»½Å
-                target = monster.transform; // Å¸°ÙÀ¸·Î ¼³Á¤
+                closestDistance = distance; // ìµœì†Œ ê±°ë¦¬ ê°±ì‹ 
+                target = monster.transform; // íƒ€ê²Ÿìœ¼ë¡œ ì„¤ì •
             }
         }
     }
 
     private void OnBecameInvisible()
     {
-        // È­¸é ¹ÛÀ¸·Î ³ª°¡¸é ½ºÅ³ »èÁ¦
+        // í™”ë©´ ë°–ìœ¼ë¡œ ë‚˜ê°€ë©´ ìŠ¤í‚¬ ì‚­ì œ
         Destroy(gameObject);
     }
 
@@ -126,14 +124,14 @@ public class PSkill : MonoBehaviour
             {
                 obj.TakeDamage(damage);
 
-                // Ãæµ¹ ÀÌÆåÆ® »ı¼º 
+                // ì¶©ëŒ ì´í™íŠ¸ ìƒì„± 
                 if (effect != null)
                 {
                     GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
-                    Destroy(effectInstance, 1f);  // ÀÌÆåÆ®°¡ 1ÃÊ ÈÄ ÀÚµ¿À¸·Î »èÁ¦µÇµµ·Ï ¼³Á¤
+                    Destroy(effectInstance, 1f);  // ì´í™íŠ¸ê°€ 1ì´ˆ í›„ ìë™ìœ¼ë¡œ ì‚­ì œë˜ë„ë¡ ì„¤ì •
                 }
 
-                // ÃÑ¾Ë »èÁ¦
+                // ì´ì•Œ ì‚­ì œ
                 Destroy(gameObject);
             }
         }
@@ -141,7 +139,7 @@ public class PSkill : MonoBehaviour
 
     private void ApplySkillEffect(GameObject monster)
     {
-        // ½ºÅ³ À¯Çüº° È¿°ú Àû¿ë
+        // ìŠ¤í‚¬ ìœ í˜•ë³„ íš¨ê³¼ ì ìš©
 
 /*
 
@@ -152,18 +150,18 @@ public class PSkill : MonoBehaviour
                 break;
 
             case SkillType.Rocket:
-                // È­»ó È¿°ú
+                // í™”ìƒ íš¨ê³¼
                 monster.GetComponent<monster>().TakeDamage(damage);
-                monster.GetComponent<monster>().ApplyStatusEffect("Burn", 5); // 5ÃÊ È­»ó
+                monster.GetComponent<monster>().ApplyStatusEffect("Burn", 5); // 5ì´ˆ í™”ìƒ
                 break;
 
             case SkillType.Missile:
-                // °üÅë È¿°ú
+                // ê´€í†µ íš¨ê³¼
                 monster.GetComponent<monster>().TakeDamage(damage);
                 break;
 
             default:
-                Debug.LogError("¾Ë ¼ö ¾ø´Â ½ºÅ³ À¯Çü");
+                Debug.LogError("ì•Œ ìˆ˜ ì—†ëŠ” ìŠ¤í‚¬ ìœ í˜•");
                 break;
         }
 

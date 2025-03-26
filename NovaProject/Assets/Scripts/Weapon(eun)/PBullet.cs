@@ -2,65 +2,66 @@ using UnityEngine;
 
 public class PBullet : MonoBehaviour
 {
-    public float speed = 4.0f; // ÃÑ¾Ë ¼Óµµ
-    public int damage = 10; // ÃÑ¾Ë °ø°İ·Â
-    public GameObject effect; // Ãæµ¹ ½Ã »ı¼ºµÉ ÀÌÆåÆ® ÇÁ¸®ÆÕ
+    public float speed = 4.0f; // ì´ì•Œ ì†ë„
+    public int damage = 10; // ì´ì•Œ ê³µê²©ë ¥
+    public GameObject effect; // ì¶©ëŒ ì‹œ ìƒì„±ë  ì´í™íŠ¸ í”„ë¦¬íŒ¹
 
-    public bool isHoming = false; // ÃÑ¾ËÀÌ Å¸°ÙÀ» ÃßÀûÇÏ´ÂÁö ¿©ºÎ (E_Bullet¿¡¼­ »ç¿ë)
-    public float homingSpeed = 4f; // Å¸°ÙÆÃ ¼Óµµ
-    public float homingRange = 10f; // Å¸°ÙÆÃ ¹üÀ§
+    public bool isHoming = false; // ì´ì•Œì´ íƒ€ê²Ÿì„ ì¶”ì í•˜ëŠ”ì§€ ì—¬ë¶€ (E_Bulletì—ì„œ ì‚¬ìš©)
+    public float homingSpeed = 4f; // íƒ€ê²ŸíŒ… ì†ë„
+    public float homingRange = 10f; // íƒ€ê²ŸíŒ… ë²”ìœ„
 
-    private Transform target; // Å¸°Ù ¸ó½ºÅÍÀÇ À§Ä¡
+    private Transform target; // íƒ€ê²Ÿ ëª¬ìŠ¤í„°ì˜ ìœ„ì¹˜
 
     void Start()
     {
         if (isHoming)
         {
-            // Å¸°Ù Ã£±â (E_BulletÀÏ °æ¿ì)
+            // íƒ€ê²Ÿ ì°¾ê¸° (E_Bulletì¼ ê²½ìš°)
             FindTarget();
         }
 
-        // ÃÑ¾Ë 2ÃÊ ÈÄ ÀÚµ¿ »èÁ¦
+        // ì´ì•Œ 2ì´ˆ í›„ ìë™ ì‚­ì œ
         Destroy(gameObject, 2f);
 
     }
 
     void Update()
     {
-        if (isHoming && target != null)
+        if (target != null && target.gameObject.activeInHierarchy) 
         {
-            // Å¸°ÙÀ» ÇâÇØ ÀÌµ¿ (Å¸°ÙÀ» ÃßÀû)
-            Vector3 direction = target.position - transform.position; // Å¸°Ù ¹æÇâ °è»ê
-            float step = homingSpeed * Time.deltaTime; // ÀÌµ¿ ¼Óµµ °è»ê
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step); // Å¸°Ù ¹æÇâÀ¸·Î ÀÌµ¿
+            // íƒ€ê²Ÿì„ í–¥í•´ ì´ë™ (íƒ€ê²Ÿì„ ì¶”ì )
+            Vector3 direction = target.position - transform.position; // íƒ€ê²Ÿ ë°©í–¥ ê³„ì‚°
+            float step = homingSpeed * Time.deltaTime; // ì´ë™ ì†ë„ ê³„ì‚°
+            transform.position = Vector2.MoveTowards(transform.position, target.position, step); // íƒ€ê²Ÿ ë°©í–¥ìœ¼ë¡œ ì´ë™
 
 
-            // È¸Àü (Å¸°ÙÀ» ÇâÇØ È¸Àü) 
+            // íšŒì „ (íƒ€ê²Ÿì„ í–¥í•´ íšŒì „) 
 
 
         }
         else
         {
-            // Å¸°ÙÀÌ ¾øÀ¸¸é ±âº»ÀûÀÎ À§ÂÊ ¹æÇâÀ¸·Î ÀÌµ¿
+            // íƒ€ê²Ÿì´ ì—†ìœ¼ë©´ ê¸°ë³¸ì ì¸ ìœ„ìª½ ë°©í–¥ìœ¼ë¡œ ì´ë™
             transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
     }
 
     private void FindTarget()
     {
-        // Å¸°ÙÆÃ ¹üÀ§ ³»¿¡¼­ °¡Àå °¡±î¿î ¸ó½ºÅÍ Ã£±â
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster"); // ¸ó½ºÅÍ ÅÂ±×·Î °Ë»ö
-        float closeDistance = Mathf.Infinity; // ÃÖ¼Ò °Å¸®¸¦ ¹«ÇÑ´ë·Î ÃÊ±âÈ­
+        // íƒ€ê²ŸíŒ… ë²”ìœ„ ë‚´ì—ì„œ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„° ì°¾ê¸°
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster"); // ëª¬ìŠ¤í„° íƒœê·¸ë¡œ ê²€ìƒ‰
+        float closeDistance = homingRange;
 
-        // ¸ğµç ¸ó½ºÅÍ¸¦ ¼øÈ¸ÇÏ¸é¼­ °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Ã£À½
+
+        // ëª¨ë“  ëª¬ìŠ¤í„°ë¥¼ ìˆœíšŒí•˜ë©´ì„œ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ë¥¼ ì°¾ìŒ
         foreach (var monster in monsters)
         {
-            float distance = Vector3.Distance(transform.position, monster.transform.position); // ÇöÀç ÃÑ¾Ë À§Ä¡¿Í ¸ó½ºÅÍ °Å¸® °è»ê
+            float distance = Vector3.Distance(transform.position, monster.transform.position); // í˜„ì¬ ì´ì•Œ ìœ„ì¹˜ì™€ ëª¬ìŠ¤í„° ê±°ë¦¬ ê³„ì‚°
 
             if (distance < closeDistance && distance <= homingRange)
             {
-                closeDistance = distance; // ÃÖ¼Ò °Å¸® °»½Å
-                target = monster.transform; // Å¸°ÙÀ¸·Î ¼³Á¤
+                closeDistance = distance; // ìµœì†Œ ê±°ë¦¬ ê°±ì‹ 
+                target = monster.transform; // íƒ€ê²Ÿìœ¼ë¡œ ì„¤ì •
             }
         }
     }
@@ -68,7 +69,7 @@ public class PBullet : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        // È­¸é ¹ÛÀ¸·Î ³ª°¡¸é »èÁ¦
+        // í™”ë©´ ë°–ìœ¼ë¡œ ë‚˜ê°€ë©´ ì‚­ì œ
         Destroy(gameObject);
     }
 
@@ -83,14 +84,14 @@ public class PBullet : MonoBehaviour
             {
                 obj.TakeDamage(damage);
 
-                // Ãæµ¹ ÀÌÆåÆ® »ı¼º (ÇÊ¿äÇÑ °æ¿ì)
+                // ì¶©ëŒ ì´í™íŠ¸ ìƒì„± 
                 if (effect != null)
                 {
                     GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
-                    Destroy(effectInstance, 1f);  // ÀÌÆåÆ®°¡ 1ÃÊ ÈÄ ÀÚµ¿À¸·Î »èÁ¦µÇµµ·Ï ¼³Á¤
+                    Destroy(effectInstance, 1f);  // ì´í™íŠ¸ê°€ 1ì´ˆ í›„ ìë™ìœ¼ë¡œ ì‚­ì œë˜ë„ë¡ ì„¤ì •
                 }
 
-                // ÃÑ¾Ë »èÁ¦
+                // ì´ì•Œ ì‚­ì œ
                 Destroy(gameObject);
             }
         }
