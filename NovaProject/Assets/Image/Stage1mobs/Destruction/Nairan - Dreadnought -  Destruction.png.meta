@@ -1,0 +1,666 @@
+fileFormatVersion: 2
+guid: dfe44cb2bd483404cb1cc9768dff2e7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1336104967557193268
+    second: Nairan - Dreadnought -  Destruction_0
+  - first:
+      213: -7716383142310388733
+    second: Nairan - Dreadnought -  Destruction_1
+  - first:
+      213: -2228503176888470113
+    second: Nairan - Dreadnought -  Destruction_2
+  - first:
+      213: -2644042771161859080
+    second: Nairan - Dreadnought -  Destruction_3
+  - first:
+      213: -303445140818420671
+    second: Nairan - Dreadnought -  Destruction_4
+  - first:
+      213: -8327152011865501004
+    second: Nairan - Dreadnought -  Destruction_5
+  - first:
+      213: -2375251966668589700
+    second: Nairan - Dreadnought -  Destruction_6
+  - first:
+      213: 5522510350100559579
+    second: Nairan - Dreadnought -  Destruction_7
+  - first:
+      213: 4240185863289763736
+    second: Nairan - Dreadnought -  Destruction_8
+  - first:
+      213: -3970576058373378220
+    second: Nairan - Dreadnought -  Destruction_9
+  - first:
+      213: 6846883392581148996
+    second: Nairan - Dreadnought -  Destruction_10
+  - first:
+      213: 5033410968144307786
+    second: Nairan - Dreadnought -  Destruction_11
+  - first:
+      213: 3762494185990592344
+    second: Nairan - Dreadnought -  Destruction_12
+  - first:
+      213: -7518700605722218070
+    second: Nairan - Dreadnought -  Destruction_13
+  - first:
+      213: -8677002740822834859
+    second: Nairan - Dreadnought -  Destruction_14
+  - first:
+      213: -1463850322659744583
+    second: Nairan - Dreadnought -  Destruction_15
+  - first:
+      213: 4475946652763085201
+    second: Nairan - Dreadnought -  Destruction_16
+  - first:
+      213: -3595960609138646580
+    second: Nairan - Dreadnought -  Destruction_17
+  - first:
+      213: 2081705870506237338
+    second: Nairan - Dreadnought -  Destruction_18
+  - first:
+      213: -8853304838810106406
+    second: Nairan - Dreadnought -  Destruction_19
+  - first:
+      213: 5674013441128885058
+    second: Nairan - Dreadnought -  Destruction_20
+  - first:
+      213: -2751029494166736582
+    second: Nairan - Dreadnought -  Destruction_21
+  - first:
+      213: 1821617697379954165
+    second: Nairan - Dreadnought -  Destruction_22
+  - first:
+      213: -3431167958941102102
+    second: Nairan - Dreadnought -  Destruction_23
+  - first:
+      213: 4821726056306932451
+    second: Nairan - Dreadnought -  Destruction_24
+  - first:
+      213: -5996678080678230651
+    second: Nairan - Dreadnought -  Destruction_25
+  - first:
+      213: 6691812264676793971
+    second: Nairan - Dreadnought -  Destruction_26
+  - first:
+      213: -9059799966106724785
+    second: Nairan - Dreadnought -  Destruction_27
+  - first:
+      213: 2906510316677403936
+    second: Nairan - Dreadnought -  Destruction_28
+  - first:
+      213: -2112349773043399420
+    second: Nairan - Dreadnought -  Destruction_29
+  - first:
+      213: 5582574733199197922
+    second: Nairan - Dreadnought -  Destruction_30
+  - first:
+      213: -1490242410032484631
+    second: Nairan - Dreadnought -  Destruction_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e91e5936cca8210800000000000000
+      internalID: 1336104967557193268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30cd6cb4a66e9e490800000000000000
+      internalID: -7716383142310388733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95bbb0fa24c211e0800000000000000
+      internalID: -2228503176888470113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb35fdbb197e4bd0800000000000000
+      internalID: -2644042771161859080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c13bc8042f9cbf0800000000000000
+      internalID: -303445140818420671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2d3164d53007c80800000000000000
+      internalID: -8327152011865501004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75bba2cbe8690fd0800000000000000
+      internalID: -2375251966668589700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6792667e5e3ac40800000000000000
+      internalID: 5522510350100559579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897f403c39a28da30800000000000000
+      internalID: 4240185863289763736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45febf6ac1ea5e8c0800000000000000
+      internalID: -3970576058373378220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44122515b24050f50800000000000000
+      internalID: 6846883392581148996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a46ebcc7b944ad540800000000000000
+      internalID: 5033410968144307786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85711711780173430800000000000000
+      internalID: 3762494185990592344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1b96782a538a790800000000000000
+      internalID: -7518700605722218070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5510a2edaf7159780800000000000000
+      internalID: -8677002740822834859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4668923eb5fabe0800000000000000
+      internalID: -1463850322659744583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199da8f14c1cd1e30800000000000000
+      internalID: 4475946652763085201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Dreadnought -  Destruction_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc16ef1d0e4981ec0800000000000000
+      internalID: -3595960609138646580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 235bfb355b9c5c247b64f89b905b4bef
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nairan - Dreadnought -  Destruction_0: 1336104967557193268
+      Nairan - Dreadnought -  Destruction_1: -7716383142310388733
+      Nairan - Dreadnought -  Destruction_10: 6846883392581148996
+      Nairan - Dreadnought -  Destruction_11: 5033410968144307786
+      Nairan - Dreadnought -  Destruction_12: 3762494185990592344
+      Nairan - Dreadnought -  Destruction_13: -7518700605722218070
+      Nairan - Dreadnought -  Destruction_14: -8677002740822834859
+      Nairan - Dreadnought -  Destruction_15: -1463850322659744583
+      Nairan - Dreadnought -  Destruction_16: 4475946652763085201
+      Nairan - Dreadnought -  Destruction_17: -3595960609138646580
+      Nairan - Dreadnought -  Destruction_2: -2228503176888470113
+      Nairan - Dreadnought -  Destruction_3: -2644042771161859080
+      Nairan - Dreadnought -  Destruction_4: -303445140818420671
+      Nairan - Dreadnought -  Destruction_5: -8327152011865501004
+      Nairan - Dreadnought -  Destruction_6: -2375251966668589700
+      Nairan - Dreadnought -  Destruction_7: 5522510350100559579
+      Nairan - Dreadnought -  Destruction_8: 4240185863289763736
+      Nairan - Dreadnought -  Destruction_9: -3970576058373378220
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
