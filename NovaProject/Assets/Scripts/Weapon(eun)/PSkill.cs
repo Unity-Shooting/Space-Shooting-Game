@@ -2,133 +2,136 @@ using UnityEngine;
 
 public enum SkillType
 {
+    Missile,
     Laser,
-    Rocket,
-    Missile
+    Bomb
 }
 
 public class PSkill : MonoBehaviour
 {
-    public float speed = 5.0f; // ½ºÅ³ ¼Óµµ
-    public int damage = 20; // ½ºÅ³ ±âº» °ø°İ·Â
-    public SkillType skillType; // ½ºÅ³ À¯Çü
-    public GameObject effect; // ½ºÅ³ »ç¿ë ½Ã È¿°ú ÇÁ¸®ÆÕ
+    public float speed = 5.0f; // ìŠ¤í‚¬ ì†ë„
+    public int damage = 20; // ìŠ¤í‚¬ ê¸°ë³¸ ê³µê²©ë ¥
+    public SkillType skillType; // ìŠ¤í‚¬ ìœ í˜•
+    public GameObject effect; // ìŠ¤í‚¬ ì‚¬ìš© ì‹œ ìƒì„±ë  ì´í™íŠ¸ í”„ë¦¬íŒ¹
 
-    // Laser °ü·Ã º¯¼ö
-    private Transform pos; // ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡¸¦ ÀúÀåÇÒ º¯¼ö
-    private float laserT = 4.0f; // ·¹ÀÌÀú Áö¼Ó ½Ã°£ (ÃÊ)
-    private float laserTimer = 0f; // Å¸ÀÌ¸Ó º¯¼ö
+    // Laser ê´€ë ¨ ë³€ìˆ˜
+    private Transform pos; // í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜ë¥¼ ì €ì¥í•  ë³€ìˆ˜
+    private float laserT = 4.0f; // ë ˆì´ì € ì§€ì† ì‹œê°„ (ì´ˆ)
+    private float laserTimer = 0f; // ë ˆì´ì € ì§€ì† ì‹œê°„ì„ ì¶”ì í•˜ëŠ” íƒ€ì´ë¨¸
 
-    // Rocket °ü·Ã º¯¼ö
-    private Transform target; // Å¸°Ù ¸ó½ºÅÍÀÇ À§Ä¡
-    private float homingSpeed = 5.0f; // Å¸°ÙÆÃ ¼Óµµ
-    private float homingRange = 10f; // Å¸°ÙÆÃ ¹üÀ§
-
-    
-
+    // missile ê´€ë ¨ ë³€ìˆ˜
+    private Transform target; // ë¡œì¼“ íƒ€ê²Ÿì´ ë˜ëŠ” ëª¬ìŠ¤í„°ì˜ ìœ„ì¹˜
+    private float homingSpeed = 5.0f; // íƒ€ê²ŸíŒ… ì†ë„
+    private float homingRange = 10f; // íƒ€ê²ŸíŒ… ë²”ìœ„
 
     void Start()
     {
-        // ÇÃ·¹ÀÌ¾îÀÇ TransformÀ» °¡Á®¿Í¼­ playerTransform¿¡ ÇÒ´ç
+        // í”Œë ˆì´ì–´ ìœ„ì¹˜ë¥¼ ê°€ì ¸ì™€ ì €ì¥
         pos = GameObject.FindWithTag("Player").transform;
 
         if (skillType == SkillType.Laser)
         {
-            // ·¹ÀÌÀú°¡ ¼ÒÈ¯µÇ¸é Å¸ÀÌ¸Ó ½ÃÀÛ
+            // ë ˆì´ì € ìŠ¤í‚¬ì´ í™œì„±í™”ë˜ë©´ íƒ€ì´ë¨¸ ì‹œì‘
             laserTimer = laserT;
         }
 
-        // Rocket ½ºÅ³ÀÎ °æ¿ì Å¸°ÙÀ» Ã£µµ·Ï ¼³Á¤
-        if (skillType == SkillType.Rocket)
+        // Missile ìŠ¤í‚¬ì¸ ê²½ìš° íƒ€ê²Ÿì„ ì°¾ë„ë¡ ì„¤ì •
+        if (skillType == SkillType.Missile)
         {
-            FindTarget(); // °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Å¸°ÙÀ¸·Î Ã£À½
+            FindTarget(); // ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ë¥¼ íƒ€ê²Ÿìœ¼ë¡œ ì°¾ìŒ
         }
+
+        // ìŠ¤í‚¬ 3ì´ˆ í›„ ìë™ ì‚­ì œ
+        Destroy(gameObject, 3f);
+
     }
 
     void Update()
     {
-        // Laser ½ºÅ³¸¸ ÇÃ·¹ÀÌ¾î À§Ä¡¿¡ ¸Â°Ô ÀÌµ¿
+        // Laser ìŠ¤í‚¬ë§Œ í”Œë ˆì´ì–´ ìœ„ì¹˜ì— ë§ê²Œ ì´ë™
         if (skillType == SkillType.Laser)
         {
+
             if (pos != null)
             {
-                // ·¹ÀÌÀú´Â ÇÃ·¹ÀÌ¾î À§Ä¡¿¡ µû¶ó °íÁ¤µÇ¸ç, ÇÃ·¹ÀÌ¾î À§Ä¡¿¡¼­ yÃà 5.5¸¸Å­ À§¿¡ À§Ä¡
                 transform.position = pos.position + (Vector3.up * 5.5f);
             }
 
-            // ·¹ÀÌÀú°¡ È°¼ºÈ­µÈ ½Ã°£ÀÌ Áö³ª¸é »èÁ¦
-            laserTimer -= Time.deltaTime; // ¸Å ÇÁ·¹ÀÓ¸¶´Ù Å¸ÀÌ¸Ó °¨¼Ò
 
+            // ë ˆì´ì € ì§€ì† ì‹œê°„ì´ ëë‚˜ë©´ ì‚­ì œ
+            laserTimer -= Time.deltaTime; // ë§¤ í”„ë ˆì„ë§ˆë‹¤ íƒ€ì´ë¨¸ ê°ì†Œ
             if (laserTimer <= 0f)
             {
-                Destroy(gameObject); // Å¸ÀÌ¸Ó°¡ 0 ÀÌÇÏ°¡ µÇ¸é ·¹ÀÌÀú »èÁ¦
+                Destroy(gameObject); // íƒ€ì´ë¨¸ê°€ 0 ì´í•˜ê°€ ë˜ë©´ ë ˆì´ì € ì‚­ì œ
             }
         }
-        if (skillType == SkillType.Rocket)
+        else if (skillType == SkillType.Missile)
         {
-            if (target != null)
+            if (target != null && target.gameObject.activeInHierarchy) 
             {
-                // Å¸°ÙÀ» ÇâÇØ ·ÎÄÏ ÀÌµ¿ (Å¸°ÙÀ» ÃßÀû)
+                // íƒ€ê²Ÿì„ í–¥í•´ ë¡œì¼“ ì´ë™ (íƒ€ê²Ÿì„ ì¶”ì )
                 Vector3 direction = target.position - transform.position;
-                float step = homingSpeed * Time.deltaTime; // ÀÌµ¿ ¼Óµµ °è»ê
-                transform.position = Vector2.MoveTowards(transform.position, target.position, step); // Å¸°Ù ÂÊÀ¸·Î ÀÌµ¿
+                float step = homingSpeed * Time.deltaTime; // ì´ë™ ì†ë„ ê³„ì‚°
+                transform.position = Vector2.MoveTowards(transform.position, target.position, step); // íƒ€ê²Ÿ ìª½ìœ¼ë¡œ ì´ë™
+            }
+            else
+            {
+                // íƒ€ê²Ÿì´ ì—†ìœ¼ë©´ ìœ„ë¡œ ì´ë™
+                transform.Translate(Vector2.up * speed * Time.deltaTime);
             }
         }
         else
         {
-            // ´Ù¸¥ ½ºÅ³ÀÏ °æ¿ì ±âº»ÀûÀ¸·Î À§ÂÊÀ¸·Î ÀÌµ¿
+            // ë‹¤ë¥¸ ìŠ¤í‚¬ì¼ ê²½ìš° ê¸°ë³¸ì ìœ¼ë¡œ ìœ„ìª½ìœ¼ë¡œ ì´ë™
             transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
     }
 
-    
 
-    // Å¸°ÙÆÃ ¹üÀ§ ³»¿¡¼­ °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Ã£´Â ¸Ş¼Òµå
+
+    // íƒ€ê²ŸíŒ… ë²”ìœ„ ë‚´ì—ì„œ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ë¥¼ ì°¾ëŠ” ë©”ì†Œë“œ
     private void FindTarget()
     {
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster");
-        float closestDistance = Mathf.Infinity; // °¡Àå °¡±î¿î ¸ó½ºÅÍÀÇ °Å¸®
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster"); // ëª¬ìŠ¤í„° íƒœê·¸ë¡œ ê²€ìƒ‰
+        float closestDistance = homingRange;
 
+
+        // ëª¨ë“  ëª¬ìŠ¤í„°ë¥¼ ìˆœíšŒí•˜ë©´ì„œ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ë¥¼ ì°¾ìŒ
         foreach (GameObject monster in monsters)
         {
-            float distance = Vector3.Distance(transform.position, monster.transform.position);
+            float distance = Vector3.Distance(transform.position, monster.transform.position); // í˜„ì¬ ì´ì•Œ ìœ„ì¹˜ì™€ ëª¬ìŠ¤í„° ê±°ë¦¬ ê³„ì‚°
             if (distance < closestDistance && distance <= homingRange)
             {
-                closestDistance = distance;
-                target = monster.transform; // °¡Àå °¡±î¿î ¸ó½ºÅÍ¸¦ Å¸°ÙÀ¸·Î ¼³Á¤
+                closestDistance = distance; // ìµœì†Œ ê±°ë¦¬ ê°±ì‹ 
+                target = monster.transform; // íƒ€ê²Ÿìœ¼ë¡œ ì„¤ì •
             }
         }
     }
 
     private void OnBecameInvisible()
     {
-        // È­¸é ¹ÛÀ¸·Î ³ª°¡¸é ½ºÅ³ »èÁ¦
+        // í™”ë©´ ë°–ìœ¼ë¡œ ë‚˜ê°€ë©´ ìŠ¤í‚¬ ì‚­ì œ
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // ½ºÅ³ÀÌ ¸ó½ºÅÍ¿Í Ãæµ¹ÇßÀ» ¶§
         if (collision.gameObject.CompareTag("Monster"))
         {
+
             IDamageable obj = collision.GetComponent<IDamageable>();
-            obj.TakeDamage(damage);
-
-
-            // ¸ó½ºÅÍ¿Í Ãæµ¹ ½Ã ½ºÅ³º° È¿°ú
-            ApplySkillEffect(collision.gameObject);
-
-
-            // Ãæµ¹ ÀÌÆåÆ® »ı¼º (ÇÊ¿äÇÑ °æ¿ì)
-            if (effect != null)
+            if (!obj.IsDead)
             {
-                GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
-                Destroy(effectInstance, 1f);  // ÀÌÆåÆ®°¡ 1ÃÊ ÈÄ ÀÚµ¿À¸·Î »èÁ¦µÇµµ·Ï ¼³Á¤
-            }
+                obj.TakeDamage(damage);
 
-            // Ãæµ¹ ÈÄ ½ºÅ³ »èÁ¦
-            if (skillType == SkillType.Rocket)
-            {
+                // ì¶©ëŒ ì´í™íŠ¸ ìƒì„± 
+                if (effect != null)
+                {
+                    GameObject effectInstance = Instantiate(effect, transform.position, Quaternion.identity);
+                    Destroy(effectInstance, 1f);  // ì´í™íŠ¸ê°€ 1ì´ˆ í›„ ìë™ìœ¼ë¡œ ì‚­ì œë˜ë„ë¡ ì„¤ì •
+                }
+
+                // ì´ì•Œ ì‚­ì œ
                 Destroy(gameObject);
             }
         }
@@ -136,7 +139,10 @@ public class PSkill : MonoBehaviour
 
     private void ApplySkillEffect(GameObject monster)
     {
-        // ½ºÅ³ À¯Çüº° È¿°ú Àû¿ë
+        // ìŠ¤í‚¬ ìœ í˜•ë³„ íš¨ê³¼ ì ìš©
+
+/*
+
         switch (skillType)
         {
             case SkillType.Laser:
@@ -144,20 +150,23 @@ public class PSkill : MonoBehaviour
                 break;
 
             case SkillType.Rocket:
-                // È­»ó È¿°ú
+                // í™”ìƒ íš¨ê³¼
                 monster.GetComponent<monster>().TakeDamage(damage);
-                monster.GetComponent<monster>().ApplyStatusEffect("Burn", 5); // 5ÃÊ È­»ó
+                monster.GetComponent<monster>().ApplyStatusEffect("Burn", 5); // 5ì´ˆ í™”ìƒ
                 break;
 
             case SkillType.Missile:
-                // °üÅë È¿°ú
+                // ê´€í†µ íš¨ê³¼
                 monster.GetComponent<monster>().TakeDamage(damage);
                 break;
 
             default:
-                Debug.LogError("¾Ë ¼ö ¾ø´Â ½ºÅ³ À¯Çü");
+                Debug.LogError("ì•Œ ìˆ˜ ì—†ëŠ” ìŠ¤í‚¬ ìœ í˜•");
                 break;
         }
+
+*/
+
     }
 
 }

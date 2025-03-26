@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Player와 충돌! 아이템 효과 발동!");
-            WeaponEun.WeaponManager weaponManager = collision.GetComponent<WeaponEun.WeaponManager>();
+            WeaponManager weaponManager = collision.GetComponent<WeaponManager>();
             if (weaponManager != null)
             {
                 weaponManager.UpgradeWeapon(); // 업그레이드 메서드 호출

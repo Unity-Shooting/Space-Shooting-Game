@@ -696,7 +696,6 @@ GameObject:
   - component: {fileID: 7337777958016577804}
   - component: {fileID: 2680075233246703296}
   - component: {fileID: 930384080245315698}
-  - component: {fileID: 3688639280501950996}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -739,7 +738,6 @@ MonoBehaviour:
   speed: 5
   shieldDuration: 3
   shieldCoolTime: 10
-  isShieldReady: 1
   useMouseDirection: 0
   Base: {fileID: 4866670335912400699}
   BaseEngine: {fileID: 1599047868199262096}
@@ -836,38 +834,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0049051046, y: -0.02943027}
   m_Size: {x: 0.56804514, y: 0.7936766}
   m_Direction: 0
---- !u!114 &3688639280501950996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140144775861856095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ebf53b0edc20840b4554826e793796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentWeapon: 0
-  E_Bullet:
-  - {fileID: 4253077063642353567, guid: 1cd2761879edbf7409f9b30a0e8f43fb, type: 3}
-  - {fileID: 2558173097472398584, guid: af5ec665385bfc74ab78d56efe7fbee8, type: 3}
-  - {fileID: 911234922511952166, guid: 645f89da7fcaaff4690142e0cff22354, type: 3}
-  F_Bullet:
-  - {fileID: 488904924355025955, guid: 72ecd4ec13b4af24ea2a6a5301310dce, type: 3}
-  - {fileID: 4887992525478543551, guid: c7e4ac538793f9949ab27b24b36d2a08, type: 3}
-  - {fileID: 9027213855682543936, guid: a3ba9b1cb6c182d4fb912d2e1a15e09d, type: 3}
-  A_Bullet:
-  - {fileID: 2979478238014149891, guid: c252453ed93255742b8c33e24e15f238, type: 3}
-  - {fileID: 7896620948793834865, guid: 4392b2cfcdfd6a647bb1ae7f5fbf6736, type: 3}
-  - {fileID: 614832966268351336, guid: f26074af8fc069e4da56baa51216d3ee, type: 3}
-  E_Skill: {fileID: 6411401949581585551, guid: 54b176cb9179b8c43a592065a65b5a86, type: 3}
-  F_Skill: {fileID: 6954724916877585830, guid: b7d38502c988f0643826871542adaa29, type: 3}
-  A_Skill: {fileID: 393926581525163294, guid: bc7accdbfa8a3a44689af9e141513119, type: 3}
-  firePoint1: {fileID: 1289938108947279956}
-  firePoint2: {fileID: 7056480542331380691}
-  firePoint3: {fileID: 3139132664342896284}
-  power: 0
 --- !u!1 &5432927126440616271
 GameObject:
   m_ObjectHideFlags: 0

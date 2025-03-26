@@ -1,263 +1,418 @@
 using JetBrains.Annotations;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-
-namespace WeaponEun
+// ë¬´ê¸° ìœ í˜•ì„ ì •ì˜í•˜ëŠ” ì—´ê±°í˜•
+public enum weaponType
 {
+    // ì„ì‹œ ë¬´ê¸° ì´ë¦„
+    Missile,
+    Laser,
+    Bomb
 
-    // ¹«±â À¯ÇüÀ» Á¤ÀÇÇÏ´Â ¿­°ÅÇü
-    public enum WeaponType
+}
+
+
+
+public class WeaponManager : MonoBehaviour
+{
+    // í˜„ì¬ ì¥ì°©ëœ ë¬´ê¸°
+    public weaponType currentWeapon;
+
+    // ì´ì•Œ í”„ë¦¬íŒ¹
+    public GameObject[] Bullet_1, Bullet_2, Bullet_3;
+
+    // ìŠ¤í‚¬ í”„ë¦¬íŒ¹
+    public GameObject Skill_1, Skill_2, Skill_3;
+
+    // ì´ì•Œ ë°œì‚¬ ìœ„ì¹˜ (Playerì˜ ë°œì‚¬ ìœ„ì¹˜)
+    public Transform firePoint1, firePoint2, firePoint3;
+
+    // ì´ì•Œ íŒŒì›Œ(ì—…ê·¸ë ˆì´ë“œ ë‹¨ê³„)
+    public int power = 0;
+    private GameObject powerup;
+
+    // Missile ê´€ë ¨ ë³€ìˆ˜
+    private bool isMissile = false; // Missile ìŠ¤í‚¬ í™œì„±í™” ì—¬ë¶€
+    private float missileTime = 4f; // Missile ë°œì‚¬ ì§€ì† ì‹œê°„ (ì´ˆ)
+    private float missileCool = 0.3f; // Missile ë°œì‚¬ ê°„ê²© (ì´ˆ)
+    private float missileTimer = 0f; // Missile ë°œì‚¬ íƒ€ì´ë¨¸
+
+    // Bomb ê´€ë ¨ ë³€ìˆ˜
+    private bool isBomb = false; // Rocket ìŠ¤í‚¬ í™œì„±í™” ì—¬ë¶€
+    private float bombTime = 4f; // ë¡œì¼“ ë°œì‚¬ ì§€ì† ì‹œê°„ (ì´ˆ)
+    private float bombCool = 0.3f; // ë°œì‚¬ ê°„ê²© (ì´ˆ)
+    private float bombTimer = 0f; // ë°œì‚¬ íƒ€ì´ë¨¸
+
+    
+    // ìŠ¤í‚¬ ì¿¨íƒ€ì„ ê´€ë¦¬
+    private bool isSkillOnCooldown = false; // ìŠ¤í‚¬ ì¿¨íƒ€ì„ ì—¬ë¶€
+    private float skillCool = 10f; // ìŠ¤í‚¬ ì¿¨íƒ€ì„
+    private float skillCoolTimer = 0f; // ìŠ¤í‚¬ ì¿¨íƒ€ì„ íƒ€ì´ë¨¸
+
+    public Animator Zapper;
+    public Animator Missile;
+    public Animator Bomb;
+
+
+    // ë¬´ê¸° í”„ë¦¬íŒ¹ ë°°ì—´
+    public GameObject[] weaponPrefabs;
+
+    // ì—”ì§„ í”„ë¦¬íŒ¹ ë°°ì—´
+    public GameObject[] enginePrefabs;
+
+    // í˜„ì¬ ë¬´ê¸° ë° ì—”ì§„ ìƒíƒœ
+    private int currentWeaponIndex = -1; // ì„ íƒë˜ì§€ ì•Šì€ ìƒíƒœë¡œ ì´ˆê¸°í™”
+    private int currentEngineIndex = -1; // ì„ íƒë˜ì§€ ì•Šì€ ìƒíƒœë¡œ ì´ˆê¸°í™”
+
+    public static WeaponManager Instance; // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤
+
+    // ìŠ¤í‚¬ í•´ê¸ˆ ì—¬ë¶€
+    public bool MissileUnlocked { get; private set; } = false;
+    public bool LaserUnlocked { get; private set; } = false;
+    public bool BombUnlocked { get; private set; } = false;
+
+
+    private void Awake()
     {
-        // ÀÓ½Ã ¹«±â ÀÌ¸§
-        ElectroGun,
-        FlameCannon,
-        AquaCannon
+        // ì‹±ê¸€í†¤ ì„¤ì •
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // ì¤‘ë³µ ì¸ìŠ¤í„´ìŠ¤ ì œê±°
+        }
     }
 
-    public class WeaponManager : MonoBehaviour
+    // ìŠ¤í‚¬ ì•„ì´í…œì„ ë¨¹ìœ¼ë©´ í•´ê¸ˆí•˜ëŠ” ë©”ì„œë“œ
+    public void UnlockSkill(string skillName)
     {
-        // ÇöÀç ÀåÂøµÈ ¹«±â
-        public WeaponType currentWeapon;
-
-        // ÃÑ¾Ë ÇÁ¸®ÆÕ
-        public GameObject[] E_Bullet, F_Bullet, A_Bullet;
-
-
-        // ½ºÅ³ ÇÁ¸®ÆÕ
-        public GameObject E_Skill, F_Skill, A_Skill;
-
-        // ÃÑ¾Ë ¹ß»ç À§Ä¡ (PlayerÀÇ ¹ß»ç À§Ä¡)
-        public Transform firePoint1, firePoint2, firePoint3;
-
-        public int power = 0;
-        private GameObject powerup;
-        
-        // Rocket °ü·Ã º¯¼ö
-        private bool isRocket = false;
-        private float rocketTime = 4f; // ·ÎÄÏ ¹ß»ç Áö¼Ó ½Ã°£ (ÃÊ)
-        private float rocketCool = 0.3f; // ¹ß»ç °£°İ (ÃÊ)
-        private float rocketTimer = 0f; // ¹ß»ç Å¸ÀÌ¸Ó
-
-        // Missile °ü·Ã º¯¼ö
-        private bool isMissile = false; // Missile ½ºÅ³ È°¼ºÈ­ ¿©ºÎ
-        private float missileTime = 4f; // Missile ¹ß»ç Áö¼Ó ½Ã°£ (ÃÊ)
-        private float missileCool = 0.3f; // Missile ¹ß»ç °£°İ (ÃÊ)
-        private float missileTimer = 0f; // Missile ¹ß»ç Å¸ÀÌ¸Ó
-
-
-        private bool isSkillOnCooldown = false; // ½ºÅ³ ÄğÅ¸ÀÓ ¿©ºÎ
-        private float skillCooldown = 10f; // ½ºÅ³ ÄğÅ¸ÀÓ
-        private float skillCooldownTimer = 0f; // ½ºÅ³ ÄğÅ¸ÀÓ Å¸ÀÌ¸Ó
-
-
-
-        // ¾÷±×·¹ÀÌµå ¸Ş¼Òµå
-        public void UpgradeWeapon()
+        switch (skillName)
         {
-            power += 1;
-            if (power > 2)
-                power = 2;
-
-            //ÆÄ¿ö¾÷ ¸Ş¼¼Áö Ãâ·Â
-            /*GameObject go = Instantiate(powerup, transform.position, Quaternion.identity);
-            Destroy(go, 1);*/
+            case "Missile":
+                MissileUnlocked = true;
+                Debug.Log("Missile ìŠ¤í‚¬ í•´ê¸ˆë¨!");
+                break;
+            case "Laser":
+                LaserUnlocked = true;
+                Debug.Log("Laser ìŠ¤í‚¬ í•´ê¸ˆë¨!");
+                break;
+            case "Bomb":
+                BombUnlocked = true;
+                Debug.Log("Bomb ìŠ¤í‚¬ í•´ê¸ˆë¨!");
+                break;
+            default:
+                Debug.LogError("ì•Œ ìˆ˜ ì—†ëŠ” ìŠ¤í‚¬ ì´ë¦„: " + skillName);
+                break;
         }
+    }
 
-        // ÃÑ¾Ë ¹ß»ç ¸Ş¼Òµå
-        public void Fire()
+    // ìŠ¤í‚¬ ì‚¬ìš© ì¡°ê±´ í™•ì¸ (ì˜ˆì‹œ)
+    public bool CanUseSkill(weaponType weaponType)
+    {
+        switch (weaponType)
         {
-            PBullet bulletScript1 = null; // PBullet ÂüÁ¶ º¯¼ö ÃÊ±âÈ­
-            PBullet bulletScript2 = null; // µÎ ¹øÂ° ÃÑ¾Ë¿¡ ´ëÇÑ PBullet ÂüÁ¶ º¯¼ö ÃÊ±âÈ­
-            switch (currentWeapon)
-            {
-                case WeaponType.ElectroGun:
-                    // Ã¹ ¹øÂ° ÃÑ¾Ë ¹ß»ç
-                    GameObject eBullet1 = Instantiate(E_Bullet[power], firePoint1.position, firePoint1.rotation);
-                    bulletScript1 = eBullet1.GetComponent<PBullet>();
-                    if (bulletScript1 != null)
-                    {
-                        bulletScript1.isHoming = true; // ElectroGun¸¸ Å¸°ÙÆÃ È°¼ºÈ­
-                    }
-
-                    // µÎ ¹øÂ° ÃÑ¾Ë ¹ß»ç
-                    GameObject eBullet2 = Instantiate(E_Bullet[power], firePoint2.position, firePoint2.rotation);
-                    bulletScript2 = eBullet2.GetComponent<PBullet>();
-                    if (bulletScript2 != null)
-                    {
-                        bulletScript2.isHoming = true; // ElectroGun¸¸ Å¸°ÙÆÃ È°¼ºÈ­
-                    }
-
-                    SFXManager.Instance.ShootSound();
-
-                    break;
-
-                case WeaponType.FlameCannon:
-                    Instantiate(F_Bullet[power], firePoint1.position, firePoint1.rotation);
-                    Instantiate(F_Bullet[power], firePoint2.position, firePoint2.rotation);
-
-                    SFXManager.Instance.ShootSound();
-
-                    break;
-
-                case WeaponType.AquaCannon:
-                    Instantiate(A_Bullet[power], firePoint1.position, firePoint1.rotation);
-                    Instantiate(A_Bullet[power], firePoint2.position, firePoint2.rotation);
-
-                    SFXManager.Instance.ShootSound();
-
-                    break;
-
-                default:
-                    Debug.LogError("¾Ë ¼ö ¾ø´Â ¹«±â À¯ÇüÀÔ´Ï´Ù.");
-                    return;
-
-            }
+            case weaponType.Missile:
+                return MissileUnlocked;
+            case weaponType.Laser:
+                return LaserUnlocked;
+            case weaponType.Bomb:
+                return BombUnlocked;
+            default:
+                return false;
         }
+    }
 
-
-
-        // ½ºÅ³ ¹ß»ç ¸Ş¼Òµå
-        public void FireSkill()
+    // ë¬´ê¸° ë° ì—”ì§„ í™œì„±í™”/ë¹„í™œì„±í™” ë©”ì„œë“œ
+    private void SetActiveState(GameObject[] prefabs, int activeIndex)
+    {
+        for (int i = 0; i < prefabs.Length; i++)
         {
-            if (isSkillOnCooldown)
-            {
-                Debug.Log("½ºÅ³ÀÌ ÄğÅ¸ÀÓ ÁßÀÔ´Ï´Ù.");
+            prefabs[i].SetActive(i == activeIndex);
+        }
+    }
+
+    // ì´ì•Œ ì—…ê·¸ë ˆì´ë“œ ë©”ì†Œë“œ
+    public void UpgradeWeapon()
+    {
+        power += 1;
+        if (power > 2)
+            power = 2;
+
+        Debug.Log("power up");
+
+        //íŒŒì›Œì—… ë©”ì„¸ì§€ ì¶œë ¥
+        /*GameObject go = Instantiate(powerup, transform.position, Quaternion.identity);
+        Destroy(go, 1);*/
+    }
+
+    // ì´ì•Œ ë°œì‚¬ ë©”ì†Œë“œ
+    public void Fire()
+    {
+
+
+        PBullet bulletScript1 = null; // PBullet ì°¸ì¡° ë³€ìˆ˜ ì´ˆê¸°í™”
+        PBullet bulletScript2 = null; // ë‘ ë²ˆì§¸ ì´ì•Œì— ëŒ€í•œ PBullet ì°¸ì¡° ë³€ìˆ˜ ì´ˆê¸°í™”
+        switch (currentWeapon)
+        {
+            case weaponType.Missile:
+
+                if (Missile != null)
+                {
+                    Missile.SetTrigger("shoot");
+                }
+                else
+                {
+                    Debug.LogError("Missile Null");
+                }
+
+                // ì²« ë²ˆì§¸ ì´ì•Œ ë°œì‚¬
+                GameObject eBullet1 = Instantiate(Bullet_1[power], firePoint1.position, firePoint1.rotation);
+                bulletScript1 = eBullet1.GetComponent<PBullet>();
+                if (bulletScript1 != null)
+                {
+                    bulletScript1.isHoming = true; // ElectroGunë§Œ íƒ€ê²ŸíŒ… í™œì„±í™”
+                }
+
+                // ë‘ ë²ˆì§¸ ì´ì•Œ ë°œì‚¬
+                GameObject eBullet2 = Instantiate(Bullet_1[power], firePoint2.position, firePoint2.rotation);
+                bulletScript2 = eBullet2.GetComponent<PBullet>();
+                if (bulletScript2 != null)
+                {
+                    bulletScript2.isHoming = true; // ElectroGunë§Œ íƒ€ê²ŸíŒ… í™œì„±í™”
+                }
+                
+
+                SFXManager.Instance.ShootSound();
+
+                break;
+
+
+            case weaponType.Laser:
+
+                if (Zapper != null)
+                {
+                    Zapper.SetTrigger("shoot");
+                }
+                else
+                {
+                    Debug.LogError("Zapper Null");
+                }
+
+
+                Instantiate(Bullet_2[power], firePoint1.position, firePoint1.rotation);
+                Instantiate(Bullet_2[power], firePoint2.position, firePoint2.rotation);
+
+                SFXManager.Instance.ShootSound();
+
+                break;
+
+            case weaponType.Bomb:
+
+                if (Bomb != null)
+                {
+                    Bomb.SetTrigger("shoot");
+                }
+                else
+                {
+                    Debug.LogError("Bomb Null");
+                }
+
+                Instantiate(Bullet_3[power], firePoint1.position, firePoint1.rotation);
+                Instantiate(Bullet_3[power], firePoint2.position, firePoint2.rotation);
+
+                SFXManager.Instance.ShootSound();
+
+                break;
+
+
+            default:
+                Debug.LogError("ì•Œ ìˆ˜ ì—†ëŠ” ë¬´ê¸° ìœ í˜•ì…ë‹ˆë‹¤.");
                 return;
-            }
 
-            isSkillOnCooldown = true; // ½ºÅ³ ÄğÅ¸ÀÓ ½ÃÀÛ
-            skillCooldownTimer = skillCooldown; // ÄğÅ¸ÀÓ Å¸ÀÌ¸Ó ¼³Á¤
+        }
+    }
 
-            switch (currentWeapon)
+
+    // ìŠ¤í‚¬ ë°œì‚¬ ë©”ì†Œë“œ
+    public void FireSkill()
+    {
+        if (isSkillOnCooldown)
+        {
+            Debug.Log("ìŠ¤í‚¬ì´ ì¿¨íƒ€ì„ ì¤‘ì…ë‹ˆë‹¤.");
+            return;
+        }
+
+        // ìŠ¤í‚¬ í•´ê¸ˆ ì—¬ë¶€ í™•ì¸
+        if (!CanUseSkill(currentWeapon))
+        {
+            Debug.Log($"{currentWeapon} ìŠ¤í‚¬ì´ í•´ê¸ˆë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+            return;
+        }
+
+        isSkillOnCooldown = true; // ìŠ¤í‚¬ ì¿¨íƒ€ì„ ì‹œì‘
+        skillCoolTimer = skillCool; // ì¿¨íƒ€ì„ íƒ€ì´ë¨¸ ì„¤ì •
+
+        switch (currentWeapon)
+        {
+            case weaponType.Missile:
+                isMissile = true; // Missile ìŠ¤í‚¬ í™œì„±í™”
+                missileTime = 4f; // ì§€ì† ì‹œê°„ ì„¤ì •
+                missileTimer = missileCool; // ë°œì‚¬ ê°„ê²© ì„¤ì •
+                break;
+
+            case weaponType.Laser:
+                
+                Instantiate(Skill_2, firePoint1.position, firePoint1.rotation);
+                //Instantiate(Skill_2, firePoint2.position, firePoint2.rotation);
+                break;
+
+            case weaponType.Bomb:
+                isBomb = true; // Bomb ìŠ¤í‚¬ í™œì„±í™”
+                bombTime = 4f; // ì§€ì† ì‹œê°„ ì„¤ì •
+                bombTimer = missileCool; // ë°œì‚¬ ê°„ê²© ì„¤ì •
+                break;
+
+            default:
+                Debug.LogError("ì˜ëª»ëœ ë¬´ê¸°ì…ë‹ˆë‹¤.");
+                break;
+        }
+    }
+
+    public void SwitchWeapon(int weaponIndex)
+    {
+        // ì…ë ¥ëœ ì¸ë±ìŠ¤ì— ë”°ë¼ ë¬´ê¸°ë¥¼ ë³€ê²½
+        switch (weaponIndex)
+        {
+            case 1:
+                currentWeapon = weaponType.Missile;
+                Debug.Log("Missile ì¥ì°©ë¨");
+                break;
+            case 2:
+                currentWeapon = weaponType.Laser;
+                Debug.Log("Laser ì¥ì°©ë¨");
+                break;
+            case 3:
+                currentWeapon = weaponType.Bomb;
+                Debug.Log("Bomb ì¥ì°©ë¨");
+                break;
+            default:
+                Debug.LogError("ì˜ëª»ëœ ë¬´ê¸° ì¸ë±ìŠ¤: " + weaponIndex);
+                break;
+
+        }
+
+        if (currentWeaponIndex == weaponIndex - 1)
+        {
+            Debug.Log($"í˜„ì¬ {currentWeapon} ìƒíƒœì…ë‹ˆë‹¤.");
+            return;
+        }
+
+        currentWeaponIndex = weaponIndex - 1;
+        currentEngineIndex = currentWeaponIndex;  // ì—”ì§„ ì¸ë±ìŠ¤ë„ ê°™ì´ ë³€ê²½
+        currentWeapon = (weaponType)currentWeaponIndex;
+
+        // ë¬´ê¸° ë° ì—”ì§„ ìƒíƒœë¥¼ ì—…ë°ì´íŠ¸
+        SetActiveState(weaponPrefabs, currentWeaponIndex);
+        SetActiveState(enginePrefabs, currentEngineIndex); // ì—”ì§„ë„ ë³€ê²½
+
+        Debug.Log($"{currentWeapon} ë¬´ê¸°ì™€ ê´€ë ¨ ì—”ì§„ì´ í™œì„±í™”ë˜ì—ˆìŠµë‹ˆë‹¤.");
+
+    }
+
+
+    void Start()
+    {
+        // ì´ˆê¸° ìƒíƒœ ì„¤ì • (ëª¨ë“  ë¬´ê¸°ì™€ ì—”ì§„ ë¹„í™œì„±í™”)
+        SetActiveState(weaponPrefabs, -1);
+        SetActiveState(enginePrefabs, -1);
+
+        // ê¸°ë³¸ ë¬´ê¸° ì¥ì°© (1ë²ˆ ë¬´ê¸°)
+        SwitchWeapon(1);
+    }
+
+    void Update()
+    {
+        // Bí‚¤ë¡œ ìŠ¤í‚¬ ì‚¬ìš© 
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            FireSkill();
+        }
+
+        // ìŠ¤í˜ì´ìŠ¤ë°”ë¡œ ê¸°ë³¸ ì´ì•Œ ë°œì‚¬
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Fire();
+        }
+
+        // 1, 2, 3 í‚¤ë¡œ ë¬´ê¸° ë³€ê²½
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SwitchWeapon(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SwitchWeapon(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SwitchWeapon(3);
+        }
+
+        // ìŠ¤í‚¬ ì¿¨íƒ€ì„ íƒ€ì´ë¨¸ ì—…ë°ì´íŠ¸
+        if (isSkillOnCooldown)
+        {
+            skillCoolTimer -= Time.deltaTime; // í”„ë ˆì„ë‹¹ ê²½ê³¼ ì‹œê°„ì„ ì¿¨íƒ€ì„ íƒ€ì´ë¨¸ì—ì„œ ì°¨ê°
+            if (skillCoolTimer <= 0f)
             {
-                case WeaponType.ElectroGun:
-                    Instantiate(E_Skill, firePoint3.position, firePoint3.rotation);
-                    break;
-
-                case WeaponType.FlameCannon:
-                    isRocket = true;
-                    rocketTime = 4f;
-                    rocketTimer = rocketCool;
-                    break;
-
-                case WeaponType.AquaCannon:
-                    isMissile = true; // Missile ½ºÅ³ È°¼ºÈ­
-                    missileTime = 4f; // ¹ß»ç Áö¼Ó ½Ã°£ ¼³Á¤
-                    missileTimer = missileCool; // ¹ß»ç °£°İ ¼³Á¤
-                    break;
-
-                default:
-                    Debug.LogError("Àß¸øµÈ ¹«±âÀÔ´Ï´Ù.");
-                    break;
+                isSkillOnCooldown = false; // ì¿¨íƒ€ì„ì´ ëë‚¬ìŒì„ í‘œì‹œ
             }
         }
 
-        public void SwitchWeapon(int weaponIndex)
+
+        // Missile ìŠ¤í‚¬ ì²˜ë¦¬
+        if (isMissile)
         {
-            // ÀÔ·ÂµÈ ÀÎµ¦½º¿¡ µû¶ó ¹«±â¸¦ º¯°æ
-            switch (weaponIndex)
+            Debug.Log("firePoint1 Position: " + firePoint1.position);
+            Debug.Log("firePoint2 Position: " + firePoint2.position);
+
+            missileTimer -= Time.deltaTime; // ë¯¸ì‚¬ì¼ ë°œì‚¬ ê°„ê²© íƒ€ì´ë¨¸ ì—…ë°ì´íŠ¸
+
+            if (missileTimer <= 0f)
             {
-                case 1:
-                    currentWeapon = WeaponType.ElectroGun;
-                    Debug.Log("ElectroGun ÀåÂøµÊ");
-                    break;
-                case 2:
-                    currentWeapon = WeaponType.FlameCannon;
-                    Debug.Log("FlameCannon ÀåÂøµÊ");
-                    break;
-                case 3:
-                    currentWeapon = WeaponType.AquaCannon;
-                    Debug.Log("AquaCannon ÀåÂøµÊ");
-                    break;
-                default:
-                    Debug.LogError("Àß¸øµÈ ¹«±â ÀÎµ¦½º: " + weaponIndex);
-                    break;
+                Instantiate(Skill_1, firePoint1.position, firePoint1.rotation); // Missile ë°œì‚¬
+                Instantiate(Skill_1, firePoint2.position, firePoint2.rotation);
+                missileTimer = missileCool; // íƒ€ì´ë¨¸ ë¦¬ì…‹
+            }
+
+            missileTime -= Time.deltaTime; // ë¯¸ì‚¬ì¼ ìŠ¤í‚¬ì˜ ì „ì²´ ì§€ì†ì‹œê°„ ì—…ë°ì´íŠ¸
+            if (missileTime <= 0f)
+            {
+                isMissile = false; // Missile ìŠ¤í‚¬ ì¢…ë£Œ
             }
         }
 
-
-        void Start()
+        // Bomb ìŠ¤í‚¬ ì²˜ë¦¬
+        if (isBomb)
         {
+            bombTimer -= Time.deltaTime; // ë¯¸ì‚¬ì¼ ë°œì‚¬ ê°„ê²© íƒ€ì´ë¨¸ ì—…ë°ì´íŠ¸
 
-        }
-
-        void Update()
-        {
-            // BÅ°·Î ½ºÅ³ »ç¿ë (WeaponManager ¾È¿¡¼­ Ã³¸®)
-            if (Input.GetKeyDown(KeyCode.B))
+            if (bombTimer <= 0f)
             {
-                FireSkill();
+                Instantiate(Skill_3, firePoint3.position, firePoint3.rotation); // Missile ë°œì‚¬
+                bombTimer = bombCool; // íƒ€ì´ë¨¸ ë¦¬ì…‹
             }
 
-            // ½ºÆäÀÌ½º¹Ù·Î ±âº» ÃÑ¾Ë ¹ß»ç
-            if (Input.GetKeyDown(KeyCode.Space))
+            bombTime -= Time.deltaTime; // ë¯¸ì‚¬ì¼ ìŠ¤í‚¬ì˜ ì „ì²´ ì§€ì†ì‹œê°„ ì—…ë°ì´íŠ¸
+            if (bombTime <= 0f)
             {
-                Fire();
+                isBomb = false; // Missile ìŠ¤í‚¬ ì¢…ë£Œ
             }
-
-            // 1, 2, 3 Å°·Î ¹«±â º¯°æ
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                SwitchWeapon(1);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                SwitchWeapon(2);
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                SwitchWeapon(3);
-            }
-
-            // ½ºÅ³ ÄğÅ¸ÀÓ Å¸ÀÌ¸Ó ¾÷µ¥ÀÌÆ®
-            if (isSkillOnCooldown)
-            {
-                skillCooldownTimer -= Time.deltaTime;
-                if (skillCooldownTimer <= 0f)
-                {
-                    isSkillOnCooldown = false;
-                }
-            }
-
-
-            // ·ÎÄÏ ½ºÅ³ Ã³¸®
-            if (isRocket)
-            {
-                rocketTimer -= Time.deltaTime;
-
-                if (rocketTimer <= 0f)
-                {
-                    Instantiate(F_Skill, firePoint3.position, firePoint3.rotation);
-                    rocketTimer = rocketCool;
-                }
-
-                rocketTime -= Time.deltaTime;
-                if (rocketTime <= 0f)
-                {
-                    isRocket = false;
-                }
-            }
-
-            // Missile ½ºÅ³ Ã³¸®
-            if (isMissile)
-            {
-                missileTimer -= Time.deltaTime;
-
-                if (missileTimer <= 0f)
-                {
-                    Instantiate(A_Skill, firePoint3.position, firePoint3.rotation); // Missile ¹ß»ç
-                    missileTimer = missileCool; // Å¸ÀÌ¸Ó ¸®¼Â
-                }
-
-                missileTime -= Time.deltaTime;
-                if (missileTime <= 0f)
-                {
-                    isMissile = false; // Missile ½ºÅ³ Á¾·á
-                }
-            }
-
         }
 
     }
+
 }
