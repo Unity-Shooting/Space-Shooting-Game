@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Monster
+  - Bullet
+  - Skill
+  - Star
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Item
   - 
   - 
   - 

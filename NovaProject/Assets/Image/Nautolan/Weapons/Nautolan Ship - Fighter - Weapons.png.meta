@@ -159,6 +159,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -166,10 +179,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 18
-        width: 34
-        height: 29
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,10 +201,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 18
-        width: 34
-        height: 29
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +223,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 18
-        width: 34
-        height: 29
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,10 +245,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_3
       rect:
         serializedVersion: 2
-        x: 207
-        y: 18
-        width: 34
-        height: 29
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +267,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_4
       rect:
         serializedVersion: 2
-        x: 271
-        y: 18
-        width: 34
-        height: 29
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,10 +289,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_5
       rect:
         serializedVersion: 2
-        x: 335
-        y: 18
-        width: 34
-        height: 29
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +311,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_6
       rect:
         serializedVersion: 2
-        x: 399
-        y: 18
-        width: 34
-        height: 29
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +333,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_7
       rect:
         serializedVersion: 2
-        x: 463
-        y: 18
-        width: 34
-        height: 29
+        x: 448
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,10 +355,10 @@ TextureImporter:
       name: Nautolan Ship - Fighter - Weapons_8
       rect:
         serializedVersion: 2
-        x: 527
-        y: 18
-        width: 34
-        height: 29
+        x: 512
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,7 +377,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a9dd2df2b0b381b4893de8caf0d3f90f
     internalID: 0
     vertices: []
     indices: 
