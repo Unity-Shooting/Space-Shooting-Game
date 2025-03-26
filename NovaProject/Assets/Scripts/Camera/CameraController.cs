@@ -2,7 +2,7 @@ using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : Singleton<CameraController>
 {
     /// <summary>
     /// Cinemachine 카메라 배열 (여러 개의 카메라 설정) 
@@ -18,6 +18,13 @@ public class CameraController : MonoBehaviour
     /// 이전에 활성화된 카메라 번호 (변경을 추적하기 위해 사용)
     /// </summary>
     private int pastCameraNum = 0;
+
+    public CinemachineCamera followCC;
+
+    private void Start()
+    {
+        followCC.Follow = PlayerController.Instance.transform;
+    }
 
     void Update()
     {
