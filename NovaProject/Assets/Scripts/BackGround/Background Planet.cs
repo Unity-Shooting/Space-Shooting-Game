@@ -43,7 +43,7 @@ public class BackgroundPlanet : MonoBehaviour
     private void RespawnAtTop()
     {
         // Y 위치를 화면 위쪽으로 이동 (카메라 높이 × 2배)
-        transform.position = new Vector3(randomX, Camera.main.orthographicSize * 2f, transform.position.z);
+        transform.position = new Vector3(randomX, 6f, transform.position.z);
         // 랜덤 크기를 적용 (X, Y 동일한 비율로 스케일 조정)
         transform.localScale = new Vector3(randomScale, randomScale, 1f);       
     }
