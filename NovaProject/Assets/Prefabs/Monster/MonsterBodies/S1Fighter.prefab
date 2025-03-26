@@ -166,9 +166,9 @@ MonoBehaviour:
   itemType: 0
   BaseHP: 10
   BaseAttack: 1
-  BaseMoveSpeed: 2
+  BaseMoveSpeed: 10
   BaseAttackSpeed: 7
-  BaseAttackStart: 1
+  BaseAttackStart: 0.5
   Bullet: {fileID: 5163471231254899717, guid: 3894f6576e6040644abfae83d110a1d5, type: 3}
   Score: 0
   DesturctionEffect: {fileID: 8430046309425923653, guid: f33de00e364bd4247895001b69df92cc, type: 3}

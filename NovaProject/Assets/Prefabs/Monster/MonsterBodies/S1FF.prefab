@@ -339,7 +339,7 @@ MonoBehaviour:
   itemType: 0
   BaseHP: 100
   BaseAttack: 10
-  BaseMoveSpeed: 1
+  BaseMoveSpeed: 10
   BaseAttackSpeed: 2
   BaseAttackStart: 1
   Bullet: {fileID: 5163471231254899717, guid: 3894f6576e6040644abfae83d110a1d5, type: 3}

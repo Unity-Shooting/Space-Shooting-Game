@@ -13,8 +13,6 @@ public class S1SC : Monster
     private void Awake()
     {
         ani = GetComponent<Animator>();
-        direction = Vector2.down;
-        MoveSpeed = 2f;
     }
 
     //protected override void StartAfterInit()

@@ -12,8 +12,14 @@ public class S1MbBolt : MbBase
     protected override void OnEnable()
     {
         base.OnEnable();
-        // type이 1인 경우 더 빠른 총알
-        if (type == 1)
-            MoveSpeed += 1;
+    }
+
+    public override void Init(Vector2 pos, Vector2 dir, int type)
+    {
+        base.Init(pos, dir, type);
+        if(type == 1)
+        {
+            MoveSpeed += 2;
+        }
     }
 }
