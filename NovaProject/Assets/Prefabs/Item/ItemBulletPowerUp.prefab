@@ -143,7 +143,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -199,4 +199,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackIncrease: 5
-  ItemVelocity: 20
+  ItemVelocity: 200
+  backgroundSize: {x: 10.2, y: 11.9}

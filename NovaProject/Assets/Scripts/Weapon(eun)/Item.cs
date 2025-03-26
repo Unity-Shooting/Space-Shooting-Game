@@ -8,9 +8,10 @@ public class Item : MonoBehaviour
      * 대현 작성  : 2025 - 03 - 25
      */
     //아이템 가속 속도
-    public float ItemVelocity = 20f; //아이템에 적용할 속도를 나타내는 변수
+    public float ItemVelocity = 200f; //아이템에 적용할 속도를 나타내는 변수
     Rigidbody2D rig = null; //2D 물리 엔진에서 물체에 물리적 상호작용을 처리하는 컴포넌트를 저장할 변수
     /**/
+    public Vector2 backgroundSize = new Vector2 (10.2f, 11.9f); //배경 크기
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,9 +47,35 @@ public class Item : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        ItemBounce(); // 아이템 튕기도록 계속 호출
+    }
 
+    //250326 낙원에서 추가
+    private void ItemBounce()
+    {
+        Vector2 pos = rig.position; // 아이템 위치
+        Vector2 vel = rig.linearVelocity; // 아이템 초기속도
+
+        Vector2 bgCenter = new Vector2(0,0);
+        float minX = bgCenter.x - backgroundSize.x / 2; //최소x
+        float maxX = bgCenter.x + backgroundSize.x / 2; //최대x
+        float minY = bgCenter.y - backgroundSize.y / 2; //최소y
+        float maxY = bgCenter.y + backgroundSize.y / 2; //최대y
+
+        // 최대 or 최소값에 닿으면 방향 단위벡터 변경해서 반사
+        if ((pos.x < minX && vel.x < 0) || (pos.x > maxX && vel.x > 0))
+        {
+            vel.x *= -1;
+        }
+        if ((pos.y < minY && vel.y < 0) || (pos.y > maxY && vel.y > 0))
+        {
+            vel.y *= -1;
+        }
+
+        // 수정된 아이템 경로 반영해서 다시 velocity를 Set
+        rig.linearVelocity = vel;
     }
 
 }
