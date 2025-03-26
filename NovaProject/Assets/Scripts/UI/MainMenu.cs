@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        RealExit.gameObject.SetActive(false);   //Exit ¹öÆ°À» ´©¸£¸é,Á¾·áÈ®ÀÎ Ã¢ÀÌ ÇÏ³ª ¶ß´Âµ¥, ±âº»°ª False ÁÖ°í, Exit ¹öÆ° ´©¸¦½Ã, True
+        RealExit.gameObject.SetActive(false);   //Exit ë²„íŠ¼ì„ ëˆ„ë¥´ë©´,ì¢…ë£Œí™•ì¸ ì°½ì´ í•˜ë‚˜ ëœ¨ëŠ”ë°, ê¸°ë³¸ê°’ False ì£¼ê³ , Exit ë²„íŠ¼ ëˆ„ë¥¼ì‹œ, True
         StartButton.GetComponent<Button>().onClick.AddListener(OnStartButtonClick);
         ExitButton.GetComponent<Button>().onClick.AddListener(OnExitButtonClick);
         RealExitButton.GetComponent<Button>().onClick.AddListener(OnRealExitButtonClick);
@@ -23,26 +23,26 @@ public class MainMenu : MonoBehaviour
 
     void OnStartButtonClick()
     {
-        Debug.Log("¶òµ¿ : ");     //Å×½ºÆ®¿ë
-        //SceneManager.LoadScene("OneStageScene"); //1½ºÅ×ÀÌÁö ½ÃÀÛ   ÃßÈÄ ¸¸µé¾îÁö¸é ÁÖ¼® Ç® ¿¹Á¤
+        Debug.Log("ëµë™ : ");     //í…ŒìŠ¤íŠ¸ìš©
+        //SceneManager.LoadScene("OneStageScene"); //1ìŠ¤í…Œì´ì§€ ì‹œì‘   ì¶”í›„ ë§Œë“¤ì–´ì§€ë©´ ì£¼ì„ í’€ ì˜ˆì •
         SceneManager.LoadScene("StageOne");
     }
 
     void OnExitButtonClick()
     {
-        RealExit.gameObject.SetActive(true);    //Exit ¹öÆ°À» Å¬¸¯ ½Ã, Á¾·áÈ®ÀÎ Ã¢ True;
+        RealExit.gameObject.SetActive(true);    //Exit ë²„íŠ¼ì„ í´ë¦­ ì‹œ, ì¢…ë£Œí™•ì¸ ì°½ True;
     }
 
     void OnRealExitButtonClick()
     {
-        Debug.Log("ÁøÂ¥ ²û : ");   //Å×½ºÆ®¿ë
+        Debug.Log("ì§„ì§œ ë” : ");   //í…ŒìŠ¤íŠ¸ìš©
         UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();   //ÃßÈÄ¿¡ ºôµå°¡ µÇ¾îÁö¸é ÇØ´ç ÄÚµå·Î º¯°æ ¿¹Á¤
+        //Application.Quit();   //ì¶”í›„ì— ë¹Œë“œê°€ ë˜ì–´ì§€ë©´ í•´ë‹¹ ì½”ë“œë¡œ ë³€ê²½ ì˜ˆì •
     }
     
     void OnRollBackButtonClick()
     {
-        Debug.Log("¾È²û : ");   //Å×½ºÆ®¿ë
+        Debug.Log("ì•ˆë” : ");   //í…ŒìŠ¤íŠ¸ìš©
         RealExit.gameObject.SetActive(false);
     }
 

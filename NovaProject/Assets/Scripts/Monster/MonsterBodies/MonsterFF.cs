@@ -6,13 +6,13 @@ public class MonsterFF : Monster
 {
     [SerializeField] private GameObject Launcher;
     /// <summary>
-    /// Á¤ÁöÇÏ´Âµ¥ °É¸®´Â ½Ã°£
+    /// ì •ì§€í•˜ëŠ”ë° ê±¸ë¦¬ëŠ” ì‹œê°„
     /// </summary>
     [SerializeField] private float stopDuration;
     protected override void StartAfterInit()
     {
-        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // »ç°İ ½ÃÀÛ
-        StartCoroutine(StopDuringDuration(type, stopDuration));  // typeÃÊ ÈÄ stopDurationµ¿¾È ¼­¼­È÷ Á¤Áö
+        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // ì‚¬ê²© ì‹œì‘
+        StartCoroutine(StopDuringDuration(type, stopDuration));  // typeì´ˆ í›„ stopDurationë™ì•ˆ ì„œì„œíˆ ì •ì§€
     }
     void Update()
     {
@@ -21,12 +21,12 @@ public class MonsterFF : Monster
 
     public override void Shoot()
     {
-        int count = 3; // 5¹ß ¹ß»ç
-        float angle = 60f; // ºÎÃ¤²Ã °¢µµ
-        float intervalangle = angle / (count - 1); // °¢ ÅºÈ¯ »çÀÌÀÇ °¢µµ
-        float baseangle = -angle / 2f; // Á¦ÀÏ ¿ŞÂÊ ÅºÈ¯ÀÇ °¢µµ
+        int count = 3; // 5ë°œ ë°œì‚¬
+        float angle = 60f; // ë¶€ì±„ê¼´ ê°ë„
+        float intervalangle = angle / (count - 1); // ê° íƒ„í™˜ ì‚¬ì´ì˜ ê°ë„
+        float baseangle = -angle / 2f; // ì œì¼ ì™¼ìª½ íƒ„í™˜ì˜ ê°ë„
 
-
+         
         for (int i = 0; i < count; i++)
         {
             float bulletangle = baseangle + intervalangle * i;
@@ -42,18 +42,18 @@ public class MonsterFF : Monster
     }
 
     /// <summary>
-    /// delayÃÊ ÈÄ¿¡ °¨¼ÓÀ» ½ÃÀÛÇØ durationµ¿¾È ¸ØÃß´Â ÇÔ¼ö
-    /// FF, Bomber, Torpedo, Support°¡ »ç¿ë
-    /// À§ 4°¡Áö À¯ÇüÀÇ ¸ó½ºÅÍ´Â »ı¼ºÇÒ ¶§ type¸¦ delay·Î »ç¿ë ( 0ÀÌ¸é ¸ØÃßÁö ¾ÊÀ½)
+    /// delayì´ˆ í›„ì— ê°ì†ì„ ì‹œì‘í•´ durationë™ì•ˆ ë©ˆì¶”ëŠ” í•¨ìˆ˜
+    /// FF, Bomber, Torpedo, Supportê°€ ì‚¬ìš©
+    /// ìœ„ 4ê°€ì§€ ìœ í˜•ì˜ ëª¬ìŠ¤í„°ëŠ” ìƒì„±í•  ë•Œ typeë¥¼ delayë¡œ ì‚¬ìš© ( 0ì´ë©´ ë©ˆì¶”ì§€ ì•ŠìŒ)
     /// </summary>
     /// <param name="delay"></param>
     /// <param name="duration"></param>
     /// <returns></returns>
     protected IEnumerator StopDuringDuration(float delay, float duration)
     {
-        // ¸ó½ºÅÍ »ı¼º½Ã type¸¦ Á¤Áö±îÁö Áö¿¬½Ã°£À¸·Î »ç¿ëÇÒ°Çµ¥ 0ÀÌ¸é Á¤ÁöÇÏÁö ¾Ê´Â ÆĞÅÏ
-        // 0ÀÌ¸é ¸ØÃßÁö ¾Ê°í °è¼Ó °¡µµ·Ï ÄÚ·çÆ¾ ÁßÁö! 10ÀÌ»óÀ¸·Î ÁÙ ÀÏÀº ¾øÀ»Å×´Ï
-        // Ãß°¡ ÆĞÅÏÀÌ ÇÊ¿äÇÑ °æ¿ì 11 µîÀ¸·Î ÁÙ ¼ö ÀÖ°Ô 10ÀÌ»óÀÌ¾îµµ Á¤ÁöÇÏÁö ¾ÊÀ½
+        // ëª¬ìŠ¤í„° ìƒì„±ì‹œ typeë¥¼ ì •ì§€ê¹Œì§€ ì§€ì—°ì‹œê°„ìœ¼ë¡œ ì‚¬ìš©í• ê±´ë° 0ì´ë©´ ì •ì§€í•˜ì§€ ì•ŠëŠ” íŒ¨í„´
+        // 0ì´ë©´ ë©ˆì¶”ì§€ ì•Šê³  ê³„ì† ê°€ë„ë¡ ì½”ë£¨í‹´ ì¤‘ì§€! 10ì´ìƒìœ¼ë¡œ ì¤„ ì¼ì€ ì—†ì„í…Œë‹ˆ
+        // ì¶”ê°€ íŒ¨í„´ì´ í•„ìš”í•œ ê²½ìš° 11 ë“±ìœ¼ë¡œ ì¤„ ìˆ˜ ìˆê²Œ 10ì´ìƒì´ì–´ë„ ì •ì§€í•˜ì§€ ì•ŠìŒ
         if (delay == 0 || delay >= 10) yield break;
 
         yield return new WaitForSeconds(delay);
@@ -62,10 +62,10 @@ public class MonsterFF : Monster
         while (time < duration)
         {
             time += Time.deltaTime;
-            MoveSpeed = Mathf.Lerp(initMoveSpeed, 0f, time / duration); // Áö³­ ½Ã°£¿¡ µû¶ó ¼Óµµ¸¦ ÃÊ±â¼Óµµ~0À¸·Î º¸°£
+            MoveSpeed = Mathf.Lerp(initMoveSpeed, 0f, time / duration); // ì§€ë‚œ ì‹œê°„ì— ë”°ë¼ ì†ë„ë¥¼ ì´ˆê¸°ì†ë„~0ìœ¼ë¡œ ë³´ê°„
             yield return null;
         }
 
-        MoveSpeed = 0f; // ½Ã°£ÀÌ Áö³­ ÈÄ¿¡ ¿ÏÀüÈ÷ Á¤ÁöÇÏµµ·Ï º¸Àå
+        MoveSpeed = 0f; // ì‹œê°„ì´ ì§€ë‚œ í›„ì— ì™„ì „íˆ ì •ì§€í•˜ë„ë¡ ë³´ì¥
     }
 }
