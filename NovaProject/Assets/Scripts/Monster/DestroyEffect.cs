@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DestroyEffect : MonoBehaviour
 {
-    // ¾Ö´Ï¸ŞÀÌ¼Ç ³¡ ÇÁ·¹ÀÓ¿¡ ÀÌº¥Æ®·Î È£Ãâ
+    // ì• ë‹ˆë©”ì´ì…˜ ë í”„ë ˆì„ì— ì´ë²¤íŠ¸ë¡œ í˜¸ì¶œ
     public void OnEffectEnd()
     {
-        PoolManager.instance.Return(gameObject);
+        PoolManager.instance.Return(gameObject); 
     }
 }
