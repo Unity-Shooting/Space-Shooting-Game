@@ -21,7 +21,7 @@ public class S1MbRay : MbBase
     {
         // 본체와 위치 동기화
         // 시전자가 보스인 경우는 안함
-        if (type != 1)
+        if (type == 0)
             transform.position = caster.Launcher.transform.position;
     }
 
