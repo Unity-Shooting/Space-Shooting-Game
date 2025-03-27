@@ -19,6 +19,7 @@ MonoBehaviour:
     position: {x: -2, y: 1, z: 0}
     direction: {x: 1, y: 0}
     type: 1
+    item: 4
     repeatCount: 6
     repeatInterval: 0.5
   - spawnTime: 3
@@ -26,5 +27,6 @@ MonoBehaviour:
     position: {x: 2, y: 1, z: 0}
     direction: {x: -1, y: 0}
     type: 2
+    item: 0
     repeatCount: 6
     repeatInterval: 0.5
