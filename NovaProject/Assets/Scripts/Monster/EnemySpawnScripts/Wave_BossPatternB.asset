@@ -19,6 +19,7 @@ MonoBehaviour:
     position: {x: 3.4, y: 6, z: 0}
     direction: {x: -0.5, y: -0.7}
     type: 1
+    item: 0
     repeatCount: 0
     repeatInterval: 0
   - spawnTime: 1
@@ -26,6 +27,7 @@ MonoBehaviour:
     position: {x: 3.4, y: 3, z: 0}
     direction: {x: -0.5, y: -0.7}
     type: 1
+    item: 0
     repeatCount: 0
     repeatInterval: 0
   - spawnTime: 1
@@ -33,26 +35,30 @@ MonoBehaviour:
     position: {x: 3.4, y: 0, z: 0}
     direction: {x: -0.5, y: -0.7}
     type: 1
+    item: 0
     repeatCount: 0
     repeatInterval: 0
-  - spawnTime: 4
+  - spawnTime: 2.5
     monster: {fileID: 2109277826356061369, guid: 6fa7e5651b5faf24cbd4ceaee5fb57f4, type: 3}
     position: {x: -3.4, y: 6, z: 0}
     direction: {x: 0.5, y: -0.7}
     type: 1
+    item: 0
     repeatCount: 0
     repeatInterval: 0
-  - spawnTime: 4
+  - spawnTime: 2.5
     monster: {fileID: 2109277826356061369, guid: 6fa7e5651b5faf24cbd4ceaee5fb57f4, type: 3}
     position: {x: -3.4, y: 3, z: 0}
     direction: {x: 0.5, y: -0.7}
     type: 1
+    item: 0
     repeatCount: 0
     repeatInterval: 0
-  - spawnTime: 4
+  - spawnTime: 2.5
     monster: {fileID: 2109277826356061369, guid: 6fa7e5651b5faf24cbd4ceaee5fb57f4, type: 3}
     position: {x: -3.4, y: 0, z: 0}
     direction: {x: 0.5, y: -0.7}
     type: 1
+    item: 0
     repeatCount: 0
     repeatInterval: 0
