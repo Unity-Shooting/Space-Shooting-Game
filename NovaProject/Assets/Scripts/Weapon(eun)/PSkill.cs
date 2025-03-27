@@ -19,8 +19,6 @@ public class PSkill : MonoBehaviour
     private float homingSpeed = 5.0f; // 타겟팅 속도
     private float homingRange = 10f; // 타겟팅 범위
 
-    public Transform firePoint1, firePoint2;
-
     void Start()
     {
         // Missile 스킬인 경우 타겟을 찾도록 설정

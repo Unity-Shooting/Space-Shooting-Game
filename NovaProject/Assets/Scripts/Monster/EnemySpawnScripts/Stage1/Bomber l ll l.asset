@@ -19,7 +19,7 @@ MonoBehaviour:
     position: {x: -1, y: 5, z: 0}
     direction: {x: 0, y: -1}
     type: 3
-    item: 3
+    item: 0
     repeatCount: 0
     repeatInterval: 0
   - spawnTime: 0

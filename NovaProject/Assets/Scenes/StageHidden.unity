@@ -576,7 +576,7 @@ MonoBehaviour:
   - {fileID: 4887992525478543551, guid: c7e4ac538793f9949ab27b24b36d2a08, type: 3}
   - {fileID: 9027213855682543936, guid: a3ba9b1cb6c182d4fb912d2e1a15e09d, type: 3}
   Skill_1: {fileID: 6954724916877585830, guid: 82c8b942eb82cfd4fbc1801b375157e6, type: 3}
-  Skill_2: {fileID: 4976992549164463041, guid: 54b176cb9179b8c43a592065a65b5a86, type: 3}
+  Skill_2: {fileID: 995487743936645183, guid: 34c2074ce2f6037488d20f569ec86065, type: 3}
   Skill_3: {fileID: 393926581525163294, guid: bc7accdbfa8a3a44689af9e141513119, type: 3}
   firePoint1: {fileID: 1450416497}
   firePoint2: {fileID: 1450416496}
