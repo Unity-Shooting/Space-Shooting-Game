@@ -13,4 +13,60 @@ MonoBehaviour:
   m_Name: S1BC V reverse
   m_EditorClassIdentifier: 
   memo: 
-  spawnEvents: []
+  spawnEvents:
+  - spawnTime: 0
+    monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
+    position: {x: -4, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 0
+    monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
+    position: {x: 4, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 2
+    monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
+    position: {x: -3, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 2
+    monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
+    position: {x: 3, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 4
+    monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
+    position: {x: -2, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 4
+    monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
+    position: {x: 2, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 6
+    monster: {fileID: 0}
+    position: {x: 0, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 0
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
