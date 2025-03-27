@@ -185,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 1523979823403722629}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: deec6bca301381849891ee81bded8a48, type: 2}
+  m_Controller: {fileID: 9100000, guid: c27614604509cb649b985ca97291bb76, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -352,13 +352,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0508975a7e39cb43a55f87f5a5a3ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseAttack: 0
+  BaseAttack: 1
   BaseMoveSpeed: 0
-  warningTime: 0
-  rayDuration: 0
-  Warning: {fileID: 0}
-  Ray: {fileID: 0}
-  Circle: {fileID: 0}
+  warningTime: 3
+  rayDuration: 2
+  Warning: {fileID: 1200986631851225193}
+  Ray: {fileID: 2160562521694108511}
+  Circle: {fileID: 2722002841255671959}
 --- !u!1 &4353509657099821997
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,10 @@ using UnityEngine.WSA;
 /// </summary>
 public class MonsterBoss : Monster
 {
+
+    private enum BossPhase { Phase1, Phase2 }
+    private BossPhase bossPhase = BossPhase.Phase1;
+
     [SerializeField] private float stopDelay;
     [SerializeField] private float stopDuration;
     [SerializeField] private GameObject mbRay;
@@ -40,6 +44,15 @@ public class MonsterBoss : Monster
     void Update()
     {
         Move();
+        if (bossPhase == BossPhase.Phase1 && HP < BaseHP / 2)
+        {
+            bossPhase = BossPhase.Phase2;
+            // WavePatternB 실행 양방향 레이저 포격 패턴
+            // StopPhase1(); // 1페이즈 코루틴 정지
+            // StartPhase2(); // 2페이즈 코루틴 실행
+
+        }
+
     }
 
     /// <summary>
@@ -64,10 +77,44 @@ public class MonsterBoss : Monster
         MoveSpeed = 0f;
 
         // 감속이 끝나면 패턴 시작
+        StartPhase1();
+    }
+
+    private void SwitchPhase1toPhase2()
+    {
+        bossPhase = BossPhase.Phase2;
+        StopPhase1();
+        StartPhase2();
+    }
+
+    private void StartPhase1()
+    {
         canBeDamaged = true;
         PatternA = StartCoroutine(BossPatternA());
         PatternB = StartCoroutine(BossPatternB());
         PatternC = StartCoroutine(BossPatternC());
+    }
+
+    private void StopPhase1()
+    {
+        if (PatternA != null)
+        {
+            StopCoroutine(PatternA);
+        }
+        if (PatternB != null)
+        {
+            StopCoroutine(PatternB);
+        }
+        if (PatternC != null)
+        {
+            StopCoroutine(PatternC);
+        }
+    }
+
+    private void StartPhase2()
+    {
+        PatternD = StartCoroutine(BossPatternD());
+        PatternE = StartCoroutine(BossPatternE());
     }
 
     /// <summary>
@@ -97,7 +144,7 @@ public class MonsterBoss : Monster
         float baseAngle = Time.time * 20f; // 각 발사마다 회전하면서 발사하도록 베이스각도를 돌리기
         for (int i = 0; i < bulletcount; i++)
         {
-            float shootangle = baseAngle + angle2 * i;  
+            float shootangle = baseAngle + angle2 * i;
             Vector2 shootdir = Quaternion.Euler(0, 0, shootangle) * Vector2.down; // 발사할 방향
             IBulletInit bul = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
             bul.Init(transform.position, shootdir, 0);
@@ -137,9 +184,20 @@ public class MonsterBoss : Monster
         while (true)
         {
             yield return new WaitForSeconds(periodC);
-           StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternA));
+            StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternA));
         }
     }
+
+    IEnumerator BossPatternD()
+    {
+        yield return null;
+    }
+
+    IEnumerator BossPatternE()
+    {
+        yield return null;
+    }
+
 
 
 

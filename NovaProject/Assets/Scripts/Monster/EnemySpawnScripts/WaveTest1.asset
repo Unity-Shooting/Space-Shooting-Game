@@ -15,19 +15,19 @@ MonoBehaviour:
   memo: "\uD14C\uC2A4\uD2B8\uC6A9 \uC6E8\uC774\uBE0C! \uBAA8\uB4E0 \uBAAC\uC2A4\uD130
     \uBF51\uC544\uBCF4\uAE30"
   spawnEvents:
-  - spawnTime: 3
-    monster: {fileID: 3910489071011965360, guid: bea7d9c0b7b1e87489f9b093a5b233a7, type: 3}
-    position: {x: -3, y: 0, z: 0}
-    direction: {x: 1, y: 0}
-    type: 1
+  - spawnTime: 2
+    monster: {fileID: 2109277826356061369, guid: 6fa7e5651b5faf24cbd4ceaee5fb57f4, type: 3}
+    position: {x: -1, y: 5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 3
     item: 0
     repeatCount: 0
     repeatInterval: 0
-  - spawnTime: 3
-    monster: {fileID: 3910489071011965360, guid: bea7d9c0b7b1e87489f9b093a5b233a7, type: 3}
-    position: {x: 3, y: 0, z: 0}
-    direction: {x: -1, y: 0}
-    type: 2
+  - spawnTime: 2
+    monster: {fileID: 3690683377447748346, guid: d039b8814d49d304197c5edefbf52e5d, type: 3}
+    position: {x: 1, y: 5, z: 0}
+    direction: {x: 0, y: -1}
+    type: 3
     item: 0
     repeatCount: 0
     repeatInterval: 0
