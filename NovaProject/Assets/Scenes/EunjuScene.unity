@@ -299,7 +299,7 @@ MonoBehaviour:
   - {fileID: 4887992525478543551, guid: c7e4ac538793f9949ab27b24b36d2a08, type: 3}
   - {fileID: 9027213855682543936, guid: a3ba9b1cb6c182d4fb912d2e1a15e09d, type: 3}
   Skill_1: {fileID: 6954724916877585830, guid: 82c8b942eb82cfd4fbc1801b375157e6, type: 3}
-  Skill_2: {fileID: 4976992549164463041, guid: 54b176cb9179b8c43a592065a65b5a86, type: 3}
+  Skill_2: {fileID: 995487743936645183, guid: 34c2074ce2f6037488d20f569ec86065, type: 3}
   Skill_3: {fileID: 393926581525163294, guid: bc7accdbfa8a3a44689af9e141513119, type: 3}
   firePoint1: {fileID: 2051591078}
   firePoint2: {fileID: 849897275}
@@ -665,11 +665,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.48
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.98
+      value: 2.94
       objectReference: {fileID: 0}
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -706,6 +706,10 @@ PrefabInstance:
     - target: {fileID: 6501819258851257190, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_Name
       value: MonsterFF (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501819258851257190, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -880,11 +884,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.43
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.74
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -921,6 +925,10 @@ PrefabInstance:
     - target: {fileID: 6501819258851257190, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_Name
       value: MonsterFF (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501819258851257190, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_TagString
+      value: Monster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1281,11 +1289,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.45
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.41
+      value: 1.39
       objectReference: {fileID: 0}
     - target: {fileID: 1381081538380599531, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1322,6 +1330,10 @@ PrefabInstance:
     - target: {fileID: 6501819258851257190, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
       propertyPath: m_Name
       value: MonsterFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501819258851257190, guid: ae08b0a01f0712e419bfd6f7e1aa28b5, type: 3}
+      propertyPath: m_TagString
+      value: Monster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1555,7 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6794908740707084800, guid: a4520fdb6c29222478f1fab7ff553804, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
