@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fa276294b3028f46a38789e832c108a, type: 3}
-  m_Name: S1Fighter ll
+  m_Name: S1Torpedo l l
   m_EditorClassIdentifier: 
   memo: 
   spawnEvents:
   - spawnTime: 0
-    monster: {fileID: 1992552151133599490, guid: e5ea6dee0d8b3f147b177235d1165be1, type: 3}
-    position: {x: -2, y: 5, z: 0}
-    direction: {x: 0, y: -1}
-    type: 0
+    monster: {fileID: 7743819443627910980, guid: 60946227865f9234188bfee9b6c5690f, type: 3}
+    position: {x: -4, y: 4, z: 0}
+    direction: {x: 0.5, y: -1}
+    type: 3
     item: 0
-    repeatCount: 5
-    repeatInterval: 1
+    repeatCount: 0
+    repeatInterval: 0
   - spawnTime: 0
-    monster: {fileID: 1992552151133599490, guid: e5ea6dee0d8b3f147b177235d1165be1, type: 3}
-    position: {x: 2, y: 5, z: 0}
-    direction: {x: 0, y: -1}
-    type: 0
+    monster: {fileID: 7743819443627910980, guid: 60946227865f9234188bfee9b6c5690f, type: 3}
+    position: {x: 4, y: 4, z: 0}
+    direction: {x: -0.5, y: -1}
+    type: 3
     item: 0
-    repeatCount: 5
-    repeatInterval: 1
+    repeatCount: 0
+    repeatInterval: 0

@@ -878,6 +878,7 @@ GameObject:
   - component: {fileID: 978464375}
   - component: {fileID: 978464377}
   - component: {fileID: 978464376}
+  - component: {fileID: 978464378}
   m_Layer: 0
   m_Name: purple_planet
   m_TagString: Untagged
@@ -916,8 +917,8 @@ MonoBehaviour:
   scrollSpeed: 5
   minScale: 0.5
   maxScale: 3
-  minX: -4
-  maxX: 4
+  minX: -5
+  maxX: 5
   rotationSpeed: 90
 --- !u!212 &978464377
 SpriteRenderer:
@@ -974,6 +975,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &978464378
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978464374}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.235
 --- !u!1 &1093102811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1647,7 @@ GameObject:
   - component: {fileID: 1517357872}
   - component: {fileID: 1517357874}
   - component: {fileID: 1517357873}
+  - component: {fileID: 1517357875}
   m_Layer: 0
   m_Name: gray_planet
   m_TagString: Untagged
@@ -1626,7 +1664,7 @@ Transform:
   m_GameObject: {fileID: 1517357871}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.19, y: 4.68, z: 0}
+  m_LocalPosition: {x: 2.49, y: 5.91, z: 0}
   m_LocalScale: {x: 1.7375, y: 1.7375, z: 0.3475}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1648,8 +1686,8 @@ MonoBehaviour:
   scrollSpeed: 6
   minScale: 0.5
   maxScale: 3
-  minX: -4
-  maxX: 4
+  minX: -5
+  maxX: 5
   rotationSpeed: 90
 --- !u!212 &1517357874
 SpriteRenderer:
@@ -1706,6 +1744,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1517357875
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517357871}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.235
 --- !u!1 &1613015176
 GameObject:
   m_ObjectHideFlags: 0
