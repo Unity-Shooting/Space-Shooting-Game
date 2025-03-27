@@ -1,0 +1,675 @@
+fileFormatVersion: 2
+guid: e2d69b5fbf8abc448baccd15970750d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7867608006997005160
+    second: Nairan - Battlecruiser  -  Destruction_0
+  - first:
+      213: -724689487648037833
+    second: Nairan - Battlecruiser  -  Destruction_1
+  - first:
+      213: -3598694049775965650
+    second: Nairan - Battlecruiser  -  Destruction_2
+  - first:
+      213: -6277000264400532925
+    second: Nairan - Battlecruiser  -  Destruction_3
+  - first:
+      213: 1906211283371968139
+    second: Nairan - Battlecruiser  -  Destruction_4
+  - first:
+      213: 8771007331469076559
+    second: Nairan - Battlecruiser  -  Destruction_5
+  - first:
+      213: 6465455827787133409
+    second: Nairan - Battlecruiser  -  Destruction_6
+  - first:
+      213: -6818443143473941909
+    second: Nairan - Battlecruiser  -  Destruction_7
+  - first:
+      213: 60524820516316978
+    second: Nairan - Battlecruiser  -  Destruction_8
+  - first:
+      213: 7557608311085193008
+    second: Nairan - Battlecruiser  -  Destruction_9
+  - first:
+      213: 8278283009754540861
+    second: Nairan - Battlecruiser  -  Destruction_10
+  - first:
+      213: -2261470255369684973
+    second: Nairan - Battlecruiser  -  Destruction_11
+  - first:
+      213: 8628567997601153522
+    second: Nairan - Battlecruiser  -  Destruction_12
+  - first:
+      213: 2013276240396726553
+    second: Nairan - Battlecruiser  -  Destruction_13
+  - first:
+      213: -6575166449805570766
+    second: Nairan - Battlecruiser  -  Destruction_14
+  - first:
+      213: -7917181065880818981
+    second: Nairan - Battlecruiser  -  Destruction_15
+  - first:
+      213: -7645306318801510604
+    second: Nairan - Battlecruiser  -  Destruction_16
+  - first:
+      213: -7719344872855680096
+    second: Nairan - Battlecruiser  -  Destruction_17
+  - first:
+      213: 2194522235446650952
+    second: Nairan - Battlecruiser  -  Destruction_18
+  - first:
+      213: 453392437729535326
+    second: Nairan - Battlecruiser  -  Destruction_19
+  - first:
+      213: -7711112139245723398
+    second: Nairan - Battlecruiser  -  Destruction_20
+  - first:
+      213: -7536412841008414068
+    second: Nairan - Battlecruiser  -  Destruction_21
+  - first:
+      213: 1277187290128525396
+    second: Nairan - Battlecruiser  -  Destruction_22
+  - first:
+      213: -3992958820388108065
+    second: Nairan - Battlecruiser  -  Destruction_23
+  - first:
+      213: -9085858138756395128
+    second: Nairan - Battlecruiser  -  Destruction_24
+  - first:
+      213: 7557764337093739495
+    second: Nairan - Battlecruiser  -  Destruction_25
+  - first:
+      213: 235797173160899784
+    second: Nairan - Battlecruiser  -  Destruction_26
+  - first:
+      213: 8655083057302000349
+    second: Nairan - Battlecruiser  -  Destruction_27
+  - first:
+      213: -3710609598843496853
+    second: Nairan - Battlecruiser  -  Destruction_28
+  - first:
+      213: -4009427251208724312
+    second: Nairan - Battlecruiser  -  Destruction_29
+  - first:
+      213: -6361384216688001743
+    second: Nairan - Battlecruiser  -  Destruction_30
+  - first:
+      213: -4600890867513752414
+    second: Nairan - Battlecruiser  -  Destruction_31
+  - first:
+      213: -1286090503050181148
+    second: Nairan - Battlecruiser  -  Destruction_32
+  - first:
+      213: 6042262019633532295
+    second: Nairan - Battlecruiser  -  Destruction_33
+  - first:
+      213: -1231295439822301885
+    second: Nairan - Battlecruiser  -  Destruction_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89cace6b334a0d290800000000000000
+      internalID: -7867608006997005160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 734674420c261f5f0800000000000000
+      internalID: -724689487648037833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2aaac314dede0ec0800000000000000
+      internalID: -3598694049775965650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a8f59348d93e8a0800000000000000
+      internalID: -6277000264400532925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b864a3c0019347a10800000000000000
+      internalID: 1906211283371968139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48af8a72b0e8b970800000000000000
+      internalID: 8771007331469076559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e13b36e1d9e9b950800000000000000
+      internalID: 6465455827787133409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b62b90036160061a0800000000000000
+      internalID: -6818443143473941909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23728fae00707d000800000000000000
+      internalID: 60524820516316978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037d5cd87b402e860800000000000000
+      internalID: 7557608311085193008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b2292898e52e270800000000000000
+      internalID: 8278283009754540861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318f396d8c4ad90e0800000000000000
+      internalID: -2261470255369684973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f10251b0e4deb770800000000000000
+      internalID: 8628567997601153522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911b497e21890fb10800000000000000
+      internalID: 2013276240396726553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23dc54c53f050c4a0800000000000000
+      internalID: -6575166449805570766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdaa9b184c5802290800000000000000
+      internalID: -7917181065880818981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f59ccd86a66e590800000000000000
+      internalID: -7645306318801510604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nairan - Battlecruiser  -  Destruction_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab44baacb06fd490800000000000000
+      internalID: -7719344872855680096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 234945d33f380174c83ce4666b1c8644
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nairan - Battlecruiser  -  Destruction_0: -7867608006997005160
+      Nairan - Battlecruiser  -  Destruction_1: -724689487648037833
+      Nairan - Battlecruiser  -  Destruction_10: 8278283009754540861
+      Nairan - Battlecruiser  -  Destruction_11: -2261470255369684973
+      Nairan - Battlecruiser  -  Destruction_12: 8628567997601153522
+      Nairan - Battlecruiser  -  Destruction_13: 2013276240396726553
+      Nairan - Battlecruiser  -  Destruction_14: -6575166449805570766
+      Nairan - Battlecruiser  -  Destruction_15: -7917181065880818981
+      Nairan - Battlecruiser  -  Destruction_16: -7645306318801510604
+      Nairan - Battlecruiser  -  Destruction_17: -7719344872855680096
+      Nairan - Battlecruiser  -  Destruction_2: -3598694049775965650
+      Nairan - Battlecruiser  -  Destruction_3: -6277000264400532925
+      Nairan - Battlecruiser  -  Destruction_4: 1906211283371968139
+      Nairan - Battlecruiser  -  Destruction_5: 8771007331469076559
+      Nairan - Battlecruiser  -  Destruction_6: 6465455827787133409
+      Nairan - Battlecruiser  -  Destruction_7: -6818443143473941909
+      Nairan - Battlecruiser  -  Destruction_8: 60524820516316978
+      Nairan - Battlecruiser  -  Destruction_9: 7557608311085193008
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

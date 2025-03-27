@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 무기 유형을 정의하는 열거형.
@@ -141,7 +142,8 @@ public class PlayerController : Singleton<PlayerController>
         inputSystem.Enable(); // 입력 시스템 활성화
         inputSystem.Player.Space.performed += _ => Attack(); // 공격 입력 이벤트 등록
         inputSystem.Player.LeftClick.performed += _ => Click(); // 클릭 입력 이벤트 등록 (마우스 클릭도 공격 처리)
-        inputSystem.Player.Shift.performed += _ => Shield(); // 실드
+        inputSystem.Player.Shift.performed += _ => Shield(); // 실드 이벤트 등록
+        inputSystem.Player.X.performed += _ => XBtn(); // X 버튼 이벤트 등록
     }
 
     /// <summary>
@@ -152,6 +154,7 @@ public class PlayerController : Singleton<PlayerController>
         inputSystem.Player.Space.performed -= _ => Attack(); // 공격 입력 이벤트 해제
         inputSystem.Player.LeftClick.performed -= _ => Click(); // 클릭 입력 이벤트 해제
         inputSystem.Player.Shift.performed -= _ => Shield(); // 실드 이벤트 해제
+        inputSystem.Player.X.performed -= _ => XBtn(); // X 버튼 이벤트 해제
         inputSystem.Disable(); // 입력 시스템 비활성화
     }
 
@@ -221,7 +224,17 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     private void Click()
     {
+    }
 
+    /// <summary>
+    /// X 버튼 클릭 시 이벤트
+    /// </summary>
+    private void XBtn()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (GameManager.Instance.logOn) Debug.Log($"{TAG} {scene.name}");
+        if(scene.name == "StageOne") SceneManager.LoadScene("StageTwo");
+        if(scene.name == "StageTwo") SceneManager.LoadScene("StageOne");
     }
 
     /// <summary>

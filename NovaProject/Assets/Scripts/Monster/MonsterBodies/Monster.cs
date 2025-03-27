@@ -95,7 +95,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
 
 
-    void Die()
+    protected virtual void Die()
     {
         CancelInvoke("Shooting");
         ScoreManager.instance.AddScore(Score);
@@ -170,6 +170,19 @@ public abstract class Monster : MonoBehaviour, IDamageable
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle + 90f); // 이미지가 아래방향이니까 90도 보정
 
+    }
+
+    /// <summary>
+    /// pos 위치에서 dir방향으로 향하는 총알을 발사 type는 특수패턴 있는 총알 만들지도 몰라서
+    /// SpawnMonster와 마찬가지로 Init 무조건 해야하는데 까먹을까봐 + 짧게 쓰려고 메서드화
+    /// </summary>
+    /// <param name="pos"></param>
+    /// <param name="dir"></param>
+    /// <param name="type"></param>
+    protected virtual void FireBullet(Vector2 pos, Vector2 dir, int type)
+    {
+        IBulletInit bullet = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
+        bullet.Init(pos, dir, type);
     }
 
 

@@ -11,20 +11,28 @@ using UnityEngine.WSA;
 /// </summary>
 public class MonsterBoss : Monster
 {
+
+    private enum BossPhase { Phase1, Phase2 }
+    private BossPhase bossPhase = BossPhase.Phase1;
+
     [SerializeField] private float stopDelay;
     [SerializeField] private float stopDuration;
     [SerializeField] private GameObject mbRay;
     bool canBeDamaged = false;
     [SerializeField] private GameObject Launcher;
+    [SerializeField] private GameObject Launcher2;
+    [SerializeField] private GameObject Launcher3;
+    [SerializeField] private GameObject Shield;
     private Animator animator;
 
     [SerializeField] private SpawnTimelineSO WavePatternA; // 일정 주기로 가로로 지나가는 Fighter 편대 소환
     [SerializeField] private SpawnTimelineSO WavePatternB; // 체력 50퍼 진입시 support 6마리 소환 바닥패턴
+    [SerializeField] private SpawnTimelineSO WavePatternC; // 체력 50퍼센트 이하 패턴, 일정 주기로 패턴 101의 Bomber 소환
 
     private Coroutine PatternA; // 일정 주기로 spin 원형 뿌리기
     private Coroutine PatternB; // 등장시 레이저 한번 쏘고 일정주기로 레이저 쏘기
     private Coroutine PatternC; // 일정 주기로 가로로 지나가는 Fighter 편대 소환
-    private Coroutine PatternD; // 양쪽 날개에서 spin 3연발
+    private Coroutine PatternD; // 체력 50퍼센트 이하 패턴, 양쪽 날개에서 spin 3연발
     private Coroutine PatternE; // 체력 50퍼센트 이하 패턴, 일정 주기로 패턴 101의 Bomber 소환
 
 
@@ -40,6 +48,12 @@ public class MonsterBoss : Monster
     void Update()
     {
         Move();
+        if (bossPhase == BossPhase.Phase1 && HP < BaseHP / 2)
+        {
+            bossPhase = BossPhase.Phase2;
+            StartCoroutine(SwitchPhase1toPhase2());
+        }
+
     }
 
     /// <summary>
@@ -64,10 +78,65 @@ public class MonsterBoss : Monster
         MoveSpeed = 0f;
 
         // 감속이 끝나면 패턴 시작
+        StartPhase1();
+    }
+
+    private IEnumerator SwitchPhase1toPhase2()
+    {
+        bossPhase = BossPhase.Phase2;
+        StopPhase1();
+        canBeDamaged = false; // 무적상태로 사이페 진행
+        yield return StartCoroutine(BossMidPhasePattern());
+        canBeDamaged = true; // 무적상태 끝
+        StartPhase2();
+    }
+
+    private void StartPhase1()
+    {
         canBeDamaged = true;
         PatternA = StartCoroutine(BossPatternA());
         PatternB = StartCoroutine(BossPatternB());
         PatternC = StartCoroutine(BossPatternC());
+    }
+
+    // 페이즈1 코루틴 정지
+    private void StopPhase1()
+    {
+        if (PatternA != null)
+        {
+            StopCoroutine(PatternA);
+        }
+        if (PatternB != null)
+        {
+            StopCoroutine(PatternB);
+        }
+        if (PatternC != null)
+        {
+            StopCoroutine(PatternC);
+        }
+    }
+
+    private void StartPhase2()
+    {
+        PatternA = StartCoroutine(BossPatternA());
+        PatternD = StartCoroutine(BossPatternD());
+        PatternE = StartCoroutine(BossPatternE());
+    }
+
+    private void StopPhase2()
+    {
+        if (PatternA != null)
+        {
+            StopCoroutine(PatternA);
+        }
+        if (PatternD != null)
+        {
+            StopCoroutine(PatternD);
+        }
+        if (PatternE != null)
+        {
+            StopCoroutine(PatternE);
+        }
     }
 
     /// <summary>
@@ -97,7 +166,7 @@ public class MonsterBoss : Monster
         float baseAngle = Time.time * 20f; // 각 발사마다 회전하면서 발사하도록 베이스각도를 돌리기
         for (int i = 0; i < bulletcount; i++)
         {
-            float shootangle = baseAngle + angle2 * i;  
+            float shootangle = baseAngle + angle2 * i;
             Vector2 shootdir = Quaternion.Euler(0, 0, shootangle) * Vector2.down; // 발사할 방향
             IBulletInit bul = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
             bul.Init(transform.position, shootdir, 0);
@@ -134,12 +203,87 @@ public class MonsterBoss : Monster
     IEnumerator BossPatternC()
     {
         float periodC = 10;
+        yield return new WaitForSeconds(5);
         while (true)
         {
+            StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternA));
             yield return new WaitForSeconds(periodC);
-           StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternA));
         }
     }
+
+    IEnumerator BossMidPhasePattern()
+    {
+        //폭발 이펙트 재생
+        var DE = PoolManager.instance.Get(DesturctionEffect);
+        DE.transform.position = transform.position;
+        DE.transform.rotation = transform.rotation;
+        DE.SetActive(true);
+        yield return new WaitForSeconds(1);
+
+        //쉴드 효과 켜기
+        Shield.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+        yield return StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternB));
+        for (int i = 0; i < 7; i++)
+        {
+            CircleFire();
+            yield return new WaitForSeconds(1);
+        }
+        yield return new WaitForSeconds(2);
+        // 실드 효과 끄기
+        Shield.SetActive(false);
+    }
+
+    /// <summary>
+    /// 패턴D : 체력 50퍼 이하 패턴, 양쪽 날개에서 spin 3연발
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator BossPatternD()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.5f);
+            StartCoroutine(BurstFire());
+        }
+    }
+
+    IEnumerator BurstFire()
+    {
+        int bulletCount = 3; // 양쪽에서 쏘니까 3발
+        float fireInterval = 0.35f;
+        float spreadAngle = 7f;
+
+        Vector2 vectorToPlayer2 = PlayerController.Instance.transform.position - Launcher2.transform.position;
+        Vector2 vectorToPlayer3 = PlayerController.Instance.transform.position - Launcher3.transform.position;
+        for (int i = 0; i < bulletCount; i++)
+        {
+            Vector2 fireDirection2 = Quaternion.Euler(0, 0, Random.Range(-spreadAngle, spreadAngle)) * vectorToPlayer2; // 흩뿌리기
+            Vector2 fireDirection3 = Quaternion.Euler(0, 0, Random.Range(-spreadAngle, spreadAngle)) * vectorToPlayer3; // 흩뿌리기
+
+
+            IBulletInit bul = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
+            bul.Init(Launcher2.transform.position, fireDirection2, 0);
+            IBulletInit bul2 = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
+            bul2.Init(Launcher3.transform.position, fireDirection3, 0);
+            yield return new WaitForSeconds(fireInterval);
+        }
+
+    }
+
+    /// <summary>
+    /// 패턴E : 체력 50퍼 이하 패턴, 일정 주기로 패턴 101의 Bomber 소환
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator BossPatternE()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3);
+            yield return StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternC));
+        }
+    }
+
 
 
 
@@ -154,5 +298,20 @@ public class MonsterBoss : Monster
         {
             base.TakeDamage(damage);
         }
+    }
+
+    protected override void Die()
+    {
+        StopPhase1();
+        StopPhase2();
+        Debug.Log("Enter Destruction Process");
+        ScoreManager.instance.AddScore(Score);
+        Release();
+
+        // 파괴 애니메이션 재생
+        var DE = PoolManager.instance.Get(DesturctionEffect);
+        DE.transform.position = transform.position;
+        DE.transform.rotation = transform.rotation;
+        DE.SetActive(true);
     }
 }
