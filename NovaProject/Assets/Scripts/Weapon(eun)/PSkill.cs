@@ -14,60 +14,33 @@ public class PSkill : MonoBehaviour
     public SkillType skillType; // 스킬 유형
     public GameObject effect; // 스킬 사용 시 생성될 이펙트 프리팹
 
-    // Laser 관련 변수
-    private Transform pos; // 플레이어의 위치를 저장할 변수
-    private float laserT = 4.0f; // 레이저 지속 시간 (초)
-    private float laserTimer = 0f; // 레이저 지속 시간을 추적하는 타이머
-
-    // missile 관련 변수
+    // Missile 관련 변수
     private Transform target; // 로켓 타겟이 되는 몬스터의 위치
     private float homingSpeed = 5.0f; // 타겟팅 속도
     private float homingRange = 10f; // 타겟팅 범위
 
+    public Transform firePoint1, firePoint2;
+
     void Start()
     {
-        // 플레이어 위치를 가져와 저장
-        pos = GameObject.FindWithTag("Player").transform;
-
-        if (skillType == SkillType.Laser)
-        {
-            // 레이저 스킬이 활성화되면 타이머 시작
-            laserTimer = laserT;
-        }
-
         // Missile 스킬인 경우 타겟을 찾도록 설정
         if (skillType == SkillType.Missile)
         {
             FindTarget(); // 가장 가까운 몬스터를 타겟으로 찾음
         }
 
-        // 스킬 3초 후 자동 삭제
-        Destroy(gameObject, 3f);
-
+        // 레이저는 삭제 타이머를 설정하지 않음
+        if (skillType != SkillType.Laser)
+        {
+            Destroy(gameObject, 3f); // 4초 후 자동 삭제
+        }
     }
 
     void Update()
     {
-        // Laser 스킬만 플레이어 위치에 맞게 이동
-        if (skillType == SkillType.Laser)
+        if (skillType == SkillType.Missile)
         {
-
-            if (pos != null)
-            {
-                transform.position = pos.position + (Vector3.up * 5.5f);
-            }
-
-
-            // 레이저 지속 시간이 끝나면 삭제
-            laserTimer -= Time.deltaTime; // 매 프레임마다 타이머 감소
-            if (laserTimer <= 0f)
-            {
-                Destroy(gameObject); // 타이머가 0 이하가 되면 레이저 삭제
-            }
-        }
-        else if (skillType == SkillType.Missile)
-        {
-            if (target != null && target.gameObject.activeInHierarchy) 
+            if (target != null && target.gameObject.activeInHierarchy)
             {
                 // 타겟을 향해 로켓 이동 (타겟을 추적)
                 Vector3 direction = target.position - transform.position;
@@ -79,22 +52,25 @@ public class PSkill : MonoBehaviour
                 // 타겟이 없으면 위로 이동
                 transform.Translate(Vector2.up * speed * Time.deltaTime);
             }
+            Debug.Log("스킬타입 : 미사일");
         }
-        else
+        else if (skillType == SkillType.Bomb)
         {
             // 다른 스킬일 경우 기본적으로 위쪽으로 이동
             transform.Translate(Vector2.up * speed * Time.deltaTime);
         }
+        else if (skillType == SkillType.Laser)
+        {
+            Debug.Log("스킬타입 : 레이저");
+
+        }
     }
-
-
 
     // 타겟팅 범위 내에서 가장 가까운 몬스터를 찾는 메소드
     private void FindTarget()
     {
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster"); // 몬스터 태그로 검색
         float closestDistance = homingRange;
-
 
         // 모든 몬스터를 순회하면서 가장 가까운 몬스터를 찾음
         foreach (GameObject monster in monsters)
@@ -118,7 +94,6 @@ public class PSkill : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-
             IDamageable obj = collision.GetComponent<IDamageable>();
             if (!obj.IsDead)
             {
@@ -131,42 +106,13 @@ public class PSkill : MonoBehaviour
                     Destroy(effectInstance, 1f);  // 이펙트가 1초 후 자동으로 삭제되도록 설정
                 }
 
-                // 총알 삭제
-                Destroy(gameObject);
+                if(skillType != SkillType.Laser)
+                {
+                    // 총알 삭제
+                    Destroy(gameObject);
+                }
+                
             }
         }
     }
-
-    private void ApplySkillEffect(GameObject monster)
-    {
-        // 스킬 유형별 효과 적용
-
-/*
-
-        switch (skillType)
-        {
-            case SkillType.Laser:
-                monster.GetComponent<monster>().TakeDamage(damage);
-                break;
-
-            case SkillType.Rocket:
-                // 화상 효과
-                monster.GetComponent<monster>().TakeDamage(damage);
-                monster.GetComponent<monster>().ApplyStatusEffect("Burn", 5); // 5초 화상
-                break;
-
-            case SkillType.Missile:
-                // 관통 효과
-                monster.GetComponent<monster>().TakeDamage(damage);
-                break;
-
-            default:
-                Debug.LogError("알 수 없는 스킬 유형");
-                break;
-        }
-
-*/
-
-    }
-
 }

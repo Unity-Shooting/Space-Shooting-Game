@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 // 무기 유형을 정의하는 열거형
 public enum weaponType
@@ -12,8 +13,6 @@ public enum weaponType
     Bomb
 
 }
-
-
 
 public class WeaponManager : MonoBehaviour
 {
@@ -45,7 +44,13 @@ public class WeaponManager : MonoBehaviour
     private float bombCool = 0.3f; // 발사 간격 (초)
     private float bombTimer = 0f; // 발사 타이머
 
-    
+    // Laser 관련 변수
+    private bool isLaser = false; // Laser 스킬 활성화 여부
+    private float laserTime = 4f; // Laser 지속 시간 (초)
+    private GameObject laser1, laser2; // 레이저 오브젝트
+
+
+
     // 스킬 쿨타임 관리
     private bool isSkillOnCooldown = false; // 스킬 쿨타임 여부
     private float skillCool = 10f; // 스킬 쿨타임
@@ -265,9 +270,29 @@ public class WeaponManager : MonoBehaviour
                 break;
 
             case weaponType.Laser:
-                
-                Instantiate(Skill_2, firePoint1.position, firePoint1.rotation);
-                //Instantiate(Skill_2, firePoint2.position, firePoint2.rotation);
+                isLaser = true;
+                laserTime = 4f;
+
+                // 레이저 1과 레이저 2 생성 후 클래스 변수에 할당
+                laser1 = Instantiate(Skill_2, firePoint1.position + (Vector3.up * 5.5f), firePoint1.rotation);
+                laser2 = Instantiate(Skill_2, firePoint2.position + (Vector3.up * 5.5f), firePoint2.rotation);
+
+                // Laser 스크립트를 가져와서 설정
+                Laser laser1Script = laser1.GetComponent<Laser>();
+                Laser laser2Script = laser2.GetComponent<Laser>();
+
+                if (laser1Script != null)
+                {
+                    laser1Script.SetLaserIdentifier("laser1");
+                    laser1Script.firePoint1 = firePoint1;
+                }
+
+                if (laser2Script != null)
+                {
+                    laser2Script.SetLaserIdentifier("laser2");
+                    laser2Script.firePoint2 = firePoint2;
+                }
+
                 break;
 
             case weaponType.Bomb:
@@ -372,7 +397,6 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
-
         // Missile 스킬 처리
         if (isMissile)
         {
@@ -413,6 +437,23 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
+        if (isLaser)
+        {
+            // 지속 시간 감소
+            laserTime -= Time.deltaTime;
+
+            if (laserTime <= 0f)
+            {
+                // 레이저 스킬 종료
+                isLaser = false;
+
+                // 레이저 오브젝트 비활성화
+                Debug.Log("레이저 종료: " + laser1 + ", " + laser2); // 레이저가 올바르게 할당되었는지 확인
+
+                Destroy(laser1);
+                Destroy(laser2);
+            }
+        }
     }
 
 }
