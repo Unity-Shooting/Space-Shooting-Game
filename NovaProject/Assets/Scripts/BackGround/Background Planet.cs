@@ -60,4 +60,14 @@ public class BackgroundPlanet : MonoBehaviour
         // 회전 속도를 랜덤으로 설정 Ex) -30 ~ +30
         currentRotationSpeed = Random.Range(-rotationSpeed, rotationSpeed);
     }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision) //충돌처리
+    {
+
+        if(collision.CompareTag("Player")) //Player tag 발견
+        {
+            PlayerHealth.Instance.TakeDamage(1); //데미지 1
+        }
+
+    }
 }
