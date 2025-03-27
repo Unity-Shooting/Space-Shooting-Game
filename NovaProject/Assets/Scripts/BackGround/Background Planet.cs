@@ -22,7 +22,7 @@ public class BackgroundPlanet : MonoBehaviour
     private float currentRotationSpeed = 30f;
 
     // 리스폰될 때 사용할 랜덤 X 좌표 값, 랜덤 스케일값 저장
-    private float randomX;
+    private float randomX = 5;
     private float randomScale;
 
     // 매 프레임 호출: 행성을 아래로 이동시키고 회전시킴

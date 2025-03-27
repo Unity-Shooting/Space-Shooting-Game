@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa276294b3028f46a38789e832c108a, type: 3}
+  m_Name: S1Support l l l down
+  m_EditorClassIdentifier: 
+  memo: 
+  spawnEvents:
+  - spawnTime: 0
+    monster: {fileID: 3690683377447748346, guid: d039b8814d49d304197c5edefbf52e5d, type: 3}
+    position: {x: 0, y: 4, z: 0}
+    direction: {x: 0, y: -1}
+    type: 2
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 1
+    monster: {fileID: 3690683377447748346, guid: d039b8814d49d304197c5edefbf52e5d, type: 3}
+    position: {x: -4, y: 4, z: 0}
+    direction: {x: 1, y: -1}
+    type: 2
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
+  - spawnTime: 2
+    monster: {fileID: 3690683377447748346, guid: d039b8814d49d304197c5edefbf52e5d, type: 3}
+    position: {x: 4, y: 4, z: 0}
+    direction: {x: -1, y: -1}
+    type: 2
+    item: 0
+    repeatCount: 0
+    repeatInterval: 0
