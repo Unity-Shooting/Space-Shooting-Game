@@ -15,6 +15,16 @@ public class S1MbTorpedo : MbBase, IDamageable
         Hoaming();
         Move();
     }
+
+    public override void Init(Vector2 pos, Vector2 dir, int type)
+    {
+        base.Init(pos, dir, type);
+        if(type == 1) // type가 1이면 아주 약한 유도 
+        {
+            hoamingPower = 0.5f;
+        }
+    }
+
     /// <summary>
     /// 플레이어 방향으로 유도하는 함수
     /// 총알이 가진 vector2 direction을 수정해서 진행 방향을 바꾸고

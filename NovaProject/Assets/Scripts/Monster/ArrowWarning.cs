@@ -47,7 +47,7 @@ public class ArrowWarning : MonoBehaviour
         {
             warningTimer = 0;
             warningCount++;
-            if (warningCount >= 4)  // warningTime 한번 더 기다린 후에 빨간바닥 마저 사라짐
+            if (warningCount >= 3)  // warningTime 한번 더 기다린 후에 빨간바닥 마저 사라짐
             {
                 //Release();
                 Destroy(gameObject);
