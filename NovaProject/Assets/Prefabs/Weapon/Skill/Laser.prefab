@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 20
+  damage: 50
   skillType: 1
-  effect: {fileID: 0}
+  effect: {fileID: 5404461303988150176, guid: e9bf829d466b8f148b40dd6699edb723, type: 3}
   firePoint1: {fileID: 0}
   firePoint2: {fileID: 0}
 --- !u!114 &4999069688233486251
