@@ -3,21 +3,39 @@ using UnityEngine;
 
 public class MbBomb : MbBase
 {
-    [SerializeField] float explodetime; // Æø¹ß Áö¿¬ ½Ã°£
-    [SerializeField] int bulletcount;  // Æø¹ß ½Ã »Ñ¸± MbBullet ¼ıÀÚ
+    [SerializeField] float explodetime; // í­ë°œ ì§€ì—° ì‹œê°„
+    [SerializeField] int bulletcount;  // í­ë°œ ì‹œ ë¿Œë¦´ MbBullet ìˆ«ì
     [SerializeField] GameObject bullet;
-    protected override void OnEnable()
+
+    public override void Init(Vector2 pos, Vector2 dir, int type)
     {
-        base.OnEnable();
-        StartCoroutine(Explodeaftertime());
+        base.Init(pos, dir, type);
+        StartAfterInit();
     }
 
+    private void StartAfterInit()
+    {
+        if (type == 0)
+        {
+            StartCoroutine(Explodeaftertime());
+        }
+        else if (type == 1)
+        {
+            MoveSpeed = 0.5f;
+            direction = Vector2.down;
+            StartCoroutine(Explodeaftertime());
+        }
+
+    }
+
+
+
     protected override void OnTriggerEnter2D(Collider2D collision)
-    {   // bomb´Â Á÷Á¢ Ãæµ¹ ¾øÀ½
+    {   // bombëŠ” ì§ì ‘ ì¶©ëŒ ì—†ìŒ
         return;
     }
 
-    private void OnDisable()  // È¤½Ã ÅÍÁö±â Àü¿¡ ºñÈ°¼ºÈ­ µÇ´Â ¿¹¿Ü»óÈ²¿¡ ÄÚ·çÆ¾ Á¾·á
+    private void OnDisable()  // í˜¹ì‹œ í„°ì§€ê¸° ì „ì— ë¹„í™œì„±í™” ë˜ëŠ” ì˜ˆì™¸ìƒí™©ì— ì½”ë£¨í‹´ ì¢…ë£Œ
     {
         StopCoroutine(Explodeaftertime());
     }
@@ -35,7 +53,7 @@ public class MbBomb : MbBase
         Release();
     }
 
-    private void Explode() // ÅÍÁö¸é¼­ MbBullet »Ñ¸®±â
+    private void Explode() // í„°ì§€ë©´ì„œ MbBullet ë¿Œë¦¬ê¸°
     {
         float angle = 360f;
         

@@ -50,7 +50,7 @@ public class S1FF : Monster
             firedirection = Quaternion.Euler(0, 0, (-spreadAngle + spreadAngle*i) ) * vectorToPlayer;
             FireBullet(Launcher2.transform.position, firedirection, 0);
         }
-        // 오른쪽 두발
+        // 오른쪽 세발
         for (int i = 0; i < bulletCount; i++)
         {
             firedirection = Quaternion.Euler(0, 0, (-spreadAngle + spreadAngle * i)) * vectorToPlayer;
