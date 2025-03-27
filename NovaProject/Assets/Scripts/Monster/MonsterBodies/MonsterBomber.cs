@@ -5,18 +5,41 @@ public class MonsterBomber : Monster
 {
     [SerializeField] private GameObject Launcher;
     /// <summary>
-    /// Á¤ÁöÇÏ´Âµ¥ °É¸®´Â ½Ã°£
+    /// ì •ì§€í•˜ëŠ”ë° ê±¸ë¦¬ëŠ” ì‹œê°„
     /// </summary>
     [SerializeField] private float stopDuration;
+    private bool isSpecial = false;
     protected override void StartAfterInit()
     {
-        InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // »ç°İ ½ÃÀÛ
-        StartCoroutine(StopDuringDuration(type, stopDuration));  // typeÃÊ ÈÄ stopDurationµ¿¾È ¼­¼­È÷ Á¤Áö
+        /// typeê°’ì´ 100ì´ìƒì¸ ê²½ìš° íŠ¹ìˆ˜íŒ¨í„´ìœ¼ë¡œ ê°„ì£¼
+        if (type > 100)
+        {
+            type = type - 100;
+            isSpecial = true;
+        }
+        else
+        {
+            isSpecial = false;
+        }
+
+
+
+        if (!isSpecial) // ì¼ë°˜ íŒ¨í„´
+        {
+            InvokeRepeating("Shoot", AttackStart, AttackSpeed);  // ì‚¬ê²© ì‹œì‘
+            StartCoroutine(StopDuringDuration(type, stopDuration));  // typeì´ˆ í›„ stopDurationë™ì•ˆ ì„œì„œíˆ ì •ì§€
+        }
+        else // íŠ¹ë³„ íŒ¨í„´ ì§ì„ ìœ¼ë¡œ ë¹„í–‰í•˜ë©´ì„œ Bomb ë‘ê°œ ë–¨êµ¬ê³  ëŸ°
+        {
+            MoveSpeed = 40;
+            StartCoroutine(SpecialBombardment());
+        }
     }
     void Update()
     {
         Move();
     }
+
 
     public override void Shoot()
     {
@@ -25,9 +48,9 @@ public class MonsterBomber : Monster
     }
 
     /// <summary>
-    /// delayÃÊ ÈÄ¿¡ °¨¼ÓÀ» ½ÃÀÛÇØ durationµ¿¾È ¸ØÃß´Â ÇÔ¼ö
-    /// FF, Bomber, Torpedo, Support°¡ »ç¿ë
-    /// À§ 4°¡Áö À¯ÇüÀÇ ¸ó½ºÅÍ´Â »ı¼ºÇÒ ¶§ type¸¦ delay·Î »ç¿ë ( 0ÀÌ¸é ¸ØÃßÁö ¾ÊÀ½)
+    /// delayì´ˆ í›„ì— ê°ì†ì„ ì‹œì‘í•´ durationë™ì•ˆ ë©ˆì¶”ëŠ” í•¨ìˆ˜
+    /// FF, Bomber, Torpedo, Supportê°€ ì‚¬ìš©
+    /// ìœ„ 4ê°€ì§€ ìœ í˜•ì˜ ëª¬ìŠ¤í„°ëŠ” ìƒì„±í•  ë•Œ typeë¥¼ delayë¡œ ì‚¬ìš© ( 0ì´ë©´ ë©ˆì¶”ì§€ ì•ŠìŒ)
     /// </summary>
     /// <param name="delay"></param>
     /// <param name="duration"></param>
@@ -35,9 +58,9 @@ public class MonsterBomber : Monster
     protected IEnumerator StopDuringDuration(float delay, float duration)
     {
         Debug.Log($"delay : {delay}");
-        // ¸ó½ºÅÍ »ı¼º½Ã type¸¦ Á¤Áö±îÁö Áö¿¬½Ã°£À¸·Î »ç¿ëÇÒ°Çµ¥ 0ÀÌ¸é Á¤ÁöÇÏÁö ¾Ê´Â ÆĞÅÏ
-        // 0ÀÌ¸é ¸ØÃßÁö ¾Ê°í °è¼Ó °¡µµ·Ï ÄÚ·çÆ¾ ÁßÁö! 10ÀÌ»óÀ¸·Î ÁÙ ÀÏÀº ¾øÀ»Å×´Ï
-        // Ãß°¡ ÆĞÅÏÀÌ ÇÊ¿äÇÑ °æ¿ì 11 µîÀ¸·Î ÁÙ ¼ö ÀÖ°Ô 10ÀÌ»óÀÌ¾îµµ Á¤ÁöÇÏÁö ¾ÊÀ½
+        // ëª¬ìŠ¤í„° ìƒì„±ì‹œ typeë¥¼ ì •ì§€ê¹Œì§€ ì§€ì—°ì‹œê°„ìœ¼ë¡œ ì‚¬ìš©í• ê±´ë° 0ì´ë©´ ì •ì§€í•˜ì§€ ì•ŠëŠ” íŒ¨í„´
+        // 0ì´ë©´ ë©ˆì¶”ì§€ ì•Šê³  ê³„ì† ê°€ë„ë¡ ì½”ë£¨í‹´ ì¤‘ì§€! 10ì´ìƒìœ¼ë¡œ ì¤„ ì¼ì€ ì—†ì„í…Œë‹ˆ
+        // ì¶”ê°€ íŒ¨í„´ì´ í•„ìš”í•œ ê²½ìš° 11 ë“±ìœ¼ë¡œ ì¤„ ìˆ˜ ìˆê²Œ 10ì´ìƒì´ì–´ë„ ì •ì§€í•˜ì§€ ì•ŠìŒ
         if (delay == 0 || delay >= 10)
         {
             yield break;
@@ -51,10 +74,32 @@ public class MonsterBomber : Monster
         while (time < duration)
         {
             time += Time.deltaTime;
-            MoveSpeed = Mathf.Lerp(initMoveSpeed, 0f, time / duration); // Áö³­ ½Ã°£¿¡ µû¶ó ¼Óµµ¸¦ ÃÊ±â¼Óµµ~0À¸·Î º¸°£
+            MoveSpeed = Mathf.Lerp(initMoveSpeed, 0f, time / duration); // ì§€ë‚œ ì‹œê°„ì— ë”°ë¼ ì†ë„ë¥¼ ì´ˆê¸°ì†ë„~0ìœ¼ë¡œ ë³´ê°„
             yield return null;
         }
 
-        MoveSpeed = 0f; // ½Ã°£ÀÌ Áö³­ ÈÄ¿¡ ¿ÏÀüÈ÷ Á¤ÁöÇÏµµ·Ï º¸Àå
+        MoveSpeed = 0f; // ì‹œê°„ì´ ì§€ë‚œ í›„ì— ì™„ì „íˆ ì •ì§€í•˜ë„ë¡ ë³´ì¥
+    }
+
+
+    /// <summary>
+    /// íŠ¹ìˆ˜íŒ¨í„´, ë¹ ë¥´ê²Œ ì§ì„ ë¹„í–‰í•˜ë©´ì„œ í­íƒ„ ë‘ê°œ ë–¨êµ¬ê³  ëŸ°
+    /// ë¬´ì 
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator SpecialBombardment()
+    {
+        yield return new WaitForSeconds(0.5f);
+        FireBullet(transform.position, Vector2.down, 1);
+        yield return new WaitForSeconds(0.5f);
+        FireBullet(transform.position, Vector2.down, 1);
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        if (!isSpecial)  // íŠ¹ìˆ˜íŒ¨í„´ì¸ ê²½ìš° ë°ë¯¸ì§€ x 
+        {
+            base.TakeDamage(damage);
+        }
     }
 }
