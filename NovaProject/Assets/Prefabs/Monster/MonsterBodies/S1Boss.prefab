@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
-  BaseHP: 100
+  BaseHP: 200
   BaseAttack: 1
   BaseMoveSpeed: 3
   BaseAttackSpeed: 0
@@ -209,8 +209,6 @@ MonoBehaviour:
   Launcher3: {fileID: 2110324691013095016}
   Shield: {fileID: 5874008161838436884}
   WavePatternA: {fileID: 0}
-  WavePatternB: {fileID: 0}
-  WavePatternC: {fileID: 0}
 --- !u!70 &5169658755419630374
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
