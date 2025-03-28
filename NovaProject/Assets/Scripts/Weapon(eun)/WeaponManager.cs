@@ -325,6 +325,7 @@ public class WeaponManager : MonoBehaviour
                 // 레이저 1과 레이저 2 생성 후 클래스 변수에 할당
                 laser1 = Instantiate(Skill_2, firePoint1.position + (Vector3.up * 5.5f), firePoint1.rotation);
                 laser2 = Instantiate(Skill_2, firePoint2.position + (Vector3.up * 5.5f), firePoint2.rotation);
+                SFXManager.Instance.ShootSound();
 
                 // Laser 스크립트를 가져와서 설정
                 Laser laser1Script = laser1.GetComponent<Laser>();
@@ -458,6 +459,7 @@ public class WeaponManager : MonoBehaviour
             {
                 Instantiate(Skill_1, firePoint1.position, firePoint1.rotation); // Missile 발사
                 Instantiate(Skill_1, firePoint2.position, firePoint2.rotation);
+                SFXManager.Instance.ShootSound();
                 missileTimer = missileCool; // 타이머 리셋
             }
 
@@ -476,6 +478,7 @@ public class WeaponManager : MonoBehaviour
             if (bombTimer <= 0f)
             {
                 Instantiate(Skill_3, firePoint3.position, firePoint3.rotation); // Missile 발사
+                SFXManager.Instance.ShootSound();
                 bombTimer = bombCool; // 타이머 리셋
             }
 
