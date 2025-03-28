@@ -3,7 +3,7 @@ using UnityEngine;
 public class ContinuousBackGround : MonoBehaviour
 {
     public float scrollSpeed = 0.5f;  // 이동 속도
-    public float minY = -0.08f;       // 최소 위치
+    public float minY = -0.03f;       // 최소 위치
     public float maxY = 10f;          // 최대 위치
     private bool movingUp = true;     // 방향 확인
 

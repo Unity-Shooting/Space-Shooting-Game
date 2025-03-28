@@ -6,7 +6,13 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public int score = 0; // 현재 점수
+    public int CheckScore = 0;
+    public int TtabongScore = 0;
+    public int HeartScore = 0;
     public Image[] digitImages; // ScoreDigit_1 ~ ScoreDigit_6 참조
+    public Image[] CheckScoreDigitImages; // ScoreDigit_1 ~ ScoreDigit_2 참조
+    public Image[] TtabongScoreDigitImages; // ScoreDigit_1 ~ ScoreDigit_2 참조
+    public Image[] HeartScoreDigitImages; // ScoreDigit_1 ~ ScoreDigit_2 참조
     public Sprite[] numberSprites; // 0~9 숫자 이미지 스프라이트 배열
 
     private void Awake()
@@ -19,12 +25,25 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()
     {
-        
+
+/*
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            AddCheckScore(1);
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            AddTtabongScore(1);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            AddHeartScore(1);
+        }*/
+
     }
 
     public void AddScore(int amount)
@@ -32,16 +51,33 @@ public class ScoreManager : MonoBehaviour
         score += amount;
         UpdateScore();
     }
-    
-    //TestScore()는 말 그대로 테스트용
-/*    public void TestScore()
+
+    public void AddCheckScore(int amount)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        CheckScore += amount;
+        HiddenCheckUpdateScore();
+    }
+
+    public void AddTtabongScore(int amount)
+    {
+        TtabongScore += amount;
+        HiddenTtabongUpdateScore();
+    }
+        public void AddHeartScore(int amount)
+    {
+        HeartScore += amount;
+        HiddenHeartUpdateScore();
+    }
+
+    //TestScore()는 말 그대로 테스트용
+    /*    public void TestScore()
         {
-            score += 100;
-            UpdateScore();
-        }
-    }*/
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                score += 100;
+                UpdateScore();
+            }
+        }*/
 
     void UpdateScore()
     {
@@ -62,4 +98,49 @@ public class ScoreManager : MonoBehaviour
             digitImages[i].sprite = numberSprites[digit];
         }
     }
+
+
+    void HiddenCheckUpdateScore()
+    {
+        string CheckScoreStr = CheckScore.ToString("D2"); // 2자리 숫자로 변환 (01 등)
+
+        for (int i = 0; i < CheckScoreDigitImages.Length; i++)
+        {
+            if (i >= CheckScoreStr.Length) break; // 배열 길이를 초과하지 않도록 방지
+
+            int digit = CheckScoreStr[i] - '0'; // 문자 '0'을 빼서 정수 변환
+            CheckScoreDigitImages[i].sprite = numberSprites[digit];
+
+            Debug.Log($"digitImages[{i}] = {digit}");
+        }
+    }
+    void HiddenTtabongUpdateScore()
+    {
+        string TtabongScoreStr = TtabongScore.ToString("D2"); // 2자리 숫자로 변환 (01 등)
+
+        for (int i = 0; i < TtabongScoreDigitImages.Length; i++)
+        {
+            if (i >= TtabongScoreStr.Length) break; // 배열 길이를 초과하지 않도록 방지
+
+            int digit = TtabongScoreStr[i] - '0'; // 문자 '0'을 빼서 정수 변환
+            TtabongScoreDigitImages[i].sprite = numberSprites[digit];
+
+            Debug.Log($"digitImages[{i}] = {digit}");
+        }
+    }
+    void HiddenHeartUpdateScore()
+    {
+        string HeartScoreStr = HeartScore.ToString("D2"); // 2자리 숫자로 변환 (01 등)
+
+        for (int i = 0; i < HeartScoreDigitImages.Length; i++)
+        {
+            if (i >= HeartScoreStr.Length) break; // 배열 길이를 초과하지 않도록 방지
+
+            int digit = HeartScoreStr[i] - '0'; // 문자 '0'을 빼서 정수 변환
+            HeartScoreDigitImages[i].sprite = numberSprites[digit];
+
+            Debug.Log($"digitImages[{i}] = {digit}");
+        }
+    }
+
 }
