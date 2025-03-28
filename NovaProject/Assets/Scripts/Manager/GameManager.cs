@@ -5,55 +5,60 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// °ÔÀÓÀ» ÃÑ°ıÇÏ´Â GameManager Å¬·¡½º.
+/// ê²Œì„ì„ ì´ê´„í•˜ëŠ” GameManager í´ë˜ìŠ¤.
 /// </summary>
 public class GameManager : Singleton<GameManager>
 {
 
     /*
-     ????˜„ ì½”ë“œ ì¶”ê?? : 2025 - 03 - 26 GameStart, GameOver ?´ë¯¸ì?? ì¶”ê?? ë°? 2ì´? ì¶œë ¥
+     ëŒ€í˜„ ì½”ë“œ ì¶”ê°€ : 2025 - 03 - 26 GameStart, GameOver ì´ë¯¸ì§€ ì¶”ê°€ ë° 2ì´ˆ ì¶œë ¥
      */
 
     /// <summary>
-    /// GameStart UI ?´ë¯¸ì?? ( Fade In / Fade Out ?‚¬?š©?„ ?œ„?•´ CanvasGroup ?‚¬?š©)
+    /// GameStart UI ì´ë¯¸ì§€ ( Fade In / Fade Out ì‚¬ìš©ì„ ìœ„í•´ CanvasGroup ì‚¬ìš©)
     /// </summary>
     public CanvasGroup gameStartCanvasGroup;
 
     /// <summary>
-    /// GameOver UI ?´ë¯¸ì?? ( Fade In / Fade Out ?‚¬?š©?„ ?œ„?•´ CanvasGroup ?‚¬?š©)
+    /// GameOver UI ì´ë¯¸ì§€ ( Fade In / Fade Out ì‚¬ìš©ì„ ìœ„í•´ CanvasGroup ì‚¬ìš©)
     /// </summary>
     public CanvasGroup gameOverCanvasGroup;
 
     /// <summary>
-    /// GameOver ?…?Š¤?Š¸ (?´ë¦? ?‹œ ë©”ì¸ ë©”ë‰´ ?´?™, ê¹œë¹¡?´?Š” ?š¨ê³? ì¶”ê??)
+    /// GameOver UI ì´ë¯¸ì§€ ( Fade In / Fade Out ì‚¬ìš©ì„ ìœ„í•´ CanvasGroup ì‚¬ìš©)
+    /// </summary>
+    public CanvasGroup clearCanvasGroup;
+
+    /// <summary>
+    /// GameOver í…ìŠ¤íŠ¸ (í´ë¦­ ì‹œ ë©”ì¸ ë©”ë‰´ ì´ë™, ê¹œë¹¡ì´ëŠ” íš¨ê³¼ ì¶”ê°€)
     /// </summary>
     public CanvasGroup gameOverTextCanvasGroup;
 
-    private bool isFadingText = true; // GameOver ?…?Š¤?Š¸ ê¹œë¹¡?´ê¸? ?—¬ë¶?
+    private bool isFadingText = true; // GameOver í…ìŠ¤íŠ¸ ê¹œë¹¡ì´ê¸° ì—¬ë¶€
 
     /// <summary>
-    /// ?˜?´?“œ ?†?„
+    /// í˜ì´ë“œ ì†ë„
     /// </summary>
     public float fadeDuration = 0.5f;
-    // GameOver ?…?Š¤?Š¸ ?˜?´?“œ ?†?„
+    // GameOver í…ìŠ¤íŠ¸ í˜ì´ë“œ ì†ë„
     public float gameOverTextFadeDuration = 1f;
 
     public bool CanClick = false;
 
-    /*******************?ˆ˜? •*********************/
+    /*******************?ë‹”?ì ™*********************/
 
     /// <summary>
-    /// GameManagerÀÇ ·Î±× ÅÂ±×.
+    /// GameManagerì˜ ë¡œê·¸ íƒœê·¸.
     /// </summary>
     private const string TAG = "GameManager";
 
     /// <summary>
-    /// µğ¹ö±ë ·Î±× Ãâ·Â ON/OFF
+    /// ë””ë²„ê¹… ë¡œê·¸ ì¶œë ¥ ON/OFF
     /// </summary>
     public bool logOn = true;
 
     /// <summary>
-    /// ÃÊ±âÈ­ ÇÔ¼ö.
+    /// ì´ˆê¸°í™” í•¨ìˆ˜.
     /// </summary>
     protected override void Awake()
     {
@@ -67,13 +72,23 @@ public class GameManager : Singleton<GameManager>
     {
 
         /*
-        ????˜„ ì½”ë“œ ì¶”ê?? : 2025 - 03 - 26 GameStart, GameOver ?´ë¯¸ì?? ì¶”ê?? ë°? 2ì´? ì¶œë ¥
+        ëŒ€í˜„ ì½”ë“œ ì¶”ê°€ : 2025 - 03 - 26 GameStart, GameOver ì´ë¯¸ì§€ ì¶”ê°€ ë° 2ì´ˆ ì¶œë ¥
         */
-        //BGMManager.Instance.PlayBGM1(); -> StartGame()?œ¼ë¡? ?˜®ê¹?
+        //BGMManager.Instance.PlayBGM1(); -> StartGame()
 
         StartCoroutine(ShowGameStart());
 
-        /*******************?ˆ˜? •*********************/
+
+        // if(StageOne ë³´ìŠ¤ë¥¼ ì¡ì•˜ì„ ê²½ìš°, ë¶ˆê°’ ê°€ì ¸ì˜¤ê¸°)
+        // {StartCoroutine(ShowClearStageOneStart());}
+
+        // if(StageTwo ë³´ìŠ¤ë¥¼ ì¡ì•˜ì„ ê²½ìš°, ë¶ˆê°’ ê°€ì ¸ì˜¤ê¸°)
+        // {StartCoroutine(ShowClearStageTwoStart());}
+
+        // if(StageHiddenë³´ìŠ¤ë¥¼ ì¡ì•˜ì„ ê²½ìš°, ë¶ˆê°’ ê°€ì ¸ì˜¤ê¸°)
+        // {StartCoroutine(ShowClearStageOneStart());}
+
+        /*******************ìˆ˜ì •*********************/
 
     }
 
@@ -81,10 +96,10 @@ public class GameManager : Singleton<GameManager>
 
 
     /// <summary>
-    /// ê²Œì„ ?‹œ?‘
+    /// ê²Œì„ ì‹œì‘
     /// </summary>
         /*
-        ????˜„ ì½”ë“œ ì¶”ê?? : 2025 - 03 - 26 GameStart, GameOver ?´ë¯¸ì?? ì¶”ê?? ë°? 2ì´? ì¶œë ¥
+        ëŒ€í˜„ ì½”ë“œ ì¶”ê°€ : 2025 - 03 - 26 GameStart, GameOver ì´ë¯¸ì§€ ì¶”ê°€ ë° 2ì´ˆ ì¶œë ¥
         */
     private void StartGame()
     {
@@ -92,24 +107,97 @@ public class GameManager : Singleton<GameManager>
         BGMManager.Instance.PlayBGM1();
     }
 
+    /// <summary>
+    /// í´ë¦¬ì–´
+    /// </summary>
+    /*
+    ëŒ€í˜„ ì½”ë“œ ì¶”ê°€ : 2025 - 03 - 27 ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ì´ë¯¸ì§€ ì¶”ê°€ ë° ìŠ¤í…Œì´ì§€ ì´ë™
+    */
+    private void ClearStageOneGame()
+    {
+
+        DestroyAllPersistentObjects();
+        SceneManager.LoadScene("StageTwo");
+    }
+
+    private void ClearStageTwoGame()
+    {
+
+        DestroyAllPersistentObjects();
+        SceneManager.LoadScene("StageHidden");
+    }
+
+
+    private void ClearStageHiddenGame()
+    {
+
+    }
+
 
     /// <summary>
-    /// GameStart ?™”ë©´ì„ ?˜?´?“œ ?¸/?•„?›ƒ?•˜ë©? ë³´ì—¬ì£¼ê³  2ì´? ?›„ ê²Œì„ ?‹œ?‘
+    /// GameStart í™”ë©´ì„ í˜ì´ë“œ ì¸/ì•„ì›ƒí•˜ë©° ë³´ì—¬ì£¼ê³  2ì´ˆ í›„ ê²Œì„ ì‹œì‘
     /// </summary>
     /// 
     IEnumerator ShowGameStart()
     {
         if (gameStartCanvasGroup != null)
         {
-            // ê¸°ì¡´ gameStartImage ?™œ?„±?™” ì½”ë“œ ????‹ , ?˜?´?“œ ?¸ ?š¨ê³? ? ?š©
-            //ì½”ë£¨?‹´ ?‹œ?‘ FadeCanvasGroup(?‚¬?š©?•  ìº í¼?Š¤ê·¸ë£¹, ?‹œ?‘ ?•Œ?ŒŒ ê°? 0 ?´ë©? ?ˆ¬ëª?  1?´ë©? ë¶ˆíˆ¬ëª?, ?™?¼ , ?˜?´?“œ ì§??† ?‹œê°„ì¸?° ?œ„?— ? •?˜?•´?†“?Œ 1f, true?´ë©? Time.timeScale = 0 ?´?—¬?„ ?™?‘?„ ?•¨. ? ?–´?†“ì§? ?•Š?œ¼ë©? ê¸°ë³¸ê°? False)
+            // ê¸°ì¡´ gameStartImage í™œì„±í™” ì½”ë“œ ëŒ€ì‹ , í˜ì´ë“œ ì¸ íš¨ê³¼ ì ìš©
+            //ì½”ë£¨í‹´ ì‹œì‘ FadeCanvasGroup(ì‚¬ìš©í•  ìº í¼ìŠ¤ê·¸ë£¹, ì‹œì‘ ì•ŒíŒŒ ê°’ 0 ì´ë©´ íˆ¬ëª…  1ì´ë©´ ë¶ˆíˆ¬ëª…, ë™ì¼ , í˜ì´ë“œ ì§€ì† ì‹œê°„ì¸ë° ìœ„ì— ì •ì˜í•´ë†“ìŒ 1f, trueì´ë©´ Time.timeScale = 0 ì´ì—¬ë„ ë™ì‘ì„ í•¨. ì ì–´ë†“ì§€ ì•Šìœ¼ë©´ ê¸°ë³¸ê°’ False)
 
-            yield return StartCoroutine(FadeCanvasGroup(gameStartCanvasGroup, 0f, 1f)); // ?„œ?„œ?ˆ ë°ì•„ì§?
-            yield return new WaitForSeconds(2f);        //2ì´? ?’¤
-            yield return StartCoroutine(FadeCanvasGroup(gameStartCanvasGroup, 1f, 0f)); // ?„œ?„œ?ˆ ?‚¬?¼ì§?
+            yield return StartCoroutine(FadeCanvasGroup(gameStartCanvasGroup, 0f, 1f)); // ì„œì„œíˆ ë°ì•„ì§
+            yield return new WaitForSeconds(2f);        //2ì´ˆ ë’¤
+            yield return StartCoroutine(FadeCanvasGroup(gameStartCanvasGroup, 1f, 0f)); // ì„œì„œíˆ ì‚¬ë¼ì§
         }
 
         StartGame();
+    }
+
+    /// <summary>
+    /// Clear ì´ë¯¸ì§€ë¥¼ í˜ì´ë“œ ì¸/ì•„ì›ƒí•˜ë©° ë³´ì—¬ì£¼ê³  2ì´ˆ í›„ ë‹¤ìŒ ìŠ¤í…Œì´ì§€ë¡œ ì´ë™ ** 2025 - 03 -27 **
+    /// </summary>
+    /// 
+    IEnumerator ShowClearStageOneStart()
+    {
+        if (gameStartCanvasGroup != null)
+        {
+            // ê¸°ì¡´ gameStartImage í™œì„±í™” ì½”ë“œ ëŒ€ì‹ , í˜ì´ë“œ ì¸ íš¨ê³¼ ì ìš©
+            //ì½”ë£¨í‹´ ì‹œì‘ FadeCanvasGroup(ì‚¬ìš©í•  ìº í¼ìŠ¤ê·¸ë£¹, ì‹œì‘ ì•ŒíŒŒ ê°’ 0 ì´ë©´ íˆ¬ëª…  1ì´ë©´ ë¶ˆíˆ¬ëª…, ë™ì¼ , í˜ì´ë“œ ì§€ì† ì‹œê°„ì¸ë° ìœ„ì— ì •ì˜í•´ë†“ìŒ 1f, trueì´ë©´ Time.timeScale = 0 ì´ì—¬ë„ ë™ì‘ì„ í•¨. ì ì–´ë†“ì§€ ì•Šìœ¼ë©´ ê¸°ë³¸ê°’ False)
+
+            yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 0f, 1f)); // ì„œì„œíˆ ë°ì•„ì§
+            yield return new WaitForSeconds(2f);        //2ì´ˆ ë’¤
+            yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 1f, 0f)); // ì„œì„œíˆ ì‚¬ë¼ì§
+        }
+
+        ClearStageOneGame();
+    }
+    IEnumerator ShowClearStageTwoStart()
+    {
+        if (gameStartCanvasGroup != null)
+        {
+            // ê¸°ì¡´ gameStartImage í™œì„±í™” ì½”ë“œ ëŒ€ì‹ , í˜ì´ë“œ ì¸ íš¨ê³¼ ì ìš©
+            //ì½”ë£¨í‹´ ì‹œì‘ FadeCanvasGroup(ì‚¬ìš©í•  ìº í¼ìŠ¤ê·¸ë£¹, ì‹œì‘ ì•ŒíŒŒ ê°’ 0 ì´ë©´ íˆ¬ëª…  1ì´ë©´ ë¶ˆíˆ¬ëª…, ë™ì¼ , í˜ì´ë“œ ì§€ì† ì‹œê°„ì¸ë° ìœ„ì— ì •ì˜í•´ë†“ìŒ 1f, trueì´ë©´ Time.timeScale = 0 ì´ì—¬ë„ ë™ì‘ì„ í•¨. ì ì–´ë†“ì§€ ì•Šìœ¼ë©´ ê¸°ë³¸ê°’ False)
+
+            yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 0f, 1f)); // ì„œì„œíˆ ë°ì•„ì§
+            yield return new WaitForSeconds(2f);        //2ì´ˆ ë’¤
+            yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 1f, 0f)); // ì„œì„œíˆ ì‚¬ë¼ì§
+        }
+
+        ClearStageOneGame();
+    }
+    IEnumerator ShowClearStageHiddenStart()
+    {
+        if (gameStartCanvasGroup != null)
+        {
+            // ê¸°ì¡´ gameStartImage í™œì„±í™” ì½”ë“œ ëŒ€ì‹ , í˜ì´ë“œ ì¸ íš¨ê³¼ ì ìš©
+            //ì½”ë£¨í‹´ ì‹œì‘ FadeCanvasGroup(ì‚¬ìš©í•  ìº í¼ìŠ¤ê·¸ë£¹, ì‹œì‘ ì•ŒíŒŒ ê°’ 0 ì´ë©´ íˆ¬ëª…  1ì´ë©´ ë¶ˆíˆ¬ëª…, ë™ì¼ , í˜ì´ë“œ ì§€ì† ì‹œê°„ì¸ë° ìœ„ì— ì •ì˜í•´ë†“ìŒ 1f, trueì´ë©´ Time.timeScale = 0 ì´ì—¬ë„ ë™ì‘ì„ í•¨. ì ì–´ë†“ì§€ ì•Šìœ¼ë©´ ê¸°ë³¸ê°’ False)
+
+            yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 0f, 1f)); // ì„œì„œíˆ ë°ì•„ì§
+            yield return new WaitForSeconds(2f);        //2ì´ˆ ë’¤
+            yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 1f, 0f)); // ì„œì„œíˆ ì‚¬ë¼ì§
+        }
+
+        ClearStageOneGame();
     }
 
 
@@ -118,16 +206,16 @@ public class GameManager : Singleton<GameManager>
         /*Time.timeScale = 0;
         if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] GameOver");
         BGMManager.Instance.PlayBGM2();
-        -> ShowGameOverScreen() ?•ˆ?— ì§‘ì–´?„£?Œ
+        -> ShowGameOverScreen() ì•ˆì— ì§‘ì–´ë„£ìŒ
          */
         PWRManager.Instance.Run = false;
         Debug.Log("Run : "+ PWRManager.Instance.Run);
-        StartCoroutine(ShowGameOverScreen());   //ì½”ë£¨?‹´ ?‹¤?–‰
+        StartCoroutine(ShowGameOverScreen());   //ì½”ë£¨í‹´ ì‹¤í–‰
     }
 
 
     /// <summary>
-    /// Game Over ?™”ë©´ì„ ?„?š°ê³? ê²Œì„ ? •ì§?
+    /// Game Over í™”ë©´ì„ ë„ìš°ê³  ê²Œì„ ì •ì§€
     /// </summary>
     IEnumerator ShowGameOverScreen()
     {
@@ -135,50 +223,50 @@ public class GameManager : Singleton<GameManager>
 
         if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] GameOver");
         CanClick = true;
-        // BGM ë³?ê²?
+        // BGM ë³€ê²½
         BGMManager.Instance.PlayBGM2();
 
-        // ê¸°ì¡´ gameOverImage ?™œ?„±?™” ì½”ë“œ ????‹ , ?˜?´?“œ ?¸ ?š¨ê³? ? ?š©
+        // ê¸°ì¡´ gameOverImage í™œì„±í™” ì½”ë“œ ëŒ€ì‹ , í˜ì´ë“œ ì¸ íš¨ê³¼ ì ìš©
         if (gameOverCanvasGroup != null)
         {
-            //ì½”ë£¨?‹´ ?‹œ?‘ FadeCanvasGroup(?‚¬?š©?•  ìº í¼?Š¤ê·¸ë£¹, ?‹œ?‘ ?•Œ?ŒŒ ê°? 0 ?´ë©? ?ˆ¬ëª?  1?´ë©? ë¶ˆíˆ¬ëª?, ?™?¼ , ?˜?´?“œ ì§??† ?‹œê°„ì¸?° ?œ„?— ? •?˜?•´?†“?Œ 1f, true?´ë©? Time.timeScale = 0 ?´?—¬?„ ?™?‘?„ ?•¨. ? ?–´?†“ì§? ?•Š?œ¼ë©? ê¸°ë³¸ê°? False)
+            //ì½”ë£¨í‹´ ì‹œì‘ FadeCanvasGroup(ì‚¬ìš©í•  ìº í¼ìŠ¤ê·¸ë£¹, ì‹œì‘ ì•ŒíŒŒ ê°’ 0 ì´ë©´ íˆ¬ëª…  1ì´ë©´ ë¶ˆíˆ¬ëª…, ë™ì¼ , í˜ì´ë“œ ì§€ì† ì‹œê°„ì¸ë° ìœ„ì— ì •ì˜í•´ë†“ìŒ 1f, trueì´ë©´ Time.timeScale = 0 ì´ì—¬ë„ ë™ì‘ì„ í•¨. ì ì–´ë†“ì§€ ì•Šìœ¼ë©´ ê¸°ë³¸ê°’ False)
             yield return StartCoroutine(FadeCanvasGroup(gameOverCanvasGroup, 0f, 1f));
         }
-        // GameOver ?…?Š¤?Š¸ ê¹œë¹¡?´ê¸? ?‹œ?‘
+        // GameOver í…ìŠ¤íŠ¸ ê¹œë¹¡ì´ê¸° ì‹œì‘
         if (gameOverTextCanvasGroup != null)
         {
             StartCoroutine(FadeLoopGameOverText());
         }
 
-        // ê²Œì„ ë©ˆì¶”ê¸?
+        // ê²Œì„ ë©ˆì¶”ê¸°
         Time.timeScale = 0;
 
     }
 
     /// <summary>
-    /// ÇÁ·¹ÀÓ¸¶´Ù È£ÃâµÇ´Â ¾÷µ¥ÀÌÆ® ÇÔ¼ö.
+    /// í”„ë ˆì„ë§ˆë‹¤ í˜¸ì¶œë˜ëŠ” ì—…ë°ì´íŠ¸ í•¨ìˆ˜.
     /// </summary>
     void Update()
     {
 
         /*
-         ????˜„ ì½”ë“œ ì¶”ê?? : 2025 - 03 - 26 GameStart, GameOver ?´ë¯¸ì?? ì¶”ê?? ë°? 2ì´? ì¶œë ¥
-         */
+        ëŒ€í˜„ ì½”ë“œ ì¶”ê°€ : 2025 - 03 - 26 GameStart, GameOver ì´ë¯¸ì§€ ì¶”ê°€ ë° 2ì´ˆ ì¶œë ¥
+        */
         if (CanClick && isFadingText && Input.GetKeyDown(KeyCode.Z))
         {
-            isFadingText = false; // ì½”ë£¨?‹´ ì¢…ë£Œ ?”Œ?˜ê·? ?„¤? •
+            isFadingText = false; // ì½”ë£¨í‹´ ì¢…ë£Œ í”Œë˜ê·¸ ì„¤ì •
             CanClick = false;
             LoadMainMenu();
         }
 
 
-        // TODO: ?”Œ? ˆ?´?–´?˜ ì²´ë ¥?´ 0 ?´?•˜?´ë©? ê²Œì„ ì¢…ë£Œ ?“±?˜ ë¬¸êµ¬ ?„?š°ê¸?
-        // TODO: UI ?™”ë©´ì— ?‘œ?‹œ?•˜ê¸?
+        // TODO: í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì´ 0 ì´í•˜ì´ë©´ ê²Œì„ ì¢…ë£Œ ë“±ì˜ ë¬¸êµ¬ ë„ìš°ê¸°
+        // TODO: UI í™”ë©´ì— í‘œì‹œí•˜ê¸°
         //if(GameManager.Instance.logOn) Debug.Log($"[{TAG}] health : {PlayerHealth.Instance.hp}");
     }
 
     /// <summary>
-    /// GameManagerÀÇ UI º¯°æ ÇÔ¼ö¸¦ ½ÇÇàÇÏ´Â Å×½ºÆ® ÇÔ¼ö.
+    /// GameManagerì˜ UI ë³€ê²½ í•¨ìˆ˜ë¥¼ ì‹¤í–‰í•˜ëŠ” í…ŒìŠ¤íŠ¸ í•¨ìˆ˜.
     /// </summary>
     public void changeUI()
     {
@@ -186,16 +274,16 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
-    /// GameOver ?…?Š¤?Š¸ê°? ê³„ì† ê¹œë¹¡?´?„ë¡? ë°˜ë³µ
+    /// GameOver í…ìŠ¤íŠ¸ê°€ ê³„ì† ê¹œë¹¡ì´ë„ë¡ ë°˜ë³µ
     /// </summary>
     /*
-    ????˜„ ì½”ë“œ ì¶”ê?? : 2025 - 03 - 26 GameStart, GameOver ?´ë¯¸ì?? ì¶”ê?? ë°? 2ì´? ì¶œë ¥
+    ëŒ€í˜„ ì½”ë“œ ì¶”ê°€ : 2025 - 03 - 26 GameStart, GameOver ì´ë¯¸ì§€ ì¶”ê°€ ë° 2ì´ˆ ì¶œë ¥
     */
     private IEnumerator FadeLoopGameOverText()
     {
         while (isFadingText)
         {
-            //ì½”ë£¨?‹´ ?‹œ?‘ FadeCanvasGroup(?‚¬?š©?•˜?„¹ ìº í¼?Š¤ê·¸ë£¹, ?‹œ?‘ ?•Œ?ŒŒ ê°? 0 ?´ë©? ?ˆ¬ëª?  1?´ë©? ë¶ˆíˆ¬ëª?, ?™?¼ , ?˜?´?“œ ì§??† ?‹œê°„ì¸?° ?œ„?— ? •?˜?•´?†“?Œ 1f, true?´ë©? Time.timeScale = 0 ?´?—¬?„ ?™?‘?„ ?•¨.)
+            //ì½”ë£¨í‹´ ì‹œì‘ FadeCanvasGroup(ì‚¬ìš©í•˜ã„¹ ìº í¼ìŠ¤ê·¸ë£¹, ì‹œì‘ ì•ŒíŒŒ ê°’ 0 ì´ë©´ íˆ¬ëª…  1ì´ë©´ ë¶ˆíˆ¬ëª…, ë™ì¼ , í˜ì´ë“œ ì§€ì† ì‹œê°„ì¸ë° ìœ„ì— ì •ì˜í•´ë†“ìŒ 1f, trueì´ë©´ Time.timeScale = 0 ì´ì—¬ë„ ë™ì‘ì„ í•¨.
             yield return StartCoroutine(FadeCanvasGroup(gameOverTextCanvasGroup, 0f, 1f, gameOverTextFadeDuration, true));
             yield return StartCoroutine(FadeCanvasGroup(gameOverTextCanvasGroup, 1f, 0f, gameOverTextFadeDuration, true));
 
@@ -203,33 +291,33 @@ public class GameManager : Singleton<GameManager>
     }
 
     /// <summary>
-    ///  ë©”ì¸ ë©”ë‰´ë¡? ?´?™?•˜?Š” ?•¨?ˆ˜
+    ///  ë©”ì¸ ë©”ë‰´ë¡œ ì´ë™í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
     /// 
     /*
-     ????˜„ ì½”ë“œ ì¶”ê?? : 2025 - 03 - 26 GameStart, GameOver ?´ë¯¸ì?? ì¶”ê?? ë°? 2ì´? ì¶œë ¥
+     ëŒ€í˜„ ì½”ë“œ ì¶”ê°€ : 2025 - 03 - 26 GameStart, GameOver ì´ë¯¸ì§€ ì¶”ê°€ ë° 2ì´ˆ ì¶œë ¥
      */
     private void LoadMainMenu()
     {
-        Time.timeScale = 1; //  ?”¬ ë³?ê²? ? „ TimeScale?„ ?‹¤?‹œ 1ë¡? ?„¤? •
+        Time.timeScale = 1; //  ì”¬ ë³€ê²½ ì „ TimeScaleì„ ë‹¤ì‹œ 1ë¡œ ì„¤ì •
         DestroyAllPersistentObjects();
         SceneManager.LoadScene("MainMenu");
     }
 
 
     /// <summary>
-    /// CanvasGroup?„ ?™œ?š©?•œ ?˜?´?“œ ?š¨ê³? (Unscaled Time ? ?š© ê°??Š¥)
+    /// CanvasGroupì„ í™œìš©í•œ í˜ì´ë“œ íš¨ê³¼ (Unscaled Time ì ìš© ê°€ëŠ¥)
     /// </summary>
     private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float startAlpha, float endAlpha, float duration = -1f, bool useUnscaledTime = false)
     {
-        if (duration < 0) duration = fadeDuration;      //duration?´ ê¸°ë³¸ê°?(-1f)?¼ ê²½ìš°, ?´?˜?Š¤?— ? •?˜?œ fadeDuration ê°’ì„ ?‚¬?š©
-        float elapsedTime = 0f;                                             //ê²½ê³¼ ?‹œê°? ì´ˆê¸°?™”
+        if (duration < 0) duration = fadeDuration;      //durationì´ ê¸°ë³¸ê°’(-1f)ì¼ ê²½ìš°, í´ë˜ìŠ¤ì— ì •ì˜ëœ fadeDuration ê°’ì„ ì‚¬ìš©
+        float elapsedTime = 0f;                                             //ê²½ê³¼ ì‹œê°„ ì´ˆê¸°í™”
 
-        while (elapsedTime < duration)                            //?„¤? •?•œ duration ?™?•ˆ while ë£¨í”„ ?‹¤?–‰ (?˜?´?“œ ?š¨ê³? ? ?š©)
+        while (elapsedTime < duration)                            //ì„¤ì •í•œ duration ë™ì•ˆ while ë£¨í”„ ì‹¤í–‰ (í˜ì´ë“œ íš¨ê³¼ ì ìš©)
         {
-            elapsedTime += useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;               //useUnscaledTime?´ trueë©? Time.unscaledDeltaTime ?‚¬?š© (ê²Œì„ ? •ì§? ?ƒ?ƒœ?—?„œ?„ ?™?‘) , falseë©? ?¼ë°? Time.deltaTime ?‚¬?š© (ê²Œì„ ì§„í–‰ ì¤‘ì¼ ?•Œë§? ?™?‘)
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);       //Lerp ?•¨?ˆ˜ë¥? ?‚¬?š©?•˜?—¬ alpha ê°’ì„ startAlpha ?†’ endAlphaë¡? ? ì§„ì ?œ¼ë¡? ë³?ê²? (ë³´ì???‹¤ê°? ?•ˆë³´ì???‹¤ê°? ? ?“±)
-            yield return null;                                                                                                                                                  // ?‹¤?Œ ?”„? ˆ?„ê¹Œì?? ???ê¸?
+            elapsedTime += useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;               //useUnscaledTimeì´ trueë©´ Time.unscaledDeltaTime ì‚¬ìš© (ê²Œì„ ì •ì§€ ìƒíƒœì—ì„œë„ ë™ì‘) , falseë©´ ì¼ë°˜ Time.deltaTime ì‚¬ìš© (ê²Œì„ ì§„í–‰ ì¤‘ì¼ ë•Œë§Œ ë™ì‘)
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);       //Lerp í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ alpha ê°’ì„ startAlpha â†’ endAlphaë¡œ ì ì§„ì ìœ¼ë¡œ ë³€ê²½ (ë³´ì˜€ë‹¤ê°€ ì•ˆë³´ì˜€ë‹¤ê°€ ì ë“±)
+            yield return null;                                                                                                                                                  // ë‹¤ìŒ í”„ë ˆì„ê¹Œì§€ ëŒ€ê¸°
         }
 
         canvasGroup.alpha = endAlpha;
@@ -237,23 +325,23 @@ public class GameManager : Singleton<GameManager>
 
 
     /// <summary>
-    /// MainMenu Secen ?œ¼ë¡? ?„˜?–´ê°ˆë•Œ, DontDestroyOnLoad object ? œê±?
+    /// MainMenu Secen ìœ¼ë¡œ ë„˜ì–´ê°ˆë•Œ, DontDestroyOnLoad object ì œê±°
     /// </summary>
     private void DestroyAllPersistentObjects()
 {
-     GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);     //?”¬?— ?ˆ?Š” ëª¨ë“  ?˜¤ë¸Œì ?Š¸ë¥? ê²??ƒ‰
+     GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);     //ì”¬ì— ìˆëŠ” ëª¨ë“  ì˜¤ë¸Œì íŠ¸ë¥¼ ê²€ìƒ‰
 
-        foreach (GameObject obj in allObjects)  //ëª¨ë“  ?˜¤ë¸Œì ?Š¸ë¥? foreachë¥? ?‚¬?š©?•˜?—¬ ?ˆœ?šŒ?•˜ë©? ì²˜ë¦¬
+        foreach (GameObject obj in allObjects)  //ëª¨ë“  ì˜¤ë¸Œì íŠ¸ë¥¼ foreachë¥¼ ì‚¬ìš©í•˜ì—¬ ìˆœíšŒí•˜ë©° ì²˜ë¦¬
         {
-            //obj.scene.handle == -1ë¡? ?•´?‹¹ ?˜¤ë¸Œì ?Š¸ê°? DontDestroyOnLoad ?”¬?— ?†?•˜?Š”ì§? ?™•?¸
-            if (obj.scene.buildIndex == -1) // DontDestroyOnLoad?— ?ˆ?Š” ?˜¤ë¸Œì ?Š¸?¸ì§? ?™•?¸
-        {
-                //?•´?‹¹ ?˜¤ë¸Œì ?Š¸ë¥? ?‚­? œ
+            //obj.scene.handle == -1ë¡œ í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ DontDestroyOnLoad ì”¬ì— ì†í•˜ëŠ”ì§€ í™•ì¸
+            if (obj.scene.buildIndex == -1) // DontDestroyOnLoadì— ìˆëŠ” ì˜¤ë¸Œì íŠ¸ì¸ì§€ í™•ì¸
+            {
+                //í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ë¥¼ ì‚­ì œ
                 Destroy(obj);
         }
     }
 }
 
-    /*******************?ˆ˜? •*********************/
+    /*******************ìˆ˜ì •*********************/
 
 }
