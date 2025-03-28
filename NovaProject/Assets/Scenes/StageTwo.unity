@@ -119,6 +119,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &134539800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134539801}
+  - component: {fileID: 134539802}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134539801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539800}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 823520586}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &134539802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1a69a0fcc1b0e4a82a8efc27f62685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 5557209280645327269, guid: 4a68727b7f3045b498d74b387b38157a, type: 3}
+  stage: {fileID: 11400000, guid: 5904c2c75cfc56f479f363c01b9516c7, type: 2}
+  itemSkillMissile: {fileID: 6008542162048325370, guid: 781b5c0d77f3880458e12c98887ca3c6, type: 3}
+  itemSkillLaser: {fileID: 58039115203528177, guid: 548063fc4fc09c940a8d682006027a70, type: 3}
+  itemSkillBomb: {fileID: 4461671099759352814, guid: 9b4069628fd0b3e43ad2f7e6a5feff8e, type: 3}
+  itemPower: {fileID: 1953341086751080141, guid: 129dd029c66f8fd40b6dcc5d4037f303, type: 3}
 --- !u!1001 &223376933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -756,7 +806,7 @@ Transform:
   - {fileID: 1326847438}
   - {fileID: 1375198487}
   - {fileID: 830931597}
-  - {fileID: 1956807801}
+  - {fileID: 134539801}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &830931596
@@ -1979,59 +2029,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8798d85c230e640a34c3e376a70d43, type: 3}
---- !u!1 &1956807800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1956807801}
-  - component: {fileID: 1956807802}
-  m_Layer: 0
-  m_Name: SpawnManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1956807801
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956807800}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 823520586}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1956807802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956807800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb1a69a0fcc1b0e4a82a8efc27f62685, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 0}
-  stages:
-  - {fileID: 11400000, guid: 5904c2c75cfc56f479f363c01b9516c7, type: 2}
-  - {fileID: 11400000, guid: 8ea060715cbc7f544a11c199687b8785, type: 2}
-  - {fileID: 11400000, guid: a2e60f3b364a9b4448a0c11387dc273d, type: 2}
-  itemSkillMissile: {fileID: 6008542162048325370, guid: 781b5c0d77f3880458e12c98887ca3c6, type: 3}
-  itemSkillLaser: {fileID: 58039115203528177, guid: 548063fc4fc09c940a8d682006027a70, type: 3}
-  itemSkillBomb: {fileID: 4461671099759352814, guid: 9b4069628fd0b3e43ad2f7e6a5feff8e, type: 3}
-  itemPower: {fileID: 1953341086751080141, guid: 129dd029c66f8fd40b6dcc5d4037f303, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
