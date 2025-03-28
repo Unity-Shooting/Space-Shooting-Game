@@ -18,30 +18,24 @@ public class TextBullet1 : MonoBehaviour
     /// </summary>
     public float damage = 5f;
 
+    public TMP_Text text;
+
     private bool isShoot = false;
 
-    /// <summary>
-    /// Rigidbody2D 컴포넌트 참조.
-    /// </summary>
-    private Rigidbody2D rb;
-
-    private Vector3 direction;
-
-    public string[] strs = {
-        "10분 쉬었다할게요", "체크해주세요~", "점심 맛있게 드세요~", "벌써 50분이야?",
-        "오늘도 두 분 모시겠습니다.", "모바일게임 숙제하면서 하시먼 안돼요",
-        "오늘도 수고 많으셨습니다.", "인원 체크", "텍스트알피지하고와야겠네",
-        "쉬었다 하겠습니다", "갓겜인데?"
+    private string[] strs = {
+        "10분 쉬었다할게요", "체크해주세요~", "점심 맛있게 드세요~", "벌써 50분이야?", 
+        "오늘도 두 분 모시겠습니다.", "모바일게임 숙제하면서 하시먼 안돼요", "오늘도 수고 많으셨습니다.", 
+        "인원 체크", "텍스트알피지하고와야겠네", "쉬었다 하겠습니다", "갓겜인데?", "이십사수매화검법!!", 
+        "슈팅게임 마스터", "카타나제로 마스터", "슈팅게임 마스터시켜드림", "1.슈팅마스터한거같다.", 
+        "2.아직멀었다", "1945마무리!", "마지막으로 하시고싶으신 말씀", "마이크 되십니까?",
+        "어제 실행됐는데 왜 지금 안되지?"
     };
-
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
-        GetComponent<TextMeshPro>().text = strs[Random.Range(0, strs.Length)];
-    }
 
     void Start()
     {
+        int randNum = Random.Range(0, strs.Length);
+        // if(GameManager.Instance.logOn) Debug.Log($"{TAG} randNum: {randNum}");
+        text.text = strs[randNum];
         SetDirection();
     }
 
@@ -76,6 +70,14 @@ public class TextBullet1 : MonoBehaviour
             // Debug.Log($"{TAG} OnTriggerEnter2D Player");
             PlayerHealth.Instance.TakeDamage((int)damage);
             Destroy(gameObject);
+            // PoolManager.instance.Return(gameObject);
         }
     }
+
+    protected virtual void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+        // PoolManager.instance.Return(gameObject);
+    }
+
 }
