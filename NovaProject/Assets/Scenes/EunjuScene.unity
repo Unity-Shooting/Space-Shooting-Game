@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: Bullet_B
       value: 
       objectReference: {fileID: 4656179374127705795, guid: 017322400164cdd4bb3b5b4b4f0e2efc, type: 3}
+    - target: {fileID: 3494364086436021066, guid: 1fe368e167072a649aa5153f68dc9222, type: 3}
+      propertyPath: Bullet_C
+      value: 
+      objectReference: {fileID: 2382171379660755931, guid: 9e2b9947d6262e14b9a62c0e09072b06, type: 3}
     - target: {fileID: 4812023954894002825, guid: 1fe368e167072a649aa5153f68dc9222, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
