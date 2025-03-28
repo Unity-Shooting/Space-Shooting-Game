@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8450127881452729420}
   - component: {fileID: 7363107066617295750}
   - component: {fileID: 8785375766866711936}
+  - component: {fileID: 5086102686157585630}
   m_Layer: 0
   m_Name: A_0
   m_TagString: Untagged
@@ -181,3 +182,25 @@ MonoBehaviour:
   isHoming: 0
   homingSpeed: 4
   homingRange: 10
+--- !u!95 &5086102686157585630
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579432082819481223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7692c636833fa9459aed6561718e65e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

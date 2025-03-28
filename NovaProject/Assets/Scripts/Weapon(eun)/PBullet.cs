@@ -12,8 +12,11 @@ public class PBullet : MonoBehaviour
 
     private Transform target; // 타겟 몬스터의 위치
 
+    public Rigidbody2D rb;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         if (isHoming)
         {
             // 타겟 찾기 (E_Bullet일 경우)
@@ -41,8 +44,8 @@ public class PBullet : MonoBehaviour
         }
         else
         {
-            // 타겟이 없으면 기본적인 위쪽 방향으로 이동
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
+            // 타겟이 없을 경우 위로만 이동
+            rb.linearVelocity = Vector2.up * speed; // Rigidbody2D로 위쪽으로 이동
         }
     }
 
