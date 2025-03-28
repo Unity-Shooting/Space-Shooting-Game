@@ -35,6 +35,9 @@ public class SpawnEventData
 
     [Tooltip("반복 간격 (초)")]
     public float repeatInterval = 1f;
+
+    [Header("스테이지 마지막 몬스터인지")]
+    public bool isLastMonster = false;
 }
 
 /// <summary>
@@ -56,28 +59,26 @@ public class WaveData
 /// </summary>
 public class SpawnManager : Singleton<SpawnManager>
 {
-    [SerializeField] private MonsterBoss boss;
-    [SerializeField] private List<StageWaveSO> stages = new();  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
+    [SerializeField] private GameObject boss;
+    [SerializeField] private StageWaveSO stage;  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
 
     [Header("아이템 프리펩")]
-    
+
     [SerializeField] protected GameObject itemSkillMissile;
     [SerializeField] protected GameObject itemSkillLaser;
     [SerializeField] protected GameObject itemSkillBomb;
     [SerializeField] protected GameObject itemPower;
     void Start()
     {
-        StartStage(1);   // 테스트용 코드. 1스테이에 저장된 정보 바로 실행
+        StartStage();   // 테스트용 코드. 스테이지 스폰 시작
     }
     /// <summary>
     /// 해당 스테이지의 스폰을 시작
     /// </summary>
     /// <param name="i"></param>
-    void StartStage(int stageIndex)
+    void StartStage()
     {
-        if (stageIndex < 1 || stageIndex > stages.Count)
-            Debug.LogWarning("스테이지 인덱스 오류");
-        StartCoroutine(WaveStarter(stages[stageIndex - 1].waves));
+        StartCoroutine(WaveStarter(stage.waves));
     }
 
     /// <summary>
@@ -138,11 +139,19 @@ public class SpawnManager : Singleton<SpawnManager>
         for (int i = 0; i < count; i++)
         {
             SpawnMonster(eventData.monster, eventData.position, eventData.direction, eventData.type, eventData.item);
+            if (eventData.isLastMonster)
+            { StartCoroutine(SpawnBoss()); }
             if (i == eventData.repeatCount - 1)
                 break;
             yield return new WaitForSeconds(eventData.repeatInterval);
         }
-        
+    }
+
+
+    IEnumerator SpawnBoss()
+    {
+        yield return new WaitForSeconds(5f);
+        Instantiate(boss, new Vector2(0, 5), Quaternion.identity);
 
     }
 
@@ -160,8 +169,8 @@ public class SpawnManager : Singleton<SpawnManager>
     {
         var go = PoolManager.instance.Get(monster);    // 오브젝트 풀링에서 생성 Instantiate대신 쓴다고 생각하면 될것같습니다
         go.GetComponent<Monster>().Init(pos, dir, type, itemtype); // 몬스터 안에서 OnEnable로 초기화 할 수 있긴 하지만
-                                                         // 스폰위치, 진행방향을 생성하면서 줄 수 있어야 다양한 경로로
-                                                         // 몬스터를 보낼 수 있을것 같아서 스폰매니저에서 위치 방향 지정
+                                                                   // 스폰위치, 진행방향을 생성하면서 줄 수 있어야 다양한 경로로
+                                                                   // 몬스터를 보낼 수 있을것 같아서 스폰매니저에서 위치 방향 지정
 
     }
 
@@ -177,7 +186,7 @@ public class SpawnManager : Singleton<SpawnManager>
         switch (itemcode)
         {
             case 1:
-        Instantiate(itemSkillMissile, pos, Quaternion.identity);
+                Instantiate(itemSkillMissile, pos, Quaternion.identity);
                 break;
             case 2:
                 Instantiate(itemSkillLaser, pos, Quaternion.identity);
