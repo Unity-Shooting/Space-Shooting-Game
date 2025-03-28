@@ -306,7 +306,7 @@ public class MonsterBoss : Monster
         StopPhase2();
         Debug.Log("Enter Destruction Process");
         ScoreManager.instance.AddScore(Score);
-        Release();
+        Destroy(gameObject);
 
         // 파괴 애니메이션 재생
         var DE = PoolManager.instance.Get(DesturctionEffect);
