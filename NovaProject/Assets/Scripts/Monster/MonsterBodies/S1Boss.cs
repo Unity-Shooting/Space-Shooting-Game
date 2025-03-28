@@ -30,6 +30,7 @@ public class S1Boss : Monster
     [SerializeField] private SpawnTimelineSO WavePatternA; // 일정 주기로 보스위에 멈춰서 사격하는 S1Fighter 소환
 
     // 페이즈전환/사망시 코루틴 정지를 위한 변수
+    private Coroutine Pattern0;
     private Coroutine PatternA;  
     private Coroutine PatternB;  
     private Coroutine PatternC; 
@@ -95,6 +96,7 @@ public class S1Boss : Monster
     private void StartPhase1()
     {
         canBeDamaged = true;
+        Pattern0 = StartCoroutine(BossPattern0());
         PatternA = StartCoroutine(BossPatternA());
         PatternB = StartCoroutine(BossPatternB());
         PatternC = StartCoroutine(BossPatternC());
@@ -103,6 +105,10 @@ public class S1Boss : Monster
     // 페이즈1 코루틴 정지
     private void StopPhase1()
     {
+        if(Pattern0 != null)
+        {
+            StopCoroutine(Pattern0);
+        }
         if (PatternA != null)
         {
             StopCoroutine(PatternA);
@@ -119,16 +125,16 @@ public class S1Boss : Monster
 
     private void StartPhase2()
     {
-        PatternB = StartCoroutine(BossPatternB());
+        Pattern0 = StartCoroutine(BossPattern0());
         PatternD = StartCoroutine(BossPatternD());
         PatternE = StartCoroutine(BossPatternE());
     }
 
     private void StopPhase2()
     {
-        if(PatternB != null)
+        if(Pattern0 != null)
         {
-            StopCoroutine(PatternB);
+            StopCoroutine(Pattern0);
         }
         if (PatternD != null)
         {
@@ -138,6 +144,23 @@ public class S1Boss : Monster
         {
             StopCoroutine(PatternE);
         }
+    }
+
+    /// <summary>
+    /// S1Fighter 소환해서 보스위에 겹쳐놓고 공격
+    /// 관통무기 안쓰면 점점 쌓이게
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator BossPattern0()
+    {
+        while (true)
+        {
+            StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternA));
+
+            yield return new WaitForSeconds(5);
+
+        }
+        
     }
 
     /// <summary>
