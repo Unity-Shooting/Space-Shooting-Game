@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Stage2
   m_EditorClassIdentifier: 
   waves:
+  - startTime: 105
+    timeline: {fileID: 11400000, guid: dc458476675bc4efa8dabe49ca0c2d52, type: 2}
   - startTime: 5
     timeline: {fileID: 11400000, guid: 6dc89dc1d13124edba9b1d4964f5f557, type: 2}
   - startTime: 15

@@ -10,43 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fa276294b3028f46a38789e832c108a, type: 3}
-  m_Name: Bomber l ll l
+  m_Name: Bomber item
   m_EditorClassIdentifier: 
   memo: 
   spawnEvents:
   - spawnTime: 0
     monster: {fileID: 6798339448652487226, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-    position: {x: -1, y: 5, z: 0}
+    position: {x: -2, y: 4, z: 0}
     direction: {x: 0, y: -1}
-    type: 3
+    type: 1
     item: 0
     repeatCount: 0
     repeatInterval: 0
     isLastMonster: 0
   - spawnTime: 0
     monster: {fileID: 6798339448652487226, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-    position: {x: 1, y: 5, z: 0}
+    position: {x: 2, y: 4, z: 0}
     direction: {x: 0, y: -1}
-    type: 3
-    item: 0
-    repeatCount: 0
-    repeatInterval: 0
-    isLastMonster: 0
-  - spawnTime: 1
-    monster: {fileID: 6798339448652487226, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-    position: {x: 2, y: 5, z: 0}
-    direction: {x: 0, y: -1}
-    type: 3
-    item: 1
-    repeatCount: 0
-    repeatInterval: 0
-    isLastMonster: 0
-  - spawnTime: 1
-    monster: {fileID: 6798339448652487226, guid: 29b36d3af4c355f429f198ee274ec46c, type: 3}
-    position: {x: -2, y: 5, z: 0}
-    direction: {x: 0, y: -1}
-    type: 3
-    item: 0
+    type: 1
+    item: 3
     repeatCount: 0
     repeatInterval: 0
     isLastMonster: 0
