@@ -1203,11 +1203,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 4
-  minScale: 2
-  maxScale: 3
-  minX: -4
-  maxX: 4
-  rotationSpeed: 100
+  minScale: 1
+  maxScale: 1.5
+  minX: -5
+  maxX: 5
+  rotationSpeed: 300
 --- !u!58 &1169874105
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2326,11 +2326,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 3
-  minScale: 1
-  maxScale: 2
-  minX: -4
-  maxX: 4
-  rotationSpeed: 100
+  minScale: 0.5
+  maxScale: 1
+  minX: -5
+  maxX: 5
+  rotationSpeed: 300
 --- !u!58 &1927512307
 CircleCollider2D:
   m_ObjectHideFlags: 0
