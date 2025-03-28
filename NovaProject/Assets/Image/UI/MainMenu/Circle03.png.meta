@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 078964192df348c47af86f9c36804971
+guid: 11db31ea6f9a43f4485f6b583ec1cd9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8569649748886545437
-    second: StageHidden_0
+      213: -192626483735148990
+    second: Circle03_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StageHidden_0
+      name: Circle03_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 406
-        height: 785
+        width: 130
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3eb1a1415fc721980800000000000000
-      internalID: -8569649748886545437
+      spriteID: 24642aecb37a35df0800000000000000
+      internalID: -192626483735148990
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StageHidden_0: -8569649748886545437
+      Circle03_0: -192626483735148990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 078964192df348c47af86f9c36804971
+guid: 37c6ab3608749e14299c61a4b01f4112
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8569649748886545437
-    second: StageHidden_0
+      213: -5776737429304972987
+    second: HiddenTwoSelectWeapon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StageHidden_0
+      name: HiddenTwoSelectWeapon_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 406
-        height: 785
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3eb1a1415fc721980800000000000000
-      internalID: -8569649748886545437
+      spriteID: 549e29d1ae7e4dfa0800000000000000
+      internalID: -5776737429304972987
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StageHidden_0: -8569649748886545437
+      HiddenTwoSelectWeapon_0: -5776737429304972987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
