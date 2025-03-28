@@ -185,5 +185,11 @@ public abstract class Monster : MonoBehaviour, IDamageable
         bullet.Init(pos, dir, type);
     }
 
+    protected virtual void FireBullet(GameObject bul, Vector2 pos, Vector2 dir, int type)
+    {
+        IBulletInit bullet = PoolManager.instance.Get(bul).GetComponent<IBulletInit>();
+        bullet.Init(pos, dir, type);
+    }
+
 
 }

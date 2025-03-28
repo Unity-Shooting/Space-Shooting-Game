@@ -9,7 +9,7 @@ using UnityEngine.WSA;
 /// 1스테이지 보스는 MbSpin과 MbRay를 사용해서 공격하는걸로 하고
 /// 중간중간 쫄 소환 패턴으로 다양한 공격을 시도
 /// </summary>
-public class MonsterBoss : Monster
+public class S1Boss : Monster
 {
 
     private enum BossPhase { Phase1, Phase2 }
@@ -17,7 +17,9 @@ public class MonsterBoss : Monster
 
     [SerializeField] private float stopDelay;
     [SerializeField] private float stopDuration;
-    [SerializeField] private GameObject mbRay;
+    [SerializeField] private GameObject aWarning;
+    [SerializeField] private GameObject s1MbRay;
+    [SerializeField] private GameObject s1MbTorpedo;
     bool canBeDamaged = false;
     [SerializeField] private GameObject Launcher;
     [SerializeField] private GameObject Launcher2;
@@ -44,7 +46,6 @@ public class MonsterBoss : Monster
         StartCoroutine(StopDuringDuration()); // 등장한 후 서서히 정지 후 패턴 시작
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -140,75 +141,101 @@ public class MonsterBoss : Monster
     }
 
     /// <summary>
-    /// 패턴A : 원형으로 MbSpin 발사
+    /// 패턴A : 다수의 유도 Torpedo 발사
     /// </summary>
     /// <returns></returns>
     IEnumerator BossPatternA()
     {
-        float periodA = 2;
+        int bulletCount = 5; // 양쪽에서 발사하니까 2배나감
+        float periodA = 4f;
         while (true)
         {
             yield return new WaitForSeconds(periodA);
-            CircleFire();
+            // 양쪽으로 펼쳐지는 유도미사일 탄막
+            Vector2 dirDownLeft = new Vector2(-0.5f, -1).normalized;
+            float spreadTotal = 70f;
+            float spreadAngle = spreadTotal / (bulletCount - 1);
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float fireAngle = -spreadTotal + spreadAngle * i;
+                Vector2 fireDir = Quaternion.Euler(0, 0, fireAngle) * dirDownLeft;
+                FireBullet(s1MbTorpedo, Launcher2.transform.position, fireDir, 1);
+                FireBullet(s1MbTorpedo, Launcher3.transform.position, FlipX(fireDir), 1);
+            }
+
         }
 
     }
 
-    /// <summary>
-    /// 원형으로 탄막 뿌리기
-    /// </summary>
-    private void CircleFire()
-    {
-        float angle = 360f;  // 발사각, 원형이니까 360
-        int bulletcount = 15; // 발사할 총알의 숫자
 
-        float angle2 = angle / (bulletcount - 1);  // 각 탄막 사이의 각도
-        float baseAngle = Time.time * 20f; // 각 발사마다 회전하면서 발사하도록 베이스각도를 돌리기
-        for (int i = 0; i < bulletcount; i++)
-        {
-            float shootangle = baseAngle + angle2 * i;
-            Vector2 shootdir = Quaternion.Euler(0, 0, shootangle) * Vector2.down; // 발사할 방향
-            IBulletInit bul = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-            bul.Init(transform.position, shootdir, 0);
-        }
-    }
 
     /// <summary>
-    /// 패턴B : 일정 주기로 3갈래 레이저
+    /// 패턴B : 일정 주기로 플레이어를 향해 레이저 발사
     /// </summary>
     /// <returns></returns>
     IEnumerator BossPatternB()
     {
-        float periodB = 10;
+        float periodB = 5;
         while (true)
         {
             animator.SetTrigger("Attack");
-            //레이저는 방향만 돌려주면 알아서 작동
-            float spreadAngle = 30f;
-            MbRay ray = PoolManager.instance.Get(mbRay).GetComponent<MbRay>();
-            ray.Init(Launcher.transform.position, Quaternion.Euler(0, 0, -spreadAngle) * Vector2.down, 1);
-            MbRay ray2 = PoolManager.instance.Get(mbRay).GetComponent<MbRay>();
-            ray2.Init(Launcher.transform.position, Vector2.down, 1);
-            MbRay ray3 = PoolManager.instance.Get(mbRay).GetComponent<MbRay>();
-            ray3.Init(Launcher.transform.position, Quaternion.Euler(0, 0, spreadAngle) * Vector2.down, 1);
+            Vector2 toPlayer = (Vector2)PlayerController.Instance.transform.position - (Vector2)Launcher.transform.position;
+            S1MbRay ray2 = PoolManager.instance.Get(s1MbRay).GetComponent<S1MbRay>();
+            ray2.Init(Launcher.transform.position, toPlayer, 1);
+
 
             yield return new WaitForSeconds(periodB);
         }
     }
 
     /// <summary>
-    /// 일정 주기로 가로로 지나가는 fighter 편대 소환
+    /// 랜덤방향에서 화면 중앙 근처를 향해 화살표경고 후 레이저
+    /// 3연속 
     /// </summary>
     /// <returns></returns>
     IEnumerator BossPatternC()
     {
-        float periodC = 10;
-        yield return new WaitForSeconds(5);
+        float periodC = 6;
+        float interval = 0.5f;
+        int count = 3;
         while (true)
         {
-            StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternA));
             yield return new WaitForSeconds(periodC);
+            for (int i = 0; i < count; i++)
+            {
+                yield return new WaitForSeconds(interval);
+                RandomArrowLaseer();
+            }
         }
+        
+    }
+
+    /// <summary>
+    /// 화살표 경고 표시 후 지속시간 짧은 레이저 발사
+    /// 화면가장자리 랜덤으로 시작해서 화면 중앙 근처로 레이저 발사
+    /// </summary>
+    /// <returns></returns>
+    private void RandomArrowLaseer()
+    {
+        Vector2 pos = GetRandomPointOnBorder(); // 화면 가장자리 랜덤위치
+        Vector2 dir = new Vector2(0,-2) - pos; //화면 중간하단으로 향하는 방향
+        float spreadMax = 20f;
+        float spread = Random.Range(-spreadMax, spreadMax);
+        dir = Quaternion.Euler(0, 0, spread) * dir;
+        StartCoroutine(ArrowLaser(pos, dir));
+    }
+
+    IEnumerator ArrowLaser(Vector2 pos, Vector2 dir)
+    {
+        ArrowWarning arrow = PoolManager.instance.Get(aWarning).GetComponent<ArrowWarning>();
+        arrow.Init(pos, dir);
+
+        yield return new WaitForSeconds(3.2f);
+        S1MbRay ray = PoolManager.instance.Get(s1MbRay).GetComponent<S1MbRay>();
+        ray.Init(pos, dir, 2);
+
+
+
     }
 
     IEnumerator BossMidPhasePattern()
@@ -227,7 +254,7 @@ public class MonsterBoss : Monster
         yield return StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternB));
         for (int i = 0; i < 7; i++)
         {
-            CircleFire();
+
             yield return new WaitForSeconds(1);
         }
         yield return new WaitForSeconds(2);
@@ -241,35 +268,9 @@ public class MonsterBoss : Monster
     /// <returns></returns>
     IEnumerator BossPatternD()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(1.5f);
-            StartCoroutine(BurstFire());
-        }
+        yield return null;
     }
 
-    IEnumerator BurstFire()
-    {
-        int bulletCount = 3; // 양쪽에서 쏘니까 3발
-        float fireInterval = 0.35f;
-        float spreadAngle = 7f;
-
-        Vector2 vectorToPlayer2 = PlayerController.Instance.transform.position - Launcher2.transform.position;
-        Vector2 vectorToPlayer3 = PlayerController.Instance.transform.position - Launcher3.transform.position;
-        for (int i = 0; i < bulletCount; i++)
-        {
-            Vector2 fireDirection2 = Quaternion.Euler(0, 0, Random.Range(-spreadAngle, spreadAngle)) * vectorToPlayer2; // 흩뿌리기
-            Vector2 fireDirection3 = Quaternion.Euler(0, 0, Random.Range(-spreadAngle, spreadAngle)) * vectorToPlayer3; // 흩뿌리기
-
-
-            IBulletInit bul = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-            bul.Init(Launcher2.transform.position, fireDirection2, 0);
-            IBulletInit bul2 = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-            bul2.Init(Launcher3.transform.position, fireDirection3, 0);
-            yield return new WaitForSeconds(fireInterval);
-        }
-
-    }
 
     /// <summary>
     /// 패턴E : 체력 50퍼 이하 패턴, 일정 주기로 패턴 101의 Bomber 소환
@@ -277,11 +278,7 @@ public class MonsterBoss : Monster
     /// <returns></returns>
     IEnumerator BossPatternE()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(3);
-            yield return StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternC));
-        }
+        yield return null;
     }
 
 
@@ -306,12 +303,55 @@ public class MonsterBoss : Monster
         StopPhase2();
         Debug.Log("Enter Destruction Process");
         ScoreManager.instance.AddScore(Score);
-        Destroy(gameObject);
+        Release();
 
         // 파괴 애니메이션 재생
         var DE = PoolManager.instance.Get(DesturctionEffect);
         DE.transform.position = transform.position;
         DE.transform.rotation = transform.rotation;
         DE.SetActive(true);
+    }
+
+    private Vector2 FlipX(Vector2 vector)
+    {
+        return new Vector2(-vector.x, vector.y);
+    }
+
+    /// <summary>
+    /// 화면 가장자리중 랜덤 포인트 
+    /// </summary>
+    /// <returns></returns>
+    private Vector2 GetRandomPointOnBorder()
+    {
+        float xMin = -5.2f;
+        float xMax = 5.2f;
+        float yMin = -6.2f;
+        float yMax = 6.2f;
+
+        int edge = Random.Range(0, 4); // 0: 위, 1: 아래, 2: 왼쪽, 3: 오른쪽
+        float x = 0f;
+        float y = 0f;
+
+        switch (edge)
+        {
+            case 0: // 위쪽 테두리
+                x = Random.Range(xMin, xMax);
+                y = yMax;
+                break;
+            case 1: // 아래쪽 테두리
+                x = Random.Range(xMin, xMax);
+                y = yMin;
+                break;
+            case 2: // 왼쪽 테두리
+                x = xMin;
+                y = Random.Range(yMin, yMax);
+                break;
+            case 3: // 오른쪽 테두리
+                x = xMax;
+                y = Random.Range(yMin, yMax);
+                break;
+        }
+
+        return new Vector2(x, y);
     }
 }

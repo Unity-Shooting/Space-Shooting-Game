@@ -21,7 +21,7 @@ public class S1MbRay : MbBase
     {
         // 본체와 위치 동기화
         // 시전자가 보스인 경우는 안함
-        if (type != 1)
+        if (type == 0)
             transform.position = caster.Launcher.transform.position;
     }
 
@@ -49,7 +49,14 @@ public class S1MbRay : MbBase
     {
         base.Init(pos, dir, type);
 
-        StartCoroutine(LazerSequence());
+        if (type == 1) // type1은 캐스터 없이 일반 레이저 패턴
+        {
+            StartCoroutine(LazerSequence());
+        }
+        else if (type == 2) // type2는 보스전용 레이저패턴, warning 없이 바로 발사
+        {
+            StartCoroutine(InstantLaser());
+        }
     }
 
     IEnumerator LazerSequence()
@@ -96,6 +103,13 @@ public class S1MbRay : MbBase
         Release();
 
     }
+
+    IEnumerator InstantLaser()
+    {
+        yield return new WaitForSeconds(0.8f);
+        Release();
+    }
+
 
     protected override void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
     {
