@@ -49,8 +49,6 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     public bool useMouseDirection = false;
 
-    public GameObject text;
-
     /// <summary>
     /// 기본 게임 오브젝트 (플레이어 이동 시 사용됨).
     /// </summary>
@@ -226,7 +224,6 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     private void Click()
     {
-        Instantiate(text, transform.position, transform.rotation);
     }
 
     /// <summary>
