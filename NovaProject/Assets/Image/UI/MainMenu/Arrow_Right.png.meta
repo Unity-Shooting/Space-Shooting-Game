@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 078964192df348c47af86f9c36804971
+guid: e5d0f9b69eb871140b929f38fad5fe29
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8569649748886545437
-    second: StageHidden_0
+      213: -2808461790493562453
+    second: Arrow_Right_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StageHidden_0
+      name: Arrow_Right_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 406
-        height: 785
+        width: 32
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3eb1a1415fc721980800000000000000
-      internalID: -8569649748886545437
+      spriteID: ba9af54a1e65609d0800000000000000
+      internalID: -2808461790493562453
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StageHidden_0: -8569649748886545437
+      Arrow_Right_0: -2808461790493562453
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
