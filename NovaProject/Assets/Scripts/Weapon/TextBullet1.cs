@@ -67,6 +67,7 @@ public class TextBullet1 : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            isShoot = false;
             // Debug.Log($"{TAG} OnTriggerEnter2D Player");
             PlayerHealth.Instance.TakeDamage((int)damage);
             Destroy(gameObject);
@@ -76,6 +77,7 @@ public class TextBullet1 : MonoBehaviour
 
     protected virtual void OnBecameInvisible()
     {
+        isShoot = false;
         Destroy(gameObject);
         // PoolManager.instance.Return(gameObject);
     }
