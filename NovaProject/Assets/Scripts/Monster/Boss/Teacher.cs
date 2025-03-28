@@ -12,7 +12,6 @@ public class Teacher : Monster
 
     bool canBeDamaged = false;
     [SerializeField] private GameObject Launcher; // 입
-    [SerializeField] private GameObject Launcher2; // 손
     [SerializeField] private SpriteRenderer Shadow; // 검은 그림자 렌더러
 
     [SerializeField] private GameObject unityBullet; // 유니티 총알
@@ -32,19 +31,20 @@ public class Teacher : Monster
     {
         canBeDamaged = false;
         direction = Vector2.zero;
-        transform.position = new Vector2(0, 5);
-        
+        transform.position = new Vector2(0, 2.7f);
+
         // 검은 실루엣이 서서히 강사님으로 바뀌는 효과
 
         //페이즈 시작
-        StartPhase();
+        StartCoroutine(StartPhase());
     }
 
     /// <summary>
     /// Phase 시작
     /// </summary>
-    private void StartPhase()
+    IEnumerator StartPhase()
     {
+        yield return StartCoroutine(UncoverVeil());
         canBeDamaged = true;
         direction = Vector2.left;
         PatternA = StartCoroutine(BossPatternA());
@@ -68,10 +68,10 @@ public class Teacher : Monster
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2.5f);
             // 유니티 총알을 플레이어에게 유도
             IBulletInit bul = PoolManager.instance.Get(unityBullet).GetComponent<IBulletInit>();
-            bul.Init(Launcher2.transform.position, Vector2.down, 0);
+            bul.Init(Launcher.transform.position, Vector2.down, 0);
         }
     }
 
@@ -94,7 +94,7 @@ public class Teacher : Monster
 
     public override void Shoot()
     {
-        
+
     }
 
     protected override void Die()
@@ -112,11 +112,11 @@ public class Teacher : Monster
     /// </summary>
     private void TurnOnBothSide()
     {
-        float SideX = 2f;
+        float SideX = 1f;
         if (transform.position.x < -SideX)
         {   // 왼쪽 벽에 도착했을 때
             // 방향이 왼쪽이라면
-            if(direction.x < 0)
+            if (direction.x < 0)
             {
                 direction = new Vector2(1, 0); //방향 전환
                 //인디코드 총알 뿌리기
@@ -149,6 +149,44 @@ public class Teacher : Monster
             Vector2 shootdir = Quaternion.Euler(0, 0, shootangle) * Vector2.down; // 발사할 방향
             IBulletInit bul = PoolManager.instance.Get(bullet).GetComponent<IBulletInit>();
             bul.Init(transform.position, shootdir, 0);
+        }
+    }
+
+    IEnumerator UncoverVeil()
+    {
+        float time = 0;
+        float second = 2;
+        Color c = Shadow.color;
+        float StartAlpha = c.a;
+        while (time < second)
+        {
+            time += Time.deltaTime;
+            c.a = Mathf.Lerp(StartAlpha, 245/255f, time / second);
+            Shadow.color = c;
+            yield return null;
+        }
+        time = 0;
+        c = Shadow.color;
+        StartAlpha = c.a;
+        while (time < second)
+        {
+            time += Time.deltaTime;
+            c.a = Mathf.Lerp(StartAlpha, 0, time / second);
+            Shadow.color = c;
+            yield return null;
+        }
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        switch (damage)
+        {
+            case 101: //체크
+                break;
+            case 102: //따봉
+                break;
+            case 103: //하트
+                break;
         }
     }
 }

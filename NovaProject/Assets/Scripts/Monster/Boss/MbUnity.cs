@@ -1,14 +1,10 @@
 using UnityEngine;
 
-public class MbUnity : MbBase, IDamageable
+public class MbUnity : MbBase
 {
     
     [SerializeField] private float hoamingPower;
     [SerializeField] private float maxHoamingAngle;
-    [SerializeField] private float maxHP;
-    private float HP;
-    private bool isDead = false;
-    public bool IsDead => isDead;
 
     void Update()
     {
@@ -35,26 +31,6 @@ public class MbUnity : MbBase, IDamageable
         // �̻��� ��������Ʈ�� ȸ�������ֱ�
         RotateToDirection();
 
-    }
-
-    public void TakeDamage(int  damage)
-    {
-        
-
-        HP -= damage;
-        if (HP <= 0)
-        {
-            if (isDead) return;
-            isDead = true;
-            Release();
-        }
-    }
-    protected override void OnEnable()
-    {
-        // �ٸ� �Ѿ˵��� ������ �ʴ� ü���� ������ ������ ���� �ʱ�ȭ
-        base.OnEnable();
-        HP = maxHP;
-        isDead = false;
     }
 
 }
