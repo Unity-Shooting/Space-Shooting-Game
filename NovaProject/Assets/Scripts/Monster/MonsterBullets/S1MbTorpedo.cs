@@ -21,7 +21,7 @@ public class S1MbTorpedo : MbBase, IDamageable
         base.Init(pos, dir, type);
         if(type == 1) // type가 1이면 아주 약한 유도, 대신 좌우각도 제한 90도로 버프
         {
-            hoamingPower = 0.5f;
+            hoamingPower = 0.6f;
             maxHoamingAngle = 90f;
         }
     }

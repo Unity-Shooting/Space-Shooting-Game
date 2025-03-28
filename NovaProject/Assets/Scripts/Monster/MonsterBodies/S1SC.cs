@@ -15,21 +15,17 @@ public class S1SC : Monster
         ani = GetComponent<Animator>();
     }
 
-    //protected override void StartAfterInit()
-    //
-    //    firesequence = StartCoroutine(FireSequence());
+    protected override void StartAfterInit()
+    {
+        firesequence = StartCoroutine(FireSequence());
 
-    //}
+    }
     void Update()
     {
         Turn();
         Move();
     }
 
-    private void Start()  // 프리펩화 하기 전 하이어러키창에서 임시 테스트용
-    {
-        firesequence = StartCoroutine(FireSequence());
-    }
 
     IEnumerator FireSequence()
     {

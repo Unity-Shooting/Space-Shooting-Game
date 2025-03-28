@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ArrowWarning : MonoBehaviour
 {
-    private Vector2 direction; // 경고표시의 방향
+    [SerializeField] private Vector2 direction; // 경고표시의 방향
     bool isReleased = false; // release() 됐는지 체크
     private float BaseMaskY = 5.57f; // 스프라이트 마스크 초기 위치
     private float EndMaskY = -13.5f; // 스프라이트 마스크 최종 위치
@@ -64,6 +64,9 @@ public class ArrowWarning : MonoBehaviour
             float maskY = Mathf.Lerp(BaseMaskY, EndMaskY, warningTimer / warningTime);
             mask.transform.localPosition = new Vector3(0, maskY, 0);
         }
+        
+        direction = transform.up*-1;
+        direction.Normalize(); 
     }
 
     protected void Release()  // 오브젝트 풀로 반환 
