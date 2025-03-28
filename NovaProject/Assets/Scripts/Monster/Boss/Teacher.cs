@@ -12,6 +12,8 @@ public class Teacher : Monster
 
     bool canBeDamaged = false;
     [SerializeField] private GameObject Launcher; // 입
+    [SerializeField] private GameObject Launcher2;
+    [SerializeField] private GameObject Launcher3;
     [SerializeField] private SpriteRenderer Shadow; // 검은 그림자 렌더러
 
     [SerializeField] private GameObject unityBullet; // 유니티 총알
@@ -77,12 +79,33 @@ public class Teacher : Monster
 
     IEnumerator BossPatternB()
     {
+        int count = 0;
         while (true)
         {
-            yield return new WaitForSeconds(3f);
-            // 텍스트 총알을 플레이어 방향으로 발사
-
-            Instantiate(textBullet, Launcher.transform.position, Quaternion.identity);
+            if(count < 3)
+            {
+                // 오브젝트풀 사용 시 애니메이션? 관련 초기화가 안되는 문제가 있어서 일단 임시로 Destroy로 삭제하는걸로 하기로
+                // TextBullet1 t1 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                // t1.transform.position = Launcher.transform.position;
+                Instantiate(textBullet, Launcher.transform.position, Quaternion.identity); // 텍스트 총알을 플레이어 방향으로 발사
+                yield return new WaitForSeconds(3f);
+            }
+            else if(count < 6)
+            {
+                Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(3f);
+            }
+            else{
+                Instantiate(textBullet, Launcher.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(3f);
+            }
+            count++;
         }
     }
 

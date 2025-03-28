@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &155329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155330}
+  m_Layer: 0
+  m_Name: Launcher2
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: ce5f11cd993284c4f9c54f854bdc8c9c, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155329}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.02, y: -1.36, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1857637927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &48811275
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +304,14 @@ PrefabInstance:
       propertyPath: Shadow
       value: 
       objectReference: {fileID: 1869611311}
+    - target: {fileID: 1231288140926247022, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
+      propertyPath: Launcher2
+      value: 
+      objectReference: {fileID: 155329}
+    - target: {fileID: 1231288140926247022, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
+      propertyPath: Launcher3
+      value: 
+      objectReference: {fileID: 1435079996}
     - target: {fileID: 3143705399432106854, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
       propertyPath: m_Name
       value: Teacher
@@ -319,7 +358,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6894122278832652470, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 155330}
+    - targetCorrespondingSourceObject: {fileID: 6894122278832652470, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1435079997}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
 --- !u!1 &344062363
@@ -909,6 +954,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe368e167072a649aa5153f68dc9222, type: 3}
+--- !u!1 &1435079996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435079997}
+  m_Layer: 0
+  m_Name: Launcher3
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: ce5f11cd993284c4f9c54f854bdc8c9c, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435079997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435079996}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2, y: -1.69, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1857637927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517357871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1357,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+--- !u!4 &1857637927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6894122278832652470, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
+  m_PrefabInstance: {fileID: 303438225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1869611311 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9118712581500265637, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}

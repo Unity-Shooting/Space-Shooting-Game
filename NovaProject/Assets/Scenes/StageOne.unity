@@ -919,51 +919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6490c07a1c04b3c42b680abcfb9d4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &517315992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 517315994}
-  - component: {fileID: 517315993}
-  m_Layer: 0
-  m_Name: BossTextShoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &517315993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517315992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b66449d31d763f4eab53dd72f412d1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 2930911920447641614, guid: d7f2b10866d68f64b84c18e1b0c0c175, type: 3}
---- !u!4 &517315994
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517315992}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: 1.36, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!225 &977786531 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 3821895189872614392, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
@@ -1715,4 +1670,3 @@ SceneRoots:
   - {fileID: 114913711}
   - {fileID: 1239329118}
   - {fileID: 3410422954439757640}
-  - {fileID: 517315994}
