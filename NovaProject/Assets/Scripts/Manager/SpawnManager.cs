@@ -59,8 +59,8 @@ public class WaveData
 /// </summary>
 public class SpawnManager : Singleton<SpawnManager>
 {
-    [SerializeField] private MonsterBoss boss;
-    [SerializeField] private List<StageWaveSO> stages = new();  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
+    [SerializeField] private GameObject boss;
+    [SerializeField] private StageWaveSO stage;  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
 
     [Header("아이템 프리펩")]
 
@@ -70,17 +70,15 @@ public class SpawnManager : Singleton<SpawnManager>
     [SerializeField] protected GameObject itemPower;
     void Start()
     {
-        StartStage(1);   // 테스트용 코드. 1스테이에 저장된 정보 바로 실행
+        StartStage();   // 테스트용 코드. 스테이지 스폰 시작
     }
     /// <summary>
     /// 해당 스테이지의 스폰을 시작
     /// </summary>
     /// <param name="i"></param>
-    void StartStage(int stageIndex)
+    void StartStage()
     {
-        if (stageIndex < 1 || stageIndex > stages.Count)
-            Debug.LogWarning("스테이지 인덱스 오류");
-        StartCoroutine(WaveStarter(stages[stageIndex - 1].waves));
+        StartCoroutine(WaveStarter(stage.waves));
     }
 
     /// <summary>
