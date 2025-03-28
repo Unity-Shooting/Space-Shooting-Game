@@ -30,10 +30,15 @@ public class BackgroundPlanet : MonoBehaviour
     {
         transform.position += Vector3.down * scrollSpeed * Time.deltaTime;
         transform.Rotate(Vector3.forward * currentRotationSpeed * Time.deltaTime);
+
+        if(transform.position.y < -6f) //화면 밖으로 나가면
+        {
+            RandomPlanet(); //랜덤 행성으로 재배치
+        }
     }
 
     // 카메라에서 사라졌을 때 실행
-    private void OnBecameInvisible()
+    private void RandomPlanet()
     {
         RespawnAtTop();  // 오브젝트를 화면 위쪽으로 재배치
         SetRandomDirectionAndRotation(); // 회전 속도와 위치, 크기를 랜덤으로 다시 설정

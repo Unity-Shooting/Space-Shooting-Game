@@ -127,8 +127,18 @@ public class PWRManager : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift ) && Pwr.fillAmount == 1f)   //실드 게이지 UI 갱신 10초 쿨타임
+            if (SceneManager.GetActiveScene().name == "StageHidden")
+            {
+            // 'StageHidden' 씬일 때 실행할 코드
+            Debug.Log("히든씬 입성 : ");
+            if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
+
+        }
+        else { 
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Pwr.fillAmount == 1f)   //실드 게이지 UI 갱신 10초 쿨타임
         {
             StartCoroutine(FillOverTime(duration));
         }
@@ -150,7 +160,7 @@ public class PWRManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
         if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
         if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
-
+        }
 
     }
 
@@ -166,9 +176,10 @@ public class PWRManager : MonoBehaviour
         HideAllImages();
 
         images[index - 1].gameObject.SetActive(true); //  인덱스 조정 (0부터 시작)
-        
+        Debug.Log("Index : "+index +" 번 이미지");
+
         //오류 로그로 인한 수정
-        
+
         /*HideAllImages(); // 모든 이미지를 비활성화
 
         switch (index)

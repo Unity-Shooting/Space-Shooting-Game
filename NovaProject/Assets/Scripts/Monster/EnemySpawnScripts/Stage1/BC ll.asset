@@ -19,9 +19,10 @@ MonoBehaviour:
     position: {x: -1.5, y: 4.5, z: 0}
     direction: {x: 0, y: -1}
     type: 0
-    item: 0
+    item: 4
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
   - spawnTime: 0
     monster: {fileID: 1583548365865125169, guid: 14e1a998029f4ea49ac84ee1b0423a32, type: 3}
     position: {x: 1.5, y: 4.5, z: 0}
@@ -30,3 +31,4 @@ MonoBehaviour:
     item: 0
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0

@@ -22,6 +22,7 @@ MonoBehaviour:
     item: 0
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
   - spawnTime: 0
     monster: {fileID: 8210523767788101434, guid: 48de8620829e0154a9ee9f79940d41b5, type: 3}
     position: {x: -1, y: 5, z: 0}
@@ -30,6 +31,7 @@ MonoBehaviour:
     item: 0
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
   - spawnTime: 1
     monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
     position: {x: 0, y: 5, z: 0}
@@ -38,6 +40,7 @@ MonoBehaviour:
     item: 0
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
   - spawnTime: 1
     monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
     position: {x: -2, y: 5, z: 0}
@@ -46,11 +49,13 @@ MonoBehaviour:
     item: 0
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
   - spawnTime: 1
     monster: {fileID: 3344653297076914632, guid: 2098bb2bc8d872c41b2b38641c825b17, type: 3}
     position: {x: 2, y: 5, z: 0}
     direction: {x: 0, y: -1}
     type: 0
-    item: 0
+    item: 4
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
