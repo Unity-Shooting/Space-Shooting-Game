@@ -2,6 +2,8 @@ using JetBrains.Annotations;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.SceneManagement;
 
 // 무기 유형을 정의하는 열거형
 public enum weaponType
@@ -13,8 +15,6 @@ public enum weaponType
 
 }
 
-
-
 public class WeaponManager : MonoBehaviour
 {
     // 현재 장착된 무기
@@ -22,6 +22,8 @@ public class WeaponManager : MonoBehaviour
 
     // 총알 프리팹
     public GameObject[] Bullet_1, Bullet_2, Bullet_3;
+    public GameObject Bullet_A, Bullet_B, Bullet_C; // StageHidden에서 사용할 총알
+
 
     // 스킬 프리팹
     public GameObject Skill_1, Skill_2, Skill_3;
@@ -45,7 +47,13 @@ public class WeaponManager : MonoBehaviour
     private float bombCool = 0.3f; // 발사 간격 (초)
     private float bombTimer = 0f; // 발사 타이머
 
-    
+    // Laser 관련 변수
+    private bool isLaser = false; // Laser 스킬 활성화 여부
+    private float laserTime = 4f; // Laser 지속 시간 (초)
+    private GameObject laser1, laser2; // 레이저 오브젝트
+
+
+
     // 스킬 쿨타임 관리
     private bool isSkillOnCooldown = false; // 스킬 쿨타임 여부
     private float skillCool = 10f; // 스킬 쿨타임
@@ -156,83 +164,131 @@ public class WeaponManager : MonoBehaviour
 
         PBullet bulletScript1 = null; // PBullet 참조 변수 초기화
         PBullet bulletScript2 = null; // 두 번째 총알에 대한 PBullet 참조 변수 초기화
-        switch (currentWeapon)
+                                      // 현재 씬이 "StageHidden"인지 체크
+        if (SceneManager.GetActiveScene().name == "StageHidden")
         {
-            case weaponType.Missile:
+            // "StageHidden" 씬일 때, 각 무기에 맞는 특수 총알을 발사
+            switch (currentWeapon)
+            {
+                case weaponType.Missile:
+                    GameObject aBullet = Instantiate(Bullet_A, firePoint3.position, firePoint3.rotation);
+                    bulletScript1 = aBullet.GetComponent<PBullet>();
+                    if (bulletScript1 != null)
+                    {
+                        bulletScript1.isHoming = true;
+                    }
 
-                if (Missile != null)
-                {
-                    Missile.SetTrigger("shoot");
-                }
-                else
-                {
-                    Debug.LogError("Missile Null");
-                }
+                    SFXManager.Instance.ShootSound();
+                    break;
 
-                // 첫 번째 총알 발사
-                GameObject eBullet1 = Instantiate(Bullet_1[power], firePoint1.position, firePoint1.rotation);
-                bulletScript1 = eBullet1.GetComponent<PBullet>();
-                if (bulletScript1 != null)
-                {
-                    bulletScript1.isHoming = true; // ElectroGun만 타겟팅 활성화
-                }
-
-                // 두 번째 총알 발사
-                GameObject eBullet2 = Instantiate(Bullet_1[power], firePoint2.position, firePoint2.rotation);
-                bulletScript2 = eBullet2.GetComponent<PBullet>();
-                if (bulletScript2 != null)
-                {
-                    bulletScript2.isHoming = true; // ElectroGun만 타겟팅 활성화
-                }
-                
-
-                SFXManager.Instance.ShootSound();
-
-                break;
-
-
-            case weaponType.Laser:
-
-                if (Zapper != null)
-                {
+                case weaponType.Laser:
                     Zapper.SetTrigger("shoot");
-                }
-                else
-                {
-                    Debug.LogError("Zapper Null");
-                }
+                    GameObject bBullet = Instantiate(Bullet_B, firePoint3.position, firePoint3.rotation);
+                    bulletScript1 = bBullet.GetComponent<PBullet>();
+                    if (bulletScript1 != null)
+                    {
+                        bulletScript1.isHoming = true;
+                    }
 
+                    SFXManager.Instance.ShootSound();
+                    break;
 
-                Instantiate(Bullet_2[power], firePoint1.position, firePoint1.rotation);
-                Instantiate(Bullet_2[power], firePoint2.position, firePoint2.rotation);
-
-                SFXManager.Instance.ShootSound();
-
-                break;
-
-            case weaponType.Bomb:
-
-                if (Bomb != null)
-                {
+                case weaponType.Bomb:
                     Bomb.SetTrigger("shoot");
-                }
-                else
-                {
-                    Debug.LogError("Bomb Null");
-                }
+                    GameObject cBullet = Instantiate(Bullet_C, firePoint3.position, firePoint3.rotation);
+                    bulletScript1 = cBullet.GetComponent<PBullet>();
+                    if (bulletScript1 != null)
+                    {
+                        bulletScript1.isHoming = true;
+                    }
 
-                Instantiate(Bullet_3[power], firePoint1.position, firePoint1.rotation);
-                Instantiate(Bullet_3[power], firePoint2.position, firePoint2.rotation);
+                    SFXManager.Instance.ShootSound();
+                    break;
 
-                SFXManager.Instance.ShootSound();
+                default:
+                    Debug.LogError("알 수 없는 무기 유형입니다.");
+                    return;
+            }
+        }
+        else
+        {
+            switch (currentWeapon)
+            {
+                case weaponType.Missile:
 
-                break;
+                    if (Missile != null)
+                    {
+                        Missile.SetTrigger("shoot");
+                    }
+                    else
+                    {
+                        Debug.LogError("Missile Null");
+                    }
+
+                    // 첫 번째 총알 발사
+                    GameObject eBullet1 = Instantiate(Bullet_1[power], firePoint1.position, firePoint1.rotation);
+                    bulletScript1 = eBullet1.GetComponent<PBullet>();
+                    if (bulletScript1 != null)
+                    {
+                        bulletScript1.isHoming = true; // Missile만 타겟팅 활성화
+                    }
+
+                    // 두 번째 총알 발사
+                    GameObject eBullet2 = Instantiate(Bullet_1[power], firePoint2.position, firePoint2.rotation);
+                    bulletScript2 = eBullet2.GetComponent<PBullet>();
+                    if (bulletScript2 != null)
+                    {
+                        bulletScript2.isHoming = true; //Missile만 타겟팅 활성화
+                    }
 
 
-            default:
-                Debug.LogError("알 수 없는 무기 유형입니다.");
-                return;
+                    SFXManager.Instance.ShootSound();
 
+                    break;
+
+
+                case weaponType.Laser:
+
+                    if (Zapper != null)
+                    {
+                        Zapper.SetTrigger("shoot");
+                    }
+                    else
+                    {
+                        Debug.LogError("Zapper Null");
+                    }
+
+
+                    Instantiate(Bullet_2[power], firePoint1.position, firePoint1.rotation);
+                    Instantiate(Bullet_2[power], firePoint2.position, firePoint2.rotation);
+
+                    SFXManager.Instance.ShootSound();
+
+                    break;
+
+                case weaponType.Bomb:
+
+                    if (Bomb != null)
+                    {
+                        Bomb.SetTrigger("shoot");
+                    }
+                    else
+                    {
+                        Debug.LogError("Bomb Null");
+                    }
+
+                    Instantiate(Bullet_3[power], firePoint1.position, firePoint1.rotation);
+                    Instantiate(Bullet_3[power], firePoint2.position, firePoint2.rotation);
+
+                    SFXManager.Instance.ShootSound();
+
+                    break;
+
+
+                default:
+                    Debug.LogError("알 수 없는 무기 유형입니다.");
+                    return;
+            }
         }
     }
 
@@ -265,9 +321,30 @@ public class WeaponManager : MonoBehaviour
                 break;
 
             case weaponType.Laser:
-                
-                Instantiate(Skill_2, firePoint1.position, firePoint1.rotation);
-                //Instantiate(Skill_2, firePoint2.position, firePoint2.rotation);
+                isLaser = true;
+                laserTime = 4f;
+
+                // 레이저 1과 레이저 2 생성 후 클래스 변수에 할당
+                laser1 = Instantiate(Skill_2, firePoint1.position + (Vector3.up * 5.5f), firePoint1.rotation);
+                laser2 = Instantiate(Skill_2, firePoint2.position + (Vector3.up * 5.5f), firePoint2.rotation);
+                SFXManager.Instance.ShootSound();
+
+                // Laser 스크립트를 가져와서 설정
+                Laser laser1Script = laser1.GetComponent<Laser>();
+                Laser laser2Script = laser2.GetComponent<Laser>();
+
+                if (laser1Script != null)
+                {
+                    laser1Script.SetLaserIdentifier("laser1");
+                    laser1Script.firePoint1 = firePoint1;
+                }
+
+                if (laser2Script != null)
+                {
+                    laser2Script.SetLaserIdentifier("laser2");
+                    laser2Script.firePoint2 = firePoint2;
+                }
+
                 break;
 
             case weaponType.Bomb:
@@ -336,10 +413,13 @@ public class WeaponManager : MonoBehaviour
 
     void Update()
     {
-        // B키로 스킬 사용 
-        if (Input.GetKeyDown(KeyCode.B))
+        // 현재 씬이 "StageHidden"일 경우 B키로 스킬 사용 불가
+        if (SceneManager.GetActiveScene().name != "StageHidden")
         {
-            FireSkill();
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                FireSkill();
+            }
         }
 
         // 스페이스바로 기본 총알 발사
@@ -372,7 +452,6 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
-
         // Missile 스킬 처리
         if (isMissile)
         {
@@ -385,6 +464,7 @@ public class WeaponManager : MonoBehaviour
             {
                 Instantiate(Skill_1, firePoint1.position, firePoint1.rotation); // Missile 발사
                 Instantiate(Skill_1, firePoint2.position, firePoint2.rotation);
+                SFXManager.Instance.ShootSound();
                 missileTimer = missileCool; // 타이머 리셋
             }
 
@@ -403,6 +483,7 @@ public class WeaponManager : MonoBehaviour
             if (bombTimer <= 0f)
             {
                 Instantiate(Skill_3, firePoint3.position, firePoint3.rotation); // Missile 발사
+                SFXManager.Instance.ShootSound();
                 bombTimer = bombCool; // 타이머 리셋
             }
 
@@ -413,6 +494,23 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
+        if (isLaser)
+        {
+            // 지속 시간 감소
+            laserTime -= Time.deltaTime;
+
+            if (laserTime <= 0f)
+            {
+                // 레이저 스킬 종료
+                isLaser = false;
+
+                // 레이저 오브젝트 비활성화
+                Debug.Log("레이저 종료: " + laser1 + ", " + laser2); // 레이저가 올바르게 할당되었는지 확인
+
+                Destroy(laser1);
+                Destroy(laser2);
+            }
+        }
     }
 
 }

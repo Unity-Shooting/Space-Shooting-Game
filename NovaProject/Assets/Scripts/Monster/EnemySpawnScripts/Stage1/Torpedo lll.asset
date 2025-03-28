@@ -22,14 +22,16 @@ MonoBehaviour:
     item: 0
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
   - spawnTime: 1
     monster: {fileID: 4690555114328573488, guid: 1cc08a1e5fcb7754db69222049686854, type: 3}
     position: {x: -4.5, y: 2, z: 0}
     direction: {x: 2, y: -3}
     type: 0
-    item: 0
+    item: 1
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0
   - spawnTime: 1
     monster: {fileID: 4690555114328573488, guid: 1cc08a1e5fcb7754db69222049686854, type: 3}
     position: {x: 4.5, y: 2, z: 0}
@@ -38,3 +40,4 @@ MonoBehaviour:
     item: 0
     repeatCount: 0
     repeatInterval: 0
+    isLastMonster: 0

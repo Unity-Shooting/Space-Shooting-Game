@@ -41,6 +41,14 @@ public class PWRManager : MonoBehaviour
     void Start()
     {
         if (Run)
+            /*
+             * Run에 대한 설명
+             * Run은 게임이 실행되고 있을때, 스테이지가 진행 중이며 캐릭터가 GameOver가 되지 않을 때, Run은 true 상태이다.
+             * True 상태일땐, 클릭이 가능하며, Pause 버튼을 누를 수 있다.
+             * 단, GameOver가 되면 Run은 False 상태가 되며 무조건 Z키를 눌러서 메인메뉴로 이동해야하며, 이때 Pause 버튼 클릭이 안된다.
+             * Run이 false상태이기 때문!
+             * 한줄 요약 : 마우스 클릭 동작 True False
+             */
         {
             Debug.Log("Run : "+Run);
             Pause.GetComponent<Button>().onClick.AddListener(PauseAction);
@@ -119,8 +127,18 @@ public class PWRManager : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift ) && Pwr.fillAmount == 1f)   //실드 게이지 UI 갱신 10초 쿨타임
+            if (SceneManager.GetActiveScene().name == "StageHidden")
+            {
+            // 'StageHidden' 씬일 때 실행할 코드
+            Debug.Log("히든씬 입성 : ");
+            if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
+
+        }
+        else { 
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Pwr.fillAmount == 1f)   //실드 게이지 UI 갱신 10초 쿨타임
         {
             StartCoroutine(FillOverTime(duration));
         }
@@ -142,7 +160,7 @@ public class PWRManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
         if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
         if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
-
+        }
 
     }
 
@@ -158,9 +176,10 @@ public class PWRManager : MonoBehaviour
         HideAllImages();
 
         images[index - 1].gameObject.SetActive(true); //  인덱스 조정 (0부터 시작)
-        
+        Debug.Log("Index : "+index +" 번 이미지");
+
         //오류 로그로 인한 수정
-        
+
         /*HideAllImages(); // 모든 이미지를 비활성화
 
         switch (index)
