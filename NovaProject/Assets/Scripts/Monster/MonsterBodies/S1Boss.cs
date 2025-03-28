@@ -27,19 +27,19 @@ public class S1Boss : Monster
     [SerializeField] private GameObject Shield;
     private Animator animator;
 
-    [SerializeField] private SpawnTimelineSO WavePatternA; // 일정 주기로 가로로 지나가는 Fighter 편대 소환
-    [SerializeField] private SpawnTimelineSO WavePatternB; // 체력 50퍼 진입시 support 6마리 소환 바닥패턴
-    [SerializeField] private SpawnTimelineSO WavePatternC; // 체력 50퍼센트 이하 패턴, 일정 주기로 패턴 101의 Bomber 소환
+    [SerializeField] private SpawnTimelineSO WavePatternA; // 일정 주기로 보스위에 멈춰서 사격하는 S1Fighter 소환
 
-    private Coroutine PatternA; // 일정 주기로 spin 원형 뿌리기
-    private Coroutine PatternB; // 등장시 레이저 한번 쏘고 일정주기로 레이저 쏘기
-    private Coroutine PatternC; // 일정 주기로 가로로 지나가는 Fighter 편대 소환
-    private Coroutine PatternD; // 체력 50퍼센트 이하 패턴, 양쪽 날개에서 spin 3연발
-    private Coroutine PatternE; // 체력 50퍼센트 이하 패턴, 일정 주기로 패턴 101의 Bomber 소환
+    // 페이즈전환/사망시 코루틴 정지를 위한 변수
+    private Coroutine PatternA;  
+    private Coroutine PatternB;  
+    private Coroutine PatternC; 
+    private Coroutine PatternD; 
+    private Coroutine PatternE; 
 
 
     void Start()
     {
+        canBeDamaged = false;
         direction = Vector2.down;
         transform.position = new Vector2(0, 5);
         animator = GetComponent<Animator>();
@@ -374,7 +374,7 @@ public class S1Boss : Monster
         StopPhase2();
         Debug.Log("Enter Destruction Process");
         ScoreManager.instance.AddScore(Score);
-        Release();
+        Destroy(gameObject);
 
         // 파괴 애니메이션 재생
         var DE = PoolManager.instance.Get(DesturctionEffect);

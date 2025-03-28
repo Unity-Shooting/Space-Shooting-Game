@@ -8,21 +8,17 @@ public class S1Fighter : Monster
     Coroutine firesequence;
     private Animator ani;
 
-    //protected override void StartAfterInit()
-    //{
+    protected override void StartAfterInit()
+    {
 
-    //    firesequence = StartCoroutine(FireSequence());
-    //}
+        firesequence = StartCoroutine(FireSequence());
+    }
 
     private void Awake()
     {
         ani = GetComponent<Animator>();
     }
 
-    private void Start()  // 프리펩화 하기 전 하이어러키창에서 임시 테스트용
-    {
-        firesequence = StartCoroutine(FireSequence());
-    }
 
     IEnumerator FireSequence()
     {
