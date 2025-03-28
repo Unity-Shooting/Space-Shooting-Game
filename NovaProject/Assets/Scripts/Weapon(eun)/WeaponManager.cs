@@ -175,29 +175,31 @@ public class WeaponManager : MonoBehaviour
                     bulletScript1 = aBullet.GetComponent<PBullet>();
                     if (bulletScript1 != null)
                     {
-                        bulletScript1.isHoming = true; 
+                        bulletScript1.isHoming = true;
                     }
 
                     SFXManager.Instance.ShootSound();
                     break;
 
                 case weaponType.Laser:
+                    Zapper.SetTrigger("shoot");
                     GameObject bBullet = Instantiate(Bullet_B, firePoint3.position, firePoint3.rotation);
                     bulletScript1 = bBullet.GetComponent<PBullet>();
                     if (bulletScript1 != null)
                     {
-                        bulletScript1.isHoming = true; 
+                        bulletScript1.isHoming = true;
                     }
 
                     SFXManager.Instance.ShootSound();
                     break;
 
                 case weaponType.Bomb:
+                    Bomb.SetTrigger("shoot");
                     GameObject cBullet = Instantiate(Bullet_C, firePoint3.position, firePoint3.rotation);
                     bulletScript1 = cBullet.GetComponent<PBullet>();
                     if (bulletScript1 != null)
                     {
-                        bulletScript1.isHoming = true; 
+                        bulletScript1.isHoming = true;
                     }
 
                     SFXManager.Instance.ShootSound();
@@ -411,10 +413,13 @@ public class WeaponManager : MonoBehaviour
 
     void Update()
     {
-        // B키로 스킬 사용 
-        if (Input.GetKeyDown(KeyCode.B))
+        // 현재 씬이 "StageHidden"일 경우 B키로 스킬 사용 불가
+        if (SceneManager.GetActiveScene().name != "StageHidden")
         {
-            FireSkill();
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                FireSkill();
+            }
         }
 
         // 스페이스바로 기본 총알 발사

@@ -99,10 +99,4 @@ public class PBullet : MonoBehaviour
             }
         }
     }
-
-    // 애니메이션 이벤트에서 호출할 함수
-    public void OnAnimationEvent()
-    {
-        // 애니메이션 이벤트가 발생했을 때 처리할 코드 작성
-    }
 }
