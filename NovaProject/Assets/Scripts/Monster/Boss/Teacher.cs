@@ -92,16 +92,29 @@ public class Teacher : Monster
             }
             else if(count < 6)
             {
+                // TextBullet1 t2 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                // t2.transform.position = Launcher2.transform.position;
                 Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
+
+                // TextBullet1 t3 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                // t3.transform.position = Launcher3.transform.position;
                 Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(3f);
             }
             else{
+                // TextBullet1 t1 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                // t1.transform.position = Launcher.transform.position;
                 Instantiate(textBullet, Launcher.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
+
+                // TextBullet1 t2 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                // t2.transform.position = Launcher2.transform.position;
                 Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
+
+                // TextBullet1 t3 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                // t3.transform.position = Launcher3.transform.position;
                 Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(3f);
             }
