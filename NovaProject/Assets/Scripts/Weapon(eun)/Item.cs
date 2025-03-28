@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int attackIncrease = 5; // 아이템으로 증가하는 공격력
+    public enum ItemType
+    {
+        PowerUp,  // 파워업 아이템
+        Skill
+    }
+
+    public ItemType itemType; // 아이템 타입
 
     /*
      * 대현 작성  : 2025 - 03 - 25
@@ -18,14 +24,15 @@ public class Item : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Player와 충돌! 아이템 효과 발동!");
-            WeaponManager weaponManager = collision.GetComponent<WeaponManager>();
-            if (weaponManager != null)
+
+            // 파워업 아이템일 때만 업그레이드 호출
+            if (itemType == ItemType.PowerUp)
             {
-                weaponManager.UpgradeWeapon(); // 업그레이드 메서드 호출
-            }
-            else
-            {
-                Debug.LogError("WeaponManager를 찾을 수 없습니다. 플레이어에 WeaponManager가 붙어있는지 확인하세요.");
+                WeaponManager weaponManager = collision.GetComponent<WeaponManager>();
+                if (weaponManager != null)
+                {
+                    weaponManager.UpgradeWeapon(); // 업그레이드 메서드 호출
+                }
             }
 
             Destroy(gameObject); // 아이템 제거

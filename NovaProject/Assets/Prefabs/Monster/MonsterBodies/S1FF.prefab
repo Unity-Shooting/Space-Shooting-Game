@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
-  BaseHP: 100
+  BaseHP: 50
   BaseAttack: 10
   BaseMoveSpeed: 10
   BaseAttackSpeed: 2

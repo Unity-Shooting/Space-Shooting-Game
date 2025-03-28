@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  attack: 25
+  damage: 12
   effect: {fileID: 2829888147440334731, guid: ca8863541706d774ab0e986bd2ff79fd, type: 3}
   isHoming: 0
   homingSpeed: 4

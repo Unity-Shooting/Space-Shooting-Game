@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e348bc9531386d649ad70c341fc37798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackIncrease: 5
+  itemType: 1
   ItemVelocity: 200
   backgroundSize: {x: 10.2, y: 11.9}
 --- !u!114 &734612838519142353

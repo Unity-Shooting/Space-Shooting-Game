@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa276294b3028f46a38789e832c108a, type: 3}
+  m_Name: S1SC OO x 6
+  m_EditorClassIdentifier: 
+  memo: 
+  spawnEvents:
+  - spawnTime: 0
+    monster: {fileID: 3910489071011965360, guid: bea7d9c0b7b1e87489f9b093a5b233a7, type: 3}
+    position: {x: -4, y: 1, z: 0}
+    direction: {x: 1, y: 0}
+    type: 2
+    item: 0
+    repeatCount: 6
+    repeatInterval: 0.5
+  - spawnTime: 3
+    monster: {fileID: 3910489071011965360, guid: bea7d9c0b7b1e87489f9b093a5b233a7, type: 3}
+    position: {x: 4, y: 1, z: 0}
+    direction: {x: -1, y: 0}
+    type: 1
+    item: 0
+    repeatCount: 6
+    repeatInterval: 0.5

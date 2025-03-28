@@ -95,7 +95,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
 
 
 
-    void Die()
+    protected virtual void Die()
     {
         CancelInvoke("Shooting");
         ScoreManager.instance.AddScore(Score);
@@ -182,7 +182,13 @@ public abstract class Monster : MonoBehaviour, IDamageable
     protected virtual void FireBullet(Vector2 pos, Vector2 dir, int type)
     {
         IBulletInit bullet = PoolManager.instance.Get(Bullet).GetComponent<IBulletInit>();
-        bullet.Init(pos, dir, 0);
+        bullet.Init(pos, dir, type);
+    }
+
+    protected virtual void FireBullet(GameObject bul, Vector2 pos, Vector2 dir, int type)
+    {
+        IBulletInit bullet = PoolManager.instance.Get(bul).GetComponent<IBulletInit>();
+        bullet.Init(pos, dir, type);
     }
 
 

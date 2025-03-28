@@ -9,7 +9,7 @@ public class S1MbRay : MbBase
     [SerializeField] private SpriteRenderer Warning;
     [SerializeField] private SpriteRenderer Ray;
     [SerializeField] private GameObject Circle;
-    private MonsterSupport caster; // 레이저 지속시간 중에 시전몬스터 사망 체크
+    private S1Support caster; // 레이저 지속시간 중에 시전몬스터 사망 체크
                                    // int type가 1로 들어오면 caster에 관련된 처리를 하지 않음(보스가 시전한 광선임)
 
     bool isRayHit = false; // 레이저 여러대 맞는일을 막기위해 한번 히트하면 더이상 히트하지않게
@@ -21,7 +21,7 @@ public class S1MbRay : MbBase
     {
         // 본체와 위치 동기화
         // 시전자가 보스인 경우는 안함
-        if (type != 1)
+        if (type == 0)
             transform.position = caster.Launcher.transform.position;
     }
 
@@ -32,7 +32,7 @@ public class S1MbRay : MbBase
         isRayHit = false;
     }
 
-    public void Init(Vector2 pos, Vector2 dir, MonsterSupport caster)
+    public void Init(Vector2 pos, Vector2 dir, S1Support caster)
     {
         // 총알 범용 초기화 하고
         base.Init(pos, dir, 0);
@@ -49,7 +49,14 @@ public class S1MbRay : MbBase
     {
         base.Init(pos, dir, type);
 
-        StartCoroutine(LazerSequence());
+        if (type == 1) // type1은 캐스터 없이 일반 레이저 패턴
+        {
+            StartCoroutine(LazerSequence());
+        }
+        else if (type == 2) // type2는 보스전용 레이저패턴, warning 없이 바로 발사
+        {
+            StartCoroutine(InstantLaser());
+        }
     }
 
     IEnumerator LazerSequence()
@@ -96,6 +103,13 @@ public class S1MbRay : MbBase
         Release();
 
     }
+
+    IEnumerator InstantLaser()
+    {
+        yield return new WaitForSeconds(0.8f);
+        Release();
+    }
+
 
     protected override void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
     {
