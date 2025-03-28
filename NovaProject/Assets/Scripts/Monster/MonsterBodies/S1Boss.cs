@@ -119,16 +119,16 @@ public class S1Boss : Monster
 
     private void StartPhase2()
     {
-        PatternA = StartCoroutine(BossPatternA());
+        PatternB = StartCoroutine(BossPatternB());
         PatternD = StartCoroutine(BossPatternD());
         PatternE = StartCoroutine(BossPatternE());
     }
 
     private void StopPhase2()
     {
-        if (PatternA != null)
+        if(PatternB != null)
         {
-            StopCoroutine(PatternA);
+            StopCoroutine(PatternB);
         }
         if (PatternD != null)
         {
@@ -141,12 +141,12 @@ public class S1Boss : Monster
     }
 
     /// <summary>
-    /// 패턴A : 다수의 유도 Torpedo 발사
+    /// 패턴A : 4발의 유도 Torpedo 발사
     /// </summary>
     /// <returns></returns>
     IEnumerator BossPatternA()
     {
-        int bulletCount = 5; // 양쪽에서 발사하니까 2배나감
+        int bulletCount = 4; // 양쪽에서 발사하니까 2배나감
         float periodA = 4f;
         while (true)
         {
@@ -190,14 +190,14 @@ public class S1Boss : Monster
 
     /// <summary>
     /// 랜덤방향에서 화면 중앙 근처를 향해 화살표경고 후 레이저
-    /// 3연속 
+    /// 간격이 긴 2연사
     /// </summary>
     /// <returns></returns>
     IEnumerator BossPatternC()
     {
         float periodC = 6;
-        float interval = 0.5f;
-        int count = 3;
+        float interval = 1f;
+        int count = 2;
         while (true)
         {
             yield return new WaitForSeconds(periodC);
@@ -233,52 +233,123 @@ public class S1Boss : Monster
         yield return new WaitForSeconds(3.2f);
         S1MbRay ray = PoolManager.instance.Get(s1MbRay).GetComponent<S1MbRay>();
         ray.Init(pos, dir, 2);
-
-
-
     }
 
     IEnumerator BossMidPhasePattern()
     {
-        //폭발 이펙트 재생
-        var DE = PoolManager.instance.Get(DesturctionEffect);
-        DE.transform.position = transform.position;
-        DE.transform.rotation = transform.rotation;
-        DE.SetActive(true);
+
         yield return new WaitForSeconds(1);
 
         //쉴드 효과 켜기
         Shield.SetActive(true);
 
         yield return new WaitForSeconds(3);
-        yield return StartCoroutine(SpawnManager.Instance.SpawnWave(WavePatternB));
-        for (int i = 0; i < 7; i++)
-        {
 
-            yield return new WaitForSeconds(1);
-        }
+        yield return StartCoroutine(MidPhase());
+        
         yield return new WaitForSeconds(2);
         // 실드 효과 끄기
         Shield.SetActive(false);
     }
 
     /// <summary>
-    /// 패턴D : 체력 50퍼 이하 패턴, 양쪽 날개에서 spin 3연발
+    /// 중간페이즈 무적 패턴
+    /// 레이저 아무튼 많이 날림 
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator MidPhase()
+    {
+        yield return new WaitForSeconds(1);
+
+        //함수로 분리해도 하드코딩 하는건 똑같을 것 같아서 나누지 않음
+        float intervalBurst = 1.5f;
+        float intervalLaser = 0.1f;
+
+        //1차 공격
+        StartCoroutine(ArrowLaser(new Vector2(-4.91f, 5.57f), new Vector2(0.728f, -0.685f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-2.57f, 6.09f), new Vector2(0.253f, -0.967f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(4.89f, 5.2f), new Vector2(-0.558f, -0.829f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-5.24f, -4.33f), new Vector2(0.906f, 0.422f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-5.85f, -0.98f), new Vector2(0.994f, -0.105f)));
+
+        yield return new WaitForSeconds(intervalBurst);
+        //2차 공격
+        StartCoroutine(ArrowLaser(new Vector2(5.08f, 1.86f), new Vector2(-0.524f, -0.851f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-4.85f, 2.26f), new Vector2(0.746f, -0.665f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-5.28f, -3.29f), new Vector2(0.915f, 0.401f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(1.85f, -6.12f), new Vector2(-0.106f, 0.994f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-3.72f, 5.84f), new Vector2(0.646f, -0.763f)));
+
+        yield return new WaitForSeconds(intervalBurst);
+        //3차 공격
+        StartCoroutine(ArrowLaser(new Vector2(4.04f, -5.58f), new Vector2(-0.928f, 0.370f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-5.68f, 6.8f), new Vector2(0.466f, -0.884f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-5.36f, -6.03f), new Vector2(0.884f, 0.466f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(6.24f, 2.05f), new Vector2(-0.949f, -0.313f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-3.32f, -5.47f), new Vector2(0.313f, 0.949f)));
+        yield return new WaitForSeconds(intervalLaser);
+        StartCoroutine(ArrowLaser(new Vector2(-1.41f, 6.41f), new Vector2(0.300f, -0.953f)));
+
+        yield return new WaitForSeconds(2);
+    }
+
+    /// <summary>
+    /// 패턴D : 체력 50퍼 이하 패턴, 패턴A보다 더 많은 로켓
     /// </summary>
     /// <returns></returns>
     IEnumerator BossPatternD()
     {
-        yield return null;
+        int bulletCount = 7; // 양쪽에서 발사하니까 2배나감
+        float periodA = 4f;
+        while (true)
+        {
+            yield return new WaitForSeconds(periodA);
+            // 양쪽으로 펼쳐지는 유도미사일 탄막
+            Vector2 dirDownLeft = new Vector2(-0.5f, -1).normalized;
+            float spreadTotal = 70f;
+            float spreadAngle = spreadTotal / (bulletCount - 1);
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float fireAngle = -spreadTotal + spreadAngle * i;
+                Vector2 fireDir = Quaternion.Euler(0, 0, fireAngle) * dirDownLeft;
+                FireBullet(s1MbTorpedo, Launcher2.transform.position, fireDir, 1);
+                FireBullet(s1MbTorpedo, Launcher3.transform.position, FlipX(fireDir), 1);
+            }
+
+        }
     }
 
 
     /// <summary>
-    /// 패턴E : 체력 50퍼 이하 패턴, 일정 주기로 패턴 101의 Bomber 소환
+    /// 패턴E : 체력 50퍼 이하 패턴, 패턴 C보다 짧은간격의 4연사 레이저
     /// </summary>
     /// <returns></returns>
     IEnumerator BossPatternE()
     {
-        yield return null;
+        float periodC = 6;
+        float interval = 0.5f;
+        int count = 4;
+        while (true)
+        {
+            yield return new WaitForSeconds(periodC);
+            for (int i = 0; i < count; i++)
+            {
+                yield return new WaitForSeconds(interval);
+                RandomArrowLaseer();
+            }
+        }
     }
 
 
@@ -310,6 +381,8 @@ public class S1Boss : Monster
         DE.transform.position = transform.position;
         DE.transform.rotation = transform.rotation;
         DE.SetActive(true);
+
+        // 다음 스태이지로 넘어가기
     }
 
     private Vector2 FlipX(Vector2 vector)
