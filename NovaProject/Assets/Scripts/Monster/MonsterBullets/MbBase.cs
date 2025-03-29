@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
     public Vector2 direction { get; protected set; }
     public int Attack { get; protected set; }
     public float MoveSpeed { get; protected set; }
+
+    private float relaseTimerInvisible = 2f;
+    Coroutine releaseTimer;
 
     [SerializeField] protected int BaseAttack;
     [SerializeField] protected float BaseMoveSpeed;
@@ -42,6 +46,15 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
         }
     }
 
+    /// <summary>
+    /// 시야에서 나갔을 때 호출, 일정시간 뒤에 Release()를 호출
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator RelaseAfterTimer()
+    {
+        yield return new WaitForSeconds(relaseTimerInvisible);
+        Release();
+    }
     protected virtual void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
     {
 
@@ -53,9 +66,23 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
 
     }
 
+    /// <summary>
+    /// 시야 밖으로 나가면 2초 뒤에 release하는 코루틴 호출
+    /// </summary>
     protected virtual void OnBecameInvisible()
     {
-        Release();
+        releaseTimer = StartCoroutine(RelaseAfterTimer());
+    }
+
+    /// <summary>
+    /// 다시 시야에 들어오면 2초 뒤에 release하는 코루틴 중지
+    /// </summary>
+    protected virtual void OnBecameVisible()
+    {
+        if (releaseTimer != null)
+        {
+            StopCoroutine(releaseTimer);
+        }
     }
 
     protected void RotateToDirection()
