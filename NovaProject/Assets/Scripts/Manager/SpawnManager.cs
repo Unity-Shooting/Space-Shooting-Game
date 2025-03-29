@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 몬스터 한 개체의 실행에 관한 정보, 반복도 가능함!
@@ -154,8 +155,19 @@ public class SpawnManager : Singleton<SpawnManager>
 
     IEnumerator SpawnBoss()
     {
-        yield return new WaitForSeconds(5f);
-        Instantiate(boss, new Vector2(0, 5), Quaternion.identity);
+        if (SceneManager.GetActiveScene().name == "StageOne")
+        {
+            yield return new WaitForSeconds(5f);
+            yield return GameManager.Instance.StartCoroutine(GameManager.Instance.ShowBossWarning());
+            Instantiate(boss[0], new Vector2(0, 5), Quaternion.identity);
+        }
+
+        if (SceneManager.GetActiveScene().name == "StageTwo")
+        {
+            yield return new WaitForSeconds(5f);
+            yield return GameManager.Instance.StartCoroutine(GameManager.Instance.ShowBossWarning());
+            Instantiate(boss[1], new Vector2(0, 5), Quaternion.identity);
+        }
 
     }
 
