@@ -62,13 +62,13 @@ public class ScoreManager : MonoBehaviour
     {
         Debug.Log("따봉 +1 : ");
         TtabongScore += amount;
-        HiddenTtabongUpdateScore();
+        if(TtabongScore <= 99)HiddenTtabongUpdateScore();
     }
         public void AddHeartScore(int amount)
     {
         Debug.Log("하트 +1 : ");
         HeartScore += amount;
-        HiddenHeartUpdateScore();
+        if(HeartScore <= 99) HiddenHeartUpdateScore();
     }
 
     //TestScore()는 말 그대로 테스트용

@@ -131,6 +131,10 @@ public class PWRManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "StageHidden")
             {
+            if (Input.GetKeyDown(KeyCode.LeftShift) && Pwr.fillAmount == 1f)   //실드 게이지 UI 갱신 10초 쿨타임
+            {
+                StartCoroutine(FillOverTime(duration));
+            }
             // 'StageHidden' 씬일 때 실행할 코드
             if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
             if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
