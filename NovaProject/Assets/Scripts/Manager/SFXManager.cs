@@ -5,6 +5,7 @@ public class SFXManager : Singleton<SFXManager>
     private AudioSource audioSource;
     public AudioClip damageSound;
     public AudioClip shootSound;
+    public AudioClip clearSound;
 
     void Start()
     {
@@ -19,5 +20,10 @@ public class SFXManager : Singleton<SFXManager>
     public void ShootSound()
     {
         audioSource.PlayOneShot(shootSound);
+    }
+
+    public void ClearSound()
+    {
+        audioSource.PlayOneShot(clearSound);
     }
 }
