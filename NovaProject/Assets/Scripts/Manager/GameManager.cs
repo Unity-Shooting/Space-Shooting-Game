@@ -110,8 +110,21 @@ public class GameManager : Singleton<GameManager>
         */
     private void StartGame()
     {
+        Debug.LogWarning("StartGame called");
         if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Game Start!");
         BGMManager.Instance.PlayBGM1();
+        if (SceneManager.GetActiveScene().name == "StageOne")
+        {
+            Debug.LogWarning("StageOne");
+            SpawnManager.Instance.StartStage(1);
+        }
+
+        if (SceneManager.GetActiveScene().name == "StageTwo")
+        {
+            Debug.LogWarning("StageTwo");
+            SpawnManager.Instance.StartStage(2);
+        }
+
     }
 
     /// <summary>
@@ -125,7 +138,7 @@ public class GameManager : Singleton<GameManager>
 
         // DestroyAllPersistentObjects();
         SceneManager.LoadScene("StageTwo");
-
+        StartCoroutine(ShowGameStart());
     }
 
     private void ClearStageTwoGame()
