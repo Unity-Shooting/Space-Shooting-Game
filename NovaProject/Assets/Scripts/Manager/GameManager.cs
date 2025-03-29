@@ -78,6 +78,9 @@ public class GameManager : Singleton<GameManager>
 
         StartCoroutine(ShowGameStart());
 
+        //테스트
+        //if(SceneManager.GetActiveScene().name == "StageOne") StartCoroutine(ShowClearStageOneStart());
+
 
         // if(StageOne 보스를 잡았을 경우, 불값 가져오기)
         // {StartCoroutine(ShowClearStageOneStart());}
@@ -131,6 +134,8 @@ public class GameManager : Singleton<GameManager>
     private void ClearStageHiddenGame()
     {
 
+        DestroyAllPersistentObjects();
+        SceneManager.LoadScene("MainMenu");
     }
 
 
@@ -157,7 +162,7 @@ public class GameManager : Singleton<GameManager>
     /// Clear 이미지를 페이드 인/아웃하며 보여주고 2초 후 다음 스테이지로 이동 ** 2025 - 03 -27 **
     /// </summary>
     /// 
-    IEnumerator ShowClearStageOneStart()
+    public IEnumerator ShowClearStageOneStart()
     {
         if (gameStartCanvasGroup != null)
         {
@@ -171,7 +176,7 @@ public class GameManager : Singleton<GameManager>
 
         ClearStageOneGame();
     }
-    IEnumerator ShowClearStageTwoStart()
+    public IEnumerator ShowClearStageTwoStart()
     {
         if (gameStartCanvasGroup != null)
         {
@@ -185,7 +190,7 @@ public class GameManager : Singleton<GameManager>
 
         ClearStageOneGame();
     }
-    IEnumerator ShowClearStageHiddenStart()
+    public IEnumerator ShowClearStageHiddenStart()
     {
         if (gameStartCanvasGroup != null)
         {

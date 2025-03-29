@@ -130,7 +130,6 @@ public class PWRManager : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "StageHidden")
             {
             // 'StageHidden' 씬일 때 실행할 코드
-            Debug.Log("히든씬 입성 : ");
             if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
             if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
             if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
