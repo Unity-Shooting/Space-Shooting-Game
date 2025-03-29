@@ -17,17 +17,21 @@ public class SFXManager : Singleton<SFXManager>
 
     public void PlayDamageSound()
     {
-        audioSource.PlayOneShot(damageSound);
+        audioMixer.SetFloat("SFX", Mathf.Log10(0.1f) * 20);
+        audioSource.clip = damageSound;
+        audioSource.Play();
     }
 
     public void ShootSound()
     {
-        audioSource.PlayOneShot(shootSound);
+        audioMixer.SetFloat("SFX", Mathf.Log10(0.08f) * 20);
+        audioSource.clip = shootSound;
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     public void ClearSound()
     {
-        audioMixer.SetFloat("SFX", Mathf.Log10(1f) * 20);
+        audioMixer.SetFloat("SFX", Mathf.Log10(1.8f) * 20);
         audioSource.clip = clearSound;
         audioSource.Play();
     }
