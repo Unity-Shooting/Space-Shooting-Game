@@ -198,7 +198,7 @@ MonoBehaviour:
   BaseAttackStart: 0
   Bullet: {fileID: 7359008953394021154, guid: f1caefe39dab1e043bcf77f5f5dc559d, type: 3}
   Score: 0
-  DesturctionEffect: {fileID: 7187877516230541534, guid: 0c616e21cb1acbd46a7ae6baa10ee0d3, type: 3}
+  DesturctionEffect: {fileID: 896013405828642909, guid: fa696cdcbaff96a4e99ee15ed38042d7, type: 3}
   stopDelay: 1
   stopDuration: 3
   aWarning: {fileID: 6752820664922566425, guid: 5506f021757856e458f10051cb17f930, type: 3}

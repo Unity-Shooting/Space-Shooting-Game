@@ -21,7 +21,9 @@ public class Teacher : Monster
     [SerializeField] private GameObject lionBullet; // 멋사 총알
     [SerializeField] private GameObject textBullet; // 텍스트 총알
 
-
+    private int check = 0; //체크
+    private int thumbsup =0; //따봉
+    private int heart = 0; //하트
 
 
     // 페이즈전환/사망시 코루틴 정지를 위한 변수
@@ -35,7 +37,6 @@ public class Teacher : Monster
         direction = Vector2.zero;
         transform.position = new Vector2(0, 2.7f);
 
-        // 검은 실루엣이 서서히 강사님으로 바뀌는 효과
 
         //페이즈 시작
         StartCoroutine(StartPhase());
@@ -46,6 +47,8 @@ public class Teacher : Monster
     /// </summary>
     IEnumerator StartPhase()
     {
+        // 검은 실루엣이 서서히 강사님으로 바뀌는 효과
+
         yield return StartCoroutine(UncoverVeil());
         canBeDamaged = true;
         direction = Vector2.left;
@@ -140,6 +143,8 @@ public class Teacher : Monster
         Destroy(gameObject);
 
         // 엔딩!
+        GameManager.Instance.StartCoroutine(GameManager.Instance.ShowClearStageHiddenStart()); // StageHidden Clear
+
     }
 
     /// <summary>
@@ -215,14 +220,32 @@ public class Teacher : Monster
 
     public override void TakeDamage(int damage)
     {
-        switch (damage)
+        Debug.Log(damage);
+        if (canBeDamaged)
         {
-            case 101: //체크
-                break;
-            case 102: //따봉
-                break;
-            case 103: //하트
-                break;
+            switch (damage)
+            {
+                case 101: //체크
+                    ScoreManager.instance.AddCheckScore(1);  //체크 스코어 1점 추가
+                    check++;
+                    Debug.Log(check);
+                    if (check > 80) // 체크 80되면 클리어
+                    {
+                        Die();
+                    }
+
+                    break;
+                case 102: //따봉
+                    ScoreManager.instance.AddTtabongScore(1);  //따봉 스코어 1점 추가
+                    thumbsup++;
+                    Debug.Log($"따봉 : {thumbsup}");
+                    break;
+                case 103: //하트
+                    ScoreManager.instance.AddHeartScore(1);  //하트 스코어 1점 추가
+                    heart++;
+                    Debug.Log($"하트 : {heart}");
+                    break;
+            }
         }
     }
 }

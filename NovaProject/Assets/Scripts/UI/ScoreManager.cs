@@ -29,7 +29,6 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-
 /*
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -42,8 +41,8 @@ public class ScoreManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             AddHeartScore(1);
-        }*/
-
+        }
+*/
     }
 
     public void AddScore(int amount)
@@ -54,19 +53,22 @@ public class ScoreManager : MonoBehaviour
 
     public void AddCheckScore(int amount)
     {
+        Debug.Log("체크 + 1 : ");
         CheckScore += amount;
         HiddenCheckUpdateScore();
     }
 
     public void AddTtabongScore(int amount)
     {
+        Debug.Log("따봉 +1 : ");
         TtabongScore += amount;
-        HiddenTtabongUpdateScore();
+        if(TtabongScore <= 99)HiddenTtabongUpdateScore();
     }
         public void AddHeartScore(int amount)
     {
+        Debug.Log("하트 +1 : ");
         HeartScore += amount;
-        HiddenHeartUpdateScore();
+        if(HeartScore <= 99) HiddenHeartUpdateScore();
     }
 
     //TestScore()는 말 그대로 테스트용

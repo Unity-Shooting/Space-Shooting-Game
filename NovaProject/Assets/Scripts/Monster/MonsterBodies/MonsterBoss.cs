@@ -313,5 +313,8 @@ public class MonsterBoss : Monster
         DE.transform.position = transform.position;
         DE.transform.rotation = transform.rotation;
         DE.SetActive(true);
+
+        GameManager.Instance.StartCoroutine(GameManager.Instance.ShowClearStageOneStart()); // StageOne Clear
+
     }
 }

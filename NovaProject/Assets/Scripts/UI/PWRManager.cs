@@ -40,7 +40,8 @@ public class PWRManager : MonoBehaviour
 
     void Start()
     {
-        if (Run)
+
+            if (Run)
             /*
              * Run에 대한 설명
              * Run은 게임이 실행되고 있을때, 스테이지가 진행 중이며 캐릭터가 GameOver가 되지 않을 때, Run은 true 상태이다.
@@ -127,10 +128,14 @@ public class PWRManager : MonoBehaviour
 
     void Update()
     {
-            if (SceneManager.GetActiveScene().name == "StageHidden")
+
+        if (SceneManager.GetActiveScene().name == "StageHidden")
             {
+            if (Input.GetKeyDown(KeyCode.LeftShift) && Pwr.fillAmount == 1f)   //실드 게이지 UI 갱신 10초 쿨타임
+            {
+                StartCoroutine(FillOverTime(duration));
+            }
             // 'StageHidden' 씬일 때 실행할 코드
-            Debug.Log("히든씬 입성 : ");
             if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
             if (Input.GetKeyDown(KeyCode.Alpha2)) ShowImage(2);
             if (Input.GetKeyDown(KeyCode.Alpha3)) ShowImage(3);
