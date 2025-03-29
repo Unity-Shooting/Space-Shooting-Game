@@ -85,37 +85,37 @@ public class Teacher : Monster
             if(count < 3)
             {
                 // 오브젝트풀 사용 시 애니메이션? 관련 초기화가 안되는 문제가 있어서 일단 임시로 Destroy로 삭제하는걸로 하기로
-                // TextBullet1 t1 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
-                // t1.transform.position = Launcher.transform.position;
-                Instantiate(textBullet, Launcher.transform.position, Quaternion.identity); // 텍스트 총알을 플레이어 방향으로 발사
+                TextBullet1 t1 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                t1.transform.position = Launcher.transform.position;
+                // Instantiate(textBullet, Launcher.transform.position, Quaternion.identity); // 텍스트 총알을 플레이어 방향으로 발사
                 yield return new WaitForSeconds(3f);
             }
             else if(count < 6)
             {
-                // TextBullet1 t2 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
-                // t2.transform.position = Launcher2.transform.position;
-                Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
+                TextBullet1 t2 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                t2.transform.position = Launcher2.transform.position;
+                // Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
 
-                // TextBullet1 t3 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
-                // t3.transform.position = Launcher3.transform.position;
-                Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
+                TextBullet1 t3 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                t3.transform.position = Launcher3.transform.position;
+                // Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(3f);
             }
             else{
-                // TextBullet1 t1 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
-                // t1.transform.position = Launcher.transform.position;
-                Instantiate(textBullet, Launcher.transform.position, Quaternion.identity);
+                TextBullet1 t1 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                t1.transform.position = Launcher.transform.position;
+                // Instantiate(textBullet, Launcher.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
 
-                // TextBullet1 t2 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
-                // t2.transform.position = Launcher2.transform.position;
-                Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
+                TextBullet1 t2 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                t2.transform.position = Launcher2.transform.position;
+                // Instantiate(textBullet, Launcher2.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
 
-                // TextBullet1 t3 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
-                // t3.transform.position = Launcher3.transform.position;
-                Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
+                TextBullet1 t3 = PoolManager.instance.Get(textBullet).GetComponent<TextBullet1>();
+                t3.transform.position = Launcher3.transform.position;
+                // Instantiate(textBullet, Launcher3.transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(3f);
             }
             count++;

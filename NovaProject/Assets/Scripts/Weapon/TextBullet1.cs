@@ -21,6 +21,7 @@ public class TextBullet1 : MonoBehaviour
     public TMP_Text text;
 
     private bool isShoot = false;
+    protected bool isReleased = false; // 중복반환 방지용 플래그
 
     private string[] strs = {
         "10분 쉬었다할게요", "체크해주세요~", "점심 맛있게 드세요~", "벌써 50분이야?", 
@@ -31,8 +32,10 @@ public class TextBullet1 : MonoBehaviour
         "어제 실행됐는데 왜 지금 안되지?"
     };
 
-    void Start()
+    void OnEnable()
     {
+        isReleased = false;
+
         int randNum = Random.Range(0, strs.Length);
         // if(GameManager.Instance.logOn) Debug.Log($"{TAG} randNum: {randNum}");
         text.text = strs[randNum];
@@ -62,24 +65,32 @@ public class TextBullet1 : MonoBehaviour
     {
         isShoot = true;
     }
+
+    protected virtual void Release() // 오브젝트 풀로 리턴 
+    {
+        if (!isReleased)
+        {
+            isReleased = true;
+            isShoot = false;
+            // Destroy(gameObject);
+            PoolManager.instance.Return(gameObject);
+        }
+    }
+
     
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            isShoot = false;
             // Debug.Log($"{TAG} OnTriggerEnter2D Player");
             PlayerHealth.Instance.TakeDamage((int)damage);
-            Destroy(gameObject);
-            // PoolManager.instance.Return(gameObject);
+            Release();
         }
     }
 
     protected virtual void OnBecameInvisible()
     {
-        isShoot = false;
-        Destroy(gameObject);
-        // PoolManager.instance.Return(gameObject);
+        Release();
     }
 
 }
