@@ -1165,10 +1165,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469159045389534343, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: Check
+      objectReference: {fileID: 0}
     - target: {fileID: 636762715820757265, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_Name
       value: HiddenCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2644410265067629617, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: CheckScore_One
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849812328685487644, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: CheckScore_Two
+      objectReference: {fileID: 0}
     - target: {fileID: 3059534176321554324, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1217,14 +1229,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3641490829670893800, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3641490829670893800, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b9369fe55710a0b4994f0372fb591cf9, type: 3}
     - target: {fileID: 3727254039843114222, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1321,6 +1325,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5966448679707338814, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: HeartScore_Two
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309931945297404696, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: TtabongScore_Two
+      objectReference: {fileID: 0}
     - target: {fileID: 6332551478254032368, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1336,6 +1348,10 @@ PrefabInstance:
     - target: {fileID: 6332551478254032368, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372972018925057873, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: Ttabong
       objectReference: {fileID: 0}
     - target: {fileID: 6392059951322580678, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1353,6 +1369,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6505827293099645198, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: Heart
+      objectReference: {fileID: 0}
     - target: {fileID: 7764952342393872395, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1369,17 +1389,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7924224217235088252, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7924224217235088252, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7924224217235088252, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+    - target: {fileID: 7918699438311989120, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: HeartScore_One
       objectReference: {fileID: 0}
     - target: {fileID: 8702704500680208314, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1396,6 +1408,10 @@ PrefabInstance:
     - target: {fileID: 8702704500680208314, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751711764648860648, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Name
+      value: TtabongScore_One
       objectReference: {fileID: 0}
     - target: {fileID: 9086552000908245346, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchorMax.y
