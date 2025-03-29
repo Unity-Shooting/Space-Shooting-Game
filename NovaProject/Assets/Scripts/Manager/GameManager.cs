@@ -112,17 +112,24 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.LogWarning("StartGame called");
         if (GameManager.Instance.logOn) Debug.Log($"[{TAG}] Game Start!");
-        BGMManager.Instance.PlayBGM1();
         if (SceneManager.GetActiveScene().name == "StageOne")
         {
             Debug.LogWarning("StageOne");
             SpawnManager.Instance.StartStage(1);
+            BGMManager.Instance.PlayBGM1(); //Stage1 BGM 재생
         }
 
         if (SceneManager.GetActiveScene().name == "StageTwo")
         {
             Debug.LogWarning("StageTwo");
             SpawnManager.Instance.StartStage(2);
+            BGMManager.Instance.PlayBGMStage2(); //Stage2 BGM 재생
+        }
+
+        if (SceneManager.GetActiveScene().name == "StageHidden")
+        {
+            Debug.LogWarning("StageHidden");
+            BGMManager.Instance.PlayBGMHidden(); // BGM 재생
         }
 
     }

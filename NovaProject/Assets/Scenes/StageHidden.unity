@@ -923,6 +923,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM1: {fileID: 8300000, guid: 801d87b278331e94cb38f4ece14cd68d, type: 3}
   BGM2: {fileID: 8300000, guid: 53f13d9769319974fb76ccf8f050d50c, type: 3}
+  BGMStage2: {fileID: 8300000, guid: 385fd4a6f28564f52a21dd23644739e4, type: 3}
+  BGMHidden: {fileID: 8300000, guid: 3fff245aa46844844ad4a672702e96a9, type: 3}
   audioMixer: {fileID: 24100000, guid: 10035a2272fa2024bb7b83910d6af06b, type: 2}
 --- !u!1001 &1320732361
 PrefabInstance:
