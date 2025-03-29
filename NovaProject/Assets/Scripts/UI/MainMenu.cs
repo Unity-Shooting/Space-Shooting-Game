@@ -47,6 +47,8 @@ public class MainMenu : MonoBehaviour
         HowToPlayCancel.GetComponent<Button>().onClick.AddListener(OnHowToPlayCancelClick);
         CreditCancel.GetComponent<Button>().onClick.AddListener(OnCreditCancelClick);
 
+
+
     }
 
     void OnStartButtonClick()

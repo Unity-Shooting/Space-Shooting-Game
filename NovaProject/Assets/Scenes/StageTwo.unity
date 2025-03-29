@@ -655,7 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartCanvasGroup: {fileID: 1450416488}
   gameOverCanvasGroup: {fileID: 1450416487}
-  clearCanvasGroup: {fileID: 0}
+  clearCanvasGroup: {fileID: 1450416489}
   gameOverTextCanvasGroup: {fileID: 1450416486}
   fadeDuration: 0.5
   gameOverTextFadeDuration: 1
@@ -1850,6 +1850,11 @@ CanvasGroup:
 --- !u!225 &1450416488 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 3162128647683160452, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
+  m_PrefabInstance: {fileID: 1450416485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1450416489 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 2575010249633315409, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
   m_PrefabInstance: {fileID: 1450416485}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1517357871
