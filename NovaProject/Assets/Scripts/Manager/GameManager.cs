@@ -188,7 +188,7 @@ public class GameManager : Singleton<GameManager>
             yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 1f, 0f)); // 서서히 사라짐
         }
 
-        ClearStageOneGame();
+        ClearStageTwoGame();
     }
     public IEnumerator ShowClearStageHiddenStart()
     {
@@ -202,7 +202,7 @@ public class GameManager : Singleton<GameManager>
             yield return StartCoroutine(FadeCanvasGroup(clearCanvasGroup, 1f, 0f)); // 서서히 사라짐
         }
 
-        ClearStageOneGame();
+        ClearStageHiddenGame();
     }
 
 

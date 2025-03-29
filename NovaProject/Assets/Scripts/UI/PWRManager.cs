@@ -40,7 +40,8 @@ public class PWRManager : MonoBehaviour
 
     void Start()
     {
-        if (Run)
+
+            if (Run)
             /*
              * Run에 대한 설명
              * Run은 게임이 실행되고 있을때, 스테이지가 진행 중이며 캐릭터가 GameOver가 되지 않을 때, Run은 true 상태이다.
@@ -127,7 +128,8 @@ public class PWRManager : MonoBehaviour
 
     void Update()
     {
-            if (SceneManager.GetActiveScene().name == "StageHidden")
+
+        if (SceneManager.GetActiveScene().name == "StageHidden")
             {
             // 'StageHidden' 씬일 때 실행할 코드
             if (Input.GetKeyDown(KeyCode.Alpha1)) ShowImage(1);
