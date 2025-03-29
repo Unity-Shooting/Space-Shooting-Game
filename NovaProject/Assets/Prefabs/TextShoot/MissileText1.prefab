@@ -59,7 +59,6 @@ MonoBehaviour:
   speed: 7
   damage: 5
   text: {fileID: 4334282895903150044}
-  strs: []
 --- !u!23 &4921320749583943306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -125,7 +124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "10\uBD84 \uC26C\uC5C8\uB2E4\uD560\uAC8C\uC694"
+  m_text: "\uC5B4\uC81C \uC2E4\uD589\uB410\uB294\uB370 \uC65C \uC9C0\uAE08 \uC548\uB418\uC9C0?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a436f52f0117452dbe0954379cbf202, type: 2}
   m_sharedMaterial: {fileID: 2049756338860617966, guid: 6a436f52f0117452dbe0954379cbf202, type: 2}
@@ -190,7 +189,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.013007641, y: 0.5731096, z: 0.021003485, w: 0.6105627}
+  m_margin: {x: -0.5829344, y: 0.5731096, z: -0.69631815, w: 0.6105627}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
