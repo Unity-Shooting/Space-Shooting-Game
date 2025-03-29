@@ -59,7 +59,7 @@ public class WaveData
 /// </summary>
 public class SpawnManager : Singleton<SpawnManager>
 {
-    [SerializeField] private GameObject boss;
+    [SerializeField] private GameObject[] boss;
     [SerializeField] private StageWaveSO[] stage;  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
 
     [Header("아이템 프리펩")]
@@ -75,14 +75,14 @@ public class SpawnManager : Singleton<SpawnManager>
     /// 해당 스테이지의 스폰을 시작
     /// </summary>
     /// <param name="i"></param>
-    void StartStage(int index)
+    public void StartStage(int index)
     {
-        if(index <= 0|| index >= stage.Length)
+        if(index <= 0|| index > stage.Length)
         {
             Debug.LogError("해당 스테이지가 없습니다");
             return;
         }
-        StartCoroutine(WaveStarter(stage[index].waves));
+        StartCoroutine(WaveStarter(stage[index-1].waves));
     }
 
     /// <summary>
