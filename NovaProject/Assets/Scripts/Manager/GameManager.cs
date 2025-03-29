@@ -119,7 +119,7 @@ public class GameManager : Singleton<GameManager>
     private void ClearStageOneGame()
     {
 
-        DestroyAllPersistentObjects();
+        // DestroyAllPersistentObjects();
         SceneManager.LoadScene("StageTwo");
     }
 
