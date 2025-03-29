@@ -129,12 +129,6 @@ public class PWRManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Debug.Log("I키 누르는중 : ");
-            ScoreManager.instance.AddCheckScore(1);
-        }
-
         if (SceneManager.GetActiveScene().name == "StageHidden")
             {
             // 'StageHidden' 씬일 때 실행할 코드
