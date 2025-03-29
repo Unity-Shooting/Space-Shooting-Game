@@ -777,6 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageSound: {fileID: 8300000, guid: 47ea69578b520c94cb9ccd494c620a41, type: 3}
   shootSound: {fileID: 8300000, guid: e8675d8c311ef2846bda131556f334fe, type: 3}
+  clearSound: {fileID: 8300000, guid: 5e2a347a65a033a4483256e8608a89dd, type: 3}
 --- !u!1 &1093102811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartCanvasGroup: {fileID: 1643198905}
   gameOverCanvasGroup: {fileID: 1643198903}
+  bossWarningCanvasGroup: {fileID: 0}
   clearCanvasGroup: {fileID: 1643198904}
   gameOverTextCanvasGroup: {fileID: 1643198902}
   fadeDuration: 0.5

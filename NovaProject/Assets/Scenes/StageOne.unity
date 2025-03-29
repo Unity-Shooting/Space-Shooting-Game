@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageSound: {fileID: 8300000, guid: 47ea69578b520c94cb9ccd494c620a41, type: 3}
   shootSound: {fileID: 8300000, guid: e8675d8c311ef2846bda131556f334fe, type: 3}
-  clearSound: {fileID: 0}
+  clearSound: {fileID: 8300000, guid: 5e2a347a65a033a4483256e8608a89dd, type: 3}
 --- !u!1 &190849565
 GameObject:
   m_ObjectHideFlags: 0
