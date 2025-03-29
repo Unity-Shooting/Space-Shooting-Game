@@ -621,9 +621,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 2545779934182465545, guid: 04d4d7c6a54804533b4d6c34980e692e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7433963, g: 0.72235674, b: 0.72235674, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1217,6 +1217,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3641490829670893800, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641490829670893800, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b9369fe55710a0b4994f0372fb591cf9, type: 3}
     - target: {fileID: 3727254039843114222, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1360,6 +1368,18 @@ PrefabInstance:
     - target: {fileID: 7764952342393872395, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924224217235088252, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924224217235088252, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924224217235088252, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8702704500680208314, guid: 7828bab24f5fcd548b2ee93f630577f8, type: 3}
       propertyPath: m_AnchorMax.y
