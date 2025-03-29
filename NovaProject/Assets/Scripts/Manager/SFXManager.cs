@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SFXManager : Singleton<SFXManager>
 {
@@ -6,6 +7,8 @@ public class SFXManager : Singleton<SFXManager>
     public AudioClip damageSound;
     public AudioClip shootSound;
     public AudioClip clearSound;
+    public AudioMixer audioMixer;
+
 
     void Start()
     {
@@ -24,6 +27,8 @@ public class SFXManager : Singleton<SFXManager>
 
     public void ClearSound()
     {
-        audioSource.PlayOneShot(clearSound);
+        audioMixer.SetFloat("SFX", Mathf.Log10(1f) * 20);
+        audioSource.clip = clearSound;
+        audioSource.Play();
     }
 }
