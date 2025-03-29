@@ -655,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartCanvasGroup: {fileID: 1450416488}
   gameOverCanvasGroup: {fileID: 1450416487}
+  bossWarningCanvasGroup: {fileID: 0}
   clearCanvasGroup: {fileID: 1450416489}
   gameOverTextCanvasGroup: {fileID: 1450416486}
   fadeDuration: 0.5
@@ -1836,10 +1837,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7351406482135561110, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8925132690803443013, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8350f79d3c476f049a38db0b070bf2ac, type: 3}
+    - target: {fileID: 9214476883912180543, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
