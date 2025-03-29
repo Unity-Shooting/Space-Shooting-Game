@@ -23,6 +23,8 @@ public abstract class Monster : MonoBehaviour, IDamageable
     public float AttackSpeed { get; protected set; }
     public float AttackStart { get; protected set; }
     public Vector2 direction { get; protected set; } // 진행 방향
+    private float relaseTimerInvisible = 2f;
+    Coroutine releaseTimer;
 
     public float type { get; protected set; }
     public int itemType;
@@ -37,6 +39,7 @@ public abstract class Monster : MonoBehaviour, IDamageable
     [SerializeField] protected GameObject Bullet; // 발사할 총알 프리펩
     [SerializeField] protected int Score; // 몬스터가 죽으면 얻을 점수
     [SerializeField] protected GameObject DesturctionEffect;
+
 
 
 
@@ -146,6 +149,16 @@ public abstract class Monster : MonoBehaviour, IDamageable
     }
 
     /// <summary>
+    /// 시야에서 나갔을 때 호출, 일정시간 뒤에 Release()를 호출
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator RelaseAfterTimer()
+    {
+        yield return new WaitForSeconds(relaseTimerInvisible);
+        Release();
+    }
+
+    /// <summary>
     /// transform 이 자식 오브젝트들을 보관하고 있어서 이런 foreach로 자식을 한바퀴 돌 수 있음
     /// 파괴 애니메이션이 시작되면서 Engine,Shield 등을 꺼주기</summary>
     private void DestroyAllChildren()
@@ -156,14 +169,31 @@ public abstract class Monster : MonoBehaviour, IDamageable
         }
     }
 
+
+    /// <summary>
+    /// 시야 밖으로 나가면 2초 뒤에 release하는 코루틴 호출
+    /// </summary>
     protected virtual void OnBecameInvisible() // 카메라 밖으로 나가면 오브젝트 풀로 반환
     {                               // 다른 함수에서 반환해도 해당 메서드가 실행되기 때문에(비활성화 되면서 카메라에서 사라지는것으로 인식하는듯함)
                                     // Release()가 호출되면 isReleased를 True로 해서 중복실행을 방지함
                                     // 이거 안하니까 같은 오브젝트를 두번씩 반환해서 오브젝트 풀 10칸을 다 쓰고 처음으로 돌아오면
                                     // 같은 오브젝트가 두번씩 호출돼서 한바퀴 돌때마다 두배씩 느려지는 현상이 발생
                                     // 느려지는것뿐만이 아니라 한 오브젝트를 두번 씩 부르니 이것저것 문제가 커서 꼭 신경써야할듯!!
-        Release();
+      releaseTimer = StartCoroutine(RelaseAfterTimer());
     }
+
+    /// <summary>
+    /// 다시 시야에 들어오면 2초 뒤에 release하는 코루틴 중지
+    /// </summary>
+    protected virtual void OnBecameVisible()
+    {
+        if (releaseTimer != null)
+        {
+            StopCoroutine(releaseTimer);
+        }
+    }
+
+
 
     protected void RotateToDirection()
     {
