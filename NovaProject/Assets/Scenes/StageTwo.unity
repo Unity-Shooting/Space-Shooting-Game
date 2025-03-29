@@ -659,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartCanvasGroup: {fileID: 1450416488}
   gameOverCanvasGroup: {fileID: 1450416487}
-  bossWarningCanvasGroup: {fileID: 0}
+  bossWarningCanvasGroup: {fileID: 1450416490}
   clearCanvasGroup: {fileID: 1450416489}
   gameOverTextCanvasGroup: {fileID: 1450416486}
   fadeDuration: 0.5
@@ -1493,6 +1493,7 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: 47ea69578b520c94cb9ccd494c620a41, type: 3}
   shootSound: {fileID: 8300000, guid: e8675d8c311ef2846bda131556f334fe, type: 3}
   clearSound: {fileID: 8300000, guid: 5e2a347a65a033a4483256e8608a89dd, type: 3}
+  audioMixer: {fileID: 24100000, guid: 10035a2272fa2024bb7b83910d6af06b, type: 2}
 --- !u!1 &1375198486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,6 +1878,11 @@ CanvasGroup:
 --- !u!225 &1450416489 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 2575010249633315409, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
+  m_PrefabInstance: {fileID: 1450416485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1450416490 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 9214476883912180543, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
   m_PrefabInstance: {fileID: 1450416485}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1517357871
