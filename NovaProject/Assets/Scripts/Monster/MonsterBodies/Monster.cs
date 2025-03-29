@@ -179,7 +179,9 @@ public abstract class Monster : MonoBehaviour, IDamageable
                                     // 이거 안하니까 같은 오브젝트를 두번씩 반환해서 오브젝트 풀 10칸을 다 쓰고 처음으로 돌아오면
                                     // 같은 오브젝트가 두번씩 호출돼서 한바퀴 돌때마다 두배씩 느려지는 현상이 발생
                                     // 느려지는것뿐만이 아니라 한 오브젝트를 두번 씩 부르니 이것저것 문제가 커서 꼭 신경써야할듯!!
-      releaseTimer = StartCoroutine(RelaseAfterTimer());
+      
+        if(gameObject.activeInHierarchy) // active 상태라면 2초후 release
+        releaseTimer = StartCoroutine(RelaseAfterTimer());
     }
 
     /// <summary>

@@ -71,7 +71,8 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
     /// </summary>
     protected virtual void OnBecameInvisible()
     {
-        releaseTimer = StartCoroutine(RelaseAfterTimer());
+        if (gameObject.activeInHierarchy) // active 상태라면 2초후 release
+            releaseTimer = StartCoroutine(RelaseAfterTimer());
     }
 
     /// <summary>
