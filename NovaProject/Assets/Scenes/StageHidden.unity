@@ -316,13 +316,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teacher
       objectReference: {fileID: 0}
+    - target: {fileID: 3143705399432106854, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
+      propertyPath: m_TagString
+      value: Monster
+      objectReference: {fileID: 0}
     - target: {fileID: 6894122278832652470, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6894122278832652470, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 6894122278832652470, guid: be667d363329d4b41ba669f3763b8a8a, type: 3}
       propertyPath: m_LocalPosition.z
