@@ -238,10 +238,12 @@ public class Teacher : Monster
                 case 102: //따봉
                     ScoreManager.instance.AddTtabongScore(1);  //따봉 스코어 1점 추가
                     thumbsup++;
+                    Debug.Log($"따봉 : {thumbsup}");
                     break;
                 case 103: //하트
                     ScoreManager.instance.AddHeartScore(1);  //하트 스코어 1점 추가
                     heart++;
+                    Debug.Log($"하트 : {heart}");
                     break;
             }
         }
