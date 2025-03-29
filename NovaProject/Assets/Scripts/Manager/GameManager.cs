@@ -27,6 +27,11 @@ public class GameManager : Singleton<GameManager>
     /// <summary>
     /// GameOver UI 이미지 ( Fade In / Fade Out 사용을 위해 CanvasGroup 사용)
     /// </summary>
+    public CanvasGroup bossWarningCanvasGroup;
+
+    /// <summary>
+    /// GameOver UI 이미지 ( Fade In / Fade Out 사용을 위해 CanvasGroup 사용)
+    /// </summary>
     public CanvasGroup clearCanvasGroup;
 
     /// <summary>
@@ -97,7 +102,6 @@ public class GameManager : Singleton<GameManager>
 
 
 
-
     /// <summary>
     /// 게임 시작
     /// </summary>
@@ -121,6 +125,7 @@ public class GameManager : Singleton<GameManager>
 
         // DestroyAllPersistentObjects();
         SceneManager.LoadScene("StageTwo");
+
     }
 
     private void ClearStageTwoGame()
@@ -156,6 +161,20 @@ public class GameManager : Singleton<GameManager>
         }
 
         StartGame();
+    }
+
+    public IEnumerator ShowBossWarning()
+    {
+        if (bossWarningCanvasGroup != null)
+        {
+            // 기존 gameStartImage 활성화 코드 대신, 페이드 인 효과 적용
+            //코루틴 시작 FadeCanvasGroup(사용할 캠퍼스그룹, 시작 알파 값 0 이면 투명  1이면 불투명, 동일 , 페이드 지속 시간인데 위에 정의해놓음 1f, true이면 Time.timeScale = 0 이여도 동작을 함. 적어놓지 않으면 기본값 False)
+
+            yield return StartCoroutine(FadeCanvasGroup(bossWarningCanvasGroup, 0f, 1f)); // 서서히 밝아짐
+            yield return new WaitForSeconds(2f);        //2초 뒤
+            yield return StartCoroutine(FadeCanvasGroup(bossWarningCanvasGroup, 1f, 0f)); // 서서히 사라짐
+        }
+
     }
 
     /// <summary>

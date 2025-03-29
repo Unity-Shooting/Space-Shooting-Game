@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 몬스터 한 개체의 실행에 관한 정보, 반복도 가능함!
@@ -59,7 +60,7 @@ public class WaveData
 /// </summary>
 public class SpawnManager : Singleton<SpawnManager>
 {
-    [SerializeField] private GameObject boss;
+    [SerializeField] private GameObject[] boss;
     [SerializeField] private StageWaveSO stage;  // 하나의 스테이지동안 실행될 여러 WavaData의 리스트를 가지고있음
 
     [Header("아이템 프리펩")]
@@ -150,8 +151,19 @@ public class SpawnManager : Singleton<SpawnManager>
 
     IEnumerator SpawnBoss()
     {
-        yield return new WaitForSeconds(5f);
-        Instantiate(boss, new Vector2(0, 5), Quaternion.identity);
+        if (SceneManager.GetActiveScene().name == "StageOne")
+        {
+            yield return new WaitForSeconds(5f);
+            yield return GameManager.Instance.StartCoroutine(GameManager.Instance.ShowBossWarning());
+            Instantiate(boss[0], new Vector2(0, 5), Quaternion.identity);
+        }
+
+        if (SceneManager.GetActiveScene().name == "StageTwo")
+        {
+            yield return new WaitForSeconds(5f);
+            yield return GameManager.Instance.StartCoroutine(GameManager.Instance.ShowBossWarning());
+            Instantiate(boss[1], new Vector2(0, 5), Quaternion.identity);
+        }
 
     }
 
