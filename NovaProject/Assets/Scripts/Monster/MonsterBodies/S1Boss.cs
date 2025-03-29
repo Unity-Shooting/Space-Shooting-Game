@@ -406,6 +406,8 @@ public class S1Boss : Monster
         DE.SetActive(true);
 
         // 다음 스태이지로 넘어가기
+        GameManager.Instance.StartCoroutine(GameManager.Instance.ShowClearStageTwoStart()); // StageTwo Clear
+
     }
 
     private Vector2 FlipX(Vector2 vector)
