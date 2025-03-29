@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!225 &8922981 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 9214476883912180543, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
+  m_PrefabInstance: {fileID: 3410422954439757640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &114913709
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageSound: {fileID: 8300000, guid: 47ea69578b520c94cb9ccd494c620a41, type: 3}
   shootSound: {fileID: 8300000, guid: e8675d8c311ef2846bda131556f334fe, type: 3}
+  clearSound: {fileID: 8300000, guid: 5e2a347a65a033a4483256e8608a89dd, type: 3}
+  audioMixer: {fileID: 24100000, guid: 10035a2272fa2024bb7b83910d6af06b, type: 2}
 --- !u!1 &190849565
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartCanvasGroup: {fileID: 1777832364}
   gameOverCanvasGroup: {fileID: 1557802904}
+  bossWarningCanvasGroup: {fileID: 8922981}
   clearCanvasGroup: {fileID: 1000491110}
   gameOverTextCanvasGroup: {fileID: 977786531}
   fadeDuration: 0.5
@@ -1225,8 +1233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1a69a0fcc1b0e4a82a8efc27f62685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 5847599739197683836, guid: e18216625d3541640ab44de6969b333c, type: 3}
-  stage: {fileID: 11400000, guid: dcf5fadd4ace0e948b617ab4e91de02a, type: 2}
+  boss:
+  - {fileID: 5847599739197683836, guid: e18216625d3541640ab44de6969b333c, type: 3}
+  - {fileID: 5557209280645327269, guid: 4a68727b7f3045b498d74b387b38157a, type: 3}
+  stage:
+  - {fileID: 11400000, guid: dcf5fadd4ace0e948b617ab4e91de02a, type: 2}
+  - {fileID: 11400000, guid: 5904c2c75cfc56f479f363c01b9516c7, type: 2}
   itemSkillMissile: {fileID: 6008542162048325370, guid: 781b5c0d77f3880458e12c98887ca3c6, type: 3}
   itemSkillLaser: {fileID: 58039115203528177, guid: 548063fc4fc09c940a8d682006027a70, type: 3}
   itemSkillBomb: {fileID: 4461671099759352814, guid: 9b4069628fd0b3e43ad2f7e6a5feff8e, type: 3}
@@ -1476,14 +1488,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3193204716152579960, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193204716152579960, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b9369fe55710a0b4994f0372fb591cf9, type: 3}
     - target: {fileID: 3269749213419611006, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1580,10 +1584,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5636189901125374775, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f4823d6bce68c2f4ab83bdc4c4fa0383, type: 3}
     - target: {fileID: 6628397615111216616, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1614,6 +1614,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7111030001537799969, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214476883912180543, guid: 63b80ba0866ec064db06dd08efcdd4f8, type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
