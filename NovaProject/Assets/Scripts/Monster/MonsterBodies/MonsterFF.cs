@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class MonsterFF : Monster
 {
@@ -26,7 +25,7 @@ public class MonsterFF : Monster
         float intervalangle = angle / (count - 1); // 각 탄환 사이의 각도
         float baseangle = -angle / 2f; // 제일 왼쪽 탄환의 각도
 
-         
+
         for (int i = 0; i < count; i++)
         {
             float bulletangle = baseangle + intervalangle * i;

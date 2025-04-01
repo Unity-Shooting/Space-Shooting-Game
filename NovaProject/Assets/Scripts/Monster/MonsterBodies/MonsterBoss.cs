@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.WSA;
 
 /// <summary>
 /// 보스는 한번만 나오면 되니까 오브젝트풀링 x Instantiate로 생성

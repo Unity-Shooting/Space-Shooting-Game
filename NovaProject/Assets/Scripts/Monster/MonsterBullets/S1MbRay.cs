@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class S1MbRay : MbBase
 {
@@ -10,7 +9,7 @@ public class S1MbRay : MbBase
     [SerializeField] private SpriteRenderer Ray;
     [SerializeField] private GameObject Circle;
     private S1Support caster; // 레이저 지속시간 중에 시전몬스터 사망 체크
-                                   // int type가 1로 들어오면 caster에 관련된 처리를 하지 않음(보스가 시전한 광선임)
+                              // int type가 1로 들어오면 caster에 관련된 처리를 하지 않음(보스가 시전한 광선임)
 
     bool isRayHit = false; // 레이저 여러대 맞는일을 막기위해 한번 히트하면 더이상 히트하지않게
 

@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.WSA;
 
 /// <summary>
 /// 보스는 한번만 나오면 되니까 오브젝트풀링 x Instantiate로 생성
@@ -31,11 +28,11 @@ public class S1Boss : Monster
 
     // 페이즈전환/사망시 코루틴 정지를 위한 변수
     private Coroutine Pattern0;
-    private Coroutine PatternA;  
-    private Coroutine PatternB;  
-    private Coroutine PatternC; 
-    private Coroutine PatternD; 
-    private Coroutine PatternE; 
+    private Coroutine PatternA;
+    private Coroutine PatternB;
+    private Coroutine PatternC;
+    private Coroutine PatternD;
+    private Coroutine PatternE;
 
 
     void Start()
@@ -105,7 +102,7 @@ public class S1Boss : Monster
     // 페이즈1 코루틴 정지
     private void StopPhase1()
     {
-        if(Pattern0 != null)
+        if (Pattern0 != null)
         {
             StopCoroutine(Pattern0);
         }
@@ -132,7 +129,7 @@ public class S1Boss : Monster
 
     private void StopPhase2()
     {
-        if(Pattern0 != null)
+        if (Pattern0 != null)
         {
             StopCoroutine(Pattern0);
         }
@@ -160,7 +157,7 @@ public class S1Boss : Monster
             yield return new WaitForSeconds(5);
 
         }
-        
+
     }
 
     /// <summary>
@@ -230,7 +227,7 @@ public class S1Boss : Monster
                 RandomArrowLaseer();
             }
         }
-        
+
     }
 
     /// <summary>
@@ -241,7 +238,7 @@ public class S1Boss : Monster
     private void RandomArrowLaseer()
     {
         Vector2 pos = GetRandomPointOnBorder(); // 화면 가장자리 랜덤위치
-        Vector2 dir = new Vector2(0,-2) - pos; //화면 중간하단으로 향하는 방향
+        Vector2 dir = new Vector2(0, -2) - pos; //화면 중간하단으로 향하는 방향
         float spreadMax = 20f;
         float spread = Random.Range(-spreadMax, spreadMax);
         dir = Quaternion.Euler(0, 0, spread) * dir;
@@ -269,7 +266,7 @@ public class S1Boss : Monster
         yield return new WaitForSeconds(3);
 
         yield return StartCoroutine(MidPhase());
-        
+
         yield return new WaitForSeconds(2);
         // 실드 효과 끄기
         Shield.SetActive(false);

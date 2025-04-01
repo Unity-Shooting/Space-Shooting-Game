@@ -1,8 +1,6 @@
 using System.Collections;
-using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 /// <summary>
 /// 게임을 총괄하는 GameManager 클래스.
@@ -253,7 +251,7 @@ public class GameManager : Singleton<GameManager>
         -> ShowGameOverScreen() 안에 집어넣음
          */
         PWRManager.Instance.Run = false;
-        Debug.Log("Run : "+ PWRManager.Instance.Run);
+        Debug.Log("Run : " + PWRManager.Instance.Run);
         StartCoroutine(ShowGameOverScreen());   //코루틴 실행
     }
 
@@ -372,8 +370,8 @@ public class GameManager : Singleton<GameManager>
     /// MainMenu Secen 으로 넘어갈때, DontDestroyOnLoad object 제거
     /// </summary>
     private void DestroyAllPersistentObjects()
-{
-     GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);     //씬에 있는 모든 오브젝트를 검색
+    {
+        GameObject[] allObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);     //씬에 있는 모든 오브젝트를 검색
 
         foreach (GameObject obj in allObjects)  //모든 오브젝트를 foreach를 사용하여 순회하며 처리
         {
@@ -382,9 +380,9 @@ public class GameManager : Singleton<GameManager>
             {
                 //해당 오브젝트를 삭제
                 Destroy(obj);
+            }
         }
     }
-}
 
     /*******************수정*********************/
 

@@ -1,8 +1,4 @@
-using JetBrains.Annotations;
-using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.SceneManagement;
 
 // 무기 유형을 정의하는 열거형

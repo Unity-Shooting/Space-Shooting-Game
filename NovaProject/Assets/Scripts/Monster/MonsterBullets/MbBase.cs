@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public abstract class MbBase : MonoBehaviour, IBulletInit
@@ -58,7 +57,7 @@ public abstract class MbBase : MonoBehaviour, IBulletInit
     protected virtual void OnTriggerEnter2D(Collider2D collision) // 플레이어 충돌 시 액션
     {
 
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             PlayerHealth.Instance.TakeDamage(Attack);
             Release();

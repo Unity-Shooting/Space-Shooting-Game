@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class S1MbTorpedo : MbBase, IDamageable
 {
@@ -19,7 +18,7 @@ public class S1MbTorpedo : MbBase, IDamageable
     public override void Init(Vector2 pos, Vector2 dir, int type)
     {
         base.Init(pos, dir, type);
-        if(type == 1) // type가 1이면 아주 약한 유도, 대신 좌우각도 제한 90도로 버프
+        if (type == 1) // type가 1이면 아주 약한 유도, 대신 좌우각도 제한 90도로 버프
         {
             hoamingPower = 0.6f;
             maxHoamingAngle = 90f;
@@ -39,7 +38,7 @@ public class S1MbTorpedo : MbBase, IDamageable
         Vector2 toPlayer = (PlayerController.Instance.transform.position - this.transform.position).normalized;
         // 아래방향 단위벡터와의 각도가 maxDegree 이하인 경우 유도
         float angleToDown = Vector2.SignedAngle(Vector2.down, toPlayer);
-        
+
         if (Mathf.Abs(angleToDown) < maxHoamingAngle)
         {
             direction = Vector2.Lerp(direction, toPlayer, hoamingPower * Time.deltaTime);
@@ -49,9 +48,9 @@ public class S1MbTorpedo : MbBase, IDamageable
 
     }
 
-    public void TakeDamage(int  damage)
+    public void TakeDamage(int damage)
     {
-        
+
 
         HP -= damage;
         if (HP <= 0)

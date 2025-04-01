@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class MbRocket : MbBase, IDamageable
 {
@@ -16,30 +15,30 @@ public class MbRocket : MbBase, IDamageable
         Move();
     }
     /// <summary>
-    /// ÇÃ·¹ÀÌ¾î ¹æÇâÀ¸·Î À¯µµÇÏ´Â ÇÔ¼ö
-    /// ÃÑ¾ËÀÌ °¡Áø vector2 directionÀ» ¼öÁ¤ÇØ¼­ ÁøÇà ¹æÇâÀ» ¹Ù²Ù°í
-    /// ÀÌ¹ÌÁöµµ ÇØ´ç °¢µµ·Î È¸Àü½ÃÄÑ¼­ ÀÚ¿¬½º·´°Ô À¯µµÇÒ¼öÀÖµµ·Ï ½ÃµµÇØº½
-    /// À¯µµÀÎ ´ë½Å ÇÃ·¹ÀÌ¾î ÃÑ¾Ë·Î °ÝÃßÇÒ ¼ö ÀÖµµ·Ï ÇÔ
-    /// ÇÃ·¹ÀÌ¾î¸¦ Áö³ªÄ£ ¹Ì»çÀÏÀÌ ¹Ø¿¡¼­ ¿Ã¶ó¿ÀÁö ¾Êµµ·Ï directionÀÇ °¢µµ¸¦ yÃà±âÁØ ÁÂ¿ì maxDegreeµµ·Î Á¦ÇÑ
+    /// ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
+    /// ï¿½Ñ¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ vector2 directionï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù°ï¿½
+    /// ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¼ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½Öµï¿½ï¿½ï¿½ ï¿½Ãµï¿½ï¿½Øºï¿½
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ñ¾Ë·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½
+    /// ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½Ä£ ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¿ï¿½ï¿½ï¿½ ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ directionï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ yï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¿ï¿½ maxDegreeï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     private void Hoaming()
     {
-        // ·ÎÄÏ¿¡¼­ ÇÃ·¹ÀÌ¾î¸¦ ÇâÇÏ´Â ´ÜÀ§º¤ÅÍ
+        // ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Vector2 toPlayer = (PlayerController.Instance.transform.position - this.transform.position).normalized;
-        // ¾Æ·¡¹æÇâ ´ÜÀ§º¤ÅÍ¿ÍÀÇ °¢µµ°¡ maxDegree ÀÌÇÏÀÎ °æ¿ì À¯µµ
+        // ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ maxDegree ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         float angleToDown = Vector2.SignedAngle(Vector2.down, toPlayer);
-        if(Mathf.Abs(angleToDown) < maxHoamingAngle)
+        if (Mathf.Abs(angleToDown) < maxHoamingAngle)
         {
             direction = Vector2.Lerp(direction, toPlayer, hoamingPower * Time.deltaTime);
         }
-        // ¹Ì»çÀÏ ½ºÇÁ¶óÀÌÆ®¸¦ È¸Àü½ÃÄÑÁÖ±â
+        // ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
         RotateToDirection();
 
     }
 
-    public void TakeDamage(int  damage)
+    public void TakeDamage(int damage)
     {
-        
+
 
         HP -= damage;
         if (HP <= 0)
@@ -51,7 +50,7 @@ public class MbRocket : MbBase, IDamageable
     }
     protected override void OnEnable()
     {
-        // ´Ù¸¥ ÃÑ¾ËµéÀº °¡ÁöÁö ¾Ê´Â Ã¼·ÂÀ» °¡Áö±â ¶§¹®¿¡ µû·Î ÃÊ±âÈ­
+        // ï¿½Ù¸ï¿½ ï¿½Ñ¾Ëµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         base.OnEnable();
         HP = maxHP;
         isDead = false;
